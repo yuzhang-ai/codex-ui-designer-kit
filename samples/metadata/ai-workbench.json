@@ -1,0 +1,993 @@
+[
+  {
+    "sample_id": "ai-chatgpt",
+    "product_name": "ChatGPT",
+    "page_url": "https://chatgpt.com/",
+    "resolved_url": "about:blank",
+    "page_type": "AI assistant entry",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-chatgpt__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-chatgpt__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "输入区、空状态、模型入口",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 0,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Noto Sans SC\""
+      ],
+      "font_sizes": [
+        "16px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "\"Noto Sans SC\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "AI 工作台要保留人工确认闭环：输入、运行、输出、失败重试和采纳动作不能混在一起"
+    ],
+    "risk_notes": [
+      "desktop navigation warning: Timed out running CDP command \"Page.navigate\" for tab 1 | mobile navigation warning: Timed out waiting for tab 1 to navigate to https://chatgpt.com/."
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out running CDP command \"Page.navigate\" for tab 1 | mobile navigation warning: Timed out waiting for tab 1 to navigate to https://chatgpt.com/."
+  },
+  {
+    "sample_id": "ai-claude",
+    "product_name": "Claude",
+    "page_url": "https://claude.ai/",
+    "resolved_url": "https://claude.ai/login",
+    "page_type": "AI assistant entry",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-claude__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-claude__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "输入区、历史入口、工作台结构",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "标题层级示例：claude.ai / 正在进行安全验证 / 验证成功。正在等待 claude.ai 响应",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [
+        "claude.ai",
+        "正在进行安全验证",
+        "验证成功。正在等待 claude.ai 响应"
+      ],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 2,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      ],
+      "font_sizes": [
+        "16px",
+        "12px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(0, 0, 0)",
+        "color": "rgb(242, 242, 242)",
+        "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(242, 242, 242)",
+      "rgb(0, 0, 0)",
+      "rgb(130, 182, 255)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "AI 工作台要保留人工确认闭环：输入、运行、输出、失败重试和采纳动作不能混在一起"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "ai-perplexity",
+    "product_name": "Perplexity",
+    "page_url": "https://www.perplexity.ai/",
+    "resolved_url": "https://www.perplexity.ai/",
+    "page_type": "AI search workbench",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-perplexity__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-perplexity__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "搜索式 AI 工作台",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "标题层级示例：www.perplexity.ai / 正在进行安全验证 / 验证成功。正在等待 www.perplexity.ai 响应",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [
+        "www.perplexity.ai",
+        "正在进行安全验证",
+        "验证成功。正在等待 www.perplexity.ai 响应"
+      ],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 2,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      ],
+      "font_sizes": [
+        "16px",
+        "12px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(0, 0, 0)",
+        "color": "rgb(242, 242, 242)",
+        "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(242, 242, 242)",
+      "rgb(0, 0, 0)",
+      "rgb(130, 182, 255)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "AI 工作台要保留人工确认闭环：输入、运行、输出、失败重试和采纳动作不能混在一起"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "ai-cursor",
+    "product_name": "Cursor",
+    "page_url": "https://www.cursor.com/",
+    "resolved_url": "https://cursor.com/",
+    "page_type": "AI coding product page",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-cursor__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-cursor__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "AI coding 产品工作流",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "导航项示例：跳至内容 / Cursor / 产品 / 智能体 / 云端 / CLI / 代码审查 / Tab；标题层级示例：Cursor 是您的编码智能体，助您构建雄心勃勃的软件。 / 每天都深受构建世界级软件的团队信赖 / 让智能体把创意变成代码 / Mission Control Interface / Trigger / View Behavior",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "侧边导航 / 工作台型导航",
+    "primary_components": {
+      "headings": [
+        "Cursor 是您的编码智能体，助您构建雄心勃勃的软件。",
+        "每天都深受构建世界级软件的团队信赖",
+        "让智能体把创意变成代码",
+        "Mission Control Interface",
+        "Trigger",
+        "View Behavior",
+        "自主工作，并行运行",
+        "覆盖所有工具，贯穿每一步",
+        "#feature-realtime-sync",
+        "精准得令人惊叹的自动补全",
+        "构建软件的全新方式。",
+        "始终保持前沿"
+      ],
+      "nav_items": [
+        "跳至内容",
+        "Cursor",
+        "产品",
+        "智能体",
+        "云端",
+        "CLI",
+        "代码审查",
+        "Tab",
+        "应用市场 ↗",
+        "企业",
+        "定价",
+        "资源",
+        "更新日志",
+        "Blog",
+        "文档",
+        "社区",
+        "帮助 ↗",
+        "工作坊"
+      ],
+      "buttons": [
+        "↓",
+        "↓",
+        "产品 →",
+        "资源 →",
+        "获取 Cursor",
+        "构建落地页 Reading docs",
+        "分析 Tab 与智能体的使用模式 Fetching data",
+        "规划 Mission Control Generating plan",
+        "PyTorch MNIST 实验 10m PyTorch MNIST 实验",
+        "为仪表盘设置 Cursor 规则 30m 为仪表盘设置 Cursor 规则",
+        "生物信息学工具 45m +135 -21 · 生物信息学工具"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 74,
+        "cards": 36,
+        "dialogs": 0,
+        "forms": 2,
+        "inputs": 3,
+        "links": 72,
+        "tables": 1
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif",
+        "\"EB Garamond\", \"Iowan Old Style\", \"Palatino Linotype\", \"URW Palladio L\", P052, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif, \"Iowan Old Style\", \"Palatino Linotype\", \"URW Palladio L\", P052, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+        "berkeleyMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "36px",
+        "12px",
+        "17.28px",
+        "13px",
+        "11px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(20, 18, 11)",
+        "color": "rgb(237, 236, 236)",
+        "fontFamily": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(237, 236, 236)",
+      "rgb(20, 18, 11)",
+      "oklab(0.943853 0.00107113 0.000336707 / 0.2)",
+      "rgb(38, 36, 30)",
+      "oklab(0.943853 0.00107113 0.000336707 / 0.025)",
+      "oklab(0.943853 0.00107113 0.000336707 / 0.6)",
+      "rgb(32, 30, 24)",
+      "rgba(237, 236, 236, 0.55)",
+      "rgba(237, 236, 236, 0.08)",
+      "rgb(43, 41, 35)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "3.35544e+07px",
+        "4px",
+        "8px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "表格页需要固定筛选入口、状态标签和批量操作的明确边界"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "ai-v0-chat",
+    "product_name": "v0",
+    "page_url": "https://v0.dev/chat",
+    "resolved_url": "https://v0.app/",
+    "page_type": "Prompt-to-UI workbench",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-v0-chat__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-v0-chat__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "prompt-to-UI 工作台",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "导航项示例：新建聊天 / Enterprise / Pricing / iOS / Students / FAQ / 登录 / 注册；标题层级示例：您想创建什么？ / Start with a template / Prompt. Build. Publish. / Sync with a repo / Integrate with apps / Deploy to Vercel",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "您想创建什么？",
+        "Start with a template",
+        "Prompt. Build. Publish.",
+        "Sync with a repo",
+        "Integrate with apps",
+        "Deploy to Vercel",
+        "Edit with design mode",
+        "Start with templates",
+        "Create design systems",
+        "Agentic by default",
+        "Create from your phone",
+        "Ship mobile sites"
+      ],
+      "nav_items": [
+        "新建聊天",
+        "Enterprise",
+        "Pricing",
+        "iOS",
+        "Students",
+        "FAQ",
+        "登录",
+        "注册"
+      ],
+      "buttons": [
+        "Templates",
+        "Resources",
+        "v0 Max",
+        "Contact Form",
+        "Image Editor",
+        "Mini Game",
+        "Finance Calculator",
+        "676",
+        "2K",
+        "809",
+        "966"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 74,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 1,
+        "inputs": 1,
+        "links": 314,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "GeistSans, \"GeistSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "13px"
+      ],
+      "body_font": {
+        "backgroundColor": "oklch(0 0 0)",
+        "color": "oklch(0.946 0 0)",
+        "fontFamily": "GeistSans, \"GeistSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "oklch(0.946 0 0)",
+      "oklch(0 0 0)",
+      "oklch(0.301 0 0)",
+      "oklch(0.218 0 0)",
+      "oklch(0.706 0 0)",
+      "oklch(0.182 0 0)",
+      "oklch(1 0 0 / 0.145)",
+      "oklch(0.145 0 0)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "8px",
+        "6px",
+        "4px",
+        "3.35544e+07px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0.02) 0px 1px 1px 0px, rgba(0, 0, 0, 0.04) 0px 4px 8px -4px, rgba(0, 0, 0, 0.06) 0px 16px 24px -8px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "AI 工作台要保留人工确认闭环：输入、运行、输出、失败重试和采纳动作不能混在一起"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://v0.dev/chat."
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://v0.dev/chat."
+  },
+  {
+    "sample_id": "ai-lovable",
+    "product_name": "Lovable",
+    "page_url": "https://lovable.dev/",
+    "resolved_url": "https://lovable.dev/",
+    "page_type": "AI app builder",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-lovable__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-lovable__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "prompt app builder",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "导航项示例：Community / Enterprise / Pricing / Security / Careers / Press & media / Enterprise / Security；标题层级示例：Build something Lovable / Meet Lovable / Start with an idea / Watch it come to life / Refine and ship / Discover templates",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Build something Lovable",
+        "Meet Lovable",
+        "Start with an idea",
+        "Watch it come to life",
+        "Refine and ship",
+        "Discover templates",
+        "Lovable in numbers",
+        "AI App Builder",
+        "Ready to build?",
+        "Company",
+        "Product",
+        "Resources"
+      ],
+      "nav_items": [
+        "Community",
+        "Enterprise",
+        "Pricing",
+        "Security",
+        "Careers",
+        "Press & media",
+        "Enterprise",
+        "Security",
+        "Trust center",
+        "Partnerships",
+        "Pricing",
+        "Student discount",
+        "Founders",
+        "Product Managers",
+        "Designers",
+        "Marketers",
+        "Sales"
+      ],
+      "buttons": [
+        "Get started",
+        "Solutions",
+        "Resources",
+        "Log in",
+        "Get started",
+        "Build",
+        "Start voice recording",
+        "Send message",
+        "Start with an idea Describe the app or website you want to create or drop in screenshots and docs",
+        "Watch it come to life See your vision transform into a working prototype in real-time as AI builds it for you",
+        "Refine and ship Iterate on your creation with simple feedback and deploy it to the world with one click",
+        "Build",
+        "Start voice recording",
+        "Send message",
+        "EN"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 16,
+        "cards": 8,
+        "dialogs": 0,
+        "forms": 2,
+        "inputs": 0,
+        "links": 76,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Camera Plain Variable\", ui-sans-serif, system-ui, sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "15px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(31, 31, 30)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "\"Camera Plain Variable\", ui-sans-serif, system-ui, sans-serif",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(255, 255, 255)",
+      "rgb(31, 31, 30)",
+      "rgb(65, 65, 61)",
+      "rgb(31, 31, 29)",
+      "rgb(39, 39, 37)",
+      "lab(11.6997 -0.388153 1.46558)",
+      "lab(100 0 0 / 0.96)",
+      "lab(100 0 0)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "8px",
+        "3.35544e+07px",
+        "12px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "ai-replit-agent",
+    "product_name": "Replit Agent",
+    "page_url": "https://replit.com/agent",
+    "resolved_url": "https://replit.com/agent4",
+    "page_type": "Agent product page",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-replit-agent__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-replit-agent__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "agent task input / run context",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "导航项示例：Agent / Design / Database / Publish / Integrations / Mobile / ProReplit for serious builders / EnterpriseReplit with Enterprise-grade security & controls；标题层级示例：Pro / Enterprise / Use Cases / Roles / Get Started / Inspiration",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Pro",
+        "Enterprise",
+        "Use Cases",
+        "Roles",
+        "Get Started",
+        "Inspiration",
+        "Introducing Agent 4",
+        "Leaders rely on Replit",
+        "See what you can build with Agent 4",
+        "Let your creativity run free"
+      ],
+      "nav_items": [
+        "Agent",
+        "Design",
+        "Database",
+        "Publish",
+        "Integrations",
+        "Mobile",
+        "ProReplit for serious builders",
+        "EnterpriseReplit with Enterprise-grade security & controls",
+        "Business Apps",
+        "Mobile Apps",
+        "Rapid Prototyping",
+        "PM",
+        "Designers",
+        "Operations",
+        "Software Developers",
+        "SMB owners"
+      ],
+      "buttons": [
+        "Products",
+        "For Work",
+        "Resources",
+        "Products",
+        "For Work",
+        "Resources",
+        "Try Agent 4 now"
+      ],
+      "counts": {
+        "badges": 1,
+        "buttons": 53,
+        "cards": 26,
+        "dialogs": 0,
+        "forms": 1,
+        "inputs": 1,
+        "links": 61,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "Inter, \"Inter Fallback\"",
+        "fontDiatype, \"fontDiatype Fallback\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "12px",
+        "30px",
+        "24px",
+        "20px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(3, 7, 18)",
+        "fontFamily": "Inter, \"Inter Fallback\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(3, 7, 18)",
+      "rgb(255, 255, 255)",
+      "rgb(229, 231, 235)",
+      "rgb(0, 0, 0)",
+      "rgb(27, 35, 51)",
+      "rgb(102, 109, 121)",
+      "rgb(255, 60, 0)",
+      "oklch(0.278 0.033 256.848)",
+      "rgb(243, 243, 243)",
+      "rgb(250, 246, 241)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "6px",
+        "23px",
+        "30px",
+        "12px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈",
+      "AI 工作台要保留人工确认闭环：输入、运行、输出、失败重试和采纳动作不能混在一起"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://replit.com/agent."
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://replit.com/agent."
+  },
+  {
+    "sample_id": "ai-gamma",
+    "product_name": "Gamma",
+    "page_url": "https://gamma.app/",
+    "resolved_url": "https://gamma.app/zh-cn",
+    "page_type": "AI presentation product page",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-gamma__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-gamma__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "AI presentation input flow",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 0,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [],
+      "font_sizes": [],
+      "body_font": null
+    },
+    "color_characteristics": [],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "页面结构较克制，围绕一个明确主任务组织内容",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "AI 工作台要保留人工确认闭环：输入、运行、输出、失败重试和采纳动作不能混在一起"
+    ],
+    "risk_notes": [
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://gamma.app/. | desktop domcontentloaded timeout | mobile navigation warning: Timed out running CDP command \"Page.navigate\" for tab 1 | mobile domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://gamma.app/. | desktop domcontentloaded timeout | mobile navigation warning: Timed out running CDP command \"Page.navigate\" for tab 1 | mobile domcontentloaded timeout"
+  },
+  {
+    "sample_id": "ai-runway",
+    "product_name": "Runway",
+    "page_url": "https://runwayml.com/",
+    "resolved_url": "https://runwayml.com/",
+    "page_type": "AI media product page",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-runway__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-runway__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "AI media tool UI",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "导航项示例：RESEARCH / PRODUCT / RESOURCES / SOLUTIONS / COMPANY / Enterprise Sales / Login / Try Runway；标题层级示例：Building AI to Simulate the World / RUNWAY CHARACTERS ↗ / MEDIA AND ENTERTAINMENT ↗ / ROBOTICS AND AUTONOMY ↗ / GENERAL WORLD MODELS ↗ / Runway Characters",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Building AI to Simulate the World",
+        "RUNWAY CHARACTERS ↗",
+        "MEDIA AND ENTERTAINMENT ↗",
+        "ROBOTICS AND AUTONOMY ↗",
+        "GENERAL WORLD MODELS ↗",
+        "Runway Characters",
+        "Introducing GWM-1",
+        "Gen-4.5: A new frontier for video generation."
+      ],
+      "nav_items": [
+        "RESEARCH",
+        "PRODUCT",
+        "RESOURCES",
+        "SOLUTIONS",
+        "COMPANY",
+        "Enterprise Sales",
+        "Login",
+        "Try Runway"
+      ],
+      "buttons": [
+        "Learn more",
+        "Learn more",
+        "Learn more",
+        "Learn more",
+        "ENGLISH"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 5,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 96,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "abcNormal, \"abcNormal Fallback\""
+      ],
+      "font_sizes": [
+        "16px",
+        "11px",
+        "14px",
+        "24px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(64, 64, 64)",
+        "fontFamily": "abcNormal, \"abcNormal Fallback\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(64, 64, 64)",
+      "rgb(229, 231, 235)",
+      "rgb(12, 12, 12)",
+      "rgb(255, 255, 255)",
+      "rgb(48, 48, 48)",
+      "rgb(247, 247, 247)",
+      "rgb(38, 38, 38)",
+      "rgb(26, 26, 26)",
+      "rgba(247, 247, 247, 0.05)",
+      "rgb(107, 114, 128)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "8px",
+        "4px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "AI 工作台要保留人工确认闭环：输入、运行、输出、失败重试和采纳动作不能混在一起"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "ai-midjourney-explore",
+    "product_name": "Midjourney",
+    "page_url": "https://www.midjourney.com/explore",
+    "resolved_url": "https://www.midjourney.com/explore",
+    "page_type": "AI gallery / explore",
+    "category": "03-ai-workbench",
+    "category_label": "AI 工作台",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/ai-workbench/ai-midjourney-explore__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/ai-workbench/ai-midjourney-explore__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "gallery / generation discovery",
+    "user_role": "AI 工具使用者 / 创作者 / 开发者",
+    "information_architecture": "标题层级示例：www.midjourney.com / 正在进行安全验证 / 验证成功。正在等待 www.midjourney.com 响应",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [
+        "www.midjourney.com",
+        "正在进行安全验证",
+        "验证成功。正在等待 www.midjourney.com 响应"
+      ],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 2,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      ],
+      "font_sizes": [
+        "16px",
+        "12px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(0, 0, 0)",
+        "color": "rgb(242, 242, 242)",
+        "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(242, 242, 242)",
+      "rgb(0, 0, 0)",
+      "rgb(130, 182, 255)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "AI 工作台要保留人工确认闭环：输入、运行、输出、失败重试和采纳动作不能混在一起"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  }
+]

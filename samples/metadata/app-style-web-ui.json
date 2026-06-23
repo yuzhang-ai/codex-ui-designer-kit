@@ -1,0 +1,730 @@
+[
+  {
+    "sample_id": "app-todoist",
+    "product_name": "Todoist",
+    "page_url": "https://todoist.com/",
+    "resolved_url": "https://www.todoist.com/zh-CN",
+    "page_type": "Productivity app product page",
+    "category": "07-app-style-web-ui",
+    "category_label": "App 风格 Web UI",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-todoist__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-todoist__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "productivity app UI",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：任务管理 / 项目管理 / 时间管理 / 习惯培养 / 团队合作 / 关联应用 / 模版 / 入门说明；标题层级示例：极致清晰 / 使用Todoist模版来开启您的下一个项目 / 可以终身信赖的任务管理器 / 通过全球最受喜爱的高效应用来获得理性和高效 / 我们保护您的隐私",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "极致清晰",
+        "使用Todoist模版来开启您的下一个项目",
+        "可以终身信赖的任务管理器",
+        "通过全球最受喜爱的高效应用来获得理性和高效",
+        "我们保护您的隐私"
+      ],
+      "nav_items": [
+        "任务管理",
+        "项目管理",
+        "时间管理",
+        "习惯培养",
+        "团队合作",
+        "关联应用",
+        "模版",
+        "入门说明",
+        "帮助中心",
+        "用户需求",
+        "高效方法+测验",
+        "灵感中心",
+        "下载",
+        "价格",
+        "登录",
+        "免费加入",
+        "免费加入"
+      ],
+      "buttons": [
+        "适用于",
+        "资源",
+        "适用于",
+        "资源",
+        "播放",
+        "播放",
+        "接受",
+        "拒绝"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 1,
+        "inputs": 13,
+        "buttons": 12,
+        "links": 112,
+        "cards": 39,
+        "dialogs": 2,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "Graphik-1bbd4a4c7a2fb472, \"Graphik-1bbd4a4c7a2fb472 fallback: Arial\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "Inter-5486e50ce5a4efdf, \"Inter-5486e50ce5a4efdf fallback: Arial\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "Arial"
+      ],
+      "font_sizes": [
+        "16px",
+        "15.5px",
+        "17px",
+        "14.5px",
+        "18.5px",
+        "13.3333px"
+      ],
+      "body_font": {
+        "fontFamily": "Graphik-1bbd4a4c7a2fb472, \"Graphik-1bbd4a4c7a2fb472 fallback: Arial\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(37, 34, 30)",
+        "backgroundColor": "rgb(254, 253, 252)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(37, 34, 30)",
+      "rgb(254, 253, 252)",
+      "rgb(255, 255, 255)",
+      "rgb(227, 68, 50)",
+      "rgba(37, 34, 30, 0.07)",
+      "rgb(255, 246, 240)",
+      "rgb(207, 53, 32)",
+      "rgb(15, 102, 174)",
+      "rgba(37, 34, 30, 0.66)",
+      "rgba(37, 34, 30, 0.83)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "8px",
+        "10px",
+        "15px"
+      ],
+      "shadows": [
+        "rgba(37, 34, 30, 0.07) 0px 14px 19px -9px, rgba(37, 34, 30, 0.18) 0px 10px 48px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈",
+      "App 风格 Web 应用稳定的 shell、底部/侧边导航和卡片节奏，让用户感觉可持续使用而不是一次性落地页"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "app-spotify-web",
+    "product_name": "Spotify Web",
+    "page_url": "https://open.spotify.com/",
+    "resolved_url": "https://open.spotify.com/",
+    "page_type": "Media app shell",
+    "category": "07-app-style-web-ui",
+    "category_label": "App 风格 Web UI",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-spotify-web__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-spotify-web__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "media app shell",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：浏览播客 / 法律 / 安全与隐私中心 / 隐私政策 / Cookie 政策 / 关于广告 / 无障碍使用 / Cookie 政策；标题层级示例：音乐库 / 主页 / 热播歌曲 / 当红艺人 / 热门专辑与单曲 / 热门电台",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "侧边导航 / 工作台型导航",
+    "primary_components": {
+      "headings": [
+        "音乐库",
+        "主页",
+        "热播歌曲",
+        "当红艺人",
+        "热门专辑与单曲",
+        "热门电台",
+        "精选排行榜",
+        "选择语言",
+        "地点"
+      ],
+      "nav_items": [
+        "浏览播客",
+        "法律",
+        "安全与隐私中心",
+        "隐私政策",
+        "Cookie 政策",
+        "关于广告",
+        "无障碍使用",
+        "Cookie 政策",
+        "关于",
+        "招聘信息",
+        "For the Record",
+        "艺人专属",
+        "开发者",
+        "广告",
+        "投资人",
+        "供应商",
+        "支持",
+        "免费移动应用"
+      ],
+      "buttons": [
+        "Premium",
+        "支持",
+        "下载",
+        "注册",
+        "登录",
+        "创建歌单",
+        "简体中文",
+        "免费注册"
+      ],
+      "counts": {
+        "tables": 6,
+        "forms": 1,
+        "inputs": 6,
+        "buttons": 187,
+        "links": 342,
+        "cards": 115,
+        "dialogs": 2,
+        "badges": 1
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, \"Helvetica Neue\", helvetica, arial, \"Microsoft YaHei\", \"PingFang SC\", \"Lantinghei SC\", \"Hiragino Sans\", \"Hiragino Kaku Gothic ProN\", Meiryo, \"MS Gothic\"",
+        "SpotifyMixUITitle, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, \"Helvetica Neue\", helvetica, arial, \"Microsoft YaHei\", \"PingFang SC\", \"Lantinghei SC\", \"Hiragino Sans\", \"Hiragino Kaku Gothic ProN\", Meiryo, \"MS Gothic\""
+      ],
+      "font_sizes": [
+        "16px",
+        "13.3333px",
+        "14px",
+        "24px"
+      ],
+      "body_font": {
+        "fontFamily": "SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, \"Helvetica Neue\", helvetica, arial, \"Microsoft YaHei\", \"PingFang SC\", \"Lantinghei SC\", \"Hiragino Sans\", \"Hiragino Kaku Gothic ProN\", Meiryo, \"MS Gothic\"",
+        "fontSize": "16px",
+        "color": "rgb(179, 179, 179)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(179, 179, 179)",
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(193, 193, 193)",
+      "rgb(0, 0, 238)",
+      "rgb(31, 31, 31)",
+      "rgb(124, 124, 124)",
+      "rgb(16, 16, 16)",
+      "rgb(197, 197, 197)",
+      "rgba(118, 118, 118, 0.3)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "50%",
+        "9999px",
+        "500px",
+        "8px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "app-arc",
+    "product_name": "Arc",
+    "page_url": "https://arc.net/",
+    "resolved_url": "https://arc.net/",
+    "page_type": "Browser app product page",
+    "category": "07-app-style-web-ui",
+    "category_label": "App 风格 Web UI",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-arc__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-arc__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "browser app product UI",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Max / Mobile / Developers / Students / Blog / “Rethinking the fundamentals of how we use the web.” / “Arc is the best browser to come out in the last decade.” / “Arc is the new browser I’ve most enjoyed using.”；标题层级示例：Arc is the Chrome replacement I've been waiting for. / Arc is the Chrome replacement I've been waiting for.",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Arc is the Chrome replacement I've been waiting for.",
+        "Arc is the Chrome replacement I've been waiting for."
+      ],
+      "nav_items": [
+        "Max",
+        "Mobile",
+        "Developers",
+        "Students",
+        "Blog",
+        "“Rethinking the fundamentals of how we use the web.”",
+        "“Arc is the best browser to come out in the last decade.”",
+        "“Arc is the new browser I’ve most enjoyed using.”",
+        "“Arc is a great name.”",
+        "“Rethinking the fundamentals of how we use the web.”",
+        "“Arc is the best browser to come out in the last decade.”",
+        "“Arc is the new browser I’ve most enjoyed using.”",
+        "“Arc is a great name.”",
+        "“Rethinking the fundamentals of how we use the web.”",
+        "“Arc is the best browser to come out in the last decade.”",
+        "“Arc is the new browser I’ve most enjoyed using.”",
+        "“Arc is a great name.”"
+      ],
+      "buttons": [
+        "Download Arc for Windows",
+        "Download Arc for Mac",
+        "Download Arc for Windows",
+        "Download Arc for Mac",
+        "Download Arc for Windows",
+        "Download Arc for Mac"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 0,
+        "buttons": 7,
+        "links": 49,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "Marlin, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "\"Marlin Soft SQ\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "\"ABC Oracle\", Helvetica, sans-serif",
+        "-apple-system, BlinkMacSystemFont, sans-serif",
+        "InterVariable, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "13.3333px",
+        "14px",
+        "24px",
+        "17px",
+        "12px"
+      ],
+      "body_font": {
+        "fontFamily": "Marlin, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 252, 236)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 252, 236)",
+      "rgb(255, 255, 255)",
+      "rgba(0, 0, 0, 0.85)",
+      "rgb(255, 250, 221)",
+      "rgb(49, 57, 251)",
+      "rgb(39, 2, 194)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "8px",
+        "22px",
+        "10px",
+        "4px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0.25) 0px 2px 8px 0px",
+        "rgba(0, 0, 0, 0.1) 0px 5px 5px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "App 风格 Web 应用稳定的 shell、底部/侧边导航和卡片节奏，让用户感觉可持续使用而不是一次性落地页"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "app-things",
+    "product_name": "Things",
+    "page_url": "https://culturedcode.com/things/",
+    "resolved_url": "https://culturedcode.com/things/",
+    "page_type": "Productivity app product page",
+    "category": "07-app-style-web-ui",
+    "category_label": "App 风格 Web UI",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-things__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-things__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "productivity app visual hierarchy",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "标题层级示例：Things / Simply Powerful / Get Things, Get Done / Mac / iPhone & Watch / iPad / Vision Pro / What People Are Saying",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [
+        "Things",
+        "Simply Powerful",
+        "Get Things, Get Done",
+        "Mac",
+        "iPhone & Watch",
+        "iPad",
+        "Vision Pro",
+        "What People Are Saying",
+        "Read All About It",
+        "Things Newsletter",
+        "Products",
+        "Support"
+      ],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "tables": 0,
+        "forms": 1,
+        "inputs": 2,
+        "buttons": 1,
+        "links": 75,
+        "cards": 30,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "ui-sans-serif, -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+      ],
+      "font_sizes": [
+        "18px",
+        "15px",
+        "20.25px",
+        "15.3px",
+        "15.2px",
+        "13px",
+        "13.68px",
+        "16px"
+      ],
+      "body_font": {
+        "fontFamily": "ui-sans-serif, -apple-system, BlinkMacSystemFont, Roboto, sans-serif",
+        "fontSize": "18px",
+        "color": "rgb(48, 51, 54)",
+        "backgroundColor": "rgb(242, 245, 247)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(48, 51, 54)",
+      "rgb(242, 245, 247)",
+      "rgba(38, 52, 74, 0.5)",
+      "rgb(92, 156, 245)",
+      "rgb(37, 118, 235)",
+      "rgba(0, 7, 18, 0.44)",
+      "rgb(135, 146, 161)",
+      "rgb(142, 145, 150)",
+      "rgb(85, 96, 110)",
+      "rgb(236, 238, 240)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "3px",
+        "5.472px",
+        "6.4px",
+        "7.632px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈",
+      "App 风格 Web 应用稳定的 shell、底部/侧边导航和卡片节奏，让用户感觉可持续使用而不是一次性落地页"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "app-product-hunt",
+    "product_name": "Product Hunt",
+    "page_url": "https://www.producthunt.com/",
+    "resolved_url": "https://www.producthunt.com/",
+    "page_type": "Community feed",
+    "category": "07-app-style-web-ui",
+    "category_label": "App 风格 Web UI",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-product-hunt__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-product-hunt__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "app-like browsing / cards / voting / discovery",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Best Products / AI Workflow Automation → / AI Dictation Apps → / Trending Categories / Engineering & Development / LLMs / Productivity / Marketing & Sales；标题层级示例：Top Products Launching Today / Yesterday's Top Products / Last Week's Top Products / Last Month's Top Products / Engineering & Development / LLMs",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Top Products Launching Today",
+        "Yesterday's Top Products",
+        "Last Week's Top Products",
+        "Last Month's Top Products",
+        "Engineering & Development",
+        "LLMs",
+        "Productivity",
+        "Marketing & Sales",
+        "Design & Creative",
+        "Social & Community",
+        "Finance",
+        "AI Agents"
+      ],
+      "nav_items": [
+        "Best Products",
+        "AI Workflow Automation →",
+        "AI Dictation Apps →",
+        "Trending Categories",
+        "Engineering & Development",
+        "LLMs",
+        "Productivity",
+        "Marketing & Sales",
+        "Design & Creative",
+        "Social & Community",
+        "Finance",
+        "AI Agents",
+        "Other Categories",
+        "Vibe Coding Tools",
+        "AI Dictation Apps",
+        "AI notetakers",
+        "Code Review Tools"
+      ],
+      "buttons": [
+        "Sign in",
+        "Take a tour.",
+        "1",
+        "—",
+        "5",
+        "—",
+        "7",
+        "—",
+        "1",
+        "—",
+        "1",
+        "—",
+        "1",
+        "—",
+        "3"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 1,
+        "buttons": 135,
+        "links": 344,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px"
+      ],
+      "body_font": {
+        "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(234, 236, 240)",
+      "rgb(75, 88, 124)",
+      "rgb(242, 244, 247)",
+      "rgb(52, 64, 84)",
+      "rgb(245, 248, 255)",
+      "rgb(255, 97, 84)",
+      "rgb(255, 244, 237)",
+      "rgb(254, 240, 199)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "9999px",
+        "4px",
+        "12px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "App 风格 Web 应用稳定的 shell、底部/侧边导航和卡片节奏，让用户感觉可持续使用而不是一次性落地页"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "app-apple-iphone",
+    "product_name": "Apple iPhone",
+    "page_url": "https://www.apple.com/iphone/",
+    "resolved_url": "https://www.apple.com/iphone/",
+    "page_type": "Product page",
+    "category": "07-app-style-web-ui",
+    "category_label": "App 风格 Web UI",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-apple-iphone__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/app-style-web-ui/app-apple-iphone__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "app-style product page",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Apple / Store / Shop the Latest / Mac / iPad / iPhone / Apple Watch / Apple Vision Pro；标题层级示例：Shop / Quick Links / Shop Special Stores / Explore Mac / Shop Mac / More from Mac",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Shop",
+        "Quick Links",
+        "Shop Special Stores",
+        "Explore Mac",
+        "Shop Mac",
+        "More from Mac",
+        "Explore iPad",
+        "Shop iPad",
+        "More from iPad",
+        "Explore iPhone",
+        "Shop iPhone",
+        "More from iPhone"
+      ],
+      "nav_items": [
+        "Apple",
+        "Store",
+        "Shop the Latest",
+        "Mac",
+        "iPad",
+        "iPhone",
+        "Apple Watch",
+        "Apple Vision Pro",
+        "AirPods",
+        "Accessories",
+        "Find a Store",
+        "Order Status",
+        "Apple Trade In",
+        "Financing",
+        "Personal Setup",
+        "Certified Refurbished",
+        "Education",
+        "Business"
+      ],
+      "buttons": [
+        "0 +"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 1,
+        "inputs": 3,
+        "buttons": 112,
+        "links": 391,
+        "cards": 0,
+        "dialogs": 27,
+        "badges": 7
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+      ],
+      "font_sizes": [
+        "17px",
+        "12px",
+        "24px"
+      ],
+      "body_font": {
+        "fontFamily": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "17px",
+        "color": "rgb(29, 29, 31)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(29, 29, 31)",
+      "rgb(255, 255, 255)",
+      "rgba(0, 0, 0, 0.8)",
+      "rgb(250, 250, 252)",
+      "rgb(51, 51, 54)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "App 风格 Web 应用稳定的 shell、底部/侧边导航和卡片节奏，让用户感觉可持续使用而不是一次性落地页"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  }
+]

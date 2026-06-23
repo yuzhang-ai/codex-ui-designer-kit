@@ -1,0 +1,938 @@
+[
+  {
+    "sample_id": "data-plausible-demo",
+    "product_name": "Plausible",
+    "page_url": "https://plausible.io/plausible.io",
+    "resolved_url": "https://plausible.io/plausible.io",
+    "page_type": "Public analytics dashboard",
+    "category": "04-data-dashboard",
+    "category_label": "数据看板",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/data-dashboard/data-plausible-demo__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "公开 analytics dashboard",
+    "user_role": "数据分析、运营、管理者",
+    "information_architecture": "导航项示例：Login / Sign up；标题层级示例：You just saw how Plausible tracks plausible.io No cookies, no personal data, no Google",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "You just saw how Plausible tracks plausible.io No cookies, no personal data, no Google"
+      ],
+      "nav_items": [
+        "Login",
+        "Sign up"
+      ],
+      "buttons": [
+        "Filter",
+        "Last 28 days",
+        "CHANNELS",
+        "SOURCES",
+        "CAMPAIGNS",
+        "TOP PAGES",
+        "ENTRY PAGES",
+        "EXIT PAGES",
+        "MAP",
+        "COUNTRIES",
+        "REGIONS",
+        "CITIES",
+        "BROWSERS"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 22,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 75,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "12px"
+      ],
+      "body_font": {
+        "backgroundColor": "oklch(0.141 0.005 285.823)",
+        "color": "oklch(0.274 0.006 286.033)",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "oklch(0.274 0.006 286.033)",
+      "oklch(0.141 0.005 285.823)",
+      "oklch(0.92 0.004 286.32)",
+      "rgb(255, 255, 255)",
+      "oklch(0.511 0.262 276.966)",
+      "oklch(0.585 0.233 277.117)",
+      "oklch(0.967 0.001 286.375)",
+      "oklch(0.705 0.015 286.067)",
+      "oklch(0.871 0.006 286.286)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "4px",
+        "2px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "数据看板应先给结论指标，再给趋势和可下钻明细，异常状态要有解释入口"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "data-grafana-dashboards",
+    "product_name": "Grafana Dashboards",
+    "page_url": "https://grafana.com/grafana/dashboards/",
+    "resolved_url": "https://grafana.com/grafana/dashboards/",
+    "page_type": "Dashboard gallery",
+    "category": "04-data-dashboard",
+    "category_label": "数据看板",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/data-dashboard/data-grafana-dashboards__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "dashboard cards / search / filtering",
+    "user_role": "数据分析、运营、管理者",
+    "information_architecture": "导航项示例：What’s new: Grafana 13 release, the latest in AI, OSS project updates, and more from GrafanaCON2026 / Learn more / Downloads / Contact Us / Pricing / Docs / Sign in / Sign up；标题层级示例：Grafana dashboards / From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want. / Featured / Monitor your Kubernetes deployment / Visualize your MongoDB data / Visualize your Jira data",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Grafana dashboards",
+        "From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.",
+        "Featured",
+        "Monitor your Kubernetes deployment",
+        "Visualize your MongoDB data",
+        "Visualize your Jira data",
+        "InfluxDB dashboards for telegraf metrics",
+        "Monitor your Kubernetes deployment",
+        "Visualize your MongoDB data",
+        "Visualize your Jira data",
+        "InfluxDB dashboards for telegraf metrics",
+        "Monitor your Kubernetes deployment"
+      ],
+      "nav_items": [
+        "What’s new: Grafana 13 release, the latest in AI, OSS project updates, and more from GrafanaCON2026",
+        "Learn more",
+        "Downloads",
+        "Contact Us",
+        "Pricing",
+        "Docs",
+        "Sign in",
+        "Sign up",
+        "Grafana Cloud Status",
+        "Legal & Security",
+        "Terms of Service",
+        "Privacy Policy",
+        "Trademark Policy"
+      ],
+      "buttons": [
+        "Site search",
+        "Ask Grot AI",
+        "EN",
+        "Grafana Cloud",
+        "Solutions",
+        "Open Source",
+        "Learn",
+        "Company",
+        "AI/Search",
+        "Site Search"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 3,
+        "inputs": 123,
+        "buttons": 45,
+        "links": 177,
+        "cards": 257,
+        "dialogs": 2,
+        "badges": 1
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "inter, sans-serif",
+        "Inter"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "13px",
+        "11px",
+        "24px"
+      ],
+      "body_font": {
+        "fontFamily": "inter, sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(57, 57, 70)",
+        "backgroundColor": "rgb(0, 0, 0)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(57, 57, 70)",
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(40, 132, 255)",
+      "rgb(24, 102, 212)",
+      "rgb(31, 41, 55)",
+      "rgb(216, 216, 223)",
+      "rgb(174, 174, 188)",
+      "rgb(244, 244, 246)",
+      "rgb(103, 103, 126)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "8px",
+        "6px",
+        "3px",
+        "2px",
+        "5px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈",
+      "数据看板应先给结论指标，再给趋势和可下钻明细，异常状态要有解释入口"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "data-redash-dashboards",
+    "product_name": "Redash Dashboards",
+    "page_url": "https://redash.io/help/user-guide/dashboards/",
+    "resolved_url": "https://redash.io/help/user-guide/dashboards/",
+    "page_type": "Dashboard documentation",
+    "category": "04-data-dashboard",
+    "category_label": "数据看板",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/data-dashboard/data-redash-dashboards__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "dashboard layout / widgets / sharing concepts",
+    "user_role": "数据分析、运营、管理者",
+    "information_architecture": "导航项示例：Product / Users / Case Studies / Community / Help / Knowledge Base / GitHub Discussions / Get Started；标题层级示例：Dashboards / Redash / Community / Help",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Dashboards",
+        "Redash",
+        "Community",
+        "Help"
+      ],
+      "nav_items": [
+        "Product",
+        "Users",
+        "Case Studies",
+        "Community",
+        "Help",
+        "Knowledge Base",
+        "GitHub Discussions",
+        "Get Started"
+      ],
+      "buttons": [
+        "Toggle navigation",
+        "Help"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 1,
+        "inputs": 1,
+        "buttons": 2,
+        "links": 22,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "18px",
+        "14px",
+        "17px"
+      ],
+      "body_font": {
+        "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(17, 17, 17)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(17, 17, 17)",
+      "rgb(255, 255, 255)",
+      "rgb(33, 150, 243)",
+      "rgb(0, 0, 0)",
+      "rgb(247, 247, 247)",
+      "rgb(33, 150, 243) rgb(33, 150, 243) rgb(189, 201, 208)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "2px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0.2) 0px 0px 14px -6px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "数据看板应先给结论指标，再给趋势和可下钻明细，异常状态要有解释入口"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "data-looker-studio-product",
+    "product_name": "Looker Studio",
+    "page_url": "https://cloud.google.com/looker-studio",
+    "resolved_url": "https://cloud.google.com/data-studio",
+    "page_type": "BI product page",
+    "category": "04-data-dashboard",
+    "category_label": "数据看板",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/data-dashboard/data-looker-studio-product__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "dashboard reports and sharing",
+    "user_role": "数据分析、运营、管理者",
+    "information_architecture": "导航项示例：概览 / 解决方案 / 产品 / 价格 / 资源 / 文档 / 支持 / 与我们联系；标题层级示例：数据洞察 / 几分钟即可创建直观的报告 / 不受限制地连接数据 / 分享您的数据故事 / 主要特性 / 拖放式报告编辑器",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "数据洞察",
+        "几分钟即可创建直观的报告",
+        "不受限制地连接数据",
+        "分享您的数据故事",
+        "主要特性",
+        "拖放式报告编辑器",
+        "数据连接器",
+        "Data Cloud 资产门户",
+        "使用 BigQuery 数据进行对话式分析",
+        "报告嵌入",
+        "文档和资源",
+        "数据洞察 Google Cloud 社区"
+      ],
+      "nav_items": [
+        "概览",
+        "解决方案",
+        "产品",
+        "价格",
+        "资源",
+        "文档",
+        "支持",
+        "与我们联系",
+        "文档",
+        "支持",
+        "控制台",
+        "登录"
+      ],
+      "buttons": [
+        "menu",
+        "close",
+        "close",
+        "close",
+        "close",
+        "close",
+        "close",
+        "arrow_forward",
+        "arrow_forward",
+        "arrow_forward",
+        "arrow_forward",
+        "arrow_forward"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 14,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 1,
+        "inputs": 1,
+        "links": 796,
+        "tables": 1
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Google Sans Text\", Roboto, Arial, sans-serif",
+        "Roboto, \"Noto Sans\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Naskh Arabic\", \"Noto Sans Thai\", \"Noto Sans Hebrew\", \"Noto Sans Bengali\", sans-serif",
+        "\"Google Sans\", \"Noto Sans\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Naskh Arabic\", \"Noto Sans Thai\", \"Noto Sans Hebrew\", \"Noto Sans Bengali\", sans-serif",
+        "\"Google Sans\", Roboto, Arial, sans-serif",
+        "\"Material Icons Extended\""
+      ],
+      "font_sizes": [
+        "16px",
+        "12px",
+        "14px",
+        "18px",
+        "24px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(95, 99, 104)",
+        "fontFamily": "\"Google Sans Text\", Roboto, Arial, sans-serif",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(95, 99, 104)",
+      "rgb(255, 255, 255)",
+      "rgb(60, 64, 67)",
+      "rgb(32, 33, 36)",
+      "rgb(32, 33, 36) rgb(32, 33, 36) rgb(32, 33, 36) rgb(232, 234, 237)",
+      "rgb(95, 99, 104) rgb(95, 99, 104) rgb(95, 99, 104) rgb(232, 234, 237)",
+      "rgb(26, 115, 232)",
+      "rgb(248, 249, 250)",
+      "rgb(25, 103, 210)",
+      "rgba(0, 0, 0, 0.65)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "8px",
+        "2px",
+        "32px",
+        "4px 2px",
+        "0px 25px 25px 0px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "表格页需要固定筛选入口、状态标签和批量操作的明确边界"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "data-tableau-showcase",
+    "product_name": "Tableau",
+    "page_url": "https://www.tableau.com/solutions/dashboard-showcase",
+    "resolved_url": "https://www.tableau.com/solutions/dashboard-showcase",
+    "page_type": "Dashboard showcase",
+    "category": "04-data-dashboard",
+    "category_label": "数据看板",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/data-dashboard/data-tableau-showcase__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "dashboard examples / visual analytics",
+    "user_role": "数据分析、运营、管理者",
+    "information_architecture": "导航项示例：Products / Overview / Tableau Next / Tableau Semantics / Tableau Cloud / Tableau Server / Tableau Desktop / Latest Release；标题层级示例：The page you were looking for does not exist. / What is Tableau? / Tableau Community / Partners / Support",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "The page you were looking for does not exist.",
+        "What is Tableau?",
+        "Tableau Community",
+        "Partners",
+        "Support"
+      ],
+      "nav_items": [
+        "Products",
+        "Overview",
+        "Tableau Next",
+        "Tableau Semantics",
+        "Tableau Cloud",
+        "Tableau Server",
+        "Tableau Desktop",
+        "Latest Release",
+        "Customers",
+        "Customer Stories",
+        "Community Stories",
+        "Solutions",
+        "By Industry",
+        "Financial Services",
+        "Healthcare and Life Sciences",
+        "Public Sector",
+        "Retail and Consumer Goods"
+      ],
+      "buttons": [
+        "Menu",
+        "Toggle sub-navigation for Products",
+        "Toggle sub-navigation for Tableau Next",
+        "Toggle sub-navigation for Customers",
+        "Toggle sub-navigation for Solutions",
+        "Toggle sub-navigation for By Industry",
+        "Toggle sub-navigation for By Role",
+        "Toggle sub-navigation for Tableau Exchange",
+        "Toggle sub-navigation for Resources",
+        "Toggle sub-navigation for Learn Tableau",
+        "Toggle sub-navigation for Pricing",
+        "English (US)"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 12,
+        "cards": 3,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 124,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Salesforce Sans\", system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "Arial",
+        "\"Salesforce Sans Bold\", system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      ],
+      "font_sizes": [
+        "16px",
+        "13.3333px",
+        "14.4px",
+        "14px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "\"Salesforce Sans\", system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(11, 92, 171)",
+      "rgb(255, 255, 255)",
+      "rgb(51, 51, 51)",
+      "rgb(46, 132, 74)",
+      "rgb(1, 118, 211)",
+      "rgb(0, 22, 57)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "数据看板应先给结论指标，再给趋势和可下钻明细，异常状态要有解释入口"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.tableau.com/solutions/dashboard-showcase. | desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.tableau.com/solutions/dashboard-showcase. | desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "data-powerbi-product",
+    "product_name": "Power BI",
+    "page_url": "https://www.microsoft.com/en-us/power-platform/products/power-bi",
+    "resolved_url": "https://www.microsoft.com/en-us/power-platform/products/power-bi",
+    "page_type": "BI product page",
+    "category": "04-data-dashboard",
+    "category_label": "数据看板",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/data-dashboard/data-powerbi-product__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "dashboard examples / reporting UI",
+    "user_role": "数据分析、运营、管理者",
+    "information_architecture": "导航项示例：Features / Product overview / Use cases / Research and news / Pricing / Interoperability / Security / Customer stories；标题层级示例：Power BI / Create a data-driven culture with BI for all / Uncover insights with AI / Bring all your data together / Turn insights into impact / Empower every data team",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Power BI",
+        "Create a data-driven culture with BI for all",
+        "Uncover insights with AI",
+        "Bring all your data together",
+        "Turn insights into impact",
+        "Empower every data team",
+        "Scale as needed",
+        "Share insights everywhere",
+        "Get more done with AI",
+        "Govern and protect data",
+        "Overview",
+        "Create reports in seconds"
+      ],
+      "nav_items": [
+        "Features",
+        "Product overview",
+        "Use cases",
+        "Research and news",
+        "Pricing",
+        "Interoperability",
+        "Security",
+        "Customer stories",
+        "Resources",
+        "Sign in",
+        "Try for free",
+        "Sign in",
+        "Try for free"
+      ],
+      "buttons": [
+        "Features",
+        "Power BI capabilities",
+        "Why Power BI",
+        "Copilot in Microsoft Fabric",
+        "Power BI in Fabric",
+        "Power BI Pro",
+        "Free account",
+        "Previous",
+        "Next",
+        "Uncover insights with AI",
+        "Bring all your data together",
+        "Turn insights into impact",
+        "Empower every data team",
+        "Scale as needed"
+      ],
+      "counts": {
+        "badges": 61,
+        "buttons": 99,
+        "cards": 2,
+        "dialogs": 3,
+        "forms": 0,
+        "inputs": 0,
+        "links": 226,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Segoe UI Variable Text\", \"Segoe UI\", segoeui, \"Helvetica Neue\", helvetica, arial, sans-serif",
+        "\"Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "18px",
+        "13px",
+        "15px",
+        "14px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(251, 251, 251)",
+        "color": "rgb(23, 37, 61)",
+        "fontFamily": "\"Segoe UI Variable Text\", \"Segoe UI\", segoeui, \"Helvetica Neue\", helvetica, arial, sans-serif",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(23, 37, 61)",
+      "rgb(251, 251, 251)",
+      "rgb(0, 103, 184)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 120, 212)",
+      "rgb(0, 66, 117)",
+      "rgb(0, 85, 151)",
+      "rgba(0, 85, 151, 0.1)",
+      "rgb(0, 0, 0)",
+      "rgb(14, 23, 38)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "8px",
+        "200px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "数据看板应先给结论指标，再给趋势和可下钻明细，异常状态要有解释入口"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.microsoft.com/en-us/power-platform/products/power-bi. | desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.microsoft.com/en-us/power-platform/products/power-bi. | desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "data-geckoboard-examples",
+    "product_name": "Geckoboard Dashboard Examples",
+    "page_url": "https://www.geckoboard.com/dashboard-examples/",
+    "resolved_url": "https://www.geckoboard.com/dashboard-examples/",
+    "page_type": "Dashboard examples gallery",
+    "category": "04-data-dashboard",
+    "category_label": "数据看板",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/data-dashboard/data-geckoboard-examples__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "dashboard examples / KPI cards / team visibility",
+    "user_role": "数据分析、运营、管理者",
+    "information_architecture": "导航项示例：Product / Build live dashboards→ Platform overview / Dashboard creator / TV dashboards / Shareable dashboards / Mobile dashboards / KPI notifications / Metrics for AI (MCP)；标题层级示例：Dashboard examples / FEATURED EXAMPLES / Browse by dashboard category / Jump to specific dashboard examples / Ready to get started?",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Dashboard examples",
+        "FEATURED EXAMPLES",
+        "Browse by dashboard category",
+        "Jump to specific dashboard examples",
+        "Ready to get started?"
+      ],
+      "nav_items": [
+        "Product",
+        "Build live dashboards→ Platform overview",
+        "Dashboard creator",
+        "TV dashboards",
+        "Shareable dashboards",
+        "Mobile dashboards",
+        "KPI notifications",
+        "Metrics for AI (MCP)",
+        "Interactive view",
+        "Snapshots and reports",
+        "Pricing",
+        "Solutions",
+        "Automate reportingReplace manual reports with a live view",
+        "Monitor performance in real timeSee performance in real time",
+        "Make team performance visibleKeep your whole team aligned",
+        "Bring your data togetherOne clear view across all your tools",
+        "Deliver executive visibilityGive leaders immediate clarity"
+      ],
+      "buttons": [
+        "Product",
+        "Solutions",
+        "Integrations",
+        "Dashboard examples",
+        "Resources",
+        "Company"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 1,
+        "buttons": 9,
+        "links": 241,
+        "cards": 65,
+        "dialogs": 0,
+        "badges": 1
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "GalanoFont, \"GalanoFont Fallback\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "18px"
+      ],
+      "body_font": {
+        "fontFamily": "GalanoFont, \"GalanoFont Fallback\"",
+        "fontSize": "16px",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(22, 17, 58)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(22, 17, 58)",
+      "rgb(0, 0, 238)",
+      "rgb(255, 255, 255)",
+      "rgb(223, 228, 238)",
+      "rgb(81, 229, 106)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "8px",
+        "999px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈",
+      "数据看板应先给结论指标，再给趋势和可下钻明细，异常状态要有解释入口"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "data-amplitude-templates",
+    "product_name": "Amplitude",
+    "page_url": "https://amplitude.com/templates",
+    "resolved_url": "https://amplitude.com/templates",
+    "page_type": "Analytics template gallery",
+    "category": "04-data-dashboard",
+    "category_label": "数据看板",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/data-dashboard/data-amplitude-templates__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "analytics templates",
+    "user_role": "数据分析、运营、管理者",
+    "information_architecture": "导航项示例：Platform / Amplitude AI / AI Agents / AI Visibility / AI Feedback / Amplitude MCP / AI Assistant / Zoning InsightsOverlay performance and revenue metrics on your webpages；标题层级示例：Template Gallery",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Template Gallery"
+      ],
+      "nav_items": [
+        "Platform",
+        "Amplitude AI",
+        "AI Agents",
+        "AI Visibility",
+        "AI Feedback",
+        "Amplitude MCP",
+        "AI Assistant",
+        "Zoning InsightsOverlay performance and revenue metrics on your webpages"
+      ],
+      "buttons": [
+        "Amplitude",
+        "Amplitude",
+        "LinkedIn",
+        "Twitter",
+        "G2",
+        "GitHub",
+        "Copy markdown",
+        "Cookie Settings"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 15,
+        "cards": 2,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 653,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "\"Twemoji Country Flags\", Gellix, Arial, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      ],
+      "font_sizes": [
+        "18px",
+        "16px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(86, 86, 86)",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "18px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(86, 86, 86)",
+      "rgb(23, 23, 23)",
+      "rgb(30, 97, 240)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "数据看板应先给结论指标，再给趋势和可下钻明细，异常状态要有解释入口"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://amplitude.com/templates. | desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://amplitude.com/templates. | desktop domcontentloaded timeout"
+  }
+]

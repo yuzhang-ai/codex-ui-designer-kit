@@ -1,0 +1,922 @@
+[
+  {
+    "sample_id": "h5-jotform-templates",
+    "product_name": "Jotform Templates",
+    "page_url": "https://www.jotform.com/form-templates/",
+    "resolved_url": "https://www.jotform.com/form-templates/",
+    "page_type": "Form template gallery",
+    "category": "05-h5-mobile-web",
+    "category_label": "H5 / 移动 Web",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-jotform-templates__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-jotform-templates__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "mobile form / conversion / template browsing",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 0,
+        "buttons": 0,
+        "links": 5,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "Circular"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px"
+      ],
+      "body_font": {
+        "fontFamily": "Circular",
+        "fontSize": "16px",
+        "color": "rgb(10, 21, 81)",
+        "backgroundColor": "rgb(243, 243, 254)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(10, 21, 81)",
+      "rgb(243, 243, 254)",
+      "rgb(84, 95, 111)",
+      "rgb(200, 206, 237)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "移动首屏只保留一个主任务，CTA 需要落在拇指友好区域并避免被安全区遮挡"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "h5-tally-templates",
+    "product_name": "Tally",
+    "page_url": "https://tally.so/templates",
+    "resolved_url": "https://tally.so/templates",
+    "page_type": "Form template gallery",
+    "category": "05-h5-mobile-web",
+    "category_label": "H5 / 移动 Web",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-tally-templates__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-tally-templates__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "form gallery / lightweight submit",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Pricing / Log in / Sign up / Create form；标题层级示例：Explore form & survey templates",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Explore form & survey templates"
+      ],
+      "nav_items": [
+        "Pricing",
+        "Log in",
+        "Sign up",
+        "Create form"
+      ],
+      "buttons": [],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 0,
+        "buttons": 0,
+        "links": 146,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "Inter, \"Inter Fallback\", sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "22px"
+      ],
+      "body_font": {
+        "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(55, 53, 47)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(55, 53, 47)",
+      "rgb(255, 255, 255)",
+      "rgb(55, 53, 47) rgb(55, 53, 47) rgba(0, 0, 0, 0)",
+      "rgb(0, 0, 238)",
+      "rgb(0, 112, 215)",
+      "rgb(119, 118, 114)",
+      "rgb(69, 67, 62)",
+      "rgb(223, 223, 222)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "7px",
+        "5px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "移动首屏只保留一个主任务，CTA 需要落在拇指友好区域并避免被安全区遮挡"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "h5-framer-marketplace",
+    "product_name": "Framer",
+    "page_url": "https://www.framer.com/marketplace/",
+    "resolved_url": "https://www.framer.com/community/marketplace/",
+    "page_type": "Template marketplace",
+    "category": "05-h5-mobile-web",
+    "category_label": "H5 / 移动 Web",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-framer-marketplace__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-framer-marketplace__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "mobile landing / template cards",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Marketplace / Framer Community / Feed / Hype / Activity / Marketplace / Gallery / Members；标题层级示例：Marketplace / Featured",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "侧边导航 / 工作台型导航",
+    "primary_components": {
+      "headings": [
+        "Marketplace",
+        "Featured"
+      ],
+      "nav_items": [
+        "Marketplace",
+        "Framer Community",
+        "Feed",
+        "Hype",
+        "Activity",
+        "Marketplace",
+        "Gallery",
+        "Members",
+        "Contests",
+        "Legal",
+        "Support"
+      ],
+      "buttons": [
+        "Tutorials",
+        "Log in",
+        "Sign up"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 1,
+        "buttons": 79,
+        "links": 115,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "inter, \"inter Fallback\""
+      ],
+      "font_sizes": [
+        "12px",
+        "13px",
+        "0px"
+      ],
+      "body_font": {
+        "fontFamily": "inter, \"inter Fallback\"",
+        "fontSize": "12px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(17, 17, 17)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(255, 255, 255)",
+      "rgb(17, 17, 17)",
+      "rgb(255, 255, 255) rgb(255, 255, 255) rgb(33, 33, 33)",
+      "rgb(136, 136, 136)",
+      "rgb(36, 36, 36)",
+      "rgb(255, 255, 255) rgb(33, 33, 33) rgb(255, 255, 255) rgb(255, 255, 255)",
+      "rgb(153, 153, 153)",
+      "rgb(102, 102, 102)",
+      "rgb(0, 153, 255)",
+      "rgba(34, 34, 34, 0.8)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "8px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0.2) 0px 2px 6px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "移动首屏只保留一个主任务，CTA 需要落在拇指友好区域并避免被安全区遮挡"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "h5-webflow-showcase",
+    "product_name": "Webflow",
+    "page_url": "https://webflow.com/made-in-webflow",
+    "resolved_url": "https://webflow.com/made-in-webflow",
+    "page_type": "Showcase gallery",
+    "category": "05-h5-mobile-web",
+    "category_label": "H5 / 移动 Web",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-webflow-showcase__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-webflow-showcase__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "responsive showcase",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Designer / CMS / Ecommerce / Interactions / Memberships / Editor / Logic / SEO；标题层级示例：Discover inspiring websites built by the Webflow community / Browse, clone, and customize thousands of websites #MadeinWebflow. Looking for templates?",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Discover inspiring websites built by the Webflow community",
+        "Browse, clone, and customize thousands of websites #MadeinWebflow. Looking for templates?"
+      ],
+      "nav_items": [
+        "Designer",
+        "CMS",
+        "Ecommerce",
+        "Interactions",
+        "Memberships",
+        "Editor",
+        "Logic",
+        "SEO",
+        "Hosting",
+        "Security",
+        "Overview",
+        "Libraries",
+        "Apps",
+        "Hire a Certified Partner",
+        "Templates",
+        "Made in Webflow",
+        "Learn"
+      ],
+      "buttons": [
+        "Product",
+        "Marketplace",
+        "Resources",
+        "Popular",
+        "View details",
+        "View details",
+        "View details",
+        "View details",
+        "View details",
+        "View details",
+        "View details",
+        "View details",
+        "View details",
+        "View details",
+        "View details",
+        "View details"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 2,
+        "buttons": 23,
+        "links": 172,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"WF Visual Sans\", Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", sans-serif",
+        "Arial"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "15px",
+        "18px",
+        "13.3333px",
+        "11.2px"
+      ],
+      "body_font": {
+        "fontFamily": "\"WF Visual Sans\", Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgba(0, 0, 0, 0.6)",
+      "rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.6) rgb(224, 224, 224)",
+      "rgb(20, 110, 245)",
+      "rgba(0, 0, 0, 0.07)",
+      "rgb(232, 232, 232)",
+      "rgb(224, 224, 224)",
+      "rgb(219, 219, 219)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "2px",
+        "100%"
+      ],
+      "shadows": [
+        "rgba(255, 255, 255, 0.2) 0px 1px 1px 0px inset, rgba(255, 255, 255, 0.12) 0px 6px 12px 0px inset, rgba(8, 8, 8, 0.2) 0px 1px 2px 0px, rgba(8, 8, 8, 0.08) 0px 4px 4px 0px",
+        "rgba(0, 0, 0, 0.14) 0px 0px 2px 0px, rgba(0, 0, 0, 0.08) 0px 1px 1px 0px, rgba(0, 0, 0, 0.06) 0px 0px 1px 0px",
+        "rgb(0, 0, 0) 0px 0px 0px 0px",
+        "rgba(0, 0, 0, 0.08) 0px 4px 5px 0px, rgba(0, 0, 0, 0.2) 0px 1px 2px 0px, rgba(0, 0, 0, 0.1) 0px 0px 2px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "loading",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "移动首屏只保留一个主任务，CTA 需要落在拇指友好区域并避免被安全区遮挡"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "h5-stripe-payments",
+    "product_name": "Stripe Payments",
+    "page_url": "https://stripe.com/payments",
+    "resolved_url": "https://stripe.com/zh-sg/payments",
+    "page_type": "Payments product page",
+    "category": "05-h5-mobile-web",
+    "category_label": "H5 / 移动 Web",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-stripe-payments__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-stripe-payments__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "mobile commerce / CTA",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Stripe logo / 定价 / 登录 / 联系销售 / Stripe logo / 定价 / 登录 / Payments 在线支付；标题层级示例：Stripe logo / 支付 / 营收 / 资金管理 / 平台和交易市场 / 更多",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "侧边导航 / 工作台型导航",
+    "primary_components": {
+      "headings": [
+        "Stripe logo",
+        "支付",
+        "营收",
+        "资金管理",
+        "平台和交易市场",
+        "更多",
+        "支付",
+        "营收",
+        "资金管理",
+        "平台和交易市场",
+        "更多",
+        "Payments"
+      ],
+      "nav_items": [
+        "Stripe logo",
+        "定价",
+        "登录",
+        "联系销售",
+        "Stripe logo",
+        "定价",
+        "登录",
+        "Payments 在线支付",
+        "Managed Payments 备案商家解决方案",
+        "Payment links 无代码支付",
+        "Checkout 预构建支付界面",
+        "Elements 灵活的 UI 组件",
+        "支付方式 支持 100 多种",
+        "Terminal 线下支付",
+        "Radar 欺诈防范",
+        "Authorization Boost 支付成功率优化",
+        "Link 加速结账",
+        "Billing 经常性收入"
+      ],
+      "buttons": [
+        "产品",
+        "解决方案",
+        "开发人员",
+        "资源",
+        "返回",
+        "产品",
+        "解决方案",
+        "开发人员",
+        "资源"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 0,
+        "buttons": 77,
+        "links": 381,
+        "cards": 3,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "sohne-var, \"Helvetica Neue\", Arial, sans-serif",
+        "Arial"
+      ],
+      "font_sizes": [
+        "16px",
+        "32px",
+        "14px",
+        "15px",
+        "13.3333px",
+        "18px"
+      ],
+      "body_font": {
+        "fontFamily": "sohne-var, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(66, 84, 102)",
+        "backgroundColor": "rgb(246, 249, 252)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(66, 84, 102)",
+      "rgb(246, 249, 252)",
+      "rgb(0, 0, 238)",
+      "rgb(10, 37, 64)",
+      "rgb(153, 102, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 0, 0)",
+      "rgb(83, 58, 253)",
+      "rgb(232, 233, 255)",
+      "rgb(6, 27, 49)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "16.5px",
+        "6px",
+        "4px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "移动首屏只保留一个主任务，CTA 需要落在拇指友好区域并避免被安全区遮挡"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "h5-linear-home",
+    "product_name": "Linear",
+    "page_url": "https://linear.app/",
+    "resolved_url": "https://linear.app/",
+    "page_type": "Responsive product page",
+    "category": "05-h5-mobile-web",
+    "category_label": "H5 / 移动 Web",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-linear-home__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-linear-home__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "responsive product page",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Customers / Pricing / Now / Contact / Docs / Open app / Log in / Sign up；标题层级示例：The product development system for teams and agents The product development system for teams and agents / Faster app launch / Make product operations self-driving / Define the product direction / Move work forward across teams and agents / Review PRs and agent output",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "侧边导航 / 工作台型导航",
+    "primary_components": {
+      "headings": [
+        "The product development system for teams and agents The product development system for teams and agents",
+        "Faster app launch",
+        "Make product operations self-driving",
+        "Define the product direction",
+        "Move work forward across teams and agents",
+        "Review PRs and agent output",
+        "Understand progress at scale",
+        "Changelog",
+        "Built for the future. Available today.",
+        "Product",
+        "Features"
+      ],
+      "nav_items": [
+        "Customers",
+        "Pricing",
+        "Now",
+        "Contact",
+        "Docs",
+        "Open app",
+        "Log in",
+        "Sign up"
+      ],
+      "buttons": [
+        "Product",
+        "Resources",
+        "Open app",
+        "Linear",
+        "Inbox",
+        "My issues",
+        "Reviews",
+        "Pulse",
+        "Workspace",
+        "Initiatives",
+        "Projects",
+        "More",
+        "Favorites"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 5,
+        "buttons": 94,
+        "links": 76,
+        "cards": 3,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Inter Variable\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "13px",
+        "13.3333px",
+        "12px"
+      ],
+      "body_font": {
+        "fontFamily": "\"Inter Variable\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(247, 248, 248)",
+        "backgroundColor": "rgb(8, 9, 10)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(247, 248, 248)",
+      "rgb(8, 9, 10)",
+      "rgb(255, 255, 255)",
+      "rgb(94, 106, 210)",
+      "rgb(247, 248, 248) rgb(247, 248, 248) rgba(255, 255, 255, 0.08)",
+      "rgb(138, 143, 152)",
+      "rgb(229, 229, 230)",
+      "rgb(98, 102, 109)",
+      "rgb(226, 228, 231)",
+      "rgba(255, 255, 255, 0.02)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "9999px",
+        "4px",
+        "50%",
+        "2px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0) 0px 8px 2px 0px, rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px",
+        "rgba(0, 0, 0, 0.2) 0px 0px 0px 1px",
+        "rgba(0, 0, 0, 0.03) 0px 1.2px 0px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "error",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "移动首屏只保留一个主任务，CTA 需要落在拇指友好区域并避免被安全区遮挡"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "h5-notion-product",
+    "product_name": "Notion",
+    "page_url": "https://www.notion.com/product",
+    "resolved_url": "https://www.notion.com/product",
+    "page_type": "Product page",
+    "category": "05-h5-mobile-web",
+    "category_label": "H5 / 移动 Web",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-notion-product__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-notion-product__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "mobile workspace story",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：NotionYour AI workspace / Notion Calendar / Notion Mail / Notion AIAI tools for work / AgentsAutomate busywork / AI Meeting NotesPerfectly written by AI / Enterprise SearchFind answers instantly / Knowledge BaseCentralize your knowledge；标题层级示例：Where teams and agents Create together. / Keep work moving 24/7. / Automate repetitive work for your team. / See what Custom Agents can do / Triage product feedback→ / Resolve support tickets in Slack→",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Where teams and agents Create together.",
+        "Keep work moving 24/7.",
+        "Automate repetitive work for your team.",
+        "See what Custom Agents can do",
+        "Triage product feedback→",
+        "Resolve support tickets in Slack→",
+        "Respond to security alerts faster→",
+        "Automate weekly reporting→",
+        "Create your own Custom Agent→",
+        "Ask your on-demand assistants.",
+        "You assign the tasks. Notion Agent does the work.",
+        "One search for everything."
+      ],
+      "nav_items": [
+        "NotionYour AI workspace",
+        "Notion Calendar",
+        "Notion Mail",
+        "Notion AIAI tools for work",
+        "AgentsAutomate busywork",
+        "AI Meeting NotesPerfectly written by AI",
+        "Enterprise SearchFind answers instantly",
+        "Knowledge BaseCentralize your knowledge",
+        "DocsSimple and powerful",
+        "ProjectsManage any project",
+        "ConnectionsConnect your apps",
+        "SecuritySafe and scalable",
+        "See what’s new→",
+        "Notion App→",
+        "Notion AIAI tools for work",
+        "AgentsAutomate busywork",
+        "AI Meeting NotesPerfectly written by AI"
+      ],
+      "buttons": [
+        "Product",
+        "AI",
+        "Solutions",
+        "Resources",
+        "Pause",
+        "Q&A agents Answers questions instantly using knowledge you already have.",
+        "Task routing agents Assigns, prioritizes, and routes tasks on its own.",
+        "Reporting agents Summarizes, writes, and sends reports for you.",
+        "Create your own Make a Custom Agent for any work that repeats."
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 1,
+        "buttons": 20,
+        "links": 134,
+        "cards": 43,
+        "dialogs": 2,
+        "badges": 6
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "12px"
+      ],
+      "body_font": {
+        "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px",
+        "color": "rgba(0, 0, 0, 0.95)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      }
+    },
+    "color_characteristics": [
+      "rgba(0, 0, 0, 0.95)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 117, 222)",
+      "rgba(0, 0, 0, 0.898)",
+      "rgba(255, 255, 255, 0)",
+      "rgb(0, 91, 171)",
+      "rgb(230, 243, 254)",
+      "rgba(0, 0, 0, 0.05)",
+      "rgba(0, 0, 0, 0.54)",
+      "rgba(0, 0, 0, 0.3)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "8px",
+        "50%",
+        "12px",
+        "9999px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0) 0px 1px 0px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "h5-beehiiv",
+    "product_name": "beehiiv",
+    "page_url": "https://www.beehiiv.com/",
+    "resolved_url": "https://www.beehiiv.com/",
+    "page_type": "Newsletter SaaS landing",
+    "category": "05-h5-mobile-web",
+    "category_label": "H5 / 移动 Web",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-beehiiv__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/h5-mobile-web/h5-beehiiv__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "newsletter / report style landing",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Login / Sign up / NewslettersMake a statement in the inbox. / Web BuilderBuild your digital home base. / PodcastsTurn listeners into a loyal audience. / Ad NetworkConnecting publishers and brands. / Content / Editor；标题层级示例：Take a tour of beehiiv / State of Newsletters / POWERING THE INTERNET'S BEST NEWSLETTERS / STAND OUT IN THE INBOX / NO CODE. NO LIMITS. / MONETIZE YOUR CONTENT",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Take a tour of beehiiv",
+        "State of Newsletters",
+        "POWERING THE INTERNET'S BEST NEWSLETTERS",
+        "STAND OUT IN THE INBOX",
+        "NO CODE. NO LIMITS.",
+        "MONETIZE YOUR CONTENT",
+        "BUILD YOUR CONTENT YOUR WAY",
+        "What's included...",
+        "Everything on Launch +",
+        "Everything on Scale +",
+        "MORE THAN JUST NEWSLETTERS",
+        "Create"
+      ],
+      "nav_items": [
+        "Login",
+        "Sign up",
+        "NewslettersMake a statement in the inbox.",
+        "Web BuilderBuild your digital home base.",
+        "PodcastsTurn listeners into a loyal audience.",
+        "Ad NetworkConnecting publishers and brands.",
+        "Content",
+        "Editor",
+        "Customization",
+        "beehiiv AI",
+        "Automations",
+        "Polls",
+        "Audio",
+        "Growth",
+        "Boosts",
+        "Referral Program"
+      ],
+      "buttons": [
+        "Platform",
+        "Solutions",
+        "Resources",
+        "Sign up with Google",
+        "What's included...",
+        "Everything on Launch +",
+        "Everything on Scale +",
+        "Media",
+        "Creator",
+        "Journalist",
+        "Business",
+        "Trial Premium Features",
+        "Platform",
+        "beehiiv for",
+        "Resources"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 1,
+        "buttons": 18,
+        "links": 196,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "SatoshiFont, \"SatoshiFont Fallback\", system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "13px"
+      ],
+      "body_font": {
+        "fontFamily": "SatoshiFont, \"SatoshiFont Fallback\", system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+        "fontSize": "16px",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(6, 4, 25)",
+      "rgb(255, 255, 255)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "4px",
+        "8px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "移动首屏只保留一个主任务，CTA 需要落在拇指友好区域并避免被安全区遮挡"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  }
+]

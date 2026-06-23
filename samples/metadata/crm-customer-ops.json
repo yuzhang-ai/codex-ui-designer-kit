@@ -1,0 +1,926 @@
+[
+  {
+    "sample_id": "crm-hubspot-crm",
+    "product_name": "HubSpot CRM",
+    "page_url": "https://www.hubspot.com/products/crm",
+    "resolved_url": "https://www.hubspot.com/products/crm",
+    "page_type": "CRM product page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-hubspot-crm__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "CRM 总览、销售工作流",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "导航项示例：Skip to content / 日本語 / Deutsch / English / Español / Português / Français / Customer Support；标题层级示例：The HubSpot Customer Platform / Marketing Hub / Sales Hub / Service Hub / Content Hub / Data Hub",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "The HubSpot Customer Platform",
+        "Marketing Hub",
+        "Sales Hub",
+        "Service Hub",
+        "Content Hub",
+        "Data Hub",
+        "Revenue Hub",
+        "Smart CRM",
+        "Small Business Bundle",
+        "Breeze",
+        "AEO (Beta)",
+        "HubSpot Marketplace"
+      ],
+      "nav_items": [
+        "Skip to content",
+        "日本語",
+        "Deutsch",
+        "English",
+        "Español",
+        "Português",
+        "Français",
+        "Customer Support",
+        "Contact Sales",
+        "Log in",
+        "About Us",
+        "Careers",
+        "Contact Us",
+        "Investor Relations",
+        "Management Team",
+        "Free HubSpot CRM",
+        "Overview of all products"
+      ],
+      "buttons": [
+        "Select a language",
+        "High Contrast",
+        "Close Search",
+        "About",
+        "Back",
+        "Menu",
+        "Close Search",
+        "Products",
+        "Solutions",
+        "By Use Case",
+        "By Team Size",
+        "Why HubSpot?",
+        "Resources",
+        "Products",
+        "Solutions"
+      ],
+      "counts": {
+        "badges": 2,
+        "buttons": 42,
+        "cards": 232,
+        "dialogs": 1,
+        "forms": 2,
+        "inputs": 2,
+        "links": 245,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"HubSpot Sans\", sans-serif",
+        "\"Zen Kaku Gothic New\", sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "12px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(252, 252, 250)",
+        "color": "rgb(31, 31, 31)",
+        "fontFamily": "\"HubSpot Sans\", sans-serif",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(31, 31, 31)",
+      "rgb(252, 252, 250)",
+      "rgb(255, 255, 255)",
+      "rgb(18, 69, 72)",
+      "rgb(0, 0, 0)",
+      "rgba(0, 0, 0, 0.47)",
+      "rgb(240, 240, 240)",
+      "rgba(0, 0, 0, 0.11)",
+      "rgba(0, 0, 0, 0.05)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "8px",
+        "4px",
+        "16px"
+      ],
+      "shadows": [
+        "rgba(33, 51, 67, 0.12) 0px 2px 4px 0px",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 1px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈",
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.hubspot.com/products/crm. | desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.hubspot.com/products/crm. | desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "crm-salesforce-sales-cloud",
+    "product_name": "Salesforce",
+    "page_url": "https://www.salesforce.com/sales/cloud/",
+    "resolved_url": "https://www.salesforce.com/sales/cloud/",
+    "page_type": "Sales Cloud product page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-salesforce-sales-cloud__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "销售管道、客户运营",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 0,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [],
+      "font_sizes": [],
+      "body_font": null
+    },
+    "color_characteristics": [],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "页面结构较克制，围绕一个明确主任务组织内容",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "crm-pipedrive-features",
+    "product_name": "Pipedrive",
+    "page_url": "https://www.pipedrive.com/en/features/crm-software",
+    "resolved_url": "https://www.pipedrive.com/en/features/crm-software",
+    "page_type": "CRM feature page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-pipedrive-features__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "pipeline / deal board",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "导航项示例：Products / See all sales software features / Sales automation / Lead management / Insights and reports / Email and communications / CRM / Pulse；标题层级示例：The page you are looking for doesn't exist. / More resources",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "The page you are looking for doesn't exist.",
+        "More resources"
+      ],
+      "nav_items": [
+        "Products",
+        "See all sales software features",
+        "Sales automation",
+        "Lead management",
+        "Insights and reports",
+        "Email and communications",
+        "CRM",
+        "Pulse",
+        "See all email marketing features",
+        "Email builder",
+        "Email segmentation",
+        "Email analytics",
+        "Marketing automation",
+        "See all apps and integrations",
+        "Attract new leads",
+        "Communicate with leads",
+        "Manage contracts"
+      ],
+      "buttons": [
+        "All categories",
+        "Marketplace apps",
+        "Blog",
+        "Knowledge Base",
+        "Academy",
+        "Try it free"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 9,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 1,
+        "inputs": 1,
+        "links": 112,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Noto Sans SC\""
+      ],
+      "font_sizes": [
+        "16px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "\"Noto Sans SC\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(0, 0, 238)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "crm-intercom-helpdesk",
+    "product_name": "Intercom",
+    "page_url": "https://www.intercom.com/help-desk",
+    "resolved_url": "https://www.intercom.com/helpdesk/tickets",
+    "page_type": "Help desk product page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-intercom-helpdesk__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "inbox / ticket / customer context",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "导航项示例：Fin / Log in / Contact sales / View demo / Start free trial / Customers / Pricing / Log in；标题层级示例：Tickets that continue the conversation / A better system for team collaboration and real-time customer updates / Customer Tickets / Back-office Tickets / Tracker Tickets / Move seamlessly between conversations and tickets",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Tickets that continue the conversation",
+        "A better system for team collaboration and real-time customer updates",
+        "Customer Tickets",
+        "Back-office Tickets",
+        "Tracker Tickets",
+        "Move seamlessly between conversations and tickets",
+        "Create a ticket with one click+-Convert a conversation to a ticket so you can resolve the issue without losing context.",
+        "Easily collect customer info upfront+-Send ticket forms through a bot or directly in your product to reduce back-and-forth.",
+        "Update customers in real time+-Automatically share updates with your customers in the Messenger and over email.",
+        "Track progress with ticket states+-Update tickets states as you work for more accurate reporting and updates.",
+        "Streamline back-office collaboration",
+        "A separate ticket when it’s needed"
+      ],
+      "nav_items": [
+        "Fin",
+        "Log in",
+        "Contact sales",
+        "View demo",
+        "Start free trial",
+        "Customers",
+        "Pricing",
+        "Log in",
+        "Contact sales",
+        "View demo",
+        "Start free trial",
+        "Fin AI Agent"
+      ],
+      "buttons": [
+        "Product",
+        "Resources",
+        "Start free trial",
+        "View demo",
+        "Create a ticket with one click Convert a conversation to a ticket so you can resolve the issue without losing context.",
+        "Easily collect customer info upfront Send ticket forms through a bot or directly in your product to reduce back-and-forth.",
+        "Update customers in real time Automatically share updates with your customers in the Messenger and over email.",
+        "Track progress with ticket states Update tickets states as you work for more accurate reporting and updates.",
+        "Create a ticket with one click+-Convert a conversation to a ticket so you can resolve the issue without losing context.",
+        "Easily collect customer info upfront+-Send ticket forms through a bot or directly in your product to reduce back-and-forth.",
+        "Update customers in real time+-Automatically share updates with your customers in the Messenger and over email.",
+        "Track progress with ticket states+-Update tickets states as you work for more accurate reporting and updates.",
+        "A single source of truth Manage all conversations related to a widespread issue with a single ticket.",
+        "Easier customer updates Save time by sharing updates to all impacted customers at once."
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 42,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 65,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "Saans, \"Saans Fallback\", ui-sans-serif, system-ui, sans-serif",
+        "MediumLL, system-ui, -apple-system, sans-serif",
+        "SaansMono, \"SaansMono Fallback\", ui-monospace, monospace"
+      ],
+      "font_sizes": [
+        "16px",
+        "12px",
+        "20px",
+        "14px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "oklab(0.581971 -0.00125566 0.00432989 / 0.3)",
+      "rgb(17, 17, 17)",
+      "rgb(250, 249, 246)",
+      "oklab(0 0 0 / 0.03)",
+      "rgb(241, 238, 233)",
+      "oklab(0.177637 0.00000810623 0.00000356138 / 0.1)",
+      "oklab(0.177637 0.00000810623 0.00000356138 / 0.8)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "4px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中高密度：以卡片/列表承载多对象浏览",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.intercom.com/help-desk. | desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.intercom.com/help-desk. | desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "crm-zendesk-ticketing",
+    "product_name": "Zendesk",
+    "page_url": "https://www.zendesk.com/service/ticketing-system/",
+    "resolved_url": "https://www.zendesk.com/sg/service/ticketing-system/#georedirect",
+    "page_type": "Ticketing product page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-zendesk-ticketing__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "ticket workspace",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "导航项示例：View demo / Sign in / Contact us / English (US) / English (UK) / Español / Español (LATAM) / Português；标题层级示例：AI Masterclass 2026 / AI Masterclass 2026 / AI-powered ticketing system / A workspace for every support need / Deliver fast service / Boost agent productivity",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "AI Masterclass 2026",
+        "AI Masterclass 2026",
+        "AI-powered ticketing system",
+        "A workspace for every support need",
+        "Deliver fast service",
+        "Boost agent productivity",
+        "Simplify ticket workflows",
+        "Excellent support starts with the right ticketing system",
+        "Drive faster reply times with better agent tools",
+        "Stay connected across any channel",
+        "Stay connected across any channel",
+        "Make it easy to find and prioritise work"
+      ],
+      "nav_items": [
+        "View demo",
+        "Sign in",
+        "Contact us",
+        "English (US)",
+        "English (UK)",
+        "Español",
+        "Español (LATAM)",
+        "Português",
+        "Français",
+        "Deutsch",
+        "Italiano",
+        "Nederlands",
+        "Dansk",
+        "Svenska",
+        "English (Australia)",
+        "English (India)",
+        "English (Singapore)"
+      ],
+      "buttons": [
+        "Platform",
+        "Products",
+        "Solutions",
+        "Resources",
+        "Language",
+        "Start your free trial",
+        "Stay connected across any channel",
+        "Make it easy to find and prioritise work",
+        "Surface the best reply, every time",
+        "Tailor workspaces to your specific needs",
+        "Route customers to the right agent",
+        "Build and customise workflows"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 47,
+        "cards": 6,
+        "dialogs": 0,
+        "forms": 1,
+        "inputs": 2,
+        "links": 278,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Vanilla Sans\", Arial, sans-serif",
+        "Arial"
+      ],
+      "font_sizes": [
+        "16px",
+        "13.3333px",
+        "14px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "\"Vanilla Sans\", Arial, sans-serif",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(17, 17, 13)",
+      "rgb(209, 244, 112)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "16px",
+        "8px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0.08) 0px 8px 24px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈",
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "crm-freshsales",
+    "product_name": "Freshsales",
+    "page_url": "https://www.freshworks.com/crm/sales/",
+    "resolved_url": "https://www.freshworks.com/crm/sales/",
+    "page_type": "Sales CRM product page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-freshsales__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "sales CRM dashboard",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 0,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [],
+      "font_sizes": [],
+      "body_font": null
+    },
+    "color_characteristics": [],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "页面结构较克制，围绕一个明确主任务组织内容",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "crm-monday-crm",
+    "product_name": "monday CRM",
+    "page_url": "https://monday.com/crm",
+    "resolved_url": "https://monday.com/crm",
+    "page_type": "CRM product page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-monday-crm__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "CRM board / automation",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 0,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [],
+      "font_sizes": [],
+      "body_font": null
+    },
+    "color_characteristics": [],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "页面结构较克制，围绕一个明确主任务组织内容",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "crm-zoho-crm",
+    "product_name": "Zoho CRM",
+    "page_url": "https://www.zoho.com/crm/",
+    "resolved_url": "about:blank",
+    "page_type": "CRM product page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-zoho-crm__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "lead / deal / record UI",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 0,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Noto Sans SC\""
+      ],
+      "font_sizes": [
+        "16px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "\"Noto Sans SC\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.zoho.com/crm/. | desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://www.zoho.com/crm/. | desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "crm-customerio-journeys",
+    "product_name": "Customer.io",
+    "page_url": "https://customer.io/journeys/",
+    "resolved_url": "https://customer.io/platform/journeys",
+    "page_type": "Customer journey product page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-customerio-journeys__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "customer journey / segment",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "导航项示例：Pricing / Sign in / Get started Get started / Book a demo Book a demo；标题层级示例：Send powerful messages / Simplify campaign execution / Designed for collaboration / Customize campaign triggers / One campaign, many branches / Your campaigns now have a brain",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Send powerful messages",
+        "Simplify campaign execution",
+        "Designed for collaboration",
+        "Customize campaign triggers",
+        "One campaign, many branches",
+        "Your campaigns now have a brain",
+        "Any prompt, any context, any output",
+        "Personalized content at send time",
+        "Real-time lead scoring",
+        "Intent detection and smart routing",
+        "Seamless customer interactions",
+        "Code and no-code message builders"
+      ],
+      "nav_items": [
+        "Pricing",
+        "Sign in",
+        "Get started Get started",
+        "Book a demo Book a demo"
+      ],
+      "buttons": [
+        "Platform",
+        "Solutions",
+        "Resources",
+        "Previous",
+        "Next",
+        "Platform",
+        "Features",
+        "Resources",
+        "Company"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 10,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 53,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "saansFont, \"saansFont Fallback\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px"
+      ],
+      "body_font": {
+        "backgroundColor": "oklch(1 0 0)",
+        "color": "oklch(0.245 0.042 207.2)",
+        "fontFamily": "saansFont, \"saansFont Fallback\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "oklch(0.245 0.042 207.2)",
+      "oklch(1 0 0)",
+      "oklch(0.94 0 0)",
+      "oklch(0.3068 0.046 206.34)",
+      "rgb(11, 55, 60)",
+      "rgb(255, 255, 255)",
+      "rgb(20, 77, 82)",
+      "rgb(251, 250, 249)",
+      "rgb(20, 20, 20)",
+      "rgb(46, 45, 45)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "3.35544e+07px",
+        "2px"
+      ],
+      "shadows": [
+        "oklch(0.9263 0.136 145.2) 0px 0px 0px 4px",
+        "oklch(0.97 0 0) 0px 0px 0px 4px",
+        "oklch(0.3068 0.046 206.34) 0px 0px 0px 4px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "crm-gainsight-cs",
+    "product_name": "Gainsight",
+    "page_url": "https://www.gainsight.com/customer-success/",
+    "resolved_url": "about:blank",
+    "page_type": "Customer success product page",
+    "category": "02-crm-customer-ops",
+    "category_label": "CRM / 客户运营",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/crm-customer-ops/crm-gainsight-cs__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "customer success dashboard",
+    "user_role": "销售、客服、客户成功或运营人员",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 0,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Noto Sans SC\""
+      ],
+      "font_sizes": [
+        "16px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "\"Noto Sans SC\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "客户运营界面要把客户身份、阶段、最近触达和风险操作放在同一决策上下文里"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  }
+]

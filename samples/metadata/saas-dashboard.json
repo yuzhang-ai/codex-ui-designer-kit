@@ -1,0 +1,1437 @@
+[
+  {
+    "sample_id": "saas-linear-changelog",
+    "product_name": "Linear Changelog",
+    "page_url": "https://linear.app/changelog",
+    "resolved_url": "https://linear.app/changelog",
+    "page_type": "Product changelog",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-linear-changelog__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "release timeline / product update list",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Customers / Pricing / Now / Contact / Docs / Open app / Log in / Sign up；标题层级示例：Now / Agent assisted project updates / Desktop navigation history and pinned tabs / Private sub-teams / Build agents with Vercel Eve / Release pipeline changelogs",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Now",
+        "Agent assisted project updates",
+        "Desktop navigation history and pinned tabs",
+        "Private sub-teams",
+        "Build agents with Vercel Eve",
+        "Release pipeline changelogs",
+        "OAuth application manifests",
+        "Coding sessions in Linear",
+        "A coding agent your team will love",
+        "Automate the first pass",
+        "Availability and pricing",
+        "Team documents"
+      ],
+      "nav_items": [
+        "Customers",
+        "Pricing",
+        "Now",
+        "Contact",
+        "Docs",
+        "Open app",
+        "Log in",
+        "Sign up"
+      ],
+      "buttons": [
+        "Product",
+        "Resources",
+        "Open app",
+        "Search…",
+        "Fixes",
+        "Improvements",
+        "MCP server",
+        "API"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 6,
+        "buttons": 67,
+        "links": 139,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Inter Variable\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "13px",
+        "48px",
+        "15px",
+        "24px",
+        "17px"
+      ],
+      "body_font": {
+        "fontFamily": "\"Inter Variable\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(247, 248, 248)",
+        "backgroundColor": "rgb(8, 9, 10)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(247, 248, 248)",
+      "rgb(8, 9, 10)",
+      "rgb(255, 255, 255)",
+      "rgb(94, 106, 210)",
+      "rgb(247, 248, 248) rgb(247, 248, 248) rgba(255, 255, 255, 0.08)",
+      "rgb(138, 143, 152)",
+      "rgb(229, 229, 230)",
+      "rgb(20, 21, 22)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "9999px",
+        "100px",
+        "8px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0) 0px 8px 2px 0px, rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px",
+        "rgba(255, 255, 255, 0.03) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 4px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "loading",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "saas-stripe-docs-api",
+    "product_name": "Stripe Docs",
+    "page_url": "https://docs.stripe.com/api",
+    "resolved_url": "https://docs.stripe.com/api",
+    "page_type": "Developer docs workspace",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-stripe-docs-api__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "文档型工作台、侧边导航、代码区",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：2026-05-27.dahlia / API Reference / Docs / Support / Sign in →；标题层级示例：API Reference / Just getting started? / Not a developer? / Authentication / Errors / Attributes",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "API Reference",
+        "Just getting started?",
+        "Not a developer?",
+        "Authentication",
+        "Errors",
+        "Attributes",
+        "More Expand all",
+        "Handling errors",
+        "Expanding Responses",
+        "Idempotent requests",
+        "Include-dependent response values (API v2)",
+        "Metadata"
+      ],
+      "nav_items": [
+        "2026-05-27.dahlia",
+        "API Reference",
+        "Docs",
+        "Support",
+        "Sign in →"
+      ],
+      "buttons": [
+        "Find anything /",
+        "Ask AI",
+        "2026-05-27.dahlia",
+        "API Reference",
+        "Ask about this section",
+        "Copy for LLM",
+        "View as Markdown",
+        "Yes",
+        "No",
+        "Ruby",
+        "Python",
+        "PHP",
+        "Java"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 152,
+        "cards": 1,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 184,
+        "tables": 3
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Ubuntu, sans-serif",
+        "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+      ],
+      "font_sizes": [
+        "14px",
+        "13px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(27, 30, 37)",
+        "color": "rgb(60, 66, 87)",
+        "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Ubuntu, sans-serif",
+        "fontSize": "14px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(60, 66, 87)",
+      "rgb(27, 30, 37)",
+      "rgb(236, 238, 241)",
+      "rgb(95, 76, 254)",
+      "rgb(65, 69, 82)",
+      "rgb(20, 23, 29)",
+      "rgb(107, 107, 107)",
+      "rgb(140, 153, 173)",
+      "rgb(43, 48, 57)",
+      "rgb(146, 137, 254)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "8px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "error",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "表格页需要固定筛选入口、状态标签和批量操作的明确边界"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "saas-vercel-templates",
+    "product_name": "Vercel",
+    "page_url": "https://vercel.com/templates",
+    "resolved_url": "https://vercel.com/templates",
+    "page_type": "Template gallery",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-vercel-templates__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "模板列表、筛选、卡片密度",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：AI SDK / AI Gateway / Sandbox / Workflows / Eve / Security / Content Delivery / Fluid Compute；标题层级示例：Agent Stack / Core Platform / Tools / Learn / Build / Explore",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Agent Stack",
+        "Core Platform",
+        "Tools",
+        "Learn",
+        "Build",
+        "Explore",
+        "Find your Template",
+        "Filter Templates",
+        "eve Chat Template",
+        "Next.js Boilerplate",
+        "Image Gallery Starter",
+        "Chatbot"
+      ],
+      "nav_items": [
+        "AI SDK",
+        "AI Gateway",
+        "Sandbox",
+        "Workflows",
+        "Eve",
+        "Security",
+        "Content Delivery",
+        "Fluid Compute",
+        "Observability",
+        "CI/CD",
+        "Next.js",
+        "Vercel Agent",
+        "Vercel Plugin",
+        "Domains",
+        "v0",
+        "Docs",
+        "About"
+      ],
+      "buttons": [
+        "Copy Logo as SVG",
+        "Copy Wordmark as SVG",
+        "Brand Guidelines",
+        "Products",
+        "Resources",
+        "Clear",
+        "Use Case",
+        "Framework",
+        "CSS",
+        "Database",
+        "Authentication",
+        "CMS",
+        "Experimentation",
+        "Load More"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 17,
+        "cards": 0,
+        "dialogs": 1,
+        "forms": 0,
+        "inputs": 111,
+        "links": 174,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "Geist, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "20px",
+        "24px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(0, 0, 0)",
+        "color": "rgb(237, 237, 237)",
+        "fontFamily": "Geist, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(237, 237, 237)",
+      "rgb(0, 0, 0)",
+      "rgb(82, 168, 255)",
+      "rgb(161, 161, 161)",
+      "rgb(10, 10, 10)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "4px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(0, 0, 0) 0px 0px 0px 2px, rgb(82, 168, 255) 0px 0px 0px 4px",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(46, 46, 46) 0px 0px 0px 1px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "loading",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "saas-supabase-docs-database",
+    "product_name": "Supabase Docs",
+    "page_url": "https://supabase.com/docs/guides/database/overview",
+    "resolved_url": "https://supabase.com/docs/guides/database/overview",
+    "page_type": "Platform docs workspace",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-supabase-docs-database__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "docs navigation / product architecture",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：DOCS / Start / DOCS / Sign up / Database / Overview / Connecting to your database / Importing data；标题层级示例：Database / Get started# / Going further# / Is this helpful? / AI TOOLS / ON THIS PAGE",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "侧边导航 / 工作台型导航",
+    "primary_components": {
+      "headings": [
+        "Database",
+        "Get started#",
+        "Going further#",
+        "Is this helpful?",
+        "AI TOOLS",
+        "ON THIS PAGE"
+      ],
+      "nav_items": [
+        "DOCS",
+        "Start",
+        "DOCS",
+        "Sign up",
+        "Database",
+        "Overview",
+        "Connecting to your database",
+        "Importing data",
+        "Securing your data",
+        "Managing tables, views, and data",
+        "Working with arrays",
+        "Managing indexes",
+        "Querying joins and nested tables",
+        "JSON and unstructured data",
+        "Implementing cascade deletes",
+        "Deleting data and dropping objects safely",
+        "Managing enums",
+        "Managing database functions"
+      ],
+      "buttons": [
+        "Products",
+        "Build",
+        "Manage",
+        "Reference",
+        "Resources",
+        "Search docs... Ctrl K",
+        "Prisma",
+        "External replication",
+        "Manual replication",
+        "Sources",
+        "Products",
+        "Build",
+        "Manage",
+        "Reference"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 0,
+        "buttons": 25,
+        "links": 125,
+        "cards": 1,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "Circular, custom-font, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "12px"
+      ],
+      "body_font": {
+        "fontFamily": "Circular, custom-font, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(23, 23, 23)",
+        "backgroundColor": "rgb(252, 252, 252)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(23, 23, 23)",
+      "rgb(252, 252, 252)",
+      "rgb(223, 223, 223)",
+      "oklab(0.990857 0.0000452697 0.0000198483 / 0.75)",
+      "rgb(212, 212, 212)",
+      "rgb(82, 82, 82)",
+      "rgb(112, 112, 112)",
+      "rgb(114, 227, 173)",
+      "oklab(0.685556 -0.144467 0.0578643 / 0.75)",
+      "rgb(0, 187, 104)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "saas-github-next-issues",
+    "product_name": "GitHub Issues",
+    "page_url": "https://github.com/vercel/next.js/issues",
+    "resolved_url": "https://github.com/vercel/next.js/issues",
+    "page_type": "Public issue list",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-github-next-issues__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "列表、筛选、状态标签",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "badges": 0,
+        "buttons": 0,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 1,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Noto Sans SC\""
+      ],
+      "font_sizes": [
+        "16px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "\"Noto Sans SC\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(255, 255, 255)",
+      "rgb(158, 158, 255)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [],
+    "risk_notes": [
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "saas-github-issues-feature",
+    "product_name": "GitHub Features",
+    "page_url": "https://github.com/features/issues",
+    "resolved_url": "https://github.com/features/issues",
+    "page_type": "Feature/product page",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-github-issues-feature__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "issue workflow 展示",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Sign in / GitHub CopilotWrite better code with AI / GitHub Copilot appDirect agents from issue to merge / MCP RegistryNewIntegrate external tools / ActionsAutomate any workflow / CodespacesInstant dev environments / IssuesPlan and track work / Code ReviewManage code changes；标题层级示例：Navigation Menu / Search code, repositories, users, issues, pull requests... / Provide feedback / Saved searches / Use saved searches to filter your results more quickly / Project planning for developers",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "侧边导航 / 工作台型导航",
+    "primary_components": {
+      "headings": [
+        "Navigation Menu",
+        "Search code, repositories, users, issues, pull requests...",
+        "Provide feedback",
+        "Saved searches",
+        "Use saved searches to filter your results more quickly",
+        "Project planning for developers",
+        "LOGOS FOR SHOPIFY, VERCEL, STRIPE, FORD, AND NASA",
+        "Break issues into sub-issues",
+        "Streamline conversations",
+        "Features",
+        "Custom fields",
+        "Track progress with project insights"
+      ],
+      "nav_items": [
+        "Sign in",
+        "GitHub CopilotWrite better code with AI",
+        "GitHub Copilot appDirect agents from issue to merge",
+        "MCP RegistryNewIntegrate external tools",
+        "ActionsAutomate any workflow",
+        "CodespacesInstant dev environments",
+        "IssuesPlan and track work",
+        "Code ReviewManage code changes",
+        "GitHub Advanced SecurityFind and fix vulnerabilities",
+        "Code securitySecure your code as you build",
+        "Secret protectionStop leaks before they start",
+        "Why GitHub",
+        "Documentation",
+        "Blog",
+        "Changelog",
+        "Marketplace",
+        "View all features"
+      ],
+      "buttons": [
+        "Toggle navigation",
+        "Platform",
+        "Solutions",
+        "Resources",
+        "Open Source",
+        "Enterprise",
+        "Search or jump to...",
+        "Cancel",
+        "Submit feedback",
+        "Cancel",
+        "Create saved search",
+        "Resetting focus"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 21,
+        "cards": 22,
+        "dialogs": 3,
+        "forms": 3,
+        "inputs": 10,
+        "links": 135,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Mona Sans VF\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+        "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\""
+      ],
+      "font_sizes": [
+        "14px",
+        "16px",
+        "12px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(31, 35, 40)",
+        "fontFamily": "\"Mona Sans VF\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+        "fontSize": "14px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(31, 35, 40)",
+      "rgb(255, 255, 255)",
+      "rgb(9, 105, 218)",
+      "rgb(37, 41, 46)",
+      "rgb(0, 0, 0)",
+      "rgb(240, 240, 240)",
+      "rgb(209, 217, 224)",
+      "rgba(255, 255, 255, 0.75)",
+      "rgb(89, 99, 110)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "6px",
+        "3px"
+      ],
+      "shadows": [
+        "rgba(31, 35, 40, 0.04) 0px 1px 0px 0px inset"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "首屏未显式暴露，需要后续交互样本补充 hover / selected / error / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "saas-notion-templates",
+    "product_name": "Notion",
+    "page_url": "https://www.notion.com/templates",
+    "resolved_url": "https://www.notion.com/templates",
+    "page_type": "Template gallery",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-notion-templates__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "workspace / template grid",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：NotionYour AI workspace / Notion Calendar / Notion Mail / Notion AIAI tools for work / AgentsAutomate busywork / AI Meeting NotesPerfectly written by AI / Enterprise SearchFind answers instantly / Knowledge BaseCentralize your knowledge；标题层级示例：Discover / Custom agents are here / Use an Agent for that / Let's Go Lukiih / Campaign Calendar / 75 templates",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Discover",
+        "Custom agents are here",
+        "Use an Agent for that",
+        "Let's Go Lukiih",
+        "Campaign Calendar",
+        "75 templates",
+        "API Documentation",
+        "22 templates",
+        "Office Home Page",
+        "25 templates",
+        "Taxes",
+        "37 templates"
+      ],
+      "nav_items": [
+        "NotionYour AI workspace",
+        "Notion Calendar",
+        "Notion Mail",
+        "Notion AIAI tools for work",
+        "AgentsAutomate busywork",
+        "AI Meeting NotesPerfectly written by AI",
+        "Enterprise SearchFind answers instantly",
+        "Knowledge BaseCentralize your knowledge",
+        "DocsSimple and powerful",
+        "ProjectsManage any project",
+        "ConnectionsConnect your apps",
+        "SecuritySafe and scalable",
+        "See what’s new→",
+        "Notion App→",
+        "Notion AIAI tools for work",
+        "AgentsAutomate busywork",
+        "AI Meeting NotesPerfectly written by AI"
+      ],
+      "buttons": [
+        "Product",
+        "AI",
+        "Solutions",
+        "Resources",
+        "Marketplace",
+        "Marketplace",
+        "Templates",
+        "Agents",
+        "Consultants",
+        "Connections",
+        "-3 more templates",
+        "No results for",
+        "English (US)"
+      ],
+      "counts": {
+        "badges": 6,
+        "buttons": 35,
+        "cards": 32,
+        "dialogs": 7,
+        "forms": 1,
+        "inputs": 2,
+        "links": 193,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+      ],
+      "font_sizes": [
+        "16px",
+        "12px",
+        "20px",
+        "15px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgba(0, 0, 0, 0.95)",
+        "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgba(0, 0, 0, 0.95)",
+      "rgb(255, 255, 255)",
+      "rgba(0, 0, 0, 0.898)",
+      "rgb(0, 117, 222)",
+      "rgba(255, 255, 255, 0)",
+      "rgba(0, 0, 0, 0.08)",
+      "rgb(163, 158, 152)",
+      "rgba(35, 131, 226, 0.04)",
+      "rgb(240, 246, 253)",
+      "rgb(248, 248, 247)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "8px",
+        "5px",
+        "6px",
+        "16px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0) 0px 1px 0px 0px",
+        "rgba(0, 0, 0, 0.016) 0px 0.7px 1.462px 0px, rgba(0, 0, 0, 0.03) 0px 3px 9px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "saas-jira-templates",
+    "product_name": "Atlassian Jira Templates",
+    "page_url": "https://www.atlassian.com/software/jira/templates",
+    "resolved_url": "https://www.atlassian.com/software/jira/templates",
+    "page_type": "Template gallery",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-jira-templates__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "template cards / filters / work management patterns",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Get it free / All Features / Rovo in Jira / Marketing / Engineering / Design / Operations / IT；标题层级示例：There’s a Jira template for that / Scrum / Most popular templates / Explore more templates to supercharge teamwork / Inspire others with your workflow",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "There’s a Jira template for that",
+        "Scrum",
+        "Most popular templates",
+        "Explore more templates to supercharge teamwork",
+        "Inspire others with your workflow"
+      ],
+      "nav_items": [
+        "Get it free",
+        "All Features",
+        "Rovo in Jira",
+        "Marketing",
+        "Engineering",
+        "Design",
+        "Operations",
+        "IT",
+        "Getting started",
+        "Planning",
+        "Campaign Management",
+        "Agile Project Management",
+        "Program Management",
+        "Enterprise",
+        "Product guide",
+        "All Templates"
+      ],
+      "buttons": [
+        "Features",
+        "Back",
+        "Solutions",
+        "Teams",
+        "Use cases",
+        "Company size",
+        "Back",
+        "Templates",
+        "Back",
+        "More +",
+        "Less -",
+        "Sign in",
+        "Back"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 1,
+        "inputs": 3,
+        "buttons": 18,
+        "links": 130,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 1
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Charlie Text\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Noto Sans\", Ubuntu, \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "Arial"
+      ],
+      "font_sizes": [
+        "16px",
+        "14px",
+        "13.3333px"
+      ],
+      "body_font": {
+        "fontFamily": "\"Charlie Text\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Noto Sans\", Ubuntu, \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(9, 30, 66)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(9, 30, 66)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 82, 204)",
+      "rgba(222, 235, 255, 0.85)",
+      "rgb(244, 245, 247)",
+      "rgb(16, 18, 20)",
+      "rgb(24, 104, 219)",
+      "rgb(0, 0, 0)",
+      "rgb(200, 200, 200) rgb(16, 18, 20) rgb(16, 18, 20)",
+      "rgb(16, 18, 20) rgb(16, 18, 20) rgb(16, 18, 20) rgb(221, 222, 225)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "40px",
+        "30px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "saas-retool-templates",
+    "product_name": "Retool",
+    "page_url": "https://retool.com/templates",
+    "resolved_url": "https://retool.com/templates",
+    "page_type": "Template gallery",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-retool-templates__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "工具模板、后台界面模式",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Use cases / Pricing / Sign in / Book a demo / Start for free；标题层级示例：Build apps with ready-made templates",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Build apps with ready-made templates"
+      ],
+      "nav_items": [
+        "Use cases",
+        "Pricing",
+        "Sign in",
+        "Book a demo",
+        "Start for free"
+      ],
+      "buttons": [
+        "BACK",
+        "Solution",
+        "Audience",
+        "Resources",
+        "Search ⌘K",
+        "Mobile",
+        "Operations",
+        "Workflows",
+        "Admin Panel",
+        "Agriculture",
+        "Construction",
+        "Dashboard",
+        "Ecommerce",
+        "Food & Beverage"
+      ],
+      "counts": {
+        "badges": 0,
+        "buttons": 28,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 1,
+        "inputs": 1,
+        "links": 441,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "pxGroteskFont, \"pxGroteskFont Fallback\", sans-serif",
+        "saansFont, \"saansFont Fallback\", sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "12px",
+        "13.9279px",
+        "23.8558px",
+        "11.9423px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(21, 21, 21)",
+        "color": "rgb(233, 235, 223)",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(233, 235, 223)",
+      "rgb(21, 21, 21)",
+      "rgb(139, 134, 127)",
+      "rgb(36, 36, 36)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "9999px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "error",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://retool.com/templates."
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop navigation warning: Timed out waiting for tab 1 to navigate to https://retool.com/templates."
+  },
+  {
+    "sample_id": "saas-posthog-session-replay",
+    "product_name": "PostHog Session Replay",
+    "page_url": "https://posthog.com/product/session-replay",
+    "resolved_url": "https://posthog.com/product/session-replay",
+    "page_type": "Product feature page",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-posthog-session-replay__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "session replay / event detail / monitoring UI",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Get started – free / home.mdx / Product OS / Pricing / customers.mdx / demo.mov / Docs / Talk to a human；标题层级示例：",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [
+        "Get started – free",
+        "home.mdx",
+        "Product OS",
+        "Pricing",
+        "customers.mdx",
+        "demo.mov",
+        "Docs",
+        "Talk to a human",
+        "Sign up ↗",
+        "Why PostHog?",
+        "Changelog",
+        "Company handbook",
+        "Store",
+        "Work here",
+        "Trash",
+        "Terms",
+        "Privacy",
+        "DPA"
+      ],
+      "buttons": [
+        "Product OS",
+        "Pricing",
+        "Docs",
+        "Community",
+        "Company",
+        "More",
+        "1",
+        "Ask a question",
+        "Switch to website mode"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 1,
+        "buttons": 20,
+        "links": 23,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"IBM Plex Sans Variable\", \"IBM Plex Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, \"segoe ui\", \"helvetica neue\", helvetica, Ubuntu, roboto, noto, arial, \"sans-serif\"",
+        "monospace, \"Courier New\"",
+        "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+      ],
+      "font_sizes": [
+        "16px",
+        "13px",
+        "14px",
+        "12px"
+      ],
+      "body_font": {
+        "fontFamily": "\"IBM Plex Sans Variable\", \"IBM Plex Sans\", -apple-system, BlinkMacSystemFont, \"avenir next\", avenir, \"segoe ui\", \"helvetica neue\", helvetica, Ubuntu, roboto, noto, arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(238, 239, 233)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(238, 239, 233)",
+      "rgb(35, 37, 29)",
+      "rgb(205, 132, 7)",
+      "rgb(177, 120, 22)",
+      "rgb(101, 103, 94)",
+      "rgb(229, 231, 224)",
+      "rgb(191, 193, 183)",
+      "rgb(77, 79, 70)",
+      "rgb(255, 255, 255)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "6px"
+      ],
+      "shadows": [
+        "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "error",
+    "why_professional": "导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "saas-sentry-issues",
+    "product_name": "Sentry",
+    "page_url": "https://sentry.io/product/issues/",
+    "resolved_url": "https://sentry.io/product/issues/",
+    "page_type": "Product feature page",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-sentry-issues__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "issue / error monitoring UI",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：Error Monitoring / Logs / Seer NEW / Agent / Autofix / AI Code Review / Session Replay / Metrics NEW；标题层级示例：Solutions / Products / Products / AI Debugging / AI Debugging / Integrations",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "Solutions",
+        "Products",
+        "Products",
+        "AI Debugging",
+        "AI Debugging",
+        "Integrations",
+        "Integrations",
+        "Learn",
+        "Learn",
+        "Support",
+        "Support",
+        "Hang out with us"
+      ],
+      "nav_items": [
+        "Error Monitoring",
+        "Logs",
+        "Seer NEW",
+        "Agent",
+        "Autofix",
+        "AI Code Review",
+        "Session Replay",
+        "Metrics NEW",
+        "Tracing",
+        "Profiling",
+        "Size Analysis",
+        "Cron Monitoring",
+        "Uptime Monitoring",
+        "Labs NEW",
+        "Github",
+        "Slack",
+        "Sentry CLI"
+      ],
+      "buttons": [
+        "Menu",
+        "Platform",
+        "Products",
+        "Seer",
+        "Integrations",
+        "Solutions",
+        "Resources",
+        "Learn",
+        "Support",
+        "Hang out with us",
+        "PLATFORM",
+        "Products",
+        "AI Debugging",
+        "Integrations",
+        "SOLUTIONS",
+        "RESOURCES"
+      ],
+      "counts": {
+        "badges": 9,
+        "buttons": 19,
+        "cards": 0,
+        "dialogs": 0,
+        "forms": 0,
+        "inputs": 0,
+        "links": 171,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "Rubik, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+      ],
+      "font_sizes": [
+        "16px",
+        "14px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(54, 45, 89)",
+        "fontFamily": "Rubik, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(54, 45, 89)",
+      "rgb(255, 255, 255)",
+      "rgb(31, 22, 51)",
+      "rgb(26, 26, 26)",
+      "rgb(239, 239, 239)",
+      "rgb(106, 95, 193)",
+      "rgb(78, 42, 154)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "8px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "error / status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  },
+  {
+    "sample_id": "saas-datadog-product",
+    "product_name": "Datadog",
+    "page_url": "https://www.datadoghq.com/product/",
+    "resolved_url": "https://www.datadoghq.com/product/",
+    "page_type": "Product overview",
+    "category": "01-saas-dashboard",
+    "category_label": "SaaS / 后台系统",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/saas-dashboard/saas-datadog-product__desktop.png",
+    "mobile_screenshot_path": null,
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": null,
+    "page_main_task": "监控工作台视觉模式",
+    "user_role": "产品用户 / 内部工具使用者",
+    "information_architecture": "导航项示例：PRODUCT / View pricing / Infrastructure Monitoring / Metrics / Network Monitoring / Container Monitoring / Kubernetes Autoscaling / Serverless；标题层级示例：See it all in one place / Your servers, your clouds, your metrics, your apps, your team. Together. / See across systems, apps, and services / Get full visibility into modern applications / Analyze and explore log data in context / Proactively monitor your user experience",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "See it all in one place",
+        "Your servers, your clouds, your metrics, your apps, your team. Together.",
+        "See across systems, apps, and services",
+        "Get full visibility into modern applications",
+        "Analyze and explore log data in context",
+        "Proactively monitor your user experience",
+        "Correlate frontend performance with business impact",
+        "Unify network visibility across your clouds, applications, and devices",
+        "Build real-time interactive dashboards",
+        "Share what you saw, write what you did",
+        "Get alerted on critical issues",
+        "Instrument your apps, write new integrations"
+      ],
+      "nav_items": [
+        "PRODUCT",
+        "View pricing",
+        "Infrastructure Monitoring",
+        "Metrics",
+        "Network Monitoring",
+        "Container Monitoring",
+        "Kubernetes Autoscaling",
+        "Serverless",
+        "Cloud Cost Management",
+        "Cloudcraft",
+        "Storage Management",
+        "GPU Monitoring",
+        "Application Performance Monitoring",
+        "Universal Service Monitoring",
+        "Continuous Profiler",
+        "Dynamic Instrumentation",
+        "Agent Observability",
+        "Database Monitoring"
+      ],
+      "buttons": [
+        "Observability",
+        "Security",
+        "Digital Experience",
+        "Software Delivery",
+        "Service Management",
+        "AI",
+        "Platform Capabilities",
+        "Toggle navigation",
+        "Product",
+        "Solutions",
+        "About",
+        "Blog",
+        "START YOUR FREE TRIAL NOW",
+        "REQUEST A DEMO"
+      ],
+      "counts": {
+        "badges": 11,
+        "buttons": 20,
+        "cards": 1,
+        "dialogs": 3,
+        "forms": 0,
+        "inputs": 0,
+        "links": 506,
+        "tables": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "NationalWeb, Helvetica, Arial, sans-serif"
+      ],
+      "font_sizes": [
+        "22px",
+        "18px",
+        "16px"
+      ],
+      "body_font": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(33, 37, 41)",
+        "fontFamily": "NationalWeb, Helvetica, Arial, sans-serif",
+        "fontSize": "22px"
+      }
+    },
+    "color_characteristics": [
+      "rgb(33, 37, 41)",
+      "rgb(255, 255, 255)",
+      "rgb(85, 85, 85)",
+      "rgb(99, 44, 166)",
+      "rgb(0, 0, 0)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0.07) 0px 0px 8px 8px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "error / status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交",
+      "desktop domcontentloaded timeout"
+    ],
+    "capture_status": "captured",
+    "capture_error": "desktop domcontentloaded timeout"
+  }
+]

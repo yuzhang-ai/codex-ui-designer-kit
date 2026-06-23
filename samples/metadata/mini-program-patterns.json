@@ -1,0 +1,601 @@
+[
+  {
+    "sample_id": "mini-wechat-design",
+    "product_name": "微信小程序设计",
+    "page_url": "https://developers.weixin.qq.com/miniprogram/design/",
+    "resolved_url": "https://developers.weixin.qq.com/miniprogram/design/",
+    "page_type": "Design guidelines",
+    "category": "06-mini-program-patterns",
+    "category_label": "小程序式模式",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-wechat-design__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-wechat-design__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "小程序规范、页面结构",
+    "user_role": "移动端轻量流程用户 / 小程序设计者",
+    "information_architecture": "导航项示例：小程序 / 小程序 / 小游戏 / 公众号 / 服务号 / 开放平台 / 企业微信 / 微信支付；标题层级示例：微信小程序设计指南 / 一、友好礼貌 / 1.1 重点突出 / 1.2 流程明确 / 二、清晰明确 / 2.1 导航明确，来去自如",
+    "layout_structure": "左侧导航 + 主内容区 + 顶部/局部操作区",
+    "navigation_pattern": "侧边导航 / 工作台型导航",
+    "primary_components": {
+      "headings": [
+        "微信小程序设计指南",
+        "一、友好礼貌",
+        "1.1 重点突出",
+        "1.2 流程明确",
+        "二、清晰明确",
+        "2.1 导航明确，来去自如",
+        "2.2 减少等待，反馈及时",
+        "2.3 异常可控，有路可退",
+        "三、便捷优雅",
+        "3.1 减少输入",
+        "3.2 避免误操作",
+        "3.3 利用接口提升性能"
+      ],
+      "nav_items": [
+        "小程序",
+        "小程序",
+        "小游戏",
+        "公众号",
+        "服务号",
+        "开放平台",
+        "企业微信",
+        "微信支付",
+        "视频号",
+        "微信小店",
+        "智能对话",
+        "腾讯小微",
+        "教育平台",
+        "开发",
+        "介绍",
+        "设计",
+        "运营"
+      ],
+      "buttons": [
+        "复制",
+        "问题反馈"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 0,
+        "buttons": 3,
+        "links": 137,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "-apple-system, BlinkMacSystemFont, \"SF UI Text\", \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", Arial, sans-serif"
+      ],
+      "font_sizes": [
+        "14px",
+        "0px",
+        "16px"
+      ],
+      "body_font": {
+        "fontFamily": "-apple-system, BlinkMacSystemFont, \"SF UI Text\", \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", Arial, sans-serif",
+        "fontSize": "14px",
+        "color": "rgb(34, 34, 34)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(34, 34, 34)",
+      "rgb(247, 247, 247)",
+      "rgb(7, 193, 96)",
+      "rgb(0, 0, 0)",
+      "rgb(136, 136, 136)"
+    ],
+    "spacing_characteristics": "工作台式分栏，信息密度较高，主区域需要稳定边距和列表节奏",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [
+        "rgba(0, 0, 0, 0.06) 0px 1px 0px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "loading",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "复杂工作台优先使用左侧主导航 + 顶部上下文操作区，降低跨页面跳转成本",
+      "轻量流程适合列表-详情-提交的短路径，底部导航只放高频任务"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "mini-alipay-design",
+    "product_name": "支付宝小程序设计",
+    "page_url": "https://opendocs.alipay.com/mini/design",
+    "resolved_url": "https://opendocs.alipay.com/mini/design",
+    "page_type": "Design guidelines",
+    "category": "06-mini-program-patterns",
+    "category_label": "小程序式模式",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-alipay-design__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-alipay-design__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "小程序设计规范",
+    "user_role": "移动端轻量流程用户 / 小程序设计者",
+    "information_architecture": "导航项示例：介绍 / 开发 / 工具 / 设计 / 数据 / 运营 / 更新日志 / 控制台；标题层级示例：设计 / 支付宝小程序核心体验白皮书",
+    "layout_structure": "顶部导航 + 首屏内容区 + 卡片/模块分区",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "设计",
+        "支付宝小程序核心体验白皮书"
+      ],
+      "nav_items": [
+        "介绍",
+        "开发",
+        "工具",
+        "设计",
+        "数据",
+        "运营",
+        "更新日志",
+        "控制台",
+        "登录",
+        "白皮书",
+        "设计指南",
+        "视觉规范",
+        "支付宝小程序官方组件",
+        "设计检查"
+      ],
+      "buttons": [
+        "返回文档"
+      ],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 3,
+        "buttons": 1,
+        "links": 28,
+        "cards": 2,
+        "dialogs": 0,
+        "badges": 3
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "\"Chinese Quote\", \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+      ],
+      "font_sizes": [
+        "14px",
+        "16px",
+        "12px"
+      ],
+      "body_font": {
+        "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "14px",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      }
+    },
+    "color_characteristics": [
+      "rgba(0, 0, 0, 0.85)",
+      "rgb(255, 255, 255)",
+      "rgb(102, 102, 102)",
+      "rgb(24, 144, 255)",
+      "rgb(22, 119, 255)",
+      "rgb(153, 153, 153)",
+      "rgb(51, 51, 51)",
+      "rgb(246, 246, 246) rgb(51, 51, 51) rgb(51, 51, 51)",
+      "rgb(60, 60, 60)",
+      "rgb(16, 142, 233)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "2px"
+      ],
+      "shadows": [
+        "rgba(231, 231, 231, 0.5) 0px 2px 6px 0px",
+        "rgba(197, 197, 197, 0.5) 0px 1px 2px 0px"
+      ],
+      "note": "使用阴影强化层级，但应克制用于浮层/卡片"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "轻量流程适合列表-详情-提交的短路径，底部导航只放高频任务"
+    ],
+    "risk_notes": [
+      "页面包含登录/验证相关入口，仅记录公开首屏，不进行登录或提交"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "mini-tdesign",
+    "product_name": "TDesign MiniProgram",
+    "page_url": "https://tdesign.tencent.com/miniprogram/overview",
+    "resolved_url": "https://tdesign.tencent.com/miniprogram/overview",
+    "page_type": "Component docs",
+    "category": "06-mini-program-patterns",
+    "category_label": "小程序式模式",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-tdesign__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-tdesign__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "组件、表单、列表",
+    "user_role": "移动端轻量流程用户 / 小程序设计者",
+    "information_architecture": "导航项示例：快速开始 / 谁在用 / 更新日志 / 样式覆盖 / 自定义主题 / 组件概览 / MCP / 全局特性配置；标题层级示例：WeChat MiniProgram / 组件概览 / 基础7 / 导航8 / 输入16 / 数据展示20",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "WeChat MiniProgram",
+        "组件概览",
+        "基础7",
+        "导航8",
+        "输入16",
+        "数据展示20",
+        "反馈12"
+      ],
+      "nav_items": [
+        "快速开始",
+        "谁在用",
+        "更新日志",
+        "样式覆盖",
+        "自定义主题",
+        "组件概览",
+        "MCP",
+        "全局特性配置",
+        "深色模式",
+        "AI Chat 对话",
+        "Button 按钮",
+        "Divider 分割线",
+        "Fab 悬浮按钮",
+        "Icon 图标",
+        "Layout 布局",
+        "Link 链接",
+        "Typography 排版",
+        "BackTop 返回顶部"
+      ],
+      "buttons": [],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 0,
+        "buttons": 0,
+        "links": 149,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 13
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "BlinkMacSystemFont, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+        "\"Microsoft YaHei\""
+      ],
+      "font_sizes": [
+        "14px",
+        "16px"
+      ],
+      "body_font": {
+        "fontFamily": "BlinkMacSystemFont, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "color": "rgba(0, 0, 0, 0.6)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "color_characteristics": [
+      "rgba(0, 0, 0, 0.6)",
+      "rgb(0, 0, 0)",
+      "rgb(0, 0, 238)",
+      "rgba(0, 0, 0, 0.9)",
+      "rgb(255, 255, 255)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "3px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "loading / empty / status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "轻量流程适合列表-详情-提交的短路径，底部导航只放高频任务"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "mini-weui",
+    "product_name": "WeUI",
+    "page_url": "https://weui.io/",
+    "resolved_url": "https://weui.io/",
+    "page_type": "Component demo",
+    "category": "06-mini-program-patterns",
+    "category_label": "小程序式模式",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-weui__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-weui__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "微信风格组件",
+    "user_role": "移动端轻量流程用户 / 小程序设计者",
+    "information_architecture": "标题层级示例：首屏标题不明显，需结合截图复核",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "tables": 0,
+        "forms": 0,
+        "inputs": 0,
+        "buttons": 6,
+        "links": 31,
+        "cards": 0,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "system-ui, -apple-system, \"Helvetica Neue\", sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "17px",
+        "12px"
+      ],
+      "body_font": {
+        "fontFamily": "system-ui, -apple-system, \"Helvetica Neue\", sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(237, 237, 237)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(0, 0, 0)",
+      "rgb(237, 237, 237)",
+      "rgba(0, 0, 0, 0.9)",
+      "rgb(0, 0, 238)",
+      "rgba(0, 0, 0, 0.2)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "中低密度：更偏首屏转化、产品说明或聚焦任务",
+    "state_design": "loading",
+    "why_professional": "颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "轻量流程适合列表-详情-提交的短路径，底部导航只放高频任务"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "mini-vant-weapp",
+    "product_name": "Vant Weapp",
+    "page_url": "https://youzan.github.io/vant-weapp/#/home",
+    "resolved_url": "https://vant-ui.github.io/vant-weapp/#/home",
+    "page_type": "Component docs",
+    "category": "06-mini-program-patterns",
+    "category_label": "小程序式模式",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-vant-weapp__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-vant-weapp__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "移动组件库",
+    "user_role": "移动端轻量流程用户 / 小程序设计者",
+    "information_architecture": "标题层级示例：Vant Weapp / 介绍 / 预览 / 快速上手 / 链接 / 贡献 / 核心团队 / 贡献者们",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "导航弱，偏单任务首屏",
+    "primary_components": {
+      "headings": [
+        "Vant Weapp",
+        "介绍",
+        "预览",
+        "快速上手",
+        "链接",
+        "贡献",
+        "核心团队",
+        "贡献者们",
+        "贡献代码",
+        "开源协议"
+      ],
+      "nav_items": [],
+      "buttons": [],
+      "counts": {
+        "tables": 2,
+        "forms": 0,
+        "inputs": 0,
+        "buttons": 0,
+        "links": 99,
+        "cards": 9,
+        "dialogs": 0,
+        "badges": 0
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "\"Open Sans\", -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, Roboto, \"PingFang SC\", miui, \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif"
+      ],
+      "font_sizes": [
+        "16px",
+        "0px",
+        "14px",
+        "15px"
+      ],
+      "body_font": {
+        "fontFamily": "\"Open Sans\", -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, Roboto, \"PingFang SC\", miui, \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif",
+        "fontSize": "16px",
+        "color": "rgb(50, 50, 51)",
+        "backgroundColor": "rgb(239, 242, 245)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(50, 50, 51)",
+      "rgb(239, 242, 245)",
+      "rgb(0, 0, 238)",
+      "rgb(25, 137, 250)",
+      "rgb(52, 73, 94)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "loading / empty",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "卡片列表需要一致的缩略信息密度、标签位置和悬停反馈",
+      "轻量流程适合列表-详情-提交的短路径，底部导航只放高频任务"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  },
+  {
+    "sample_id": "mini-ant-mobile-list",
+    "product_name": "Ant Design Mobile",
+    "page_url": "https://mobile.ant.design/components/list",
+    "resolved_url": "https://mobile.ant.design/zh/components/list",
+    "page_type": "Component docs",
+    "category": "06-mini-program-patterns",
+    "category_label": "小程序式模式",
+    "collection_date": "2026-06-23",
+    "screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-ant-mobile-list__desktop.png",
+    "mobile_screenshot_path": "samples/raw-screenshots/mini-program-patterns/mini-ant-mobile-list__mobile.png",
+    "desktop_viewport": "1440x1000",
+    "mobile_viewport": "390x844",
+    "page_main_task": "App / 小程序式列表",
+    "user_role": "移动端轻量流程用户 / 小程序设计者",
+    "information_architecture": "导航项示例：指南 / 组件 / 资源 / 国内镜像 / 返回旧版 / 发布日志 / GitHub / English；标题层级示例：List 列表 / 何时使用 / 示例 / List / 属性 / CSS 变量",
+    "layout_structure": "单页内容流或嵌入式 demo 结构",
+    "navigation_pattern": "顶部导航 / 分类入口 / 页内锚点",
+    "primary_components": {
+      "headings": [
+        "List 列表",
+        "何时使用",
+        "示例",
+        "List",
+        "属性",
+        "CSS 变量",
+        "Ref",
+        "List.Item",
+        "属性",
+        "CSS 变量",
+        "FAQ",
+        "列表能否支持虚拟滚动？"
+      ],
+      "nav_items": [
+        "指南",
+        "组件",
+        "资源",
+        "国内镜像",
+        "返回旧版",
+        "发布日志",
+        "GitHub",
+        "English"
+      ],
+      "buttons": [],
+      "counts": {
+        "tables": 4,
+        "forms": 5,
+        "inputs": 11,
+        "buttons": 17,
+        "links": 124,
+        "cards": 1,
+        "dialogs": 0,
+        "badges": 410
+      }
+    },
+    "typography_hierarchy": {
+      "font_families": [
+        "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "Arial"
+      ],
+      "font_sizes": [
+        "13px",
+        "13.3333px",
+        "14px",
+        "16px",
+        "14.4px"
+      ],
+      "body_font": {
+        "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "13px",
+        "color": "rgb(51, 51, 51)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "color_characteristics": [
+      "rgb(51, 51, 51)",
+      "rgb(0, 0, 0)",
+      "rgb(22, 119, 255)",
+      "rgb(13, 26, 38)",
+      "rgb(245, 247, 250)",
+      "rgb(77, 81, 100)",
+      "rgb(123, 127, 141)",
+      "rgb(218, 218, 223)",
+      "rgb(49, 70, 89)"
+    ],
+    "spacing_characteristics": "首屏留白较多，模块间距服务于叙事和转化",
+    "radius_shadow_border_characteristics": {
+      "radii": [
+        "0px",
+        "4px",
+        "50%"
+      ],
+      "shadows": [],
+      "note": "更多依赖边框、留白或背景块建立层级"
+    },
+    "table_card_list_density": "高密度：适合后台、表格、筛选和批量处理场景",
+    "state_design": "loading / empty / error / disabled / status badges",
+    "why_professional": "首屏层级清晰，标题和操作区有明确优先级；导航结构可扫描，用户能快速判断当前位置和下一步；内容被稳定容器组织，密度和留白相对克制；颜色主要服务于状态、品牌和行动强调，没有把所有信息都做成同一权重",
+    "reusable_rules_for_codex_ui_designer_kit": [
+      "主要动作和次要动作在视觉权重上分层，避免所有按钮同等强调",
+      "输入区应靠近结果/反馈区，并提供清晰的提交、取消、重试状态",
+      "轻量流程适合列表-详情-提交的短路径，底部导航只放高频任务"
+    ],
+    "risk_notes": [
+      "公开页面采集；未登录、未提交表单、未采集客户数据或密钥"
+    ],
+    "capture_status": "captured",
+    "capture_error": null
+  }
+]
