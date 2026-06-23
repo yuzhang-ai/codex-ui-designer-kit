@@ -1,0 +1,163 @@
+{
+  "target": "file:///D:/Users/Desktop/zhangyu/Codex%20UI%20Designer%20Kit/examples/ugly-saas-dashboard/original.html",
+  "desktop": {
+    "title": "Ugly SaaS Dashboard Prototype",
+    "url": "file:///D:/Users/Desktop/zhangyu/Codex%20UI%20Designer%20Kit/examples/ugly-saas-dashboard/original.html",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "bodyTextLength": 705,
+    "bodyTextSample": "Customer Success Super Ultra Dashboard Everything everywhere all at once for managers and teams and exports and reports. Export All Customers Delete Send Email Blast Refresh Settings Invite Total accounts 12839 No period, no comparison, no ",
+    "horizontalScroll": false,
+    "scrollWidth": 1440,
+    "textOverflow": [],
+    "smallButtons": [
+      {
+        "tag": "button",
+        "text": "Export All Customers",
+        "width": 119,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Delete",
+        "width": 48,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Send Email Blast",
+        "width": 100,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Refresh",
+        "width": 55,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Settings",
+        "width": 56,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Invite",
+        "width": 42,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "delete and email",
+        "width": 97,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "open",
+        "width": 40,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "do stuff",
+        "width": 52,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "go",
+        "width": 28,
+        "height": 20
+      }
+    ],
+    "blockingFixed": [],
+    "hasMain": false,
+    "screenshotPath": "D:\\Users\\Desktop\\zhangyu\\Codex UI Designer Kit\\examples\\ugly-saas-dashboard\\.design\\screenshots\\before-desktop.png",
+    "screenshotBytes": 533555,
+    "blankRisk": false
+  },
+  "mobile": {
+    "title": "Ugly SaaS Dashboard Prototype",
+    "url": "file:///D:/Users/Desktop/zhangyu/Codex%20UI%20Designer%20Kit/examples/ugly-saas-dashboard/original.html",
+    "viewport": {
+      "width": 1100,
+      "height": 2378
+    },
+    "bodyTextLength": 705,
+    "bodyTextSample": "Customer Success Super Ultra Dashboard Everything everywhere all at once for managers and teams and exports and reports. Export All Customers Delete Send Email Blast Refresh Settings Invite Total accounts 12839 No period, no comparison, no ",
+    "horizontalScroll": false,
+    "scrollWidth": 1100,
+    "textOverflow": [],
+    "smallButtons": [
+      {
+        "tag": "button",
+        "text": "Export All Customers",
+        "width": 119,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Delete",
+        "width": 48,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Send Email Blast",
+        "width": 100,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Refresh",
+        "width": 55,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Settings",
+        "width": 56,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "Invite",
+        "width": 42,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "delete and email",
+        "width": 97,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "open",
+        "width": 40,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "do stuff",
+        "width": 52,
+        "height": 20
+      },
+      {
+        "tag": "button",
+        "text": "go",
+        "width": 28,
+        "height": 20
+      }
+    ],
+    "blockingFixed": [],
+    "hasMain": false,
+    "screenshotPath": "D:\\Users\\Desktop\\zhangyu\\Codex UI Designer Kit\\examples\\ugly-saas-dashboard\\.design\\screenshots\\before-mobile.png",
+    "screenshotBytes": 132537,
+    "blankRisk": false
+  }
+}

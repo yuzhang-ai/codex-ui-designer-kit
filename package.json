@@ -1,0 +1,15 @@
+{
+  "name": "codex-ui-designer-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reusable UI upgrade kit for turning rough Codex prototypes into product-grade interfaces.",
+  "scripts": {
+    "visual:audit": "node scripts/visual-audit.mjs",
+    "visual:compare": "node scripts/compare-before-after.mjs",
+    "ui:report": "node scripts/generate-ui-report.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

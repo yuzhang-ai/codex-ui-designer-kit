@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Success Dashboard</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #172033;
+      --muted: #637083;
+      --line: #dfe4ec;
+      --brand: #2563eb;
+      --brand-strong: #1d4ed8;
+      --success: #0f9f6e;
+      --warning: #b7791f;
+      --danger: #c2410c;
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 248px minmax(0, 1fr);
+    }
+    aside {
+      background: #101827;
+      color: #dbe4f0;
+      padding: 20px 16px;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 17px;
+      margin-bottom: 24px;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 40px;
+      padding: 0 12px;
+      border-radius: 6px;
+      color: #b9c4d4;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav a.active {
+      color: #fff;
+      background: rgba(255,255,255,.1);
+    }
+    main { min-width: 0; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 28px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    button, .button {
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .primary {
+      border-color: var(--brand);
+      background: var(--brand);
+      color: white;
+    }
+    .primary:hover { background: var(--brand-strong); }
+    .danger {
+      border-color: #fed7aa;
+      color: var(--danger);
+      background: #fff7ed;
+    }
+    .content {
+      padding: 24px 28px 40px;
+      display: grid;
+      gap: 18px;
+    }
+    .filters {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) repeat(3, minmax(130px, 180px));
+      gap: 12px;
+      padding: 14px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    input, select {
+      width: 100%;
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0 12px;
+      font: inherit;
+      color: var(--ink);
+      background: white;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .metric-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .metric-value {
+      margin-top: 8px;
+      font-size: 28px;
+      font-weight: 750;
+    }
+    .metric-note {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .positive { color: var(--success); }
+    .negative { color: var(--danger); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .panel-title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+    }
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+      text-transform: uppercase;
+    }
+    .customer {
+      font-weight: 650;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 650;
+    }
+    .tag.good { color: #047857; background: #ecfdf5; }
+    .tag.warn { color: #92400e; background: #fffbeb; }
+    .tag.bad { color: #9a3412; background: #fff7ed; }
+    .table-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+    .table-actions button {
+      min-height: 36px;
+      font-size: 13px;
+    }
+    .states {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .state {
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: #fbfcfe;
+      font-size: 13px;
+    }
+    .state strong { display: block; margin-bottom: 4px; }
+    .risk {
+      border-left: 4px solid var(--warning);
+      background: #fffbeb;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #5f3f0b;
+    }
+    @media (max-width: 860px) {
+      .app { grid-template-columns: 1fr; }
+      html, body, .app { max-width: 100%; overflow-x: hidden; }
+      aside {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 12px;
+        max-width: 100vw;
+        overflow: hidden;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      nav a {
+        flex: 1 1 auto;
+        white-space: normal;
+        min-height: 38px;
+      }
+      .brand { margin-bottom: 10px; }
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 16px;
+      }
+      .actions {
+        width: 100%;
+        justify-content: stretch;
+      }
+      .actions button { flex: 1; }
+      .content { padding: 16px; }
+      .filters,
+      .metrics,
+      .states {
+        grid-template-columns: 1fr;
+      }
+      table, thead, tbody, tr, th, td {
+        display: block;
+      }
+      thead { display: none; }
+      tr {
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+      }
+      td {
+        border: 0;
+        padding: 6px 0;
+      }
+      td::before {
+        content: attr(data-label);
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 2px;
+      }
+      .table-actions {
+        justify-content: stretch;
+      }
+      .table-actions button {
+        flex: 1;
+        min-height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <div class="brand">CS Ops</div>
+      <nav aria-label="Main navigation">
+        <a class="active" href="#">Accounts</a>
+        <a href="#">Renewals</a>
+        <a href="#">Tasks</a>
+        <a href="#">Segments</a>
+        <a href="#">Settings</a>
+      </nav>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div>
+          <h1>Customer success dashboard</h1>
+          <p class="subtitle">Mock account health for renewal planning. No real customer data.</p>
+        </div>
+        <div class="actions">
+          <button>Save view</button>
+          <button class="danger">Export needs review</button>
+          <button class="primary">Create follow-up</button>
+        </div>
+      </header>
+      <section class="content">
+        <div class="filters" aria-label="Account filters">
+          <input aria-label="Search accounts" placeholder="Search accounts">
+          <select aria-label="Health"><option>All health</option><option>At risk</option><option>Healthy</option></select>
+          <select aria-label="Owner"><option>All owners</option><option>Chris</option><option>Alex</option></select>
+          <select aria-label="Period"><option>Last 30 days</option><option>This quarter</option></select>
+        </div>
+        <section class="metrics" aria-label="Key metrics">
+          <article class="metric-card"><div class="metric-label">Active accounts</div><div class="metric-value">12,839</div><div class="metric-note positive">+8.2% vs last month</div></article>
+          <article class="metric-card"><div class="metric-label">At-risk renewals</div><div class="metric-value">481</div><div class="metric-note negative">42 need follow-up this week</div></article>
+          <article class="metric-card"><div class="metric-label">Expansion pipeline</div><div class="metric-value">$9.8M</div><div class="metric-note">Weighted pipeline, USD</div></article>
+          <article class="metric-card"><div class="metric-label">Open tasks</div><div class="metric-value">77</div><div class="metric-note">12 overdue, 31 due today</div></article>
+        </section>
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Priority accounts</div>
+              <div class="muted">Sorted by renewal risk and last touch.</div>
+            </div>
+            <button>Review selected</button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Account</th><th>Plan</th><th>Owner</th><th>Health</th><th>Last touch</th><th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Account"><div class="customer">Acme Example Co.</div><div class="muted">Renewal in 18 days</div></td>
+                <td data-label="Plan">Enterprise</td>
+                <td data-label="Owner">Chris</td>
+                <td data-label="Health"><span class="tag warn">Needs review</span></td>
+                <td data-label="Last touch">2 days ago</td>
+                <td data-label="Action"><div class="table-actions"><button>Open</button><button class="primary">Follow up</button></div></td>
+              </tr>
+              <tr>
+                <td data-label="Account"><div class="customer">Northwind Mock Ltd.</div><div class="muted">Usage trending up</div></td>
+                <td data-label="Plan">Team</td>
+                <td data-label="Owner">Alex</td>
+                <td data-label="Health"><span class="tag good">Healthy</span></td>
+                <td data-label="Last touch">Today</td>
+                <td data-label="Action"><div class="table-actions"><button>Open</button><button>Log note</button></div></td>
+              </tr>
+              <tr>
+                <td data-label="Account"><div class="customer">Globex Sample Group</div><div class="muted">Trial expires Friday</div></td>
+                <td data-label="Plan">Trial</td>
+                <td data-label="Owner">Sam</td>
+                <td data-label="Health"><span class="tag bad">At risk</span></td>
+                <td data-label="Last touch">9 days ago</td>
+                <td data-label="Action"><div class="table-actions"><button>Open</button><button class="primary">Assign task</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="states" aria-label="State coverage">
+          <div class="state"><strong>Loading</strong>Use skeleton rows while accounts load.</div>
+          <div class="state"><strong>Empty</strong>Explain when filters return no accounts.</div>
+          <div class="state"><strong>Error</strong>Show retry when CRM sync fails.</div>
+          <div class="state"><strong>Disabled</strong>Export is disabled without manager approval.</div>
+        </section>
+        <div class="risk">Human review required before export, bulk email, CRM writeback, or permission changes.</div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

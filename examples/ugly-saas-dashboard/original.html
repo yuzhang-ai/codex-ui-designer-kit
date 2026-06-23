@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ugly SaaS Dashboard Prototype</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 1100px;
+      font-family: "Times New Roman", serif;
+      background: linear-gradient(135deg, #6f00ff, #00e5ff, #ffcc00);
+      color: #111;
+    }
+    .hero {
+      padding: 60px;
+      text-align: center;
+      color: white;
+      text-shadow: 0 3px 10px rgba(0,0,0,.5);
+    }
+    h1 { font-size: 72px; margin: 0 0 20px; letter-spacing: -4px; }
+    .subtitle { font-size: 28px; }
+    .toolbar {
+      margin: 20px auto;
+      width: 1000px;
+      padding: 24px;
+      background: rgba(255,255,255,.45);
+      border-radius: 32px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.3);
+    }
+    button {
+      margin: 4px;
+      padding: 4px 8px;
+      border: 0;
+      border-radius: 99px;
+      background: #ff00c8;
+      color: white;
+      font-size: 11px;
+      cursor: pointer;
+    }
+    .cards {
+      display: flex;
+      gap: 8px;
+      width: 1080px;
+      margin: 16px auto;
+    }
+    .card {
+      flex: 1;
+      min-height: 150px;
+      padding: 18px;
+      border-radius: 28px;
+      background: white;
+      box-shadow: inset 0 0 40px rgba(255,0,200,.3);
+    }
+    .card:nth-child(2) { background: #fffb8f; }
+    .card:nth-child(3) { background: #9bffb5; }
+    .card:nth-child(4) { background: #ffc3c3; }
+    .metric { font-size: 44px; font-weight: 800; }
+    table {
+      width: 1080px;
+      margin: 20px auto 80px;
+      border-collapse: collapse;
+      background: white;
+      font-size: 11px;
+    }
+    th, td { border: 3px dashed #ff00c8; padding: 5px; text-align: left; }
+    th { background: #111; color: #fff; }
+    .danger { background: red; color: white; }
+    .tiny { font-size: 9px; color: #777; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Customer Success Super Ultra Dashboard</h1>
+    <p class="subtitle">Everything everywhere all at once for managers and teams and exports and reports.</p>
+  </section>
+  <div class="toolbar">
+    <button>Export All Customers</button>
+    <button>Delete</button>
+    <button>Send Email Blast</button>
+    <button>Refresh</button>
+    <button>Settings</button>
+    <button>Invite</button>
+    <input placeholder="search maybe" style="padding: 3px; width: 90px;">
+  </div>
+  <div class="cards">
+    <div class="card"><div>Total accounts</div><div class="metric">12839</div><p class="tiny">No period, no comparison, no explanation.</p></div>
+    <div class="card"><div>At risk</div><div class="metric">481</div><p class="tiny">Some accounts maybe bad.</p></div>
+    <div class="card"><div>Revenue</div><div class="metric">$9.8M</div><p class="tiny">Not sure which currency or dates.</p></div>
+    <div class="card"><div>Tasks</div><div class="metric">77</div><p class="tiny">Could be due today or all time.</p></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Customer</th><th>Plan</th><th>Owner</th><th>Status</th><th>Last touch</th><th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Acme Example Co.</td><td>Enterprise</td><td>Chris</td><td>maybe ok maybe bad maybe renewal soon</td><td>no idea</td><td><button class="danger">delete and email</button></td></tr>
+      <tr><td>Northwind Mock Ltd.</td><td>Team</td><td>Alex</td><td>yellow</td><td>last month</td><td><button>open</button></td></tr>
+      <tr><td>Globex Sample Group With A Very Very Long Name That Breaks Everything</td><td>Trial</td><td>Sam</td><td>red</td><td>?</td><td><button>do stuff</button></td></tr>
+      <tr><td>Initech Demo</td><td>Free</td><td>Pat</td><td>green</td><td>today</td><td><button>go</button></td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

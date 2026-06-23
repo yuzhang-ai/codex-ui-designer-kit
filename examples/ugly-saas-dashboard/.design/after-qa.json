@@ -1,0 +1,41 @@
+{
+  "target": "file:///D:/Users/Desktop/zhangyu/Codex%20UI%20Designer%20Kit/examples/ugly-saas-dashboard/improved.html",
+  "desktop": {
+    "title": "Customer Success Dashboard",
+    "url": "file:///D:/Users/Desktop/zhangyu/Codex%20UI%20Designer%20Kit/examples/ugly-saas-dashboard/improved.html",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "bodyTextLength": 1086,
+    "bodyTextSample": "CS Ops Accounts Renewals Tasks Segments Settings Customer success dashboard Mock account health for renewal planning. No real customer data. Save view Export needs review Create follow-up All health At risk Healthy All owners Chris Alex Las",
+    "horizontalScroll": false,
+    "scrollWidth": 1440,
+    "textOverflow": [],
+    "smallButtons": [],
+    "blockingFixed": [],
+    "hasMain": true,
+    "screenshotPath": "D:\\Users\\Desktop\\zhangyu\\Codex UI Designer Kit\\examples\\ugly-saas-dashboard\\.design\\screenshots\\after-desktop.png",
+    "screenshotBytes": 95335,
+    "blankRisk": false
+  },
+  "mobile": {
+    "title": "Customer Success Dashboard",
+    "url": "file:///D:/Users/Desktop/zhangyu/Codex%20UI%20Designer%20Kit/examples/ugly-saas-dashboard/improved.html",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "bodyTextLength": 1042,
+    "bodyTextSample": "CS Ops Accounts Renewals Tasks Segments Settings Customer success dashboard Mock account health for renewal planning. No real customer data. Save view Export needs review Create follow-up All health At risk Healthy All owners Chris Alex Las",
+    "horizontalScroll": false,
+    "scrollWidth": 390,
+    "textOverflow": [],
+    "smallButtons": [],
+    "blockingFixed": [],
+    "hasMain": true,
+    "screenshotPath": "D:\\Users\\Desktop\\zhangyu\\Codex UI Designer Kit\\examples\\ugly-saas-dashboard\\.design\\screenshots\\after-mobile.png",
+    "screenshotBytes": 39316,
+    "blankRisk": false
+  }
+}
