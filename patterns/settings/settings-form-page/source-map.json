@@ -1,0 +1,28 @@
+{
+  "pattern_id": "settings/settings-form-page",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "shadcn/ui forms",
+      "url": "https://ui.shadcn.com/docs/forms",
+      "role": "form architecture and framework choices",
+      "license": "MIT via shadcn-ui/ui repository",
+      "copy_policy": "Use field structure and validation approach; adapt to target form library."
+    },
+    {
+      "name": "Origin UI",
+      "url": "https://github.com/shadcn/originui",
+      "role": "copy-paste React/Tailwind app UI components for settings controls",
+      "license": "MIT",
+      "copy_policy": "Use component-level ideas; normalize tokens with target design system."
+    }
+  ],
+  "local_references": [
+    "references/saas-dashboard-ui.md",
+    "checklists/product-ui-risk-checklist.md"
+  ],
+  "risk_flags": [
+    "Never commit real API keys or webhook URLs.",
+    "Permission changes and danger-zone actions need confirmation."
+  ]
+}

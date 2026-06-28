@@ -1,0 +1,36 @@
+{
+  "pattern_id": "data-table/faceted-filter-table",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "openstatusHQ/data-table-filters",
+      "url": "https://github.com/openstatusHQ/data-table-filters",
+      "role": "faceted filters, sorting, infinite scroll, row detail side panel, URL/store adapters",
+      "license": "MIT",
+      "copy_policy": "Copy schema and component ideas with license notice; adapt columns and data fetching."
+    },
+    {
+      "name": "OpenStatus data-table docs",
+      "url": "https://data-table.openstatus.dev/docs/introduction",
+      "role": "end-to-end table schema, filters, columns, row details",
+      "license": "MIT via repository",
+      "copy_policy": "Use docs to map target fields to schema."
+    },
+    {
+      "name": "shadcn/ui data table",
+      "url": "https://ui.shadcn.com/docs/components/data-table",
+      "role": "TanStack Table baseline with sorting, filtering, visibility and row selection",
+      "license": "MIT via shadcn-ui/ui repository",
+      "copy_policy": "Use component structure; keep target app table behavior."
+    }
+  ],
+  "local_references": [
+    "references/saas-dashboard-ui.md",
+    "references/crm-customer-ops-ui.md",
+    "references/data-dashboard-ui.md"
+  ],
+  "risk_flags": [
+    "High-risk bulk actions need confirmation.",
+    "Do not expose real customer data in screenshots."
+  ]
+}

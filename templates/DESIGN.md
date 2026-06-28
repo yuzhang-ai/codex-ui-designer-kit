@@ -3,9 +3,18 @@
 ## Product Type
 
 - Type:
+- Main business object:
+- Selected recipe:
 - Reference files:
+- Selected patterns:
 - User role:
 - Primary task:
+
+## Pattern Commitments
+
+| Pattern | Where It Applies | What To Imitate | What Not To Copy |
+|---|---|---|---|
+|  |  |  |  |
 
 ## Design Goals
 
@@ -66,4 +75,5 @@
 - Files to edit:
 - Files to avoid:
 - Existing design patterns to preserve:
-
+- Pattern files to keep open while editing:
+- License / source constraints:

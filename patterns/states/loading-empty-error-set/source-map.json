@@ -1,0 +1,29 @@
+{
+  "pattern_id": "states/loading-empty-error-set",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "Internal state pattern",
+      "url": "checklists/ui-audit-checklist.md",
+      "role": "state coverage requirements",
+      "license": "project-local documentation",
+      "copy_policy": "Use freely inside UI Designer Kit workflows."
+    },
+    {
+      "name": "shadcn/ui components",
+      "url": "https://ui.shadcn.com/docs/components/sidebar",
+      "role": "component catalog including Empty, Skeleton, Spinner, Alert and related primitives",
+      "license": "MIT via shadcn-ui/ui repository",
+      "copy_policy": "Use primitives according to target project conventions."
+    }
+  ],
+  "local_references": [
+    "checklists/ui-audit-checklist.md",
+    "checklists/visual-qa-checklist.md",
+    "templates/VISUAL_SCORECARD.md"
+  ],
+  "risk_flags": [
+    "Do not treat visual state as business confirmation.",
+    "High-risk states must block side effects until confirmed."
+  ]
+}

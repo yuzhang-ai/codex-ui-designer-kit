@@ -1,0 +1,29 @@
+{
+  "pattern_id": "crm/customer-list-detail",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "Internal composite pattern",
+      "url": "samples/analysis/crm-customer-ops-notes.md",
+      "role": "business object and risk extraction from public CRM samples",
+      "license": "project-local documentation",
+      "copy_policy": "Use structure only; never copy customer data or private screenshots."
+    },
+    {
+      "name": "shadcn/ui data table",
+      "url": "https://ui.shadcn.com/docs/components/data-table",
+      "role": "table baseline for customer list",
+      "license": "MIT via shadcn-ui/ui repository",
+      "copy_policy": "Adapt table fields and row actions."
+    }
+  ],
+  "local_references": [
+    "references/crm-customer-ops-ui.md",
+    "checklists/customer-data-safety-checklist.md",
+    "samples/analysis/crm-customer-ops-notes.md"
+  ],
+  "risk_flags": [
+    "Use mock data by default.",
+    "Human review required for customer exports, writebacks and outbound messages."
+  ]
+}

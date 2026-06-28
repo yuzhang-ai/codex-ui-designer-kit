@@ -1,0 +1,29 @@
+{
+  "pattern_id": "app-shell/shadcn-dashboard-shell",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "shadcn/ui blocks",
+      "url": "https://ui.shadcn.com/blocks",
+      "role": "dashboard shell, sidebar, section cards, chart, data table composition",
+      "license": "MIT via shadcn-ui/ui repository",
+      "copy_policy": "May copy component structure with license notice; adapt domain data and tokens."
+    },
+    {
+      "name": "shadcn/ui sidebar",
+      "url": "https://ui.shadcn.com/docs/components/sidebar",
+      "role": "composable sidebar foundation",
+      "license": "MIT via shadcn-ui/ui repository",
+      "copy_policy": "Use component API and layout ideas; do not copy brand assets."
+    }
+  ],
+  "local_references": [
+    "references/saas-dashboard-ui.md",
+    "references/crm-customer-ops-ui.md",
+    "references/data-dashboard-ui.md"
+  ],
+  "risk_flags": [
+    "Check target project shadcn/ui version before copying.",
+    "Do not import demo auth, billing, or mock datasets blindly."
+  ]
+}

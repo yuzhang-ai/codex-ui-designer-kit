@@ -2,7 +2,13 @@
 
 Codex UI Designer Kit helps Codex turn rough but working prototypes into product-grade UI.
 
-It is built from public UI samples, structured design references, practical checklists, a reusable Codex skill, templates, screenshot QA scripts, and a verified before/after example.
+The kit is no longer just a screenshot/reference/checklist library. The current workflow is:
+
+```text
+recipe -> pattern match -> audit -> design -> code changes -> screenshot QA -> human visual score -> delivery report
+```
+
+Codex must select concrete React / Tailwind / shadcn-oriented patterns before implementation, so the final UI can imitate proven page skeletons instead of relying on abstract design advice.
 
 ## Problem
 
@@ -15,9 +21,10 @@ Codex can quickly build tools, dashboards, demos, and internal apps, but the fir
 - missing loading/empty/error/disabled states,
 - broken mobile layout,
 - no screenshot QA,
-- no risk controls for customer data or external actions.
+- no risk controls for customer data or external actions,
+- no concrete code pattern to imitate.
 
-This kit turns those recurring problems into a repeatable workflow.
+This kit turns those recurring problems into a repeatable, pattern-first workflow.
 
 ## Suitable Scenarios
 
@@ -25,9 +32,9 @@ This kit turns those recurring problems into a repeatable workflow.
 - CRM, customer operations, WeCom/企微 workflows, support or sales tools.
 - AI workbenches, prompt tools, agent UIs.
 - Data dashboards and BI-style reports.
-- H5/mobile forms, reports, campaigns, and lightweight tools.
-- Mini-program-style list/detail/submit workflows.
-- App-style Web UIs with feeds, cards, and persistent navigation.
+- Mobile notes/task apps and app-style Web tools.
+- Settings/forms, account configuration, permissions, API keys and webhooks.
+- State coverage for loading, empty, error, disabled, hover, selected and review-required flows.
 
 ## Not Suitable For
 
@@ -35,20 +42,24 @@ This kit turns those recurring problems into a repeatable workflow.
 - Capturing private dashboards, logged-in pages, customer data, or secrets.
 - Replacing product thinking with visual decoration only.
 - High-risk customer messaging, exports, writebacks, or permission changes without human review.
+- Using React Bits or other micro-interaction libraries as the main skeleton for CRM, dashboards or internal tools.
 
-## Workflow
+## New Workflow
 
 ```mermaid
 flowchart LR
-  A["Rough prototype"] --> B["Identify product type"]
-  B --> C["Read matching references"]
-  C --> D["UI audit"]
-  D --> E["DESIGN.md"]
-  E --> F["Modify implementation"]
-  F --> G["Desktop + mobile screenshot QA"]
-  G --> H{"Issues found?"}
-  H -->|Yes| F
-  H -->|No| I["Delivery report"]
+  A["Rough prototype"] --> B["Identify product type + object"]
+  B --> C["Read recipe"]
+  C --> D["Select 1-3 patterns"]
+  D --> E["PATTERN_MATCH.md"]
+  E --> F["UI_AUDIT.md"]
+  F --> G["DESIGN.md cites patterns"]
+  G --> H["Modify code"]
+  H --> I["Desktop + mobile screenshot QA"]
+  I --> J["VISUAL_SCORECARD.md"]
+  J --> K{"Average >= 4?"}
+  K -->|No| H
+  K -->|Yes| L["UI_DELIVERY_REPORT.md"]
 ```
 
 ## Project Structure
@@ -56,10 +67,24 @@ flowchart LR
 ```text
 .
   AGENTS.md
+  PROJECT_LOG.md
   SKILL.md
   README.md
+  benchmarks/
   checklists/
   examples/
+  patterns/
+    registry.json
+    app-shell/
+    data-table/
+    dashboard/
+    crm/
+    ai-workbench/
+    mobile-app/
+    states/
+    settings/
+    micro-interactions/
+  recipes/
   references/
   samples/
   scripts/
@@ -74,21 +99,37 @@ flowchart LR
    Get-Content -Encoding utf8 -Raw .\SKILL.md
    ```
 
-2. Pick the closest UI type from `references/`.
+2. Identify product type and main business object.
 
-3. Audit the rough prototype with:
+3. Read the matching recipe:
+
+   - `recipes/saas-dashboard.md`
+   - `recipes/crm-customer-ops.md`
+   - `recipes/ai-workbench.md`
+   - `recipes/data-dashboard.md`
+   - `recipes/mobile-notes-app.md`
+
+4. Read `patterns/registry.json` and select 1-3 patterns.
+
+5. Generate `PATTERN_MATCH.md` from:
+
+   - `templates/PATTERN_MATCH.md`
+
+6. Audit the rough prototype with:
 
    - `templates/UI_AUDIT.md`
    - `checklists/ui-audit-checklist.md`
    - `checklists/product-ui-risk-checklist.md`
 
-4. Write a design plan with:
+7. Write a design plan with:
 
    - `templates/DESIGN.md`
 
-5. Modify the app.
+   `DESIGN.md` must cite specific selected patterns.
 
-6. Run screenshot QA:
+8. Modify the app.
+
+9. Run screenshot QA:
 
    ```powershell
    node .\scripts\visual-audit.mjs --url http://localhost:3000 --name after
@@ -100,38 +141,73 @@ flowchart LR
    node .\scripts\visual-audit.mjs --file .\examples\ugly-saas-dashboard\improved.html --name after --out .\examples\ugly-saas-dashboard\.design
    ```
 
-7. Generate before/after and delivery reports when applicable:
+10. Fill the human visual scorecard:
 
-   ```powershell
-   node .\scripts\compare-before-after.mjs --out .\examples\ugly-saas-dashboard\.design
-   node .\scripts\generate-ui-report.mjs --caseDir .\examples\ugly-saas-dashboard
-   ```
+    - `templates/VISUAL_SCORECARD.md`
 
-## How To Connect This Kit To Another Codex Project
+    Average score below 4 means the UI is not ready for delivery.
 
-Copy or reference these files in the target project:
+11. Generate before/after and delivery reports when applicable:
 
-- `AGENTS.md`
-- `SKILL.md`
-- `references/`
-- `checklists/`
-- `templates/`
-- `scripts/visual-audit.mjs`
+    ```powershell
+    node .\scripts\compare-before-after.mjs --out .\examples\ugly-saas-dashboard\.design
+    node .\scripts\generate-ui-report.mjs --caseDir .\examples\ugly-saas-dashboard
+    ```
 
-Recommended target-project workflow:
+## Pattern Library MVP
 
-1. Start the target app locally.
-2. Ask Codex to use this kit.
-3. Codex identifies the product type.
-4. Codex reads the matching `references/*.md`.
-5. Codex writes `UI_AUDIT.md` and `DESIGN.md`.
-6. Codex edits the UI implementation.
-7. Codex runs screenshot QA.
-8. Codex fixes QA findings and writes `UI_DELIVERY_REPORT.md`.
+The first pattern batch includes:
+
+| Pattern | Best For |
+|---|---|
+| `app-shell/shadcn-dashboard-shell` | SaaS dashboard, CRM, internal tools |
+| `app-shell/vite-shadcn-admin-shell` | Vite React admin shells |
+| `data-table/faceted-filter-table` | Filterable tables, CRM lists, logs |
+| `dashboard/tremor-kpi-chart-grid` | KPI dashboards and chart grids |
+| `crm/customer-list-detail` | Customer list + detail + timeline |
+| `ai-workbench/chat-history-runner` | AI chat, agent and prompt runners |
+| `mobile-app/notes-workbench` | Mobile notes/tasks and lightweight app UI |
+| `states/loading-empty-error-set` | State coverage across all product types |
+| `settings/settings-form-page` | Settings, forms, permissions, API config |
+| `micro-interactions/react-bits-empty-state` | Optional empty/running micro-interactions |
+
+Each pattern contains:
+
+- `pattern.md`
+- `source-map.json`
+- `code/README.md`
+
+## Open Source References
+
+The pattern library references public, license-clear sources and extracts structure rather than copying whole repositories:
+
+- [shadcn/ui blocks](https://ui.shadcn.com/blocks)
+- [shadcn-admin](https://github.com/satnaing/shadcn-admin)
+- [next-shadcn-dashboard-starter](https://github.com/Kiranism/next-shadcn-dashboard-starter)
+- [OpenStatus data-table-filters](https://github.com/openstatusHQ/data-table-filters)
+- [Tremor](https://github.com/tremorlabs/tremor)
+- [Origin UI](https://github.com/shadcn/originui)
+- [React Bits](https://reactbits.dev/)
+
+React Bits is treated as a micro-interaction reference only. Its repository license is MIT + Commons Clause, so copying or redistributing components requires extra review.
+
+## Sample Quality
+
+The original sample library remains useful, but it is no longer the only source of truth.
+
+- `samples/analysis/*.md` has been repaired to UTF-8 Chinese.
+- `samples/SAMPLE_QUALITY_REPORT.md` classifies samples as `strong-reference`, `visual-only`, `weak-sample`, or `code-backed`.
+- `weak-sample` entries should not drive design decisions.
+- `visual-only` entries can inform visual rhythm but not code structure.
+- `code-backed` entries should be mapped to `patterns/`.
+
+## Project Log
+
+See `PROJECT_LOG.md` for the evolution from the original sample-driven idea, through `docs/optimization-roadmap.md`, to the current pattern-first workflow and GitHub publication notes.
 
 ## Running Screenshot QA
 
-`scripts/visual-audit.mjs` is the MVP QA tool.
+`scripts/visual-audit.mjs` is the mechanical QA tool.
 
 It checks:
 
@@ -155,26 +231,7 @@ Output:
 
 The tool uses a temporary Chrome profile. It does not read your logged-in browser profile.
 
-## Example
-
-See `examples/ugly-saas-dashboard/`.
-
-It includes:
-
-- `original.html` - rough prototype.
-- `.design/screenshots/before-desktop.png`
-- `.design/screenshots/before-mobile.png`
-- `UI_AUDIT.md`
-- `DESIGN.md`
-- `improved.html` - improved product UI.
-- `.design/screenshots/after-desktop.png`
-- `.design/screenshots/after-mobile.png`
-- `.design/UI_QA_REPORT.md`
-- `.design/BEFORE_AFTER_REPORT.md`
-- `BEFORE_AFTER.md`
-- `UI_DELIVERY_REPORT.md`
-
-The after version improves layout, information architecture, KPI clarity, table scanability, state coverage, risk controls, and mobile responsiveness.
+Mechanical QA is not enough. You must also fill `VISUAL_SCORECARD.md`.
 
 ## Data Safety And Human Review
 
@@ -193,19 +250,20 @@ When in doubt, stop before the external side effect and ask for confirmation.
 
 ## Current Status
 
-- Stage 1 sample library: complete.
-- Stage 2 structured references: complete.
-- Stage 3 checklists: complete.
-- Stage 4 Codex skill: complete.
-- Stage 5 onboarding templates and AGENTS instructions: complete.
-- Stage 6 visual QA MVP scripts: complete.
-- Stage 7 before/after example: complete.
+- Stage 1 sample library: repaired and quality-ranked.
+- Stage 2 structured references: retained.
+- Stage 3 checklists: retained.
+- Stage 4 pattern library MVP: complete.
+- Stage 5 recipes: complete.
+- Stage 6 pattern-first skill workflow: complete.
+- Stage 7 screenshot QA MVP: retained.
+- Stage 8 human visual scorecard: added.
+- Stage 9 benchmark rules: added.
 
 ## Future Enhancements
 
-- Add interactive state capture for hover, selected, modal, empty, error, and disabled states.
+- Add runnable benchmark projects for CRM, AI workbench, data dashboard, mobile notes and settings.
 - Add component-level visual diff.
-- Add framework-specific adapters for Next.js, Vite, React, Vue, and Svelte.
+- Add token extraction for color, font size, spacing and radius consistency.
+- Add framework adapters for Next.js, Vite, React, Vue and Svelte.
 - Add richer accessibility checks.
-- Add more verified examples for AI workbench, CRM, and mobile form flows.
-

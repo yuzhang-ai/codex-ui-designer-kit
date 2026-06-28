@@ -1,0 +1,29 @@
+{
+  "pattern_id": "micro-interactions/react-bits-empty-state",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "React Bits",
+      "url": "https://reactbits.dev/",
+      "role": "animated React component reference for empty/running states",
+      "license": "MIT + Commons Clause according to repository license file",
+      "copy_policy": "Reference interaction ideas by default; copy source only after license review."
+    },
+    {
+      "name": "React Bits license",
+      "url": "https://github.com/DavidHDev/react-bits/blob/main/LICENSE.md",
+      "role": "license risk verification",
+      "license": "MIT + Commons Clause",
+      "copy_policy": "Do not sell, sublicense or redistribute the components themselves without review."
+    }
+  ],
+  "local_references": [
+    "references/ai-workbench-ui.md",
+    "references/app-style-web-ui.md",
+    "templates/VISUAL_SCORECARD.md"
+  ],
+  "risk_flags": [
+    "Use only as micro-interaction, not product skeleton.",
+    "License review required before copying into redistributable products."
+  ]
+}

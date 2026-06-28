@@ -1,0 +1,29 @@
+{
+  "pattern_id": "mobile-app/notes-workbench",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "Internal composite pattern",
+      "url": "samples/analysis/app-style-web-ui-notes.md",
+      "role": "app shell, feed, productivity object and mobile behavior extraction",
+      "license": "project-local documentation",
+      "copy_policy": "Use structure only; do not copy app brand assets."
+    },
+    {
+      "name": "Mobile and mini-program references",
+      "url": "samples/analysis/mini-program-patterns-notes.md",
+      "role": "mobile list-detail-submit-result flow",
+      "license": "project-local documentation",
+      "copy_policy": "Translate interaction principles, not platform-specific assets."
+    }
+  ],
+  "local_references": [
+    "references/app-style-web-ui.md",
+    "references/h5-mobile-web-ui.md",
+    "references/mini-program-patterns-ui.md"
+  ],
+  "risk_flags": [
+    "Mobile QA required at 390x844.",
+    "Sharing/export/delete actions require confirmation."
+  ]
+}

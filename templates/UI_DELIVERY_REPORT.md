@@ -3,6 +3,8 @@
 ## Summary
 
 - Product type:
+- Recipe:
+- Patterns used:
 - What changed:
 - Current status:
 
@@ -24,6 +26,8 @@
 - Desktop screenshot:
 - Mobile screenshot:
 - QA report:
+- Visual scorecard:
+- Average visual score:
 - Passed:
 - Failed:
 
@@ -35,6 +39,7 @@
 - States:
 - Mobile responsiveness:
 - Risk controls:
+- Pattern alignment:
 
 ## Human Review Required
 
@@ -47,4 +52,3 @@
 ## Remaining Follow-Ups
 
 - 
-

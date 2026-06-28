@@ -1,0 +1,28 @@
+{
+  "pattern_id": "ai-workbench/chat-history-runner",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "Internal composite pattern",
+      "url": "samples/analysis/ai-workbench-notes.md",
+      "role": "AI workbench task, run state and review-gate extraction",
+      "license": "project-local documentation",
+      "copy_policy": "Use structure only; do not copy logged-in AI product screens."
+    },
+    {
+      "name": "shadcn/ui blocks",
+      "url": "https://ui.shadcn.com/blocks",
+      "role": "shell, input, cards, sheet and state components",
+      "license": "MIT via shadcn-ui/ui repository",
+      "copy_policy": "Use components and layout rhythm; adapt AI-specific state."
+    }
+  ],
+  "local_references": [
+    "references/ai-workbench-ui.md",
+    "samples/analysis/ai-workbench-notes.md"
+  ],
+  "risk_flags": [
+    "AI external side effects require human review.",
+    "Do not expose prompts, attachments or generated customer content in screenshots."
+  ]
+}

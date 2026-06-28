@@ -1,0 +1,35 @@
+{
+  "pattern_id": "dashboard/tremor-kpi-chart-grid",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "Tremor",
+      "url": "https://github.com/tremorlabs/tremor",
+      "role": "copy-paste React components for charts and dashboards",
+      "license": "Apache-2.0",
+      "copy_policy": "Use KPI/chart layout ideas; check license before copying component source."
+    },
+    {
+      "name": "Tremor website",
+      "url": "https://www.tremor.so/",
+      "role": "dashboard and chart component behavior reference",
+      "license": "Apache-2.0 via repository for core components",
+      "copy_policy": "Use as component behavior reference, not brand reference."
+    },
+    {
+      "name": "shadcn/ui charts",
+      "url": "https://ui.shadcn.com/charts",
+      "role": "Recharts-based chart snippets",
+      "license": "MIT via shadcn-ui/ui repository",
+      "copy_policy": "Adapt chart snippets to target data model."
+    }
+  ],
+  "local_references": [
+    "references/data-dashboard-ui.md",
+    "samples/analysis/data-dashboard-notes.md"
+  ],
+  "risk_flags": [
+    "Manual review required for external-facing metrics.",
+    "Do not invent KPI values when target data is missing."
+  ]
+}

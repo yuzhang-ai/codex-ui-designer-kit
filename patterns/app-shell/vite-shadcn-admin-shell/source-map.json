@@ -1,0 +1,28 @@
+{
+  "pattern_id": "app-shell/vite-shadcn-admin-shell",
+  "verified_at": "2026-06-25",
+  "sources": [
+    {
+      "name": "satnaing/shadcn-admin",
+      "url": "https://github.com/satnaing/shadcn-admin",
+      "role": "Vite React admin shell with sidebar, command search, theme and multiple pages",
+      "license": "MIT",
+      "copy_policy": "Extract shell patterns only; avoid whole-repo copying unless explicitly intended."
+    },
+    {
+      "name": "next-shadcn-dashboard-starter",
+      "url": "https://github.com/Kiranism/next-shadcn-dashboard-starter",
+      "role": "feature-based admin structure comparison",
+      "license": "MIT",
+      "copy_policy": "Use as architecture reference when target is Next.js; do not mix framework assumptions."
+    }
+  ],
+  "local_references": [
+    "references/saas-dashboard-ui.md",
+    "references/app-style-web-ui.md"
+  ],
+  "risk_flags": [
+    "Do not import auth or billing assumptions without product confirmation.",
+    "Check target framework before applying Vite-specific structure."
+  ]
+}
