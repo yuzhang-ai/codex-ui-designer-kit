@@ -1,0 +1,18 @@
+import {spawnSync} from 'node:child_process';
+import {promises as fs} from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const out=path.resolve(root, process.argv[2] || 'examples/ai-workbench-review/.design/current-run');
+const relative=path.relative(root,out);
+if(relative.startsWith('..') || path.isAbsolute(relative)) throw new Error('Evidence must stay inside this checkout');
+const result=spawnSync(process.execPath,['--test','--test-reporter=tap',path.join(root,'tests/ai-workbench-contract.test.mjs')],{cwd:root,encoding:'utf8',timeout:30000});
+await fs.mkdir(out,{recursive:true});
+await fs.writeFile(path.join(out,'contract-tests.txt'), result.stdout + result.stderr, 'utf8');
+const passed=Number(result.stdout.match(/# pass (\d+)/)?.[1] || 0);
+const total=Number(result.stdout.match(/# tests (\d+)/)?.[1] || 0);
+const failed=Number(result.stdout.match(/# fail (\d+)/)?.[1] || 0);
+const evidence={status:result.status===0 && total>0 && passed===total && failed===0?'Candidate':'Failed', exitCode:result.status, total, passed, failed, timestamp:new Date().toISOString(), runtime:process.version, evidenceLevel:'synthetic in-process state contract', browser:'not executed: playbook/contract extension, no new UI', realModel:'not executed', externalWrite:'not executed', humanScore:'pending', fixtures:'newly authored synthetic document only'};
+await fs.writeFile(path.join(out,'verification.json'),JSON.stringify(evidence,null,2),'utf8');
+console.log(JSON.stringify(evidence,null,2));
+process.exitCode=evidence.status==='Candidate'?0:1;

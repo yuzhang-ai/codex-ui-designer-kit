@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Reusable UI upgrade kit for turning rough Codex prototypes into product-grade interfaces.",
+  "description": "Guide Codex to design and implement coherent product page sets for users without design experience, from ideas or existing UI.",
   "scripts": {
     "visual:audit": "node scripts/visual-audit.mjs",
     "visual:compare": "node scripts/compare-before-after.mjs",
-    "ui:report": "node scripts/generate-ui-report.mjs"
+    "ui:report": "node scripts/generate-ui-report.mjs",
+    "test": "node --test tests/*.test.mjs"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   }
 }

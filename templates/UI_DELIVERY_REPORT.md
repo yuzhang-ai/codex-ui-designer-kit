@@ -2,6 +2,7 @@
 
 ## Summary
 
+- Mode: New product / Redesign / Local refinement
 - Product type:
 - Recipe:
 - Patterns used:
@@ -14,7 +15,18 @@
 |---|---|
 |  |  |
 
-## Before / After
+## Page Set And Task Acceptance
+
+| Page / Main Flow | Implemented Scope | Data Boundary | Verified Evidence | Unknown / Gap |
+|---|---|---|---|---|
+|  |  |  |  |  |
+
+- Startup command and runtime prerequisites:
+- Save / refresh / cross-page consistency:
+
+## Screenshots (Before only for existing UI)
+
+For new builds mark Before as N/A; never invent a prior state.
 
 | View | Before | After |
 |---|---|---|
@@ -27,7 +39,9 @@
 - Mobile screenshot:
 - QA report:
 - Visual scorecard:
-- Average visual score:
+- Agent self-review (if any):
+- Human review: reviewer / result / not reviewed
+- Average visual score (identify reviewer; N/A if unscored):
 - Passed:
 - Failed:
 

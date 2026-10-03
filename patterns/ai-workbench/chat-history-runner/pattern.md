@@ -38,7 +38,7 @@
 - running：显示步骤、日志摘要、取消/停止。
 - error：失败原因、重试、修改输入建议。
 - disabled：模型不可用、权限不足、上下文缺失。
-- needs-review：外部发送、写库、改代码、导出前等待确认。
+- needs-review：实际后果和当前授权要求审核时等待确认。
 - accepted：结果已应用后显示回滚或查看变更。
 
 ## 响应式规则
@@ -58,7 +58,7 @@
 1. 判断 AI 类型：chat、agent、generator、search。
 2. 把现有输入/输出拆为 composer、run status、output。
 3. 明确哪些动作只是本地预览，哪些会产生外部副作用。
-4. 对外部副作用接入 `ReviewGate`。
+4. 对确需审核的副作用复用宿主审核机制，见 `references/interaction-contracts.md`（Kit根目录）。
 
 ## 可以模仿
 
@@ -76,5 +76,7 @@
 
 ## 人工确认点
 
-- 应用代码、写入数据库、发送消息、群发、导出、发布、删除。
+对确需审核的生成结果应用流程，使用 [reviewable workbench playbook](../../../examples/ai-workbench-review/PLAYBOOK.md) 的 preview/review/apply/readback/undo 流程。unknown 结果先只读核对，不能直接重试写入；accepted 必须有目标读回证据。该示例仅为合成机器契约，不证明真实模型或宿主功能。
+
+- 按实际对象、后果和既有授权决定；普通本地可逆编辑/下载不统一加确认。
 - AI 生成的外部文案、日期、链接、收件人。

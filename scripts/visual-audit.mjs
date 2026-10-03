@@ -3,6 +3,7 @@ import { promises as fs } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { assessViewport } from './qa-contract.mjs';
 
 const desktopViewport = { width: 1440, height: 1000 };
 const mobileViewport = { width: 390, height: 844 };
@@ -228,6 +229,7 @@ async function captureAndAudit(page, url, viewport, mobile, outPath) {
   await applyViewport(page, viewport, mobile);
   await navigate(page, url);
   const qa = await evaluate(page, qaExpression);
+  Object.assign(qa, assessViewport(qa, viewport));
   const shot = await page.send('Page.captureScreenshot', {
     format: 'png',
     captureBeyondViewport: false,
@@ -264,6 +266,7 @@ Target: ${url}
 
 - ${statusIcon(!desktop.blankRisk)} blank / loading risk: body text ${desktop.bodyTextLength}, screenshot ${desktop.screenshotBytes} bytes
 - ${statusIcon(!desktop.horizontalScroll)} horizontal scroll: scrollWidth ${desktop.scrollWidth}, viewport ${desktop.viewport.width}
+- ${statusIcon(!desktop.layoutViewportMismatch)} requested viewport: ${desktop.expectedViewport.width}, measured layout viewport: ${desktop.viewport.width}
 - ${statusIcon(desktop.textOverflow.length === 0)} text overflow candidates: ${desktop.textOverflow.length}
 - ${statusIcon(desktop.smallButtons.length === 0)} small button candidates: ${desktop.smallButtons.length}
 - ${statusIcon(desktop.blockingFixed.length === 0)} large fixed overlay candidates: ${desktop.blockingFixed.length}
@@ -272,6 +275,7 @@ Target: ${url}
 
 - ${statusIcon(!mobile.blankRisk)} blank / loading risk: body text ${mobile.bodyTextLength}, screenshot ${mobile.screenshotBytes} bytes
 - ${statusIcon(!mobile.horizontalScroll)} horizontal scroll: scrollWidth ${mobile.scrollWidth}, viewport ${mobile.viewport.width}
+- ${statusIcon(!mobile.layoutViewportMismatch)} requested viewport: ${mobile.expectedViewport.width}, measured layout viewport: ${mobile.viewport.width}
 - ${statusIcon(mobile.textOverflow.length === 0)} text overflow candidates: ${mobile.textOverflow.length}
 - ${statusIcon(mobile.smallButtons.length === 0)} small button candidates: ${mobile.smallButtons.length}
 - ${statusIcon(mobile.blockingFixed.length === 0)} large fixed overlay candidates: ${mobile.blockingFixed.length}
@@ -305,14 +309,16 @@ ${listItems(mobile.blockingFixed, item => `- ${item.tag}: "${item.text}" (${item
 - Confirm screenshots do not contain customer data, secrets, internal URLs, or account information.
 - Confirm external links, export, bulk-send, writeback, delete, and permission actions are protected by human review when present.
 `;
-  const reportPath = path.join(outDir, 'UI_QA_REPORT.md');
+  const reportPath = path.join(outDir, `${name}-UI_QA_REPORT.md`);
+  await fs.writeFile(path.join(outDir, 'UI_QA_REPORT.md'), report, 'utf8');
   const jsonPath = path.join(outDir, `${name}-qa.json`);
   await fs.writeFile(reportPath, report, 'utf8');
-  await fs.writeFile(jsonPath, JSON.stringify({ target: url, desktop, mobile }, null, 2), 'utf8');
+  await fs.writeFile(jsonPath, JSON.stringify({ schemaVersion: 1, capturedAt: new Date().toISOString(), runtime: process.version, target: url, desktop, mobile }, null, 2), 'utf8');
   return { reportPath, jsonPath };
 }
 
 async function main() {
+  if (typeof WebSocket !== 'function') throw new Error('Node.js >=22 with global WebSocket is required. Check node --version; no browser was launched.');
   const args = parseArgs(process.argv.slice(2));
   const input = args.url || args.file;
   if (!input) throw new Error('Usage: node scripts/visual-audit.mjs --url <url> OR --file <html-path> [--name after] [--out .design]');

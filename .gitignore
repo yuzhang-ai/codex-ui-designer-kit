@@ -37,4 +37,5 @@ temp/
 .tmp/
 chrome-profile/
 browser-profile/
+.local-evidence/
 

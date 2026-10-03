@@ -1,269 +1,153 @@
 # Codex UI Designer Kit
 
-Codex UI Designer Kit helps Codex turn rough but working prototypes into product-grade UI.
+### 说清楚你想做什么，设计判断交给 Skill。
 
-The kit is no longer just a screenshot/reference/checklist library. The current workflow is:
+让没有设计经验的人，通过 Codex 把产品想法或粗糙 demo 做成一套清楚、一致、可操作的页面。
+
+你不用先懂字体搭配、栅格、骨架屏或转场术语。描述用户、任务与想要的感觉，Kit 会引导 Codex 规划页面、选择视觉方向、实现交互，再通过真实页面检查迭代。
+
+[看案例](#三个案例) · [开始使用](#开始使用) · [Skill入口](SKILL.md) · [验证记录](docs/showcase-validation.md)
+
+![研读桌：由自然语言需求生成的阅读笔记页面](docs/assets/showcase/reading-desktop.jpg)
+
+> **当前阶段：候选版本。** 已有本地可运行案例与指定浏览器验证；“产品级”是设计和验收目标。案例 AI 为本地模拟，真人审美仍待验证。
+
+## 它能帮你做什么
+
+| 你现在的情况 | 交给 Kit 的输入 | Codex 应交付什么 |
+|---|---|---|
+| 只有一个产品想法 | 谁用、要完成什么、想要什么感觉 | 必要页面、统一视觉规范、可运行主流程 |
+| 已经有一个小 demo | 现有代码或运行入口、哪里不好用 | 保留原行为与数据的改造，以及前后对比 |
+| 只想调整一个区域 | 指定页面或组件、期望变化 | 沿用现有设计系统的局部优化 |
+| 说不出效果的名字 | “生成时别空着”“详情别突然跳出来” | 白话解释、适合的方案，必要时提供比较样例 |
+
+它把**设计判断、代码实现、真实验收**串在一起。已有组件和技术栈优先复用，不强制迁移到特定前端框架。
+
+## 三个案例
+
+### 01 · 研读桌：从想法到阅读产品
+
+> “我没有设计经验，希望像一本安静的杂志。粘贴文章后整理要点，能保存、查看和编辑；电脑手机都能用。”
+
+- **设计判断**：用纸白、墨色与朱红建立阅读气质；桌面目录与正文双栏，手机聚焦单个任务。
+- **实际流程**：粘贴 → 模拟整理 → 校订 → 保存 → 列表 → 详情 → 编辑。
+- **交互细节**：等待反馈、取消、原文保留、刷新读回、轻转场及减少动态效果。
+
+<table>
+<tr><td width="72%"><img src="docs/assets/showcase/reading-desktop.jpg" alt="研读桌桌面详情，目录与阅读区域分开"></td><td width="28%"><img src="docs/assets/showcase/reading-mobile.jpg" alt="研读桌手机详情，单列阅读与编辑入口"></td></tr>
+<tr><td>桌面：目录与阅读</td><td>手机：聚焦当前内容</td></tr>
+</table>
+
+[查看源码与运行方法](examples/reading-desk/) · [查看验证与首次修复](docs/showcase-validation.md#1-研读桌从一句需求开始)
+
+### 02 · 投递手记：把能跑的 demo 改成日常工具
+
+> “功能能跑，但像作业。希望变成每天能用的产品，保留原数据和新增、编辑、搜索功能。”
+
+<table>
+<tr><td width="50%"><img src="docs/assets/showcase/applications-before.jpg" alt="改造前：表单与固定宽度表格直接堆放"></td><td width="50%"><img src="docs/assets/showcase/applications-after.jpg" alt="改造后：列表优先、状态筛选与清晰操作层级"></td></tr>
+<tr><td>改造前：功能直接堆在一页</td><td>改造后：按记录和操作组织界面</td></tr>
+</table>
+
+- **保留**：原数据键、字段，以及新增、编辑、搜索、保存能力。
+- **改善**：列表优先、按需编辑、状态筛选；手机转为记录卡片，失败时保留输入。
+- **验证**：先在旧页创建记录，再用新版打开、修改、刷新，确认数据继承与保存。
+
+<details>
+<summary>查看手机布局</summary>
+<br>
+<img src="docs/assets/showcase/applications-mobile.jpg" width="320" alt="投递手记手机卡片列表，保留状态、备注与编辑入口">
+</details>
+
+[查看改造前后源码](examples/application-tracker/) · [查看验证与首次修复](docs/showcase-validation.md#2-投递手记保留功能与数据的改造)
+
+### 03 · 效果体验室：把感觉变成可讨论的设计
+
+> “我不知道这个效果叫什么，但想让它自然一点。”
+
+用同一份内容比较等待反馈、详情切换、排版密度和保存反馈。讨论的是何时使用、怎样帮助任务、有哪些取舍，再决定实现方式。
+
+这是固定交互演示；理解自然语言与推荐方案由 Codex + Skill 完成。体验室本身没有接入模型。
+
+[查看效果体验室](examples/effect-studio/) · [设计对话方法](references/design-dialogue.md) · [效果场景索引](references/effect-patterns.md)
+
+## 开始使用
+
+### 先体验案例
+
+获取仓库后，在根目录执行以下命令（需要 Python）：
+
+```bash
+python -m http.server 8000 --bind 127.0.0.1
+```
+
+在浏览器打开：
+
+- 研读桌：`http://127.0.0.1:8000/examples/reading-desk/`
+- 投递手记：`http://127.0.0.1:8000/examples/application-tracker/`
+- 效果体验室：`http://127.0.0.1:8000/examples/effect-studio/`
+
+GitHub 文件页展示源码，不会直接运行这些 HTML。案例无需前端构建；数据只保存在当前浏览器，不跨设备同步。
+
+### 再用到自己的项目
+
+把本仓库放到 Codex 能读取的位置，指定 `SKILL.md` 和你的目标工程。无需先安装全局 Skill，也无需提供设计术语。
+
+**从零新建**
 
 ```text
-recipe -> pattern match -> audit -> design -> code changes -> screenshot QA -> human visual score -> delivery report
+请读取 UI Designer Kit 的 SKILL.md，在我的项目中做一个阅读笔记工具。
+用户粘贴文章后可以整理、修改和保存要点，手机也能用。
+我希望像一本安静的杂志。先用本地模拟数据实现，说明设计选择并验证主流程。
 ```
 
-Codex must select concrete React / Tailwind / shadcn-oriented patterns before implementation, so the final UI can imitate proven page skeletons instead of relying on abstract design advice.
-
-## Problem
-
-Codex can quickly build tools, dashboards, demos, and internal apps, but the first version often looks like a functional prototype:
-
-- unclear hierarchy,
-- weak navigation,
-- oversized hero sections for tools,
-- inconsistent cards/tables/forms,
-- missing loading/empty/error/disabled states,
-- broken mobile layout,
-- no screenshot QA,
-- no risk controls for customer data or external actions,
-- no concrete code pattern to imitate.
-
-This kit turns those recurring problems into a repeatable, pattern-first workflow.
-
-## Suitable Scenarios
-
-- SaaS dashboards and admin tools.
-- CRM, customer operations, WeCom/企微 workflows, support or sales tools.
-- AI workbenches, prompt tools, agent UIs.
-- Data dashboards and BI-style reports.
-- Mobile notes/task apps and app-style Web tools.
-- Settings/forms, account configuration, permissions, API keys and webhooks.
-- State coverage for loading, empty, error, disabled, hover, selected and review-required flows.
-
-## Not Suitable For
-
-- Copying another company's brand assets or proprietary design.
-- Capturing private dashboards, logged-in pages, customer data, or secrets.
-- Replacing product thinking with visual decoration only.
-- High-risk customer messaging, exports, writebacks, or permission changes without human review.
-- Using React Bits or other micro-interaction libraries as the main skeleton for CRM, dashboards or internal tools.
-
-## New Workflow
-
-```mermaid
-flowchart LR
-  A["Rough prototype"] --> B["Identify product type + object"]
-  B --> C["Read recipe"]
-  C --> D["Select 1-3 patterns"]
-  D --> E["PATTERN_MATCH.md"]
-  E --> F["UI_AUDIT.md"]
-  F --> G["DESIGN.md cites patterns"]
-  G --> H["Modify code"]
-  H --> I["Desktop + mobile screenshot QA"]
-  I --> J["VISUAL_SCORECARD.md"]
-  J --> K{"Average >= 4?"}
-  K -->|No| H
-  K -->|Yes| L["UI_DELIVERY_REPORT.md"]
-```
-
-## Project Structure
+**已有改造**
 
 ```text
-.
-  AGENTS.md
-  PROJECT_LOG.md
-  SKILL.md
-  README.md
-  benchmarks/
-  checklists/
-  examples/
-  patterns/
-    registry.json
-    app-shell/
-    data-table/
-    dashboard/
-    crm/
-    ai-workbench/
-    mobile-app/
-    states/
-    settings/
-    micro-interactions/
-  recipes/
-  references/
-  samples/
-  scripts/
-  templates/
+请按 UI Designer Kit 改造这个 demo。保留已有数据与功能。
+现在输入、结果和操作挤在一起，我不知道怎么整理。
+请先检查运行入口和现有行为，再调整布局、反馈与手机适配，交付前后对比。
 ```
 
-## Quick Start
+## Skill 如何工作
 
-1. Read the skill workflow:
+```text
+理解用户与任务 → 规划页面和主流程 → 选择视觉方向
+→ 做代表页 → 扩展页面与状态 → 浏览器检查 → 修复并交付
+```
 
-   ```powershell
-   Get-Content -Encoding utf8 -Raw .\SKILL.md
-   ```
+1. **承担设计判断**：从口语需求推导内容优先级、排版、分组和响应式变化。
+2. **按需选择效果**：先解释体验与取舍，再给术语；动效对应真实状态，不虚构进度。
+3. **实现任务闭环**：除了成功画面，还处理空态、校验、失败恢复、取消和保存。
+4. **实际验证**：检查页面、关键交互和多种宽度，记录问题并聚焦修复。
 
-2. Identify product type and main business object.
+交付应包含可运行代码、启动说明、简短设计记录，以及已验证与未验证项。
 
-3. Read the matching recipe:
+## 资源导航
 
-   - `recipes/saas-dashboard.md`
-   - `recipes/crm-customer-ops.md`
-   - `recipes/ai-workbench.md`
-   - `recipes/data-dashboard.md`
-   - `recipes/mobile-notes-app.md`
-
-4. Read `patterns/registry.json` and select 1-3 patterns.
-
-5. Generate `PATTERN_MATCH.md` from:
-
-   - `templates/PATTERN_MATCH.md`
-
-6. Audit the rough prototype with:
-
-   - `templates/UI_AUDIT.md`
-   - `checklists/ui-audit-checklist.md`
-   - `checklists/product-ui-risk-checklist.md`
-
-7. Write a design plan with:
-
-   - `templates/DESIGN.md`
-
-   `DESIGN.md` must cite specific selected patterns.
-
-8. Modify the app.
-
-9. Run screenshot QA:
-
-   ```powershell
-   node .\scripts\visual-audit.mjs --url http://localhost:3000 --name after
-   ```
-
-   Or for a static file:
-
-   ```powershell
-   node .\scripts\visual-audit.mjs --file .\examples\ugly-saas-dashboard\improved.html --name after --out .\examples\ugly-saas-dashboard\.design
-   ```
-
-10. Fill the human visual scorecard:
-
-    - `templates/VISUAL_SCORECARD.md`
-
-    Average score below 4 means the UI is not ready for delivery.
-
-11. Generate before/after and delivery reports when applicable:
-
-    ```powershell
-    node .\scripts\compare-before-after.mjs --out .\examples\ugly-saas-dashboard\.design
-    node .\scripts\generate-ui-report.mjs --caseDir .\examples\ugly-saas-dashboard
-    ```
-
-## Pattern Library MVP
-
-The first pattern batch includes:
-
-| Pattern | Best For |
+| 资源 | 用途 |
 |---|---|
-| `app-shell/shadcn-dashboard-shell` | SaaS dashboard, CRM, internal tools |
-| `app-shell/vite-shadcn-admin-shell` | Vite React admin shells |
-| `data-table/faceted-filter-table` | Filterable tables, CRM lists, logs |
-| `dashboard/tremor-kpi-chart-grid` | KPI dashboards and chart grids |
-| `crm/customer-list-detail` | Customer list + detail + timeline |
-| `ai-workbench/chat-history-runner` | AI chat, agent and prompt runners |
-| `mobile-app/notes-workbench` | Mobile notes/tasks and lightweight app UI |
-| `states/loading-empty-error-set` | State coverage across all product types |
-| `settings/settings-form-page` | Settings, forms, permissions, API config |
-| `micro-interactions/react-bits-empty-state` | Optional empty/running micro-interactions |
+| [产品设计流程](references/product-design-workflow.md) | 页面规划与主任务闭环 |
+| [设计基础](references/design-foundations.md) | 内容层级、排版、间距与响应式 |
+| [交互契约](references/interaction-contracts.md) | 输入保留、错误恢复、焦点与用户控制 |
+| [Recipes](recipes/) | SaaS、CRM、AI工作台、看板、移动笔记五类场景 |
+| [Pattern registry](patterns/registry.json) | 十个布局、内容和状态模式的选择入口 |
+| [设计模板](templates/DESIGN.md) | 把选择落实为可实现的规格 |
+| [质量与证据](references/product-quality.md) | 区分代码检查、浏览器结果与真人评价 |
+| [截图QA运行说明](examples/ugly-saas-dashboard/QA_RUNBOOK.md) | 自动截图和机械检查的前提与限制 |
 
-Each pattern contains:
+Recipe 和 pattern 提供设计指导与结构示意，部分组件需要自行实现。案例是特定任务的实现，不能直接代表所有产品类型。
 
-- `pattern.md`
-- `source-map.json`
-- `code/README.md`
+## 验证与边界
 
-## Open Source References
+本次两个新案例检查了指定主流程、保存刷新、桌面与390/768宽度；修复过焦点和中宽布局问题。脚本测试与独立复核均有记录，详见[案例验证说明](docs/showcase-validation.md)。
 
-The pattern library references public, license-clear sources and extracts structure rather than copying whole repositories:
+仍未验证真人审美、真实AI输出质量、完整无障碍覆盖、真实手机软键盘及生产环境。旧新单次样例不支持稳定质量提升或提效倍数的结论。
 
-- [shadcn/ui blocks](https://ui.shadcn.com/blocks)
-- [shadcn-admin](https://github.com/satnaing/shadcn-admin)
-- [next-shadcn-dashboard-starter](https://github.com/Kiranism/next-shadcn-dashboard-starter)
-- [OpenStatus data-table-filters](https://github.com/openstatusHQ/data-table-filters)
-- [Tremor](https://github.com/tremorlabs/tremor)
-- [Origin UI](https://github.com/shadcn/originui)
-- [React Bits](https://reactbits.dev/)
+本地案例使用模拟数据，不包含客户资料。实际外部发送、生产写回或权限变化需要符合目标项目的授权。
 
-React Bits is treated as a micro-interaction reference only. Its repository license is MIT + Commons Clause, so copying or redistributing components requires extra review.
+## 来源与复用
 
-## Sample Quality
+设计规则参考公开设计系统与交互资料，链接见[案例说明](docs/showcase-validation.md#资料依据)；pattern 的来源与适配范围记录在各自 `source-map.json`。
 
-The original sample library remains useful, but it is no longer the only source of truth.
-
-- `samples/analysis/*.md` has been repaired to UTF-8 Chinese.
-- `samples/SAMPLE_QUALITY_REPORT.md` classifies samples as `strong-reference`, `visual-only`, `weak-sample`, or `code-backed`.
-- `weak-sample` entries should not drive design decisions.
-- `visual-only` entries can inform visual rhythm but not code structure.
-- `code-backed` entries should be mapped to `patterns/`.
-
-## Project Log
-
-See `PROJECT_LOG.md` for the evolution from the original sample-driven idea, through `docs/optimization-roadmap.md`, to the current pattern-first workflow and GitHub publication notes.
-
-## Running Screenshot QA
-
-`scripts/visual-audit.mjs` is the mechanical QA tool.
-
-It checks:
-
-- blank/loading-page risk,
-- horizontal scroll,
-- text overflow candidates,
-- small button candidates,
-- large fixed overlay candidates,
-- desktop and mobile screenshots.
-
-Output:
-
-```text
-.design/
-  screenshots/
-    after-desktop.png
-    after-mobile.png
-  UI_QA_REPORT.md
-  after-qa.json
-```
-
-The tool uses a temporary Chrome profile. It does not read your logged-in browser profile.
-
-Mechanical QA is not enough. You must also fill `VISUAL_SCORECARD.md`.
-
-## Data Safety And Human Review
-
-This kit is optimistic about automation, but not blind.
-
-Human review is required for:
-
-- customer data display, export, or writeback,
-- WeCom/企微, email, SMS, webhook, or bulk-send actions,
-- permission changes and public sharing,
-- deleting, merging, or batch-modifying records,
-- API keys, tokens, secrets, internal links,
-- external-facing copy, dates, links, recipients, and downloadable files.
-
-When in doubt, stop before the external side effect and ask for confirmation.
-
-## Current Status
-
-- Stage 1 sample library: repaired and quality-ranked.
-- Stage 2 structured references: retained.
-- Stage 3 checklists: retained.
-- Stage 4 pattern library MVP: complete.
-- Stage 5 recipes: complete.
-- Stage 6 pattern-first skill workflow: complete.
-- Stage 7 screenshot QA MVP: retained.
-- Stage 8 human visual scorecard: added.
-- Stage 9 benchmark rules: added.
-
-## Future Enhancements
-
-- Add runnable benchmark projects for CRM, AI workbench, data dashboard, mobile notes and settings.
-- Add component-level visual diff.
-- Add token extraction for color, font size, spacing and radius consistency.
-- Add framework adapters for Next.js, Vite, React, Vue and Svelte.
-- Add richer accessibility checks.
+复用第三方组件时，应核对所选版本的许可。引用设计原则不等于拥有组件代码、字体、图片或品牌资产的再分发权。

@@ -1,6 +1,6 @@
 # VISUAL SCORECARD
 
-Average score below 4 means the UI is not ready for delivery.
+4 is an internal review convention, not a universal product-grade standard. Identify Agent self-review versus human review; do not fill a human score when no human reviewed. Averages cannot override a broken main flow or critical defect. Unreviewed results remain Candidate.
 
 ## Score Summary
 
@@ -9,10 +9,11 @@ Average score below 4 means the UI is not ready for delivery.
 - Patterns:
 - Desktop screenshot:
 - Mobile screenshot:
+- Review type: Agent self-review / Human review / Not reviewed
 - Reviewer:
 - Date:
 - Average score:
-- Delivery decision: Pass / Continue fixing
+- Delivery decision: Candidate / Reviewed / Continue fixing
 
 ## 1-5 Scoring Rubric
 

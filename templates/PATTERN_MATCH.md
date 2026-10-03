@@ -4,7 +4,8 @@
 
 - Product type:
 - Main business object:
-- Selected recipe:
+- Mode: New product / Redesign / Local refinement
+- Selected recipe (or explicit coverage gap):
 - Selected patterns:
 - Patterns deliberately not selected:
 
@@ -27,7 +28,7 @@
 
 ## Pattern Selection
 
-| Pattern | Role In This Redesign | Why Selected | What To Imitate | What Not To Copy |
+| Pattern | Role In This Product | Why Selected | What To Imitate | What Not To Copy |
 |---|---|---|---|---|
 |  | Main / Secondary / State |  |  |  |
 

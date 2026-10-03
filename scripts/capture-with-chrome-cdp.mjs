@@ -483,6 +483,7 @@ async function writeCategory(category, metas) {
 }
 
 async function main() {
+  if (typeof WebSocket !== 'function') throw new Error('Node.js >=22 with global WebSocket is required. Check node --version; no browser was launched.');
   const chromePath = await existingPath([
     process.env.CHROME_PATH,
     'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',

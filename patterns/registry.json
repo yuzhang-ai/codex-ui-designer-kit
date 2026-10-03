@@ -61,8 +61,17 @@
       "name": "shadcn dashboard shell",
       "category": "app-shell",
       "path": "patterns/app-shell/shadcn-dashboard-shell/pattern.md",
-      "best_for": ["SaaS dashboard", "CRM / customer ops", "data dashboard", "internal tools"],
-      "stack": ["React", "Tailwind CSS", "shadcn/ui"],
+      "best_for": [
+        "SaaS dashboard",
+        "CRM / customer ops",
+        "data dashboard",
+        "internal tools"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui"
+      ],
       "primary_source": "https://ui.shadcn.com/blocks",
       "license_summary": "shadcn/ui repository is MIT; preserve source license notices when copying code."
     },
@@ -71,8 +80,17 @@
       "name": "Vite shadcn admin shell",
       "category": "app-shell",
       "path": "patterns/app-shell/vite-shadcn-admin-shell/pattern.md",
-      "best_for": ["SaaS dashboard", "internal tools", "settings/form"],
-      "stack": ["Vite", "React", "Tailwind CSS", "shadcn/ui"],
+      "best_for": [
+        "SaaS dashboard",
+        "internal tools",
+        "settings/form"
+      ],
+      "stack": [
+        "Vite",
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui"
+      ],
       "primary_source": "https://github.com/satnaing/shadcn-admin",
       "license_summary": "MIT; do not copy the whole repository unless the target project explicitly accepts its structure."
     },
@@ -81,8 +99,17 @@
       "name": "faceted filter table",
       "category": "data-table",
       "path": "patterns/data-table/faceted-filter-table/pattern.md",
-      "best_for": ["SaaS dashboard", "CRM / customer ops", "data dashboard"],
-      "stack": ["React", "TanStack Table", "shadcn/ui", "optional nuqs/zustand"],
+      "best_for": [
+        "SaaS dashboard",
+        "CRM / customer ops",
+        "data dashboard"
+      ],
+      "stack": [
+        "React",
+        "TanStack Table",
+        "shadcn/ui",
+        "optional nuqs/zustand"
+      ],
       "primary_source": "https://github.com/openstatusHQ/data-table-filters",
       "license_summary": "MIT; keep table state model and filter UX, adapt columns to target domain."
     },
@@ -91,8 +118,17 @@
       "name": "Tremor KPI chart grid",
       "category": "dashboard",
       "path": "patterns/dashboard/tremor-kpi-chart-grid/pattern.md",
-      "best_for": ["data dashboard", "SaaS dashboard"],
-      "stack": ["React", "Tailwind CSS", "Radix UI", "Tremor", "Recharts"],
+      "best_for": [
+        "data dashboard",
+        "SaaS dashboard"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Radix UI",
+        "Tremor",
+        "Recharts"
+      ],
       "primary_source": "https://github.com/tremorlabs/tremor",
       "license_summary": "Apache-2.0 for Tremor core; check source-map before copying code."
     },
@@ -101,8 +137,16 @@
       "name": "customer list detail",
       "category": "crm",
       "path": "patterns/crm/customer-list-detail/pattern.md",
-      "best_for": ["CRM / customer ops", "support tools", "sales ops"],
-      "stack": ["React", "Tailwind CSS", "shadcn/ui"],
+      "best_for": [
+        "CRM / customer ops",
+        "support tools",
+        "sales ops"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui"
+      ],
       "primary_source": "internal composite pattern",
       "license_summary": "Original kit pattern; safe to adapt with mock data only."
     },
@@ -111,8 +155,16 @@
       "name": "chat history runner",
       "category": "ai-workbench",
       "path": "patterns/ai-workbench/chat-history-runner/pattern.md",
-      "best_for": ["AI workbench", "agent UI", "prompt tools"],
-      "stack": ["React", "Tailwind CSS", "shadcn/ui"],
+      "best_for": [
+        "AI workbench",
+        "agent UI",
+        "prompt tools"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui"
+      ],
       "primary_source": "internal composite pattern inspired by public AI workbench samples",
       "license_summary": "Original kit pattern; do not copy private AI product UI or logged-in screens."
     },
@@ -121,8 +173,15 @@
       "name": "mobile notes workbench",
       "category": "mobile-app",
       "path": "patterns/mobile-app/notes-workbench/pattern.md",
-      "best_for": ["mobile notes/task app", "app-style Web UI", "lightweight workflow"],
-      "stack": ["React", "Tailwind CSS"],
+      "best_for": [
+        "mobile notes/task app",
+        "app-style Web UI",
+        "lightweight workflow"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS"
+      ],
       "primary_source": "internal composite pattern inspired by mobile/app-style public samples",
       "license_summary": "Original kit pattern; do not copy app brand assets."
     },
@@ -131,8 +190,18 @@
       "name": "loading empty error set",
       "category": "states",
       "path": "patterns/states/loading-empty-error-set/pattern.md",
-      "best_for": ["state coverage", "SaaS dashboard", "CRM / customer ops", "AI workbench", "data dashboard"],
-      "stack": ["React", "Tailwind CSS", "shadcn/ui optional"],
+      "best_for": [
+        "state coverage",
+        "SaaS dashboard",
+        "CRM / customer ops",
+        "AI workbench",
+        "data dashboard"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui optional"
+      ],
       "primary_source": "internal reusable state pattern",
       "license_summary": "Original kit pattern; safe to adapt."
     },
@@ -141,8 +210,17 @@
       "name": "settings form page",
       "category": "settings",
       "path": "patterns/settings/settings-form-page/pattern.md",
-      "best_for": ["settings/form", "admin tools", "SaaS dashboard"],
-      "stack": ["React", "Tailwind CSS", "shadcn/ui", "React Hook Form or TanStack Form"],
+      "best_for": [
+        "settings/form",
+        "admin tools",
+        "SaaS dashboard"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "React Hook Form or TanStack Form"
+      ],
       "primary_source": "https://ui.shadcn.com/docs/forms",
       "license_summary": "Use shadcn form conventions; preserve upstream license notices when copying code."
     },
@@ -151,10 +229,24 @@
       "name": "React Bits empty state micro-interaction",
       "category": "micro-interactions",
       "path": "patterns/micro-interactions/react-bits-empty-state/pattern.md",
-      "best_for": ["micro-interaction", "AI workbench", "mobile notes/task app", "empty states"],
-      "stack": ["React", "Tailwind CSS", "Framer Motion optional"],
+      "best_for": [
+        "micro-interaction",
+        "AI workbench",
+        "mobile notes/task app",
+        "empty states"
+      ],
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion optional"
+      ],
       "primary_source": "https://reactbits.dev/",
       "license_summary": "MIT + Commons Clause; do not redistribute the components themselves without license review."
     }
-  ]
+  ],
+  "artifact_contract": {
+    "kind": "design-guidance-and-structural-examples",
+    "runnable_page_suite": false,
+    "usage": "Inspect each code README and source map; implement and validate missing components in the target stack."
+  }
 }
