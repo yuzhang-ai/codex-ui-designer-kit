@@ -56,7 +56,7 @@
 
 ## Task State Contract
 
-| Page / Action | Trigger | Visible Feedback / Next Action | Data Change | Recovery | Evidence |
+| Page / Action | Trigger | Visible Feedback / Next Action | Data Change | Recovery / Focus destination | Evidence |
 |---|---|---|---|---|---|
 |  |  |  |  |  |  |
 
@@ -70,19 +70,57 @@
 - Selected:
 - Needs human review:
 
+## Visual Direction And Derivation
+
+For a new product or full redesign, use the Skill's [visual design derivation](../references/visual-design-derivation.md); local work references the existing direction. When copying this template into a project, replace this link with the actual Skill location. Keep this concise and grounded in real content.
+
+- Product promise / core object / most frequent user decision:
+- Two or three style qualities → visible design decisions and trade-offs:
+- Style thesis: task → intended character → layout/type/icons/content relationship:
+
+| Observed or author-stated source / state / date | Problem and mechanism | Transfer conditions / rejected features | Our decision | Implementation and evidence |
+|---|---|---|---|---|
+| | | | | |
+
+- Representative content fragment / key state / actual rendered evidence:
+- Direction chosen and why; unresolved positioning conflict if any:
+
 ## Visual System
+
+- Primary product reference: exact page/state / URL / observed date / source type / version limits
+- Optional secondary reference and task differences:
+- Adopt / reject / why this fits the user's task:
+- Representative page targets: region proportions / alignment / typography / density / component finish
+- Comparison content and states: short/long/mixed content, empty/one/many records as applicable
+- Evidence needed for each target: screenshot / interaction / motion / human review
 
 - Recommended direction and task-based rationale:
 - Existing tokens / shared components to reuse:
 - Reference sources and adaptation / license:
 - Token names and role mapping:
 
-- Priority: user judgment / 3–5 decisive fields / next action / deferred details
-- Typography: role / size / line-height / reading width / long-content behavior
+- Priority: user judgment / decisive content or fields (quantity follows the task) / next action / deferred details
+- Typography: role / family and fallback / weight / size / line-height / letter-spacing / reading width / long-content behavior
+- Font availability, license/loading and Chinese/Latin/numeric specimen verification:
+- Icon mapping: meaning / family or asset / stroke or fill / size / label / state / hit area
+- Content voice: object/action names, time/units, empty/error/undo wording
 - Color:
 - Spacing:
 - Radius / shadow / border:
 - Density:
+
+## Implementation Contract
+
+Reuse the existing system for local work; fill only roles affected by this scope. Use actual values and paths, not aesthetic adjectives.
+
+| Visual / interaction role | Token values or component variant | Code location | Pages / states | Justified exceptions |
+|---|---|---|---|---|
+| | | | | |
+
+- First visual priority per representative page:
+- Always-visible information / on-demand help / omitted repetition:
+- Border and elevation purposes; where neither is needed:
+- Shared component default / focus / disabled / error behavior:
 
 ## Effect Decisions (only when applicable)
 

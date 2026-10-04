@@ -1,60 +1,63 @@
-# VISUAL SCORECARD
+# 视觉评审表
 
-4 is an internal review convention, not a universal product-grade standard. Identify Agent self-review versus human review; do not fill a human score when no human reviewed. Averages cannot override a broken main flow or critical defect. Unreviewed results remain Candidate.
+逐项证据评审，不用 1–5 自评分或平均分认证“产品级”。具体口径见 [真实产品视觉基准](../references/product-visual-benchmarks.md)。小任务只填适用项，说明不适用原因。
 
-## Score Summary
+## 评审上下文
 
-- Product type:
-- Recipe:
-- Patterns:
-- Desktop screenshot:
-- Mobile screenshot:
-- Review type: Agent self-review / Human review / Not reviewed
-- Reviewer:
-- Date:
-- Average score:
-- Delivery decision: Candidate / Reviewed / Continue fixing
+- 任务 / 代表页 / 当前实现版本：
+- 主参照：产品、具体页面/状态、URL、观察日期、来源类型与版本边界：
+- 辅助参照（可选）：
+- 借鉴什么 / 不借鉴什么 / 任务差异：
+- 截图或录屏：视口、缩放、数据量、状态与文件位置：
+- 评审类型：Agent 自评 / 独立 Agent 复评 / 真人评审
+- 评审人和日期（真人未评则写未评）：
 
-## 1-5 Scoring Rubric
+## 可用性门槛（与视觉分开）
 
-| Score | Meaning |
-|---:|---|
-| 1 | Broken, prototype-like, or misleading |
-| 2 | Functional but rough, weak hierarchy, incomplete states |
-| 3 | Acceptable baseline, still visibly generic or uneven |
-| 4 | Product-grade, clear, consistent, usable |
-| 5 | Excellent, polished, domain-fit, resilient across states |
+| 检查 | 通过 / 失败 / 未验证 / 不适用 | 实际动作与证据 |
+|---|---|---|
+| 主流程与适用的保存/刷新 | | |
+| 输入保留、错误恢复、状态真实性 | | |
+| 键盘焦点、标签、可读对比、非颜色提示 | | |
+| 遮挡、溢出、操作入口可达 | | |
 
-## Score Table
+## 视觉评审
 
-| Dimension | Score 1-5 | Evidence | Must Fix If Below 4 |
-|---|---:|---|---|
-| 产品真实感 |  | 是否像真实可用产品，而不是 demo |  |
-| 信息层级 |  | 用户 5 秒内能否知道页面在干什么 |  |
-| 操作路径 |  | 主操作、次操作、危险操作是否清楚 |  |
-| 组件一致性 |  | 字号、间距、圆角、边框、按钮是否统一 |  |
-| 数据密度 |  | 是否适合目标场景，不空不挤 |  |
-| 状态完整度 |  | loading / empty / error / disabled / hover / selected 是否齐 |  |
-| 移动端质量 |  | 是否无横向滚动、遮挡、小按钮、文字溢出 |  |
-| 代码可维护性 |  | 组件拆分是否清楚，是否尊重原项目结构 |  |
+| 编号 / 维度 | 通过 / 需修复 / 未验证 / 不适用 | 具体观察与证据 | 下一步 |
+|---|---|---|---|
+| V1 主次 | | | |
+| V2 布局比例与对齐 | | | |
+| V3 排版与长内容 | | | |
+| V4 间距与分组 | | | |
+| V5 任务密度 | | | |
+| V6 组件精度 | | | |
+| V7 色彩与材质 | | | |
+| V8 跨状态一致 | | | |
+| V9 响应式重排 | | | |
+| V10 动态与中断 | | | |
 
-## Required Fixes Before Delivery
+## 定位与风格一致性
 
-- [ ] 
-- [ ] 
-- [ ] 
+- DESIGN的风格命题如何在布局、字体、信息与图标中共同体现：
+- 真实字体/中文与混排/字距的渲染证据，未测平台与回退边界：
+- 关键icon语义和状态、光学大小、标签与点击区域证据：
+- 问题属于定位/内容结构、视觉关系还是工程执行；若方向不成立，退回哪项决定：
 
-## Human Review Gate
+## 主动注意力与系统审查
 
-- [ ] Customer data / sensitive data reviewed.
-- [ ] Permissions and roles reviewed.
-- [ ] Bulk send / export / writeback reviewed.
-- [ ] External links, dates, recipients and final copy reviewed.
-- [ ] Delete / irreversible actions reviewed.
-- [ ] Secrets, API keys and internal links reviewed.
+| 页面 / 状态 | 争夺注意力或跨页不一致的具体观察 | 保留 / 合并 / 按需 / 删除及理由 | 复核证据 |
+|---|---|---|---|
+| | | | |
 
-## Decision
+核对 DESIGN 的角色到代码映射。没有问题写已检查范围；不要为填表强行删除。必要标签、错误、能力边界和焦点不以简化为由移除。具体可解释的缺陷先修复，不能转交用户当作纯审美问题。
 
-- Average score:
-- Pass threshold met: Yes / No
-- If no, next repair target:
+## 结论与下一轮
+
+- 可用性：已通过指定验证 / 失败 / 部分未验证
+- 视觉：Candidate / 需修复 / 已通过指定视觉评审（写明评审类型与覆盖范围）
+- 真人验收：未评 / 接受 / 需修复（原始反馈、范围与日期）
+- 证据缺口及阻塞：
+- 本轮最重要的 1–3 个问题：
+- 修复次数 / 下一步 / 停止条件：
+
+适用项缺证据不能填通过，关键缺陷不能由其他维度抵消。外部发布及隐私检查按交付范围另记；静态图、代码检查和模拟状态不能证明真实服务或动效质量。

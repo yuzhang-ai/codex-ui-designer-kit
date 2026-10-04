@@ -41,7 +41,8 @@ For new builds mark Before as N/A; never invent a prior state.
 - Visual scorecard:
 - Agent self-review (if any):
 - Human review: reviewer / result / not reviewed
-- Average visual score (identify reviewer; N/A if unscored):
+- Visual review status / reviewer type / covered pages and states:
+- Visual evidence gaps and required fixes (no average-score approval):
 - Passed:
 - Failed:
 

@@ -10,7 +10,9 @@
 
 ![研读桌：由自然语言需求生成的阅读笔记页面](docs/assets/showcase/reading-desktop.jpg)
 
-> **当前阶段：候选版本。** 已有本地可运行案例与指定浏览器验证；“产品级”是设计和验收目标。案例 AI 为本地模拟，真人审美仍待验证。
+> **当前阶段：流程验证候选。** 下列案例用于展示新建、改造与效果讨论，尚未达到精修产品页面的视觉标杆要求。已有指定浏览器功能验证，案例 AI 为本地模拟。我们正在用[真实产品调研与复评](docs/product-benchmark-research.md)及[视觉基准](references/product-visual-benchmarks.md)收敛质量。
+
+设计方法进一步补充了[从成熟产品提炼自己的视觉语言](references/visual-design-derivation.md)：先解释定位、布局、字体、信息和图标之间的关系，再落到前端；[来源与边界](docs/visual-design-extraction.md)可核查。这是方法更新，尚未证明新一轮生成效果。
 
 ## 它能帮你做什么
 
@@ -24,6 +26,8 @@
 它把**设计判断、代码实现、真实验收**串在一起。已有组件和技术栈优先复用，不强制迁移到特定前端框架。
 
 ## 三个案例
+
+这三例分别验证不同能力；效果体验室是局部演示，两个页面案例的视觉精修仍待完成。
 
 ### 01 · 研读桌：从想法到阅读产品
 
@@ -129,6 +133,8 @@ GitHub 文件页展示源码，不会直接运行这些 HTML。案例无需前�
 |---|---|
 | [产品设计流程](references/product-design-workflow.md) | 页面规划与主任务闭环 |
 | [设计基础](references/design-foundations.md) | 内容层级、排版、间距与响应式 |
+| [真实产品视觉基准](references/product-visual-benchmarks.md) | 按任务选参照，逐项验收精修质量 |
+| [产品调研与样例复评](docs/product-benchmark-research.md) | 官方来源、可见观察、证据边界和现有差距 |
 | [交互契约](references/interaction-contracts.md) | 输入保留、错误恢复、焦点与用户控制 |
 | [Recipes](recipes/) | SaaS、CRM、AI工作台、看板、移动笔记五类场景 |
 | [Pattern registry](patterns/registry.json) | 十个布局、内容和状态模式的选择入口 |

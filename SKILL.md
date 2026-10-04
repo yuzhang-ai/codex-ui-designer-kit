@@ -29,6 +29,12 @@ description: Design and implement coherent product UI with Codex for users witho
 
 读取 `references/design-foundations.md`，先排代表页的内容优先级，再决定排版角色、分组与各区域的响应式变化。
 
+新建或整体改造先读取 `references/visual-design-derivation.md`：从产品定位和核心对象出发，提取真实产品的“问题—设计关系—适用条件—实现方法”，再形成自己的风格命题。把字体家族/回退、字号行高字距、信息表达、icon语义与画法作为一套关系设计；用真实内容代表片段验证组合，再扩展页面。局部任务沿用现有方向，只补受影响的决定。
+
+新建或整体改造时读取 `references/product-visual-benchmarks.md`，选一个同任务的真实产品页面作为主参照，必要时加一个辅助参照；局部优化优先对照工程内成熟页面。在 DESIGN 中记录具体页面/状态、来源与观察边界、采用/舍弃理由，以及代表页的可见验收目标。先核验参照，再定区域比例、排版和密度；不要拼贴品牌外观或让用户先学设计术语。
+
+新建或整体改造时读取 `references/project-design-contract.md`：实现前在 DESIGN 落定本项目的视觉角色、组件variants与状态反馈，映射到实际tokens/组件/代码位置；局部修改只处理受影响角色。
+
 结合任务、内容密度、用户、品牌和参考，给出一个推荐方向及理由；落成字体层级、颜色语义、间距、圆角、边框、布局与交互反馈的共享 tokens。没有品牌时选择清晰克制的默认方向，必要时只给一个有实际差异的备选。
 
 - 工具/后台：突出任务、信息可扫读、列表详情和操作效率。
@@ -80,9 +86,11 @@ node scripts/visual-audit.mjs --url http://localhost:3000 --name after
 
 运行前检查脚本参数与 Node/浏览器前提。自动报告是机器检查，不证明视觉质量或业务闭环。不能运行浏览器时记录原因和未验证项。
 
+交付前按 `references/project-design-contract.md` 主动做注意力审查：检查重复提示、无职责的强调与装饰、同角色跨页漂移；记录具体取舍并修复，不等用户逐项指出，也不把“少文字/无边框/无阴影”变成通用风格。
+
 先修复阻塞主流程、溢出、遮挡、状态误导与跨页不一致。默认最多 3 轮聚焦修复；两次同类失败没有新增证据时先写根因链并更换最小探针；仍未通过则交付 Candidate 和具体缺口，不无限循环或宣称完成。
 
-交付实际代码、启动方式、简短 DESIGN 与验收结果；复杂任务用 `templates/UI_DELIVERY_REPORT.md` 汇总。`templates/VISUAL_SCORECARD.md` 可辅助评审：Agent 评分标为自评，真人未评保持未评。4 分阈值是本项目内部约定，平均分不能掩盖关键阻塞；用户/真人验收与机器通过分别报告。
+交付实际代码、启动方式、简短 DESIGN 与验收结果；复杂任务用 `templates/UI_DELIVERY_REPORT.md` 汇总。用 `templates/VISUAL_SCORECARD.md` 对适用视觉项记录具体观察、证据与缺口；按 `product-visual-benchmarks.md` 比较代表页及困难内容/关键状态。不能用自评分或均分认证产品级。可用性、Agent 视觉评审、真人审美验收分开，真人未评保持未评。
 
 ## 授权与资料边界
 
