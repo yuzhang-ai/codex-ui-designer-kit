@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>衡 · 研究台（演示）</title>
+<style>
+/* 方向：深夜书房里的一张工作纸。暖石墨底，文档面亮一档；
+   金象牙色只负责三件事：引用编号、键盘焦点、主操作。 */
+:root{
+  --bg:#181715;--sheet:#1f1e1b;--sheet-hi:#23221f;--raise:#272522;--raise-2:#2f2d29;
+  --ink:#ede7da;--ink-2:#c9c1b2;--muted:#958d80;
+  --rule:rgba(237,231,218,.08);--tint:rgba(237,231,218,.06);--tint-2:rgba(237,231,218,.1);
+  --accent:#dcc27e;--accent-hi:#e8d295;--accent-ink:#1d1910;
+  --accent-wash:rgba(220,194,126,.13);--accent-line:rgba(220,194,126,.5);
+  --sage:#a8b996;--sage-wash:rgba(168,185,150,.12);
+  --slate:#a3b3c8;--slate-wash:rgba(163,179,200,.12);
+  --clay:#d4a28c;--clay-wash:rgba(212,162,140,.13);
+  --danger:#ee9280;--danger-wash:rgba(238,146,128,.12);
+  --r-pane:20px;--r-card:16px;--r-field:14px;--r-pill:999px;
+  --float:0 1px 0 rgba(255,245,225,.04) inset,0 28px 64px -24px rgba(6,5,3,.7);
+  --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","Noto Serif CJK SC",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;
+  --num:"SF Pro Text","Helvetica Neue","PingFang SC",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --rail:252px;--side:392px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 var(--sans);-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums;overflow:hidden}
+h1,h2,h3,p,ol,ul,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+button,textarea{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+[hidden]{display:none!important}
+::selection{background:rgba(220,194,126,.28)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+[tabindex="-1"]:focus{outline:none}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.num{font-family:var(--num);font-variant-numeric:lining-nums tabular-nums}
+.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* 按钮：主 / 次 / 安静 */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:0 15px;border:0;border-radius:var(--r-pill);background:transparent;font-size:13.5px;letter-spacing:.02em;cursor:pointer;white-space:nowrap;transition:background .18s var(--ease),color .18s var(--ease),transform .18s var(--ease),opacity .18s}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn-primary{background:var(--accent);color:var(--accent-ink);font-weight:600;box-shadow:inset 0 1px 0 rgba(255,250,230,.45),0 10px 24px -12px rgba(220,194,126,.55)}
+.btn-primary:hover:not(:disabled){background:var(--accent-hi)}
+.btn-secondary{background:var(--tint);color:var(--ink)}
+.btn-secondary:hover{background:var(--tint-2)}
+.btn-quiet{color:var(--ink-2);padding:0 12px}
+.btn-quiet:hover{background:var(--tint);color:var(--ink)}
+.btn-icon{width:38px;padding:0}
+.btn .num{color:var(--ink-2)}
+
+/* 三栏 */
+.app{display:grid;grid-template-columns:var(--rail) minmax(0,1fr) var(--side);height:100dvh;padding:10px 0;gap:0}
+.threads{display:flex;flex-direction:column;padding:14px 14px 16px 20px;min-height:0}
+.brand,.m-brand{display:flex;align-items:center;gap:9px;height:40px;padding-left:4px}
+.logo{width:22px;height:22px;color:var(--ink);stroke-width:1.5}
+.brand-name{font:600 19px/1 var(--serif);letter-spacing:.08em}
+.brand-sub{color:var(--muted);font-size:13px;letter-spacing:.12em}
+.btn-new{margin:22px 0 26px;justify-content:flex-start;padding:0 16px;min-height:42px}
+.threads-label{color:var(--muted);font-size:12px;letter-spacing:.14em;padding:0 12px 8px}
+.thread-list{display:grid;gap:2px;overflow:auto}
+.thread{display:grid;gap:3px;padding:11px 12px;border-radius:12px;color:var(--ink-2);transition:background .18s}
+.thread:hover{background:var(--tint)}
+.thread.is-current{background:var(--raise);color:var(--ink)}
+.t-title{font-size:13.5px;line-height:1.45;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.t-meta{font-size:12px;color:var(--muted)}
+.thread.is-current .t-meta{color:var(--ink-2)}
+.threads-foot{margin-top:auto;color:var(--muted);font-size:12px;padding:0 12px;line-height:1.6}
+
+/* 文档面 */
+.doc-pane{position:relative;display:flex;flex-direction:column;min-height:0;min-width:0;background:var(--sheet);border-radius:var(--r-pane);box-shadow:0 1px 0 rgba(255,245,225,.035) inset}
+.doc-bar{display:flex;align-items:center;gap:10px;min-height:62px;padding:12px 16px 8px 28px}
+.m-brand{display:none;margin-right:4px}
+.bar-actions{display:flex;align-items:center;gap:2px;margin-left:auto}
+.bar-hint{color:var(--muted);font-size:12.5px;margin-right:8px}
+.btn-src{display:none;margin-left:6px}
+.status{display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 12px 0 10px;border-radius:var(--r-pill);background:var(--tint);color:var(--ink-2);font-size:12.5px}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+.status[data-tone=ok]{color:var(--sage);background:var(--sage-wash)}
+.status[data-tone=run]{color:var(--ink);background:var(--tint-2)}
+.status[data-tone=run] .dot{animation:pulse 1.4s var(--ease) infinite}
+.status[data-tone=warn]{color:var(--clay);background:var(--clay-wash)}
+.status[data-tone=err]{color:var(--danger);background:var(--danger-wash)}
+.status[data-tone=edit]{color:var(--ink);background:var(--tint-2)}
+@keyframes pulse{50%{opacity:.25}}
+.seg{display:none}
+
+.doc-scroll{flex:1;min-height:0;overflow:auto;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--raise-2) transparent}
+.doc{max-width:41rem;margin:0 auto;padding:18px 32px 40px}
+.demo-note{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12.5px}
+.demo-tag{padding:1px 8px;border-radius:var(--r-pill);background:var(--tint);color:var(--ink-2);font-size:11.5px;letter-spacing:.08em}
+.question{margin:18px 0 0;font:500 21px/1.5 var(--sans);letter-spacing:.01em;color:var(--ink);text-wrap:pretty}
+
+/* 步骤 */
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 34px}
+.step{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 13px 0 10px;border-radius:var(--r-pill);background:var(--tint);color:var(--muted);font-size:12.5px}
+.step b{font-weight:500;color:var(--ink-2)}
+.step .i{width:15px;height:15px}
+.step[data-s=done]{color:var(--muted)}
+.step[data-s=done] .i{color:var(--sage)}
+.step[data-s=active]{background:var(--tint-2);color:var(--ink-2)}
+.step[data-s=active] b{color:var(--ink)}
+.step[data-s=stopped] .i{color:var(--clay)}
+.step[data-s=pending]{opacity:.55}
+.spin{width:13px;height:13px;border-radius:50%;border:1.6px solid var(--tint-2);border-top-color:var(--ink);animation:spin .9s linear infinite;flex:none}
+.ring{width:13px;height:13px;border-radius:50%;border:1.6px solid var(--tint-2);flex:none}
+@keyframes spin{to{transform:rotate(1turn)}}
+
+/* 横幅：停止 / 失败 */
+.banner{display:flex;align-items:center;gap:12px;margin:-14px 0 30px;padding:12px 12px 12px 16px;border-radius:var(--r-card);background:var(--clay-wash);color:var(--ink);font-size:13.5px}
+.banner .i{color:var(--clay)}
+.banner[data-tone=err]{background:var(--danger-wash)}
+.banner[data-tone=err] .i{color:var(--danger)}
+.banner p{flex:1;line-height:1.55}
+.banner small{display:block;color:var(--ink-2);font-size:12.5px}
+
+/* 简报正文 */
+.brief{font-family:var(--serif);font-size:17px;line-height:1.92;color:var(--ink);max-width:36em}
+.brief h2{font:600 29px/1.38 var(--serif);letter-spacing:.01em;margin:0 0 6px;text-wrap:balance}
+.brief .byline{font:12.5px/1.6 var(--sans);color:var(--muted);margin-bottom:26px}
+.brief h3{font:600 18.5px/1.5 var(--serif);margin:38px 0 10px;color:var(--ink)}
+.brief p{margin:0 0 14px;text-wrap:pretty;hanging-punctuation:allow-end}
+.brief .lead{font-size:18px;color:var(--ink)}
+.brief[contenteditable=true]{outline:none;caret-color:var(--accent)}
+.doc.is-editing .brief{background:var(--raise);box-shadow:0 0 0 22px var(--raise);border-radius:2px}
+.doc.is-editing .brief th,.doc.is-editing .figure{background:var(--raise-2)}
+.cite.wait{display:none}
+.stop-pill{display:inline-flex;align-items:center;height:20px;margin-left:6px;padding:0 8px;border-radius:var(--r-pill);background:var(--clay-wash);color:var(--clay);font:500 11.5px/1 var(--sans);vertical-align:.15em}
+.btn-primary:disabled{background:var(--tint-2);color:var(--muted);box-shadow:none}
+.app[data-state=empty] #barView .btn-quiet{display:none}
+.src-list{position:relative;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 10px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(to bottom,transparent 0,#000 10px,#000 calc(100% - 40px),transparent)}
+.toast[data-tone=err] .i{color:var(--danger)}
+.fq{margin:40px 0 14px;padding:14px 18px;border-radius:var(--r-card);background:var(--raise);font:15px/1.7 var(--sans);color:var(--ink)}
+.fq-k{display:block;color:var(--muted);font-size:12px;margin-bottom:2px}
+.fig-src{display:inline-flex;align-items:center;gap:2px}
+.claim{border-radius:4px;transition:background .3s var(--ease),box-shadow .3s var(--ease);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.claim.is-link{background:var(--tint)}
+.claim.is-hit{background:var(--accent-wash);box-shadow:0 0 0 3px var(--accent-wash)}
+.cite{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:21px;height:19px;padding:0 6px;margin:0 1px 0 3px;border:0;border-radius:var(--r-pill);background:var(--accent-wash);color:var(--accent);font:600 11.5px/1 var(--num);font-variant-numeric:tabular-nums;vertical-align:.18em;cursor:pointer;transition:background .15s,color .15s}
+.cite::before{content:"";position:absolute;inset:-9px -4px}
+.cite:hover,.cite.is-on{background:var(--accent);color:var(--accent-ink)}
+.cite:empty{display:none}
+.caret{display:inline-block;width:.5em;height:1.05em;margin-left:2px;vertical-align:-.15em;border-radius:2px;background:var(--ink-2);animation:pulse 1s steps(2) infinite}
+
+.figure{display:grid;grid-template-columns:auto 1fr;gap:6px 28px;align-items:end;margin:26px 0 30px;padding:22px 24px;border-radius:var(--r-card);background:var(--raise);font-family:var(--sans)}
+.fig-k{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:12.5px}
+.fig-v{font:600 40px/1.1 var(--num);letter-spacing:-.01em;font-variant-numeric:lining-nums tabular-nums;color:var(--ink)}
+.fig-v small{font-size:15px;font-weight:500;color:var(--ink-2);margin-left:6px;letter-spacing:0}
+.fig-d{color:var(--ink-2);font-size:13.5px;line-height:1.6;padding-bottom:4px}
+.fig-d em{font-style:normal;font-weight:600;color:var(--ink)}
+
+.table-wrap{margin:18px 0 10px;overflow-x:auto;border-radius:var(--r-field)}
+.brief table{width:100%;border-collapse:collapse;font:13.5px/1.5 var(--sans);font-variant-numeric:lining-nums tabular-nums;min-width:520px}
+.brief th{text-align:left;font-weight:500;color:var(--muted);font-size:12.5px;padding:10px 14px;background:var(--raise)}
+.brief th:first-child{border-radius:var(--r-field) 0 0 var(--r-field)}
+.brief th:last-child{border-radius:0 var(--r-field) var(--r-field) 0}
+.brief td{padding:12px 14px;border-bottom:1px solid var(--rule);color:var(--ink-2);vertical-align:top}
+.brief td:first-child{color:var(--ink);font-weight:500;white-space:nowrap}
+.brief tr:last-child td{border-bottom:0}
+.brief .r{text-align:right;white-space:nowrap}
+.t-note{font:12.5px/1.6 var(--sans);color:var(--muted);margin:0 0 8px}
+.brief .is-pending{display:none}
+
+/* 空状态 */
+.empty{padding:9vh 0 24px}
+.empty-title{font:600 34px/1.3 var(--serif);letter-spacing:.02em}
+.empty-lead{margin:14px 0 40px;max-width:30em;color:var(--ink-2);font-size:15px;line-height:1.8;text-wrap:pretty}
+.empty-label{color:var(--muted);font-size:12.5px;margin-bottom:10px}
+.suggest{display:grid;gap:8px;margin-bottom:28px}
+.suggest button{display:flex;align-items:center;gap:14px;width:100%;min-height:56px;padding:12px 18px;border:0;border-radius:var(--r-card);background:var(--raise);color:var(--ink);text-align:left;font-size:14.5px;cursor:pointer;transition:background .18s}
+.suggest button:hover{background:var(--raise-2)}
+.suggest span{flex:1}
+.suggest .i{color:var(--muted);transition:transform .2s var(--ease),color .2s}
+.suggest button:hover .i{color:var(--ink);transform:translateX(2px)}
+
+/* 输入区 */
+.composer{flex:none;margin:0 auto 18px;width:calc(100% - 64px);max-width:39rem;padding:10px 10px 10px 16px;border-radius:22px;background:var(--raise)}
+.composer:focus-within{box-shadow:0 0 0 1px var(--accent-line)}
+.composer textarea{display:block;width:100%;min-height:26px;max-height:140px;padding:6px 2px 4px;border:0;background:transparent;resize:none;outline:none;font-size:15px;line-height:1.6}
+.composer textarea::placeholder{color:var(--muted)}
+.chips{display:flex;gap:6px;padding-top:2px}
+.file-chip{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 4px 0 10px;border-radius:var(--r-pill);background:var(--tint);color:var(--ink-2);font-size:12.5px}
+.file-chip .i{width:14px;height:14px}
+.chip-x{display:grid;place-items:center;width:24px;height:24px;border:0;border-radius:50%;background:transparent;color:var(--muted);cursor:pointer}
+.chip-x:hover{background:var(--tint-2);color:var(--ink)}
+.composer-row{display:flex;align-items:center;gap:8px;margin-top:4px}
+.composer-row .btn-icon{margin-left:-8px;color:var(--muted)}
+.composer-note{flex:1;color:var(--muted);font-size:12px}
+.composer-note[data-tone=err]{color:var(--danger)}
+.btn-send{min-height:40px;padding:0 18px 0 14px}
+
+/* 来源 */
+.sources{display:flex;flex-direction:column;min-height:0;padding:6px 10px 0 18px}
+.src-head{display:flex;align-items:flex-start;gap:8px;padding:12px 8px 14px 6px}
+.src-head>div{flex:1}
+.src-head h2{font-size:15px;font-weight:600}
+.src-head h2 .num{color:var(--muted);font-weight:500;margin-left:4px}
+.src-sub{color:var(--muted);font-size:12px;margin-top:2px}
+.src-close{display:none}
+.src-list{flex:1;min-height:0;overflow:auto;display:grid;align-content:start;gap:8px;padding:2px 8px 24px 2px;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--raise-2) transparent}
+.src-empty{color:var(--muted);font-size:13px;line-height:1.7;padding:6px 8px}
+.src{position:relative;display:grid;gap:9px;padding:15px 16px 13px;border-radius:var(--r-card);background:var(--sheet);transition:background .2s var(--ease),box-shadow .2s var(--ease),opacity .3s}
+.src:hover{background:var(--sheet-hi)}
+.src.is-on{background:var(--raise);box-shadow:inset 0 0 0 1px var(--accent-line)}
+.src.is-new{animation:rise .4s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}}
+.src-top{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:12px}
+.src-n{display:grid;place-items:center;min-width:22px;height:20px;padding:0 6px;border-radius:var(--r-pill);background:var(--tint);color:var(--ink-2);font:600 11.5px/1 var(--num)}
+.src.is-on .src-n{background:var(--accent);color:var(--accent-ink)}
+.src-pub{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.src-title{font-size:14px;font-weight:500;line-height:1.5;color:var(--ink)}
+.src-title button{all:unset;cursor:pointer}
+.src-title button::after{content:"";position:absolute;inset:0;border-radius:var(--r-card)}
+.src-title button:focus-visible::after{outline:2px solid var(--accent);outline-offset:2px}
+.src q{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;font:13.5px/1.75 var(--serif);color:var(--ink-2);quotes:none}
+.src.is-on q{display:block;-webkit-line-clamp:unset;line-clamp:none;overflow:visible}
+.src q mark{background:none;color:var(--ink);text-decoration:underline;text-decoration-color:rgba(237,231,218,.28);text-underline-offset:4px;text-decoration-thickness:1px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background .2s}
+.src.is-on q mark{background:var(--accent-wash);text-decoration-color:transparent;padding:0 2px}
+.src-foot{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px}
+.src-foot .go{margin-left:auto;color:var(--muted)}
+.src:hover .src-foot .go{color:var(--ink-2)}
+.src.is-on .src-foot .go{color:var(--accent)}
+.tag{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 9px;border-radius:var(--r-pill);font-size:11.5px}
+.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.tag[data-c=high]{color:var(--sage);background:var(--sage-wash)}
+.tag[data-c=mid]{color:var(--slate);background:var(--slate-wash)}
+.tag[data-c=low]{color:var(--clay);background:var(--clay-wash)}
+.tag[data-c=low]::before{border-radius:1px;transform:rotate(45deg)}
+.src.unread{opacity:.42}
+.src-foot .go{display:inline-flex;align-items:center;gap:4px}
+.src-foot .go .i{width:14px;height:14px}
+.btn-stop{background:var(--tint-2);color:var(--ink);font-weight:500}
+.btn-stop:hover{background:rgba(237,231,218,.15)}
+.scrim{display:none}
+
+.toast{position:fixed;left:50%;bottom:28px;z-index:30;display:flex;align-items:center;gap:8px;padding:11px 18px 11px 14px;border-radius:var(--r-pill);background:#34322d;color:var(--ink);font-size:13.5px;box-shadow:var(--float);transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .2s var(--ease),transform .25s var(--ease)}
+.toast.is-on{opacity:1;transform:translate(-50%,0)}
+.toast .i{color:var(--sage);width:16px;height:16px}
+
+/* 768：两栏，来源为右侧滑出层 */
+@media (max-width:1219px){
+  :root{--rail:220px}
+  .app{grid-template-columns:var(--rail) minmax(0,1fr);padding-right:10px}
+  .btn-src{display:inline-flex}
+  .sources{position:fixed;top:10px;right:10px;bottom:10px;z-index:20;width:min(400px,calc(100vw - 20px));padding:6px 6px 0 14px;border-radius:var(--r-pane);background:var(--bg);box-shadow:var(--float);transform:translateX(calc(100% + 20px));visibility:hidden;transition:transform .32s var(--ease),visibility 0s .32s}
+  .app.src-open .sources{transform:none;visibility:visible;transition:transform .32s var(--ease)}
+  .src-close{display:inline-flex}
+  .scrim{display:block;position:fixed;inset:0;z-index:19;background:rgba(10,9,7,.5);opacity:0;pointer-events:none;transition:opacity .3s}
+  .app.src-open .scrim{opacity:1;pointer-events:auto}
+  .threads{padding-left:14px}
+  .bar-hint{display:none}
+}
+@media (max-width:960px){.bar-actions .lbl{display:none}.bar-actions .btn-quiet{width:38px;padding:0}}
+
+/* 375：单栏，顶部分段，输入区吸底 */
+@media (max-width:759px){
+  .app{display:flex;flex-direction:column;padding:0}
+  .threads{display:none}
+  .doc-pane{flex:1;border-radius:0;background:var(--bg)}
+  .doc-bar{padding:calc(8px + env(safe-area-inset-top)) 10px 4px 16px;min-height:56px;gap:6px}
+  .m-brand{display:flex}
+  .btn-src{display:none}
+  .status{height:26px;font-size:12px;padding:0 10px 0 9px}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:4px 16px 6px;padding:4px;border-radius:var(--r-pill);background:var(--sheet)}
+  .seg button{min-height:38px;border:0;border-radius:var(--r-pill);background:transparent;color:var(--muted);font-size:14px;cursor:pointer}
+  .seg button[aria-selected=true]{background:var(--raise-2);color:var(--ink);font-weight:500;box-shadow:0 4px 12px -6px rgba(0,0,0,.6)}
+  .seg .num{color:inherit;margin-left:2px}
+  .doc{padding:12px 20px 32px}
+  .question{font-size:18px;margin-top:12px}
+  .steps{margin:14px 0 26px;flex-wrap:nowrap}
+  .step[data-s=done]>span:not(.sr-only),.step[data-s=pending]>span:not(.sr-only){display:none}
+  .step{padding:0 12px 0 10px}
+  .brief{font-size:16.5px;line-height:1.88}
+  .brief h2{font-size:23px}
+  .figure{grid-template-columns:1fr;padding:18px;gap:8px}
+  .fig-v{font-size:34px}
+  .composer{width:auto;margin:0 10px calc(10px + env(safe-area-inset-bottom));border-radius:20px}
+  .composer-note{font-size:11.5px}
+  .sources{position:static;display:none;width:auto;padding:0 8px;transform:none;visibility:visible;box-shadow:none;background:var(--bg);flex:1}
+  .app[data-tab=sources] .sources{display:flex}
+  .app[data-tab=sources] .doc-scroll,.app[data-tab=sources] .composer{display:none}
+  .app[data-tab=sources] .doc-pane{flex:none}
+  .src-head{display:none}
+  .src-list{padding:4px 8px calc(24px + env(safe-area-inset-bottom))}
+  .scrim{display:none}
+  .empty{padding-top:4vh}
+  .empty-title{font-size:28px}
+  .toast{bottom:calc(110px + env(safe-area-inset-bottom))}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+.no-anim *,.no-anim *::before,.no-anim *::after{animation:none!important;transition:none!important}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-logo" viewBox="0 0 24 24"><path d="M12 4.5V19M8 19h8M4.5 8h15M4.5 8 2.5 13a2 2 0 0 0 4 0L4.5 8Zm15 0-2 5a2 2 0 0 0 4 0l-2-5Z"/><circle cx="12" cy="4" r=".6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><path d="m19.5 11.2-7.4 7.4a4.6 4.6 0 0 1-6.5-6.5l7.9-7.9a3.1 3.1 0 0 1 4.4 4.4l-7.9 7.9a1.5 1.5 0 0 1-2.2-2.2l7.2-7.2"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 18.5v-13M6.5 11 12 5.5l5.5 5.5"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.2"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.6"/><path d="M15.5 8.5V7a2.5 2.5 0 0 0-2.5-2.5H7A2.5 2.5 0 0 0 4.5 7v6A2.5 2.5 0 0 0 7 15.5h1.5"/></symbol>
+    <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 4.5v10M7.5 10l4.5 4.5 4.5-4.5M5 19.5h14"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4.5 19.5h3.8L18.6 9.2a2.7 2.7 0 0 0-3.8-3.8L4.5 15.7v3.8ZM13.4 6.8l3.8 3.8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5.5 12.5 4.2 4.2 8.8-9.2"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6.5 6.5 11 11m0-11-11 11"/></symbol>
+    <symbol id="i-retry" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4.5 5.5c0-.6.4-1 1-1H10a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4.5v-12Zm15 0c0-.6-.4-1-1-1H14a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h5.5v-12Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5.5 12h12.5M13 7l5 5-5 5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.8v5M12 16.2v.01"/></symbol>
+  </defs>
+</svg>
+
+<div class="app" id="app" data-state="done" data-tab="doc">
+  <aside class="threads" aria-label="研究记录">
+    <div class="brand"><svg class="i logo" aria-hidden="true"><use href="#i-logo"/></svg><span class="brand-name">衡</span><span class="brand-sub">研究台</span></div>
+    <button type="button" class="btn btn-secondary btn-new" id="newBtn"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg>新研究</button>
+    <p class="threads-label" id="threadsLabel">最近</p>
+    <ul class="thread-list" aria-labelledby="threadsLabel">
+      <li><a href="#done" class="thread is-current" aria-current="page" data-thread="current"><span class="t-title">储能电池技术路线与成本</span><span class="t-meta">今天 · 6 个来源</span></a></li>
+      <li><a href="#" class="thread" data-thread="other"><span class="t-title">城市更新项目的融资模式</span><span class="t-meta">昨天 · 9 个来源</span></a></li>
+      <li><a href="#" class="thread" data-thread="other"><span class="t-title">跨境电商退货率的影响因素</span><span class="t-meta">11 月 8 日 · 7 个来源</span></a></li>
+      <li><a href="#" class="thread" data-thread="other"><span class="t-title">县域医共体运行评估方法</span><span class="t-meta">11 月 3 日 · 12 个来源</span></a></li>
+    </ul>
+    <p class="threads-foot">演示数据，均为虚构</p>
+  </aside>
+
+  <main class="doc-pane" id="docPane">
+    <header class="doc-bar">
+      <div class="m-brand"><svg class="i logo" aria-hidden="true"><use href="#i-logo"/></svg><span class="brand-name">衡</span></div>
+      <span class="status" id="status" data-tone="ok"><i class="dot" aria-hidden="true"></i><span id="statusText">已完成</span></span>
+      <div class="bar-actions" id="barView">
+        <button type="button" class="btn btn-quiet" id="editBtn" aria-label="编辑简报"><svg class="i" aria-hidden="true"><use href="#i-edit"/></svg><span class="lbl">编辑</span></button>
+        <button type="button" class="btn btn-quiet" id="copyBtn" aria-label="复制全文"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span class="lbl">复制</span></button>
+        <button type="button" class="btn btn-quiet" id="exportBtn" aria-label="导出 Markdown"><svg class="i" aria-hidden="true"><use href="#i-export"/></svg><span class="lbl">导出</span></button>
+        <button type="button" class="btn btn-secondary btn-src" id="srcToggle" aria-controls="sources" aria-expanded="false"><svg class="i" aria-hidden="true"><use href="#i-book"/></svg>来源 <span class="num" id="srcCountBtn">6</span></button>
+      </div>
+      <div class="bar-actions" id="barEdit" hidden>
+        <span class="bar-hint">直接在文档中修改 · 演示：文中含“失败测试”时保存会失败</span>
+        <button type="button" class="btn btn-quiet" id="cancelBtn">取消</button>
+        <button type="button" class="btn btn-primary" id="saveBtn"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span id="saveLbl">保存</span></button>
+      </div>
+    </header>
+
+    <div class="seg" role="tablist" aria-label="视图">
+      <button type="button" role="tab" id="tabDoc" aria-selected="true" aria-controls="docScroll" data-tab="doc">文档</button>
+      <button type="button" role="tab" id="tabSrc" aria-selected="false" aria-controls="sources" data-tab="sources">来源 <span class="num" id="srcCountTab">6</span></button>
+    </div>
+
+    <div class="doc-scroll" id="docScroll">
+      <article class="doc" id="doc">
+        <section class="empty" id="empty" hidden aria-labelledby="emptyTitle">
+          <h1 class="empty-title" id="emptyTitle" tabindex="-1">要研究什么？</h1>
+          <p class="empty-lead">衡会检索资料，写成带编号来源的简报。每句结论都能回到原文核对，你可以直接修改后导出。</p>
+          <p class="empty-label">可以从这些问题开始</p>
+          <ul class="suggest" id="suggest"></ul>
+          <p class="demo-note">演示：任何问题都会返回同一份预置的储能简报，来源与数字均为虚构。</p>
+        </section>
+        <div class="run" id="runView">
+          <p class="demo-note"><span class="demo-tag">演示</span>回答为预置内容，来源与数字均为虚构</p>
+          <h1 class="question" id="question" tabindex="-1"></h1>
+          <ol class="steps" id="steps" aria-label="研究进度"></ol>
+          <div class="banner" id="banner" hidden></div>
+          <div class="brief" id="brief" aria-label="研究简报"></div>
+        </div>
+      </article>
+    </div>
+
+    <form class="composer" id="composer" novalidate>
+      <label class="sr-only" for="ask">研究问题或追问</label>
+      <div class="chips" id="chips"><span class="file-chip"><svg class="i" aria-hidden="true"><use href="#i-clip"/></svg>储能项目清单（示例）.xlsx<button type="button" class="chip-x" id="chipX" aria-label="移除附件"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></span></div>
+      <textarea id="ask" rows="1" placeholder="追问，或要求补充、改写……"></textarea>
+      <div class="composer-row">
+        <button type="button" class="btn btn-quiet btn-icon" id="attachBtn" aria-label="添加附件"><svg class="i" aria-hidden="true"><use href="#i-clip"/></svg></button>
+        <span class="composer-note" id="composerNote" aria-live="polite">Enter 发送，Shift + Enter 换行</span>
+        <button type="submit" class="btn btn-primary btn-send" id="sendBtn"><svg class="i" aria-hidden="true"><use id="sendIco" href="#i-up"/></svg><span id="sendLbl">发送</span></button>
+      </div>
+    </form>
+  </main>
+
+  <aside class="sources" id="sources" aria-labelledby="srcTitle">
+    <header class="src-head">
+      <div><h2 id="srcTitle">来源 <span class="num" id="srcCount">6</span></h2><p class="src-sub" id="srcSub">按首次引用排序 · 悬停编号查看对应来源</p></div>
+      <button type="button" class="btn btn-quiet btn-icon src-close" id="srcClose" aria-label="关闭来源"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </header>
+    <div class="src-list" id="srcList"></div>
+    <p class="src-empty" id="srcEmpty" hidden>提出问题后，检索到的来源会出现在这里，并标出可信度。</p>
+  </aside>
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<p class="sr-only" id="live" aria-live="polite"></p>
+<script>
+/* 演示数据：机构、标题、数字均为虚构，仅用于展示引用与核对流程 */
+const Q = '2026 年国内储能电池的主要技术路线和成本变化？';
+const SUGGEST = [Q, '县域商业体系建设对农村消费的影响有哪些证据？', '近三年国内咖啡连锁的门店扩张策略有何差异？'];
+const SRC = [
+  {pub:'国家能源统计年报', date:'2026-03', c:'high', cl:'可信度高 · 官方统计', title:'2025 年度电化学储能运行统计', q:'截至 2025 年底，新增电化学储能装机中，[磷酸铁锂电池占比为 92.4%]，钠离子、液流等其他技术合计不足一成。'},
+  {pub:'储能产业研究院 · 价格周报', date:'2026-10', c:'mid', cl:'可信度中 · 行业机构', title:'储能电芯与系统价格跟踪（第 41 周）', q:'[280Ah 以上大容量电芯成为招标主流]，[电芯均价约 0.31 元/Wh，较 2024 年同期下降约 28%]。'},
+  {pub:'华东电网 · 示范项目公告', date:'2026-06', c:'high', cl:'可信度高 · 一手公告', title:'钠离子储能示范电站并网运行情况', q:'[本期钠离子储能示范电站已于 5 月并网]，冬季低温工况下容量保持率优于同规模磷酸铁锂电站。'},
+  {pub:'电池学会期刊 · 综述', date:'2026-04', c:'high', cl:'可信度高 · 同行评审', title:'新型储能电池技术成熟度评估', q:'[钠离子电池能量密度与产业链成熟度仍落后于磷酸铁锂]；[液流电池适用于 4 小时以上长时储能，目前以单体示范为主]。'},
+  {pub:'能源产业观察', date:'2026-09', c:'mid', cl:'可信度中 · 行业媒体', title:'电芯降价之后，系统集成成本去了哪里', q:'受访集成商表示，[温控、PCS 与并网环节占比上升，部分项目系统报价仍在 0.6 元/Wh 左右]。'},
+  {pub:'个人专栏', date:'2026-10', c:'low', cl:'待核实 · 未注明口径', title:'储能电芯价格“跌穿地板”了吗', q:'据业内朋友透露，[部分电芯报价已经低于 0.25 元/Wh]，价格战还会持续。'}
+];
+/* 简报：[[句子|来源]] 为带引用的句子；figure / table 整块出现 */
+const BRIEF = [
+  {t:'h2', x:'储能电池：技术路线与成本变化'},
+  {t:'by', x:'国内市场 · 演示简报 · 依据 6 个虚构来源，数字仅作示例'},
+  {t:'p', k:'lead', x:'结论先行：[[磷酸铁锂仍是国内电化学储能的绝对主流|1]]；[[钠离子电池开始进入示范项目，但规模有限|3,4]]。[[电芯价格较 2024 年继续下降|2]]，[[系统成本的下降则越来越依赖电芯以外的集成环节|5]]。'},
+  {t:'h3', x:'技术路线'},
+  {t:'p', x:'[[磷酸铁锂凭借循环寿命和安全性，在新增装机中占比超过九成|1]]。[[主流电芯正从 280Ah 向更大容量规格迁移|2]]，单柜能量随之提高，场站占地减少。'},
+  {t:'p', x:'[[钠离子电池的优势在于原材料供应和低温性能，已有电网侧示范电站并网|3]]；[[但能量密度和产业链成熟度仍落后于磷酸铁锂|4]]。[[液流电池适合 4 小时以上的长时储能，目前以单体示范为主|4]]。'},
+  {t:'table', head:['路线','示例份额','循环寿命（次）','主要场景'], rows:[['磷酸铁锂','约 92%','8,000–12,000','电网侧、工商业'],['钠离子','约 3%','4,000–6,000','示范、低温地区'],['液流电池','约 2%','15,000 以上','长时储能']], note:'示例数据，整理自虚构来源 [1][4]，不代表真实统计。'},
+  {t:'h3', x:'成本变化'},
+  {t:'fig', k:'储能电芯均价（示例）', n:2, v:'0.31', u:'元/Wh', d:'较 2024 年同期下降约 <em>28%</em>，主要来自碳酸锂价格回落和产线规模效应。'},
+  {t:'p', x:'[[电芯降价并未完全传导到系统价格：温控、变流与并网环节的占比上升，部分项目系统报价仍在 0.6 元/Wh 左右|5]]。'},
+  {t:'h3', x:'待核实'},
+  {t:'p', x:'[[有个人专栏称部分电芯报价已低于 0.25 元/Wh|6]]，但未说明样本和统计口径。引用前建议先核对原始报价单。'}
+];
+const FOLLOW = '演示回复：按现有来源，降价主要发生在电芯环节；[[温控、变流和并网等系统环节的降幅明显小于电芯|5]]。如需拆分到具体项目，需要补充集成商报价资料。';
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const app = $('#app'), brief = $('#brief'), docEl = $('#doc'), srcList = $('#srcList'), stepsEl = $('#steps'), banner = $('#banner');
+const ask = $('#ask'), sendBtn = $('#sendBtn'), note = $('#composerNote');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)'), mqMid = matchMedia('(max-width:1219px)'), mqNarrow = matchMedia('(max-width:759px)');
+const ICON = id => `<svg class="i" aria-hidden="true"><use href="#i-${id}"/></svg>`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const mode = () => mqNarrow.matches ? 'narrow' : mqMid.matches ? 'mid' : 'wide';
+const smooth = () => reduce.matches ? 'auto' : 'smooth';
+const CLAIM = /\[\[(.+?)\|([\d,]+)\]\]/g;
+const USES = {};
+BRIEF.concat({t:'p', x:''}).forEach(b => { for (const m of (b.x || '').matchAll(CLAIM)) m[2].split(',').forEach(n => USES[n] = (USES[n] || 0) + 1); if (b.t === 'fig') USES[b.n] = (USES[b.n] || 0) + 1; });
+const caret = Object.assign(document.createElement('span'), {className: 'caret'});
+caret.setAttribute('aria-hidden', 'true');
+let state = 'done', R = null, baseState = 'done', editSnapshot = '', pinned = 0, hovCard = null, lastFocus = null;
+
+function announce(t) { const l = $('#live'); l.textContent = ''; setTimeout(() => l.textContent = t, 30); }
+let tt; function toast(msg, tone) { const t = $('#toast'); t.dataset.tone = tone || ''; t.innerHTML = ICON(tone === 'err' ? 'alert' : 'check') + esc(msg); t.classList.add('is-on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('is-on'), 2600); }
+function setCount(n) { ['srcCount', 'srcCountBtn', 'srcCountTab'].forEach(id => $('#' + id).textContent = n); }
+
+const LABEL = {empty:['新研究',''], running:['研究中','run'], stopped:['已停止','warn'], done:['已完成','ok'], editing:['编辑中','edit'], saving:['保存中…','edit'], saved:['已保存','ok'], failed:['保存失败','err']};
+function setState(s) {
+  state = s; app.dataset.state = s;
+  const [t, tone] = LABEL[s]; $('#statusText').textContent = t; $('#status').dataset.tone = tone;
+  const busy = s === 'running', editing = s === 'editing' || s === 'saving' || s === 'failed';
+  $('#barView').hidden = editing; $('#barEdit').hidden = !editing;
+  ['editBtn', 'copyBtn', 'exportBtn'].forEach(id => $('#' + id).disabled = busy || s === 'empty');
+  brief.contentEditable = editing ? 'true' : 'false';
+  docEl.classList.toggle('is-editing', editing);
+  $('#saveBtn').disabled = s === 'saving'; $('#cancelBtn').disabled = s === 'saving';
+  sendBtn.classList.toggle('btn-primary', !busy); sendBtn.classList.toggle('btn-stop', busy);
+  $('#sendLbl').textContent = busy ? '停止' : '发送'; $('#sendIco').setAttribute('href', busy ? '#i-stop' : '#i-up');
+  sendBtn.setAttribute('aria-label', busy ? '停止研究' : '发送');
+  sendBtn.disabled = ask.disabled = editing;
+  ask.placeholder = s === 'empty' ? '输入研究问题，例如某个行业的技术路线与成本' : editing ? '先保存或取消编辑，再继续追问' : s === 'stopped' ? '发送会开始新的研究' : '追问，或要求补充、改写……';
+  $('#empty').hidden = s !== 'empty'; $('#runView').hidden = s === 'empty';
+  srcList.hidden = s === 'empty'; $('#srcEmpty').hidden = s !== 'empty'; $('#srcSub').hidden = s === 'empty';
+  setCount(s === 'empty' ? 0 : R ? R.found : 0);
+  const cur = $('.thread[data-thread=current]'); cur.classList.toggle('is-current', s !== 'empty');
+  s === 'empty' ? cur.removeAttribute('aria-current') : cur.setAttribute('aria-current', 'page');
+}
+
+/* 简报 DOM：先整份建好并隐藏，流式时逐字填充文本节点 */
+function citeBtn(n, wait) { return `<button type="button" class="cite${wait ? ' wait' : ''}" contenteditable="false" data-n="${n}" aria-label="来源 ${n}：${esc(SRC[n - 1].title)}">${n}</button>`; }
+function frag(html) { const t = document.createElement('template'); t.innerHTML = html; return [...t.content.children]; }
+function build(blocks) {
+  const ops = [];
+  const text = (parent, s) => { const t = document.createTextNode(''); parent.append(t); ops.push({t, s}); };
+  for (const b of blocks) {
+    let el;
+    if (b.t === 'table') {
+      const r = i => i === 1 || i === 2 ? ' class="r"' : '';
+      el = document.createElement('div'); el.className = 'tbl';
+      el.innerHTML = `<div class="table-wrap"><table><thead><tr>${b.head.map((h, i) => `<th${r(i)}>${h}</th>`).join('')}</tr></thead><tbody>${b.rows.map(row => `<tr>${row.map((c, i) => `<td${r(i)}>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="t-note">${b.note.replace(/\[(\d)\]/g, (m, n) => citeBtn(n))}</p>`;
+      ops.push({show: el, cost: 60});
+    } else if (b.t === 'fig') {
+      el = document.createElement('figure'); el.className = 'figure claim'; el.dataset.src = b.n;
+      el.innerHTML = `<figcaption class="fig-k"><span>${b.k}</span><span class="fig-src">来源 ${citeBtn(b.n)}</span></figcaption><div class="fig-v num">${b.v}<small>${b.u}</small></div><p class="fig-d">${b.d}</p>`;
+      ops.push({show: el, cost: 40});
+    } else {
+      el = document.createElement(b.t === 'by' || b.t === 'fq' ? 'p' : b.t);
+      if (b.t === 'by') el.className = 'byline'; if (b.k) el.className = b.k;
+      if (b.t === 'fq') { el.className = 'fq'; el.innerHTML = '<span class="fq-k" contenteditable="false">追问</span>'; }
+      ops.push({show: el, sec: b.t === 'h3' ? b.x : null});
+      let last = 0;
+      for (const m of b.x.matchAll(CLAIM)) {
+        if (m.index > last) text(el, b.x.slice(last, m.index));
+        const sp = document.createElement('span'); sp.className = 'claim'; sp.dataset.src = m[2].replace(/,/g, ' ');
+        el.append(sp); text(sp, m[1]);
+        const cs = frag(m[2].split(',').map(n => citeBtn(n, true)).join('')); el.append(...cs); ops.push({cites: cs});
+        last = m.index + m[0].length;
+      }
+      if (last < b.x.length) text(el, b.x.slice(last));
+    }
+    el.classList.add('is-pending'); brief.append(el);
+  }
+  return ops;
+}
+function apply(r, budget) {
+  while (r.i < r.ops.length && budget > 0) {
+    const o = r.ops[r.i];
+    if (o.show) { o.show.classList.remove('is-pending'); if (o.show.tagName === 'H3') { r.sec = o.sec; r.secChanged = true; } budget -= o.cost || 0; r.last = o.show; r.i++; continue; }
+    if (o.cites) { o.cites.forEach(c => c.classList.remove('wait')); r.last = o.cites[o.cites.length - 1]; r.i++; continue; }
+    const take = Math.min(budget, o.s.length - r.off); r.off += take; o.t.data = o.s.slice(0, r.off); budget -= take; r.last = o.t;
+    if (r.off >= o.s.length) { r.i++; r.off = 0; }
+  }
+}
+function placeCaret() { if (R && R.last && R.last.nodeType === 3 || R && R.last && R.last.classList && R.last.classList.contains('cite')) R.last.after(caret); else caret.remove(); }
+
+/* 运行：检索 → 阅读 → 撰写，每一步对应真实的模拟进度 */
+function srcCard(i) {
+  const s = SRC[i], n = i + 1;
+  return `<article class="src" id="src-${n}" data-n="${n}"><div class="src-top"><span class="src-n">${n}</span><span class="src-pub">${s.pub}</span><time>${s.date}</time></div><h3 class="src-title"><button type="button" data-src="${n}" aria-describedby="go-${n}">${s.title}</button></h3><q>${esc(s.q).replace(/\[(.+?)\]/g, '<mark>$1</mark>')}</q><div class="src-foot"><span class="tag" data-c="${s.c}">${s.cl}</span><span class="go" id="go-${n}">定位原句${ICON('arrow')}</span></div></article>`;
+}
+function addSource(i, fresh) { srcList.insertAdjacentHTML('beforeend', srcCard(i)); const c = srcList.lastElementChild; c.classList.add('unread'); if (fresh) c.classList.add('is-new'); setCount(i + 1); }
+function renderSteps() {
+  const r = R, P = ['search', 'read', 'write', 'done'], pi = P.indexOf(r.phase), stopped = state === 'stopped';
+  const st = k => pi > k ? 'done' : pi === k ? (stopped ? 'stopped' : 'active') : 'pending';
+  const words = [
+    {pending: '查找资料', active: `已找到 ${r.found} 个`, stopped: `已找到 ${r.found} 个`, done: `${r.found} 个来源`},
+    {pending: '阅读来源', active: `已读 ${r.read}/${SRC.length}`, stopped: `已读 ${r.read}/${SRC.length}`, done: `读完 ${r.read} 篇`},
+    {pending: '撰写简报', active: r.follow ? '回答追问' : '正在写「' + (r.sec || '结论') + '」', stopped: '停在「' + (r.sec || '结论') + '」', done: r.cut ? '中途停止，已手动编辑' : '已完成'}];
+  const ico = {done: ICON('check'), active: '<span class="spin" aria-hidden="true"></span>', pending: '<span class="ring" aria-hidden="true"></span>', stopped: ICON('stop')};
+  const sr = {done: '完成', active: '进行中', pending: '未开始', stopped: '已停止'};
+  stepsEl.innerHTML = ['检索', '阅读', '撰写'].map((name, k) => { const s = st(k); return `<li class="step" data-s="${s}">${ico[s]}<b>${name}</b><span>${words[k][s]}</span><span class="sr-only">（${sr[s]}）</span></li>`; }).join('');
+}
+function newRun(q, o = {}) {
+  if (R) clearTimeout(R.timer); unpin(); caret.remove(); banner.hidden = true;
+  brief.innerHTML = ''; srcList.innerHTML = '';
+  R = {q, phase: 'search', found: 0, read: 0, ops: build(BRIEF), i: 0, off: 0, last: null, timer: 0};
+  $('#question').textContent = q;
+  const cur = $('.thread[data-thread=current]'); cur.querySelector('.t-title').textContent = q === Q ? '储能电池技术路线与成本' : q.replace(/[？?]$/, '');
+  setState('running');
+  if (o.at != null) {
+    SRC.forEach((s, i) => addSource(i)); $$('.src', srcList).forEach(c => c.classList.remove('unread'));
+    R.found = R.read = SRC.length; R.phase = 'write';
+    const total = R.ops.reduce((a, x) => a + (x.s ? x.s.length : x.cost || 0), 0);
+    apply(R, Math.round(total * o.at)); placeCaret();
+  }
+  renderSteps();
+  if (!o.hold) R.timer = setTimeout(loop, o.at != null ? 30 : 420);
+  else if (R.i >= R.ops.length) finish(true);
+  if (!o.quiet) announce('开始研究：' + q);
+}
+function loop() {
+  const r = R; if (!r || state !== 'running') return;
+  if (r.phase === 'search') {
+    addSource(r.found, true); r.found++;
+    if (r.found >= SRC.length) r.phase = 'read';
+    renderSteps(); r.timer = setTimeout(loop, reduce.matches ? 60 : 280); return;
+  }
+  if (r.phase === 'read') {
+    r.read++; $('#src-' + r.read).classList.remove('unread');
+    if (r.read >= SRC.length) r.phase = 'write';
+    renderSteps(); r.timer = setTimeout(loop, reduce.matches ? 60 : r.phase === 'write' ? 260 : 170); return;
+  }
+  apply(r, reduce.matches ? Infinity : 4); placeCaret();
+  if (r.secChanged) { r.secChanged = false; renderSteps(); }
+  if (r.i >= r.ops.length) return finish();
+  r.timer = setTimeout(loop, 28);
+}
+function finish(quiet) { R.phase = 'done'; caret.remove(); setState('done'); renderSteps(); if (!quiet) announce('简报已完成，引用 ' + R.found + ' 个来源'); }
+function stop() {
+  if (state !== 'running') return;
+  clearTimeout(R.timer); caret.remove(); setState('stopped'); renderSteps();
+  if (R.phase === 'write' && R.last) { const p = frag('<span class="stop-pill" contenteditable="false">已停止</span>')[0]; (R.last.nodeType === 3 || R.last.classList.contains('cite') ? R.last.after(p) : R.last.append(p)); R.pill = p; }
+  showBanner('stop'); announce('已停止，已生成的部分保留在文档中');
+}
+function resume() { if (R.pill) R.pill.remove(); R.pill = null; banner.hidden = true; setState('running'); renderSteps(); R.timer = setTimeout(loop, 160); }
+function followUp(q) {
+  unpin(); const ops = build([{t: 'fq', x: q}, {t: 'p', x: FOLLOW}]);
+  R.ops.push(...ops); R.phase = 'write'; R.follow = true; banner.hidden = true;
+  setState('running'); renderSteps(); R.timer = setTimeout(loop, 300); announce('正在回答追问');
+}
+/* 横幅：停止与保存失败都保留已有内容，并给出下一步 */
+function showBanner(kind) {
+  banner.hidden = false; banner.dataset.tone = kind === 'fail' ? 'err' : 'warn';
+  banner.innerHTML = kind === 'fail'
+    ? `${ICON('alert')}<p>保存失败，你的修改仍在文档里，没有丢失。<small>演示：正文含“失败测试”时会模拟保存失败，删掉它再重试即可。</small></p><button type="button" class="btn btn-secondary" data-act="retry">${ICON('retry')}重试保存</button>`
+    : `${ICON('stop')}<p>${R.phase === 'write' ? '已停止，已生成的部分保留在文档里。' : `已停止，已找到 ${R.found} 个来源，还没开始撰写。`}<small>可以继续、直接编辑已有内容，或换个问题重新开始。</small></p><button type="button" class="btn btn-secondary" data-act="resume">继续</button><button type="button" class="btn btn-quiet" data-act="restart">${ICON('retry')}重新生成</button>`;
+}
+banner.addEventListener('click', e => { const a = e.target.closest('[data-act]'); if (!a) return; const k = a.dataset.act;
+  if (k === 'retry') save(); if (k === 'resume') resume(); if (k === 'restart') newRun(R.q); });
+
+/* 编辑与保存 */
+function startEdit() {
+  if (state === 'running' || state === 'empty') return; unpin();
+  baseState = state === 'stopped' ? 'stopped' : 'done'; editSnapshot = [...brief.childNodes]; brief.replaceChildren(...editSnapshot.map(n => n.cloneNode(true))); banner.hidden = true;
+  setState('editing'); const p = $('p.lead', brief) || $('p', brief); brief.focus();
+  if (p) { const sel = getSelection(), rg = document.createRange(); rg.selectNodeContents(p); rg.collapse(false); sel.removeAllRanges(); sel.addRange(rg); }
+  announce('进入编辑，直接修改文档文字');
+}
+function cancelEdit() { brief.replaceChildren(...editSnapshot); endEdit(baseState); if (baseState === 'stopped') showBanner('stop'); $('#editBtn').focus(); announce('已取消编辑'); }
+function endEdit(s) { banner.hidden = true; setState(s); }
+function save() {
+  if (!['editing', 'failed'].includes(state)) return;
+  setState('saving'); $('#saveLbl').textContent = '保存中…'; banner.hidden = true;
+  setTimeout(() => {
+    $('#saveLbl').textContent = '保存';
+    if (brief.textContent.includes('失败测试')) { setState('failed'); showBanner('fail'); toast('保存失败，修改已保留', 'err'); announce('保存失败，修改仍在文档中'); $('[data-act=retry]').focus(); return; }
+    if (R.phase !== 'done') { R.ops.length = R.i; R.off = 0; R.phase = 'done'; R.cut = true; R.pill = null; }
+    $$('.is-pending, .cite.wait', brief).forEach(x => x.remove()); editSnapshot = [...brief.childNodes]; endEdit('saved'); renderSteps(); toast('已保存到本地演示'); announce('已保存'); $('#editBtn').focus();
+  }, reduce.matches ? 200 : 650);
+}
+
+/* 复制与导出 */
+function plain() {
+  const c = brief.cloneNode(true); c.querySelectorAll('.is-pending, .cite.wait').forEach(x => x.remove()); c.querySelectorAll('.cite').forEach(b => b.textContent = `[${b.dataset.n}]`); c.querySelectorAll('.stop-pill,.fq-k').forEach(x => x.remove());
+  const out = []; [...c.children].forEach(el => {
+    if (el.matches('h2')) out.push('# ' + el.textContent); else if (el.matches('h3')) out.push('## ' + el.textContent);
+    else if (el.matches('.tbl')) { const rows = [...el.querySelectorAll('tr')].map(tr => '| ' + [...tr.children].map(td => td.textContent).join(' | ') + ' |'); rows.splice(1, 0, '|' + ' --- |'.repeat(el.querySelector('tr').children.length)); out.push(rows.join('\n'), el.querySelector('.t-note').textContent); }
+    else out.push(el.textContent.replace(/\s+/g, ' ').trim());
+  });
+  out.push('## 来源', ...SRC.map((s, i) => `[${i + 1}] ${s.pub}，《${s.title}》，${s.date}（${s.cl}，演示虚构）`));
+  return out.filter(Boolean).join('\n\n');
+}
+async function copy() {
+  const t = plain(); let ok = false;
+  try { await navigator.clipboard.writeText(t); ok = true; } catch (e) { const a = document.createElement('textarea'); a.value = t; document.body.append(a); a.select(); try { ok = document.execCommand('copy'); } catch (_) {} a.remove(); }
+  ok ? toast('已复制全文和 6 条来源') : toast('浏览器拒绝了复制，请手动选择文字', 'err');
+}
+function exportMd() { const u = URL.createObjectURL(new Blob([plain()], {type: 'text/markdown'})); const a = Object.assign(document.createElement('a'), {href: u, download: '衡-储能电池研究简报（演示）.md'}); document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 1e3); toast('已导出 Markdown 文件'); }
+
+/* 引用 ↔ 来源 */
+function srcVisible() { const m = mode(); return m === 'wide' || (m === 'mid' && app.classList.contains('src-open')) || (m === 'narrow' && app.dataset.tab === 'sources'); }
+function mark(n, on) {
+  $$('.src.is-on').forEach(c => c.classList.remove('is-on')); $$('.cite.is-on').forEach(c => c.classList.remove('is-on')); $$('.claim.is-link').forEach(c => c.classList.remove('is-link'));
+  if (!on) return;
+  const card = $('#src-' + n); if (card) card.classList.add('is-on');
+  $$(`.cite[data-n="${n}"]`, brief).forEach(c => c.classList.add('is-on'));
+  return card;
+}
+function claimOf(cite) { let p = cite.previousElementSibling; while (p && p.classList.contains('cite')) p = p.previousElementSibling; return p && p.classList.contains('claim') ? p : cite.closest('.claim'); }
+function previewCite(cite) {
+  const card = mark(cite.dataset.n, true), cl = claimOf(cite); if (cl) cl.classList.add('is-link');
+  if (card && srcVisible()) card.scrollIntoView({block: 'nearest', behavior: smooth()});
+}
+function unpin() { pinned = 0; $$('.claim.is-hit').forEach(c => c.classList.remove('is-hit')); mark(0, false); }
+function pinCite(cite) {
+  const n = +cite.dataset.n; pinned = n; previewCite(cite); const m = mode();
+  if (m === 'mid' && !app.classList.contains('src-open')) openSrc(false);
+  if (m === 'narrow') setTab('sources');
+  const card = $('#src-' + n); if (card) { card.scrollIntoView({block: 'center', behavior: smooth()}); if (m !== 'wide') $('button', card).focus({preventScroll: true}); }
+  announce(`来源 ${n}：${SRC[n - 1].pub}，${SRC[n - 1].cl}`);
+}
+function gotoClaims(n) {
+  unpin(); pinned = n; mark(n, true);
+  const hits = $$(`.claim[data-src~="${n}"]`, brief).filter(c => !c.closest('.is-pending')); hits.forEach(c => c.classList.add('is-hit'));
+  const m = mode(); if (m === 'mid') closeSrc(false); if (m === 'narrow') setTab('doc');
+  if (hits[0]) { requestAnimationFrame(() => hits[0].scrollIntoView({block: 'center', behavior: smooth()})); const c = hits[0].nextElementSibling && hits[0].nextElementSibling.classList.contains('cite') ? hits[0].nextElementSibling : $('.cite', hits[0]); if (c && m !== 'wide') c.focus({preventScroll: true}); }
+  announce(hits.length ? `来源 ${n} 支持 ${hits.length} 处内容，已在文档中标出` : `来源 ${n} 支持的内容尚未生成`);
+}
+brief.addEventListener('mouseover', e => { const c = e.target.closest('.cite'); if (c && !pinned) previewCite(c); });
+brief.addEventListener('mouseout', e => { const c = e.target.closest('.cite'); if (c && !pinned) mark(0, false); });
+brief.addEventListener('focusin', e => { const c = e.target.closest('.cite'); if (c && !pinned) previewCite(c); });
+brief.addEventListener('focusout', e => { const c = e.target.closest('.cite'); if (c && !pinned) mark(0, false); });
+brief.addEventListener('click', e => { const c = e.target.closest('.cite'); if (c) { e.preventDefault(); pinned === +c.dataset.n && mode() === 'wide' ? unpin() : (unpin(), pinCite(c)); } else if (pinned && state !== 'editing') unpin(); });
+srcList.addEventListener('click', e => { const b = e.target.closest('[data-src]'); if (b) gotoClaims(+b.dataset.src); });
+srcList.addEventListener('mouseover', e => { const c = e.target.closest('.src'); if (!c || pinned || c === hovCard) return; hovCard = c; $$('.cite', brief).forEach(x => x.classList.toggle('is-on', x.dataset.n === c.dataset.n)); });
+srcList.addEventListener('mouseleave', () => { hovCard = null; if (!pinned) mark(0, false); });
+
+/* 来源面板：768 滑出、375 分段 */
+function openSrc(focus = true) { lastFocus = document.activeElement; app.classList.add('src-open'); $('#srcToggle').setAttribute('aria-expanded', 'true'); $('#docPane').inert = true; $('.threads').inert = true; if (focus) setTimeout(() => $('#srcClose').focus(), 30); }
+function closeSrc(back = true) { if (!app.classList.contains('src-open')) return; app.classList.remove('src-open'); $('#srcToggle').setAttribute('aria-expanded', 'false'); $('#docPane').inert = false; $('.threads').inert = false; if (back && lastFocus) lastFocus.focus(); }
+function setTab(t) { app.dataset.tab = t; $$('.seg [role=tab]').forEach(b => { const on = b.dataset.tab === t; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; }); }
+$('#srcToggle').onclick = () => app.classList.contains('src-open') ? closeSrc() : openSrc();
+$('#srcClose').onclick = () => closeSrc(); $('#scrim').onclick = () => closeSrc();
+$$('.seg [role=tab]').forEach(b => { b.onclick = () => setTab(b.dataset.tab); b.onkeydown = e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const o = $$('.seg [role=tab]').find(x => x !== b); setTab(o.dataset.tab); o.focus(); } }; });
+mqMid.addEventListener('change', () => closeSrc(false));
+document.addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (app.classList.contains('src-open')) closeSrc(); else if (pinned) unpin(); });
+
+/* 输入区 */
+function fit() { ask.style.height = 'auto'; ask.style.height = Math.min(ask.scrollHeight, 140) + 'px'; }
+ask.addEventListener('input', () => { fit(); if (note.dataset.tone) { note.dataset.tone = ''; note.textContent = 'Enter 发送，Shift + Enter 换行'; } });
+ask.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); $('#composer').requestSubmit(); } });
+$('#composer').addEventListener('submit', e => {
+  e.preventDefault(); if (state === 'running') return stop();
+  const q = ask.value.trim();
+  if (!q) { note.dataset.tone = 'err'; note.textContent = state === 'empty' ? '先写下要研究的问题' : '先写下追问内容'; ask.focus(); return; }
+  ask.value = ''; fit();
+  if (state === 'empty' || state === 'stopped') newRun(q); else followUp(q);
+  setTab('doc');
+});
+$('#chipX').onclick = () => { $('.file-chip').hidden = true; $('#attachBtn').focus(); announce('已移除附件'); };
+$('#attachBtn').onclick = () => { $('.file-chip').hidden = false; toast('演示：已附上示例表格，未接入文件选择'); };
+$('#newBtn').onclick = () => { if (R) clearTimeout(R.timer); caret.remove(); unpin(); $('.file-chip').hidden = true; setState('empty'); setTab('doc'); $('#emptyTitle').focus(); };
+$('#suggest').innerHTML = SUGGEST.map(q => `<li><button type="button"><span>${q}</span>${ICON('arrow')}</button></li>`).join('');
+$('#suggest').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { newRun(b.textContent.trim()); $('#question').focus(); } });
+$$('.thread').forEach(a => a.onclick = e => { e.preventDefault(); if (a.dataset.thread === 'other') toast('演示：其他研究记录没有预置内容'); else if (state === 'empty') { setState(R.phase === 'done' ? 'done' : 'stopped'); } });
+$('#editBtn').onclick = startEdit; $('#cancelBtn').onclick = cancelEdit; $('#saveBtn').onclick = save;
+$('#copyBtn').onclick = copy; $('#exportBtn').onclick = exportMd;
+reduce.addEventListener('change', () => { if (state === 'running' && R.phase === 'write') { apply(R, Infinity); finish(); } });
+
+/* 启动：地址栏 hash 可直接进入某个状态，例如 #done&cite=2、#running&still、#empty、#stopped、#failed */
+(function boot() {
+  const h = new URLSearchParams(location.hash.slice(1).replace(/^([a-z]+)(?=&|$)/, 'view=$1'));
+  const v = h.get('view') || 'done';
+  if (h.has('still')) document.documentElement.classList.add('no-anim');
+  if (v === 'empty') { newRun(Q, {at: 1, hold: true, quiet: true}); $('.file-chip').hidden = true; setState('empty'); }
+  else if (v === 'running') { newRun(Q, {at: +(h.get('at') || .42), hold: h.has('still'), quiet: true}); }
+  else if (v === 'live') newRun(Q);
+  else if (v === 'stopped') { newRun(Q, {at: .42, hold: true, quiet: true}); stop(); }
+  else { newRun(Q, {at: 1, hold: true, quiet: true}); if (v === 'edit' || v === 'failed') { startEdit(); if (v === 'failed') { $('p.lead', brief).append('（失败测试）'); setState('failed'); showBanner('fail'); } } }
+  if (h.get('tab')) setTab(h.get('tab'));
+  if (h.has('open')) openSrc(false);
+  if (h.get('y')) $('#docScroll').scrollTop = +h.get('y');
+  const n = h.get('cite'); if (n) { const c = $(`.cite[data-n="${n}"]`, brief); if (c) { if (h.has('goto')) gotoClaims(+n); else { pinned = +n; previewCite(c); const cl = claimOf(c); if (cl) cl.classList.add('is-hit'); } } }
+  fit();
+})();
+
+</script>
+</body>
+</html>

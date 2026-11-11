@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f1e6">
+<title>漫行 · 城市慢行 App 概念</title>
+<style>
+:root{
+  --paper:#f6f1e6; --card:#fcfaf4; --well:#eee7d8; --well-2:#e6ddca;
+  --ink:#1f2c25; --ink-2:#47554c; --muted:#5f695f;
+  --moss:#2e4a3a; --moss-2:#5b7a5f; --moss-soft:#dfe6d4; --leaf:#8fa883;
+  --persimmon:#c4532c; --persimmon-ink:#ad4320; --persimmon-wash:rgba(196,83,44,.12);
+  --stage:#e8e1d2;
+  --r-card:28px; --r-block:18px; --r-input:14px; --r-pill:999px;
+  --lift:0 1px 2px rgba(58,46,24,.06),0 12px 28px -14px rgba(58,46,24,.26);
+  --float:0 -10px 24px -16px rgba(58,46,24,.30);
+  --sans:"PingFang SC","Hiragino Sans GB","Noto Sans SC",system-ui,sans-serif;
+  --serif:"Songti SC","STSong","Noto Serif SC",serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--stage);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums;text-rendering:optimizeLegibility}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus{outline:none}
+:focus-visible{outline:2.5px solid var(--moss-2);outline-offset:3px;border-radius:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.num{font-variant-numeric:lining-nums tabular-nums}
+#defs{position:absolute;width:0;height:0;overflow:hidden}
+
+/* ---------- 展示台 ---------- */
+.stage{min-height:100vh;padding:38px 32px 40px;background:radial-gradient(900px 520px at 50% 0%,#f3eee3 0%,rgba(243,238,227,0) 72%),var(--stage)}
+.stage-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;max-width:1360px;margin:0 auto 26px;padding:0 8px}
+.brand{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-family:var(--serif);font-size:19px;font-weight:600;color:var(--moss)}
+.brand svg{width:30px;height:30px}
+.stage-head h1{margin:0;font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.3;letter-spacing:.01em;text-wrap:balance}
+.stage-note{margin:0 0 6px;max-width:23em;font-size:14px;line-height:1.75;color:var(--muted);text-wrap:pretty}
+.phones{--z:.78;display:grid;grid-template-columns:repeat(4,auto);justify-content:center;gap:40px 28px}
+.slot{display:flex;flex-direction:column;align-items:center;gap:14px}
+.cap{width:calc(414px * var(--z,.72));display:flex;gap:10px;align-items:baseline;font-size:14px;color:var(--ink-2);padding:0 8px}
+.cap b{font-weight:600;color:var(--ink);font-size:15px}
+.cap i{font-style:normal;font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;font-weight:600}
+
+/* ---------- 机身 ---------- */
+.phone{zoom:var(--z,.72);width:414px;height:868px;padding:12px;border-radius:66px;position:relative;background:#1c201d;
+  box-shadow:inset 0 0 0 1.5px #464c47,inset 0 0 0 5px #121513,0 2px 6px rgba(40,32,18,.14),0 44px 80px -34px rgba(40,32,18,.5)}
+.phone::before,.phone::after{content:"";position:absolute;left:-3px;width:3px;border-radius:2px 0 0 2px;background:#2a2f2b}
+.phone::before{top:180px;height:60px}.phone::after{top:256px;height:60px}
+.screen{position:relative;width:390px;height:844px;border-radius:54px;overflow:hidden;background:var(--paper);isolation:isolate;
+  --top:58px;--bottom:26px;--tab:58px}
+.island{position:absolute;z-index:40;top:11px;left:50%;width:122px;height:36px;margin-left:-61px;border-radius:20px;background:#090a09;pointer-events:none}
+.statusbar{position:absolute;z-index:35;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 32px 0 50px;font-size:16px;font-weight:600;letter-spacing:.01em;pointer-events:none;color:var(--ink)}
+.statusbar svg{display:block}
+.statusbar .sys{display:flex;gap:6px;align-items:center}
+.homebar{position:absolute;z-index:45;bottom:8px;left:50%;width:136px;height:5px;margin-left:-68px;border-radius:3px;background:var(--ink);opacity:.82;pointer-events:none}
+.scrim{position:absolute;z-index:34;top:0;left:0;right:0;height:calc(var(--top) + 8px);background:linear-gradient(var(--paper) 62%,rgba(246,241,230,0));opacity:0;pointer-events:none;transition:opacity .2s}
+.screen.scrolled .scrim{opacity:1}
+[data-focus]:focus,[data-focus]:focus-visible{outline:none}
+
+/* ---------- App 外壳 ---------- */
+.app{position:absolute;inset:0;display:flex;flex-direction:column}
+.viewport{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:none}
+.viewport::-webkit-scrollbar{display:none}
+.view{min-height:100%;padding:calc(var(--top) + 6px) 20px calc(var(--bottom) + var(--tab) + 28px);animation:viewIn .32s var(--ease) both}
+@keyframes viewIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.tabbar{position:absolute;z-index:20;left:0;right:0;bottom:0;height:calc(var(--tab) + var(--bottom));padding:6px 10px var(--bottom);display:grid;grid-template-columns:repeat(4,1fr);background:#f9f5ec;box-shadow:var(--float)}
+.tab{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:48px;border-radius:14px;color:var(--muted);font-size:11px;font-weight:500;letter-spacing:.04em}
+.tab svg{width:25px;height:25px}
+.tab[aria-current="page"]{color:var(--moss);font-weight:600}
+.tab[aria-current="page"] svg{stroke-width:2.1}
+.tab .live{position:absolute;top:5px;left:calc(50% + 9px);width:7px;height:7px;border-radius:50%;background:var(--persimmon);box-shadow:0 0 0 2px #f9f5ec}
+
+.toast{position:absolute;z-index:30;left:50%;top:calc(var(--top) + 4px);transform:translate(-50%,-12px);opacity:0;pointer-events:none;display:flex;align-items:center;gap:8px;max-width:calc(100% - 40px);padding:10px 16px 10px 12px;border-radius:var(--r-pill);background:var(--moss);color:#f6f1e6;font-size:14px;font-weight:500;white-space:nowrap;box-shadow:var(--lift);transition:opacity .2s,transform .3s var(--ease)}
+.toast svg{width:18px;height:18px;flex:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* 图标 */
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* 通用 */
+.h-sec{display:flex;align-items:baseline;justify-content:space-between;margin:26px 0 14px;font-size:17px;font-weight:600}
+.h-sec small{font-size:13px;font-weight:400;color:var(--muted)}
+.btn-primary{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:56px;padding:0 24px;border-radius:var(--r-pill);background:var(--moss);color:#f7f2e7;font-size:17px;font-weight:600;letter-spacing:.06em;box-shadow:0 1px 1px rgba(30,48,38,.2),0 10px 22px -10px rgba(30,48,38,.55);transition:transform .15s var(--ease),background .2s,opacity .2s}
+.btn-primary:active{transform:scale(.98)}
+.btn-primary small{font-size:13px;font-weight:400;letter-spacing:0;opacity:.78}
+.btn-primary[disabled],.btn-primary[aria-disabled="true"]{background:#a5ad9f;box-shadow:none;cursor:not-allowed}
+.btn-round{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--card);color:var(--ink);box-shadow:var(--lift)}
+.btn-round[aria-pressed="true"]{color:var(--persimmon-ink)}
+.btn-round[aria-pressed="true"] .ic{fill:currentColor}
+.demo-note{margin:34px 0 0;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.04em}
+
+/* ---------- 今日 ---------- */
+.t-date{margin:8px 0 6px;font-size:13px;color:var(--muted);letter-spacing:.06em}
+.t-greet{margin:0;font-family:var(--serif);font-weight:600;font-size:31px;line-height:1.32;letter-spacing:.02em}
+.t-weather{display:flex;align-items:center;gap:7px;margin:12px 0 0;font-size:14px;color:var(--ink-2)}
+.t-weather .ic{width:20px;height:20px;color:var(--moss-2)}
+.resume{display:flex;align-items:center;gap:12px;width:100%;margin:20px 0 0;padding:8px 14px 8px 8px;min-height:60px;border-radius:var(--r-pill);background:var(--well);text-align:left;transition:background .2s}
+.resume:hover{background:var(--well-2)}
+.resume .ring{width:44px;height:44px;flex:none}
+.resume span{display:block;font-size:12px;color:var(--muted)}
+.resume b{display:block;font-size:15px;font-weight:600;margin-top:1px}
+.resume .ic{margin-left:auto;color:var(--muted)}
+.feature{display:block;width:100%;margin:16px 0 0;padding:8px;border-radius:var(--r-card);background:var(--card);box-shadow:var(--lift);text-align:left;transition:transform .2s var(--ease)}
+.feature:active{transform:scale(.985)}
+.feature .art{position:relative;display:block;height:232px;border-radius:20px;overflow:hidden;background:var(--well)}
+.feature .art svg{display:block;width:100%;height:100%}
+.chip-on-art{position:absolute;left:12px;top:12px;padding:6px 11px;border-radius:var(--r-pill);background:rgba(252,250,244,.94);font-size:12px;font-weight:600;color:var(--moss);letter-spacing:.04em}
+.feature .body{display:flex;align-items:center;gap:12px;padding:16px 8px 8px 10px}
+.feature .name{display:block;font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.03em}
+.feature .meta{display:block;margin-top:6px;font-size:13px;color:var(--ink-2)}
+.feature .go{margin-left:auto;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--moss-soft);color:var(--moss);flex:none}
+.rail{display:flex;gap:12px;margin:0 -20px;padding:0 20px 6px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.mini{flex:none;width:150px;scroll-snap-align:start;text-align:left;border-radius:var(--r-block)}
+.mini .art{display:block;height:112px;border-radius:var(--r-block);overflow:hidden;background:var(--well)}
+.mini .art svg{display:block;width:100%;height:100%}
+.mini .name{display:block;margin:10px 2px 0;font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:.02em}
+.mini .meta{display:block;margin:4px 2px 0;font-size:12px;color:var(--muted)}
+
+/* ---------- 路线详情 ---------- */
+.view.route{padding-top:0;padding-left:0;padding-right:0}
+.map-hero{position:relative;height:var(--map-h,336px);background:#e9e0cc}
+.map-hero svg.map{display:block;width:100%;height:100%}
+.map-top{position:absolute;left:16px;right:16px;top:calc(var(--top) + 2px);display:flex;justify-content:space-between}
+.sheet{position:relative;margin-top:-30px;padding:26px 20px 0;border-radius:var(--r-card) var(--r-card) 0 0;background:var(--paper)}
+.r-area{margin:0;font-size:13px;color:var(--muted);letter-spacing:.04em}
+.r-name{margin:6px 0 0;font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:.03em}
+.r-tag{margin:8px 0 0;text-wrap:pretty;font-size:15px;line-height:1.6;color:var(--ink-2)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin:20px 0 0;padding:14px 4px;border-radius:var(--r-block);background:var(--well)}
+.stat{padding:0 12px}
+.stat+.stat{box-shadow:-1px 0 0 rgba(70,60,40,.1)}
+.stat .v{font-size:22px;font-weight:600;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.01em}
+.stat .v small{margin-left:3px;font-size:13px;font-weight:500;color:var(--ink-2)}
+.stat .k{display:flex;align-items:center;gap:4px;margin-top:3px;font-size:12px;color:var(--muted)}
+.stat .k .ic{width:14px;height:14px}
+.stops{list-style:none;margin:0;padding:0}
+.stop{display:grid;grid-template-columns:30px 1fr auto;gap:0 14px;width:100%;padding:0 0 18px;text-align:left;position:relative;border-radius:14px}
+.stops li:not(:last-child) .stop::before{content:"";position:absolute;left:14px;top:34px;bottom:2px;border-left:2px dotted #b9c3ab}
+.stop .n{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--moss-soft);color:var(--moss);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;transition:background .2s,color .2s}
+.stop[aria-pressed="true"] .n{background:var(--persimmon);color:#fff;box-shadow:0 0 0 5px var(--persimmon-wash)}
+.stop .t{font-family:var(--serif);font-size:17px;font-weight:600;line-height:30px;letter-spacing:.02em}
+.stop .d{grid-column:2;margin-top:2px;font-size:14px;line-height:1.6;color:var(--ink-2)}
+.stop .m{grid-row:1;grid-column:3;font-size:12px;line-height:30px;color:var(--muted);font-variant-numeric:tabular-nums}
+.cta-bar{position:sticky;z-index:5;bottom:calc(var(--bottom) + var(--tab));margin:6px 0 0;padding:18px 0 14px;background:linear-gradient(to top,var(--paper) 72%,rgba(246,241,230,0))}
+
+/* ---------- 漫行中 ---------- */
+.w-head{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin-top:2px}
+.w-state{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--persimmon-ink);letter-spacing:.06em}
+.w-state .dot{width:8px;height:8px;border-radius:50%;background:var(--persimmon);animation:breathe 1.8s ease-in-out infinite}
+.w-state.paused{color:var(--muted)}
+.w-state.paused .dot{background:var(--muted);animation:none}
+@keyframes breathe{50%{transform:scale(.6);opacity:.55}}
+.w-route{margin:2px 0 0;font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.03em}
+.w-count{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.w-count b{font-size:17px;color:var(--ink);font-weight:600}
+.w-map{position:relative;height:226px;margin:14px 0 0;border-radius:var(--r-block);overflow:hidden;background:#e9e0cc}
+.w-map svg{display:block;width:100%;height:100%}
+.next{position:relative;margin:14px 0 0;padding:20px 20px 18px;border-radius:var(--r-card);background:var(--card);box-shadow:var(--lift);overflow:hidden}
+.next .lbl{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--persimmon-ink);letter-spacing:.04em}
+.next .lbl .n{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--persimmon);color:#fff;font-size:12px;font-variant-numeric:tabular-nums}
+.next .nm{margin:10px 0 0;font-family:var(--serif);font-size:32px;font-weight:600;letter-spacing:.04em;line-height:1.25}
+.next .far{margin:6px 0 0;font-size:15px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.next .look{margin:14px 0 0;padding:12px 14px;border-radius:var(--r-input);background:var(--well);font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.next .look b{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--moss-2);margin-right:6px;letter-spacing:.04em}
+.next.advance .swap{animation:swapIn .5s var(--ease) both}
+@keyframes swapIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.meters{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:16px 4px 0}
+.meter .v{font-size:30px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:lining-nums tabular-nums;transition:opacity .2s}
+.meter .v small{margin-left:3px;font-size:14px;font-weight:500;color:var(--ink-2)}
+.meter .k{margin-top:2px;font-size:12px;color:var(--muted)}
+.paused-v .meter:first-child .v{opacity:.45}
+.controls{display:flex;gap:12px;align-items:center;margin:18px 0 0}
+.controls .btn-round{width:56px;height:56px;flex:none;background:var(--well);box-shadow:none;color:var(--moss)}
+.controls .btn-round .ic{width:24px;height:24px}
+.arrive{position:relative;flex:1;overflow:visible}
+.arrive .ripple{position:absolute;inset:0;border-radius:var(--r-pill);pointer-events:none;box-shadow:0 0 0 0 rgba(196,83,44,.55)}
+.arrive.hit{animation:press .42s var(--ease)}
+.arrive.hit .ripple{animation:ripple .7s ease-out}
+@keyframes press{0%{transform:scale(1)}30%{transform:scale(.95)}65%{transform:scale(1.015)}100%{transform:scale(1)}}
+@keyframes ripple{from{box-shadow:0 0 0 0 rgba(196,83,44,.5)}to{box-shadow:0 0 0 18px rgba(196,83,44,0)}}
+.hint{min-height:20px;margin:10px 0 0;text-align:center;font-size:13px;color:var(--muted)}
+.pos-pulse{transform-box:fill-box;transform-origin:center;animation:pos 2s ease-out infinite}
+@keyframes pos{from{transform:scale(.6);opacity:.55}to{transform:scale(2.2);opacity:0}}
+.done-card,.idle-card{margin:16px 0 0;padding:24px 20px 20px;border-radius:var(--r-card);background:var(--card);box-shadow:var(--lift)}
+.done-card h2,.idle-card h2{margin:0;font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:.04em}
+.done-card p,.idle-card p{margin:8px 0 0;font-size:15px;line-height:1.6;color:var(--ink-2)}
+.done-card .stats{background:var(--well)}
+.done-card .btn-primary,.idle-card .btn-primary{margin-top:20px}
+
+/* ---------- 手记 ---------- */
+.j-title{margin:8px 0 0;font-family:var(--serif);font-size:31px;font-weight:600;letter-spacing:.04em}
+.j-sub{margin:6px 0 0;font-size:14px;color:var(--muted)}
+.walked{display:flex;gap:14px;align-items:center;margin:18px 0 0;padding:10px 16px 10px 10px;border-radius:var(--r-card);background:var(--card);box-shadow:var(--lift)}
+.walked .trace{width:88px;height:88px;flex:none;border-radius:var(--r-block);overflow:hidden;background:#ece4d2}
+.walked .trace svg{display:block;width:100%;height:100%}
+.walked .nm{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.03em}
+.walked .mt{margin-top:6px;font-size:13px;line-height:1.5;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.walked .ticks{display:flex;gap:5px;margin-top:9px}
+.walked .ticks i{width:16px;height:4px;border-radius:2px;background:var(--persimmon)}
+.composer{margin:26px 0 0}
+.composer label.q{display:block;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.02em}
+.composer .field{position:relative;margin:12px 0 0}
+.composer textarea{display:block;width:100%;min-height:128px;resize:none;padding:14px 16px 30px;border:0;border-radius:var(--r-input);background:var(--well);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.75;transition:background .2s,box-shadow .2s}
+.composer textarea::placeholder{color:#8a8f84}
+.composer textarea:focus{outline:none;background:var(--card);box-shadow:0 0 0 2px var(--moss-2)}
+.composer textarea[readonly]{opacity:.7}
+.count{position:absolute;right:14px;bottom:9px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;pointer-events:none}
+.moods-l{margin:16px 0 8px;font-size:13px;color:var(--muted)}
+.moods{display:flex;flex-wrap:wrap;gap:6px}
+.mood{display:inline-flex;align-items:center;gap:4px;min-height:40px;padding:0 12px;border-radius:var(--r-pill);background:var(--well);color:var(--ink-2);font-size:14px;transition:background .2s,color .2s}
+.mood .ic{width:16px;height:16px;display:none;stroke-width:2.2}
+.mood[aria-pressed="true"]{background:var(--moss-soft);color:var(--moss);font-weight:600;box-shadow:inset 0 0 0 1.5px rgba(46,74,58,.35)}
+.mood[aria-pressed="true"] .ic{display:block}
+.composer .btn-primary{margin-top:20px}
+.spin{width:18px;height:18px;border-radius:50%;border:2px solid rgba(247,242,231,.35);border-top-color:#f7f2e7;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.status{display:flex;align-items:flex-start;gap:8px;min-height:22px;margin:12px 2px 0;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.status:empty{display:none}
+.status .ic{width:18px;height:18px;margin-top:1px}
+.status.ok{color:var(--moss)}
+.status.err{color:var(--persimmon-ink);padding:10px 8px 10px 12px;margin-left:0;margin-right:0;border-radius:var(--r-input);background:var(--persimmon-wash);align-items:center}
+.status .retry{margin-left:auto;flex:none;min-height:32px;padding:0 12px;border-radius:var(--r-pill);background:var(--persimmon-wash);color:var(--persimmon-ink);font-weight:600;font-size:13px}
+.empty{display:flex;flex-direction:column;align-items:center;padding:22px 20px 8px;text-align:center}
+.empty svg{width:96px;height:72px}
+.empty p{margin:12px 0 0;font-size:14px;line-height:1.65;color:var(--muted)}
+.entries{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.entry{padding:16px 18px;border-radius:var(--r-block);background:var(--card);box-shadow:var(--lift);animation:viewIn .4s var(--ease) both}
+.entry p{margin:0;font-family:var(--serif);font-size:16px;line-height:1.75;text-wrap:pretty}
+.entry .em{display:flex;gap:8px;align-items:center;margin-top:10px;font-size:12px;color:var(--muted)}
+.entry .em span{padding:3px 9px;border-radius:var(--r-pill);background:var(--moss-soft);color:var(--moss);font-weight:600}
+
+/* ---------- 断点 ---------- */
+@media (max-width:1099px){
+  .stage{padding:40px 32px 48px}
+  .stage-head{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:32px;max-width:720px}
+  .stage-note{text-align:left}
+  .phones{--z:.72;grid-template-columns:repeat(2,auto);gap:40px 28px}
+}
+@media (max-width:599px){
+  body{background:var(--paper)}
+  .stage{padding:0;background:none}
+  .stage-head,.cap,.slot:not(:first-child){display:none}
+  .phones{display:block}
+  .slot{display:block}
+  .phone{zoom:1;width:100%;height:100vh;height:100dvh;padding:0;border-radius:0;background:none;box-shadow:none}
+  .phone::before,.phone::after,.island,.statusbar,.homebar{display:none}
+  .scrim{height:calc(var(--top) + 4px)}
+  .screen{--map-h:300px;width:100%;height:100%;border-radius:0;--top:max(14px,env(safe-area-inset-top));--bottom:max(8px,env(safe-area-inset-bottom))}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .pos-pulse{display:none}
+}
+.shot *,.shot *::before,.shot *::after{animation:none!important;transition:none!important}
+.shot .pos-pulse{display:none}
+</style>
+</head>
+<body>
+<svg id="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="rough" filterUnits="userSpaceOnUse" x="-40" y="-40" width="480" height="460">
+      <feTurbulence type="turbulence" baseFrequency=".03" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="3" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 .30  0 0 0 0 .23  0 0 0 0 .13  1.25 0 0 0 -.56"/>
+    </filter>
+    <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5e9d2"/><stop offset="1" stop-color="#ecd9bb"/></linearGradient>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efc6a2"/><stop offset=".62" stop-color="#f6e2c6"/></linearGradient>
+    <linearGradient id="water2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9d6c2"/><stop offset="1" stop-color="#b3c2b7"/></linearGradient>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9eddd"/><stop offset="1" stop-color="#f5f0e2"/></linearGradient>
+    <linearGradient id="sky4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe6d8"/><stop offset="1" stop-color="#e9ecdf"/></linearGradient>
+    <clipPath id="moon"><circle cx="150" cy="150" r="62"/></clipPath>
+
+    <symbol id="i-today" viewBox="0 0 24 24"><path d="M7 18a5 5 0 0 1 10 0M12 8.5v2M5.3 11.3l1.4 1.4M18.7 11.3l-1.4 1.4M3 18h18M7.5 21.5h9"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4ZM9 4v14M15 6v14"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24"><path d="M8.6 3.2c1.7 0 2.7 1.9 2.7 4.2 0 1.9-.8 3-2.4 3.2-1.8.2-3-1-3.1-3.2C5.7 5 6.9 3.2 8.6 3.2ZM6.3 13.2l4.3-.5.3 2.2a2.2 2.2 0 0 1-4.3.5l-.3-2.2ZM15.6 7.6c1.7 0 2.8 1.9 2.7 4.2-.1 2.2-1.3 3.4-3.1 3.2-1.6-.2-2.4-1.3-2.4-3.2 0-2.3 1.1-4.2 2.8-4.2ZM13.4 17.3l4.3.5-.3 2.2a2.2 2.2 0 0 1-4.3-.5l.3-2.2Z"/></symbol>
+    <symbol id="i-journal" viewBox="0 0 24 24"><path d="M5 5a2 2 0 0 1 2-2h11v15.5H7a2 2 0 0 0-2 2V5ZM5 20.5a2 2 0 0 0 2 2h12M9 7.5h5M9 11h3"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M14.5 5.5 8 12l6.5 6.5"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M7 3.5h10a1 1 0 0 1 1 1v16l-6-3.8-6 3.8v-16a1 1 0 0 1 1-1Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13.5 6.5 19 12l-5.5 5.5"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8.5 6.2v11.6a.7.7 0 0 0 1.07.6l9.1-5.8a.7.7 0 0 0 0-1.2l-9.1-5.8a.7.7 0 0 0-1.07.6Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-path" viewBox="0 0 24 24"><circle cx="5" cy="18" r="2"/><circle cx="19" cy="6" r="2"/><path d="M7 18c4 0 3-6 6.5-6S16 7 17 6.5"/></symbol>
+    <symbol id="i-hill" viewBox="0 0 24 24"><path d="M3 19 9 9.5l4 5.5 2.5-3L21 19H3Z"/></symbol>
+    <symbol id="i-weather" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2"/><path d="M9 2.5V4M2.5 9H4M4.4 4.4l1 1M13.6 4.4l-1 1"/><path d="M8.5 20h8.3a3.4 3.4 0 0 0 .5-6.8 5 5 0 0 0-9.4 1.5A2.7 2.7 0 0 0 8.5 20Z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.8v5M12 16.2v.1"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4.5 19.5 5.5 15 15.8 4.7a2 2 0 0 1 2.8 0l.7.7a2 2 0 0 1 0 2.8L9 18.5l-4.5 1ZM14 6.5l3.5 3.5"/></symbol>
+  </defs>
+</svg>
+
+<main class="stage">
+  <header class="stage-head">
+    <div>
+      <p class="brand"><svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#2e4a3a"/><path d="M7.5 19.5c3-6.5 6 2.5 9.2-3.8 1.8-3.5 3.3-5 5-5.6" fill="none" stroke="#f6f1e6" stroke-width="2.2" stroke-linecap="round"/><circle cx="22.4" cy="9.8" r="2.4" fill="#e07a52"/></svg>漫行</p>
+      <h1>慢慢走一条街，记下路上注意到的东西</h1>
+    </div>
+    <p class="stage-note">城市慢行 App 概念：挑一条主题路线，一站一站走，走完写几句手记。四个界面都可以点；路线、地点和天气是虚构的演示数据。</p>
+  </header>
+  <div class="phones" id="phones"></div>
+</main>
+<script>
+(function(){
+"use strict";
+/* ============ 演示数据（虚构） ============ */
+var ROUTES=[
+ {id:"wutong",name:"老城梧桐线",area:"旧城区 · 梧桐路一带",tag:"沿着两排老梧桐往东走，过桥，在钟楼下结束。树荫多，几乎全是平路。",km:3.2,min:52,up:18,chip:"树荫多 · 平路",art:"tree",
+  stops:[
+   {n:"梧桐路口",d:"两排法国梧桐在头顶合拢，先在树荫下站一会儿。",look:"抬头看树皮，一块一块像拼起来的地图。",x:40,y:124,km:0},
+   {n:"红砖老邮局",d:"门楣上还留着手写体的旧招牌。",look:"找找门边那只绿色的老邮筒。",x:150,y:119,km:.5},
+   {n:"巷口烧饼铺",d:"下午三点出第二炉，芝麻撒得很多。",look:"闻一下，炉子在巷子里面第三家。",x:255,y:176,km:1.1},
+   {n:"清溪河石桥",d:"桥栏上的石狮子被人摸得发亮。",look:"数一数桥栏上有几只石狮子。",x:262,y:388,km:1.8},
+   {n:"河南岸旧书摊",d:"摊主按书脊颜色给书排队。",look:"随手翻一本，看看扉页上有没有旧主人的名字。",x:336,y:428,km:2.5},
+   {n:"钟楼小广场",d:"整点会响一次，坐下听完再走。",look:"找张长椅坐下，等下一次钟声。",x:428,y:414,km:3.2}]},
+ {id:"river",name:"江边日落线",area:"清溪河北岸",tag:"顺着河岸一路向东，太阳落下的方向正好在前面。",km:4.6,min:68,up:6,chip:"傍晚最好",art:"river",
+  stops:[
+   {n:"旧船坞",d:"废弃的吊车还在，涂成了暗绿色。",look:"吊车臂上常停着几只白鹭。",x:-40,y:348,km:0},
+   {n:"芦苇滩",d:"秋天芦花最高，风一吹整片翻白。",look:"停下来听一听芦苇的声音。",x:52,y:330,km:.9},
+   {n:"钢桥下",d:"桥洞里有人拉手风琴。",look:"桥墩上有往年的水位刻线。",x:140,y:334,km:1.8},
+   {n:"看鸟的台阶",d:"台阶一直伸到水边，适合坐着。",look:"数数今天水面上有几种鸟。",x:226,y:356,km:2.7},
+   {n:"渡口茶亭",d:"一块钱一杯大碗茶，老板记得熟客。",look:"茶亭柱子上贴着渡船的旧时刻表。",x:318,y:360,km:3.6},
+   {n:"落日长堤",d:"长堤尽头正对着落日。",look:"等太阳碰到对岸楼顶的那一刻。",x:410,y:340,km:4.6}]},
+ {id:"hutong",name:"胡同早点线",area:"西街以西的老胡同",tag:"七点前出门，一路吃到菜市场门口。",km:2.1,min:35,up:4,chip:"清晨 · 可以边走边吃",art:"hutong",
+  stops:[
+   {n:"胡同口豆浆",d:"现磨豆浆，甜咸都有。",look:"看师傅怎么一口气点完一锅豆花。",x:-40,y:186,km:0},
+   {n:"修车铺",d:"老师傅五十年只修自行车。",look:"墙上挂着一排不同年代的车铃。",x:40,y:187,km:.4},
+   {n:"晾衣的院墙",d:"竹竿横过整条胡同。",look:"抬头，衣服的影子落在青砖上。",x:42,y:128,km:.8},
+   {n:"包子铺",d:"蒸笼一层层摞到门框那么高。",look:"热气冒出来的时候，整条胡同都是白的。",x:116,y:122,km:1.2},
+   {n:"老理发店",d:"转灯还在转，椅子是铸铁的。",look:"镜子上贴着一张旧价目表。",x:116,y:188,km:1.6},
+   {n:"菜市场门口",d:"早上八点最热闹。",look:"买一把今天最新鲜的菜带回家。",x:184,y:190,km:2.1}]},
+ {id:"lake",name:"湖畔水杉线",area:"东园 · 园湖一圈",tag:"十一月的水杉变成铁锈色，绕湖走一圈刚好。",km:4.0,min:60,up:9,chip:"水杉转红了",art:"lake",
+  stops:[
+   {n:"东园西门",d:"进门右手边有一张园子的旧手绘图。",look:"对照一下旧图和现在哪里不一样。",x:400,y:150,km:0},
+   {n:"水杉林",d:"一排排笔直的树，叶子正在变红。",look:"踩一踩地上落的细叶，很软。",x:452,y:118,km:.8},
+   {n:"木栈道",d:"栈道贴着水面，走起来有回声。",look:"低头看水里树的倒影。",x:530,y:120,km:1.6},
+   {n:"湖心石舫",d:"一条不会开的石头船。",look:"船头刻着建园的年份。",x:566,y:172,km:2.4},
+   {n:"残荷塘",d:"荷叶枯了，杆子还立在水里。",look:"枯荷杆在水面上画出很多几何图形。",x:522,y:224,km:3.2},
+   {n:"湖边茶棚",d:"有热茶和烤红薯。",look:"挑一个能看见整片水杉的位置坐下。",x:446,y:222,km:4.0}]}
+];
+var R={};ROUTES.forEach(function(r){R[r.id]=r});
+var MOODS=["安静","好奇","惬意","有点累","想再来"];
+var DEMO_DONE={routeId:"wutong",km:3.2,sec:54*60+12,date:"11月11日"};
+var FAIL_ALL=/[?&]fail=1/.test(location.search);
+var REDUCED=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ============ 工具 ============ */
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function ic(name,cls){return '<svg class="ic'+(cls?" "+cls:"")+'" aria-hidden="true"><use href="#i-'+name+'"/></svg>'}
+function rnd(seed){return function(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}}
+function smooth(pts){
+  if(pts.length<2)return "";
+  var d="M"+pts[0][0]+" "+pts[0][1];
+  for(var i=0;i<pts.length-1;i++){
+    var p0=pts[i-1]||pts[i],p1=pts[i],p2=pts[i+1],p3=pts[i+2]||p2;
+    d+=" C"+(p1[0]+(p2[0]-p0[0])/6).toFixed(1)+" "+(p1[1]+(p2[1]-p0[1])/6).toFixed(1)+" "+(p2[0]-(p3[0]-p1[0])/6).toFixed(1)+" "+(p2[1]-(p3[1]-p1[1])/6).toFixed(1)+" "+p2[0]+" "+p2[1];
+  }
+  return d;
+}
+function fmtTime(sec){sec=Math.floor(sec);var h=Math.floor(sec/3600),m=Math.floor(sec%3600/60),s=sec%60;function p(n){return(n<10?"0":"")+n}return h?h+":"+p(m)+":"+p(s):p(m)+":"+p(s)}
+function fmtMin(sec){return Math.max(1,Math.round(sec/60))}
+
+/* ============ 路线几何 ============ */
+var NS="http://www.w3.org/2000/svg";
+function geom(r){
+  if(r._g)return r._g;
+  var host=document.getElementById("defs"),p=document.createElementNS(NS,"path"),pts=r.stops.map(function(s){return[s.x,s.y]});
+  var d=smooth(pts);p.setAttribute("d",d);host.appendChild(p);
+  var total=p.getTotalLength(),cum=[0];
+  for(var i=1;i<pts.length;i++){var q=document.createElementNS(NS,"path");q.setAttribute("d",smooth(pts.slice(0,i+1)));host.appendChild(q);cum.push(q.getTotalLength());host.removeChild(q)}
+  cum[cum.length-1]=total;
+  var xs=pts.map(function(a){return a[0]}),ys=pts.map(function(a){return a[1]});
+  r._g={d:d,el:p,total:total,cum:cum,bb:{x0:Math.min.apply(0,xs),x1:Math.max.apply(0,xs),y0:Math.min.apply(0,ys),y1:Math.max.apply(0,ys)}};
+  return r._g;
+}
+/* 当前距离（公里）→ 路径长度 */
+function lenAt(r,km){
+  var g=geom(r),s=r.stops;
+  for(var i=1;i<s.length;i++){if(km<=s[i].km){var f=(km-s[i-1].km)/(s[i].km-s[i-1].km);return g.cum[i-1]+Math.max(0,Math.min(1,f))*(g.cum[i]-g.cum[i-1])}}
+  return g.total;
+}
+/* ============ 城市底图（一张虚构城市，所有路线共用） ============ */
+var RIVER=[[-160,388],[-60,380],[60,372],[150,378],[240,395],[330,392],[420,375],[520,372],[620,384],[760,392]];
+function riverY(x){for(var i=1;i<RIVER.length;i++){if(x<=RIVER[i][0]){var a=RIVER[i-1],b=RIVER[i],f=(x-a[0])/(b[0]-a[0]);return a[1]+f*(b[1]-a[1])}}return RIVER[RIVER.length-1][1]}
+var PARK={cx:490,cy:172,rx:128,ry:98},LAKE={cx:505,cy:170,rx:52,ry:38};
+function inEll(e,x,y,grow){grow=grow||0;var dx=(x-e.cx)/(e.rx+grow),dy=(y-e.cy)/(e.ry+grow);return dx*dx+dy*dy<1}
+function buildWorld(){
+  var rand=rnd(11),o=[];
+  var X=[-170,-110,-50,42,116,184,258,330,400,470,540,610,680,760];
+  var Y=[-60,0,60,122,188,250,316, 412,470,530,600];
+  o.push('<rect x="-200" y="-100" width="1000" height="760" fill="#ece3cf"/>');
+  // 公园
+  o.push('<ellipse cx="'+PARK.cx+'" cy="'+PARK.cy+'" rx="'+PARK.rx+'" ry="'+PARK.ry+'" fill="#d5dcc0"/>');
+  // 街区
+  var tones=["#e2d6bb","#ddd0b3","#e6dbc3","#dcd3bd"];
+  for(var j=0;j<Y.length-1;j++){
+    if(j===6)continue; // 沿河步道与河
+    for(var i=0;i<X.length-1;i++){
+      var x0=X[i]+7,x1=X[i+1]-7,y0=Y[j]+7,y1=Y[j+1]-7;
+      if(j===7)y0=Math.max(y0,riverY((x0+x1)/2)+30);
+      if(y1-y0<14)continue;
+      var hut=X[i]>=-110&&X[i]<184&&Y[j]>=122&&Y[j]<316;
+      var splits=hut?3:(rand()<.5?2:1),rows=hut?2:(rand()<.4?2:1);
+      for(var a=0;a<splits;a++)for(var b=0;b<rows;b++){
+        var w=(x1-x0)/splits,h=(y1-y0)/rows,bx=x0+a*w+(a?2:0),by=y0+b*h+(b?2:0),bw=w-(a<splits-1?2:0)-(a?2:0)+ (a?2:0),bh=h-(b<rows-1?2:0);
+        bw=w-(splits>1?2:0);bh=h-(rows>1?2:0);
+        var cx=bx+bw/2,cy=by+bh/2;
+        if(inEll(PARK,cx,cy,8)||inEll(PARK,bx,by,4)||inEll(PARK,bx+bw,by+bh,4)||inEll(PARK,bx+bw,by,4)||inEll(PARK,bx,by+bh,4))continue;
+        var fill=hut?(rand()<.5?"#dbd4c4":"#d6cfbf"):tones[Math.floor(rand()*tones.length)];
+        if(!hut&&rand()<.12)fill="#d3d8bf";
+        o.push('<rect x="'+bx.toFixed(1)+'" y="'+by.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+bh.toFixed(1)+'" rx="3" fill="'+fill+'"/>');
+        if(hut&&rand()<.7){o.push('<rect x="'+(bx+bw*.28).toFixed(1)+'" y="'+(by+bh*.3).toFixed(1)+'" width="'+(bw*.44).toFixed(1)+'" height="'+(bh*.4).toFixed(1)+'" rx="1.5" fill="#e9e2d2"/>')}
+      }
+    }
+  }
+  // 各条路线压出的小巷
+  ROUTES.forEach(function(r){o.push('<path d="'+geom(r).d+'" fill="none" stroke="#ece3cf" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>')});
+  // 河
+  var rd=smooth(RIVER);
+  o.push('<path d="'+rd+'" fill="none" stroke="#dcd2b9" stroke-width="54" stroke-linecap="round"/>');
+  o.push('<path d="'+rd+'" fill="none" stroke="#b5c8bb" stroke-width="40" stroke-linecap="round"/>');
+  o.push('<path d="'+rd+'" fill="none" stroke="#c3d3c5" stroke-width="18" stroke-linecap="round" opacity=".7"/>');
+  for(var k=0;k<26;k++){var wx=-140+k*34+rand()*14,wy=riverY(wx)+(rand()-.5)*20;o.push('<path d="M'+wx.toFixed(1)+' '+wy.toFixed(1)+' q4 -3 8 0 t8 0" fill="none" stroke="#9fb6a8" stroke-width="1.2" stroke-linecap="round"/>')}
+  // 桥
+  function bridge(x,stone){var t=riverY(x)-30,h=60;
+    o.push('<rect x="'+(x-8)+'" y="'+t+'" width="16" height="'+h+'" rx="3" fill="'+(stone?"#e8dcc2":"#cfd3c4")+'"/>');
+    o.push('<path d="M'+(x-8)+' '+(t+4)+'v'+(h-8)+'M'+(x+8)+' '+(t+4)+'v'+(h-8)+'" stroke="'+(stone?"#b9a988":"#7e8f84")+'" stroke-width="1.6" '+(stone?'':'stroke-dasharray="3 3"')+'/>');}
+  bridge(262,true);bridge(140,false);bridge(470,false);
+  // 公园里的湖与水杉
+  o.push('<ellipse cx="'+LAKE.cx+'" cy="'+LAKE.cy+'" rx="'+LAKE.rx+'" ry="'+LAKE.ry+'" fill="#b5c8bb"/>');
+  o.push('<ellipse cx="'+(LAKE.cx-14)+'" cy="'+(LAKE.cy-8)+'" rx="'+(LAKE.rx*.55)+'" ry="'+(LAKE.ry*.4)+'" fill="#c3d3c5" opacity=".7"/>');
+  o.push('<path d="M552 166h22l-4 8h-14z" fill="#e8dcc2"/>');
+  for(var t=0;t<44;t++){var ang=rand()*Math.PI*2,rr=1.18+rand()*.42,tx=PARK.cx+Math.cos(ang)*LAKE.rx*rr*1.35,ty=PARK.cy+Math.sin(ang)*LAKE.ry*rr*1.45;
+    if(!inEll(PARK,tx,ty,-10)||inEll(LAKE,tx,ty,10))continue;
+    var c=["#c9875f","#b8734d","#a9b791","#94a985"][Math.floor(rand()*4)];
+    o.push('<path d="M'+tx.toFixed(1)+' '+(ty-7).toFixed(1)+'l4 10h-8z" fill="'+c+'"/>')}
+  // 梧桐路行道树
+  for(var x=-160;x<310;x+=15){[113,131].forEach(function(y,ii){var jx=x+(ii?7:0)+rand()*3;if(jx>150&&y===131)return;
+    o.push('<circle cx="'+jx.toFixed(1)+'" cy="'+(y+(rand()-.5)*2).toFixed(1)+'" r="'+(5.2+rand()*1.6).toFixed(1)+'" fill="'+(rand()<.5?"#a7b892":"#9aae88")+'"/>')})}
+  // 河边芦苇
+  for(var q=0;q<30;q++){var px=-140+q*20+rand()*8,py=riverY(px)-26-rand()*6;o.push('<path d="M'+px.toFixed(1)+' '+py.toFixed(1)+'v-6m3 6v-8m3 8v-5" stroke="#a5ae86" stroke-width="1.3" stroke-linecap="round"/>')}
+  // 钟楼广场
+  o.push('<circle cx="428" cy="446" r="22" fill="#e8ddc5"/><rect x="421" y="430" width="14" height="22" rx="2" fill="#c9b694"/><circle cx="428" cy="438" r="4" fill="#f6f1e6"/>');
+  // 地名
+  var lab=function(x,y,t,s,c){o.push('<text x="'+x+'" y="'+y+'" font-family="Songti SC,STSong,Noto Serif SC,serif" font-size="'+(s||12)+'" fill="'+(c||"#8a8670")+'" letter-spacing="3">'+t+'</text>')};
+  lab(560,402,"清 溪 河",13,"#6f8a7d");lab(-130,402,"清 溪 河",13,"#6f8a7d");lab(452,92,"东 园",12,"#6c7d5c");lab(186,104,"梧 桐 路",11);lab(-24,262,"西 街 胡 同",11);
+  return o.join("");
+}
+
+/* ============ 封面插画（每条路线一幅） ============ */
+function grainRect(){return '<rect width="100%" height="100%" filter="url(#grain)" opacity=".55"/>'}
+function sceneTree(){
+  var r=rnd(5),o=['<rect width="300" height="200" fill="url(#sky1)"/>','<circle cx="214" cy="66" r="24" fill="#f0b48c" opacity=".85"/>'];
+  o.push('<path d="M0 132 L28 120 L52 126 L80 112 L110 122 L150 106 L190 120 L222 110 L258 122 L300 114 V200 H0Z" fill="#e2cfae"/>');
+  o.push('<path d="M118 200 L146 128 L154 128 L182 200Z" fill="#ead9bb"/><path d="M150 200 L150 132" stroke="#f5ead6" stroke-width="2" stroke-dasharray="6 7"/>');
+  var trees=[];for(var i=0;i<7;i++){var f=i/6,s=.34+f*.9;trees.push([136-f*124,128+f*58,s],[164+f*124,128+f*58,s])}
+  trees.forEach(function(t){var x=t[0],y=t[1],s=t[2];
+    o.push('<path d="M'+(x-2.4*s)+' '+y+' L'+(x-1.6*s)+' '+(y-46*s)+' L'+(x+1.6*s)+' '+(y-46*s)+' L'+(x+2.4*s)+' '+y+'Z" fill="#c4b393"/>');
+    o.push('<ellipse cx="'+(x+(r()-.5)*2*s)+'" cy="'+(y-20*s)+'" rx="'+(1.6*s)+'" ry="'+(3*s)+'" fill="#ece0c8"/>')});
+  var greens=["#8ea67f","#7a966e","#6b8a62","#a0b48d"];
+  trees.forEach(function(t){var x=t[0],y=t[1],s=t[2];for(var k=0;k<6;k++){o.push('<circle cx="'+(x+(r()-.5)*44*s+(x<150?10*s:-10*s)).toFixed(1)+'" cy="'+(y-58*s+(r()-.5)*24*s).toFixed(1)+'" r="'+((14+r()*10)*s).toFixed(1)+'" fill="'+greens[Math.floor(r()*4)]+'" opacity=".95"/>')}});
+  for(var k2=0;k2<26;k2++){o.push('<circle cx="'+(r()*300).toFixed(1)+'" cy="'+(r()*30-6).toFixed(1)+'" r="'+(14+r()*14).toFixed(1)+'" fill="'+greens[Math.floor(r()*4)]+'"/>')}
+  o.push('<g transform="translate(146 150)"><circle cx="4" cy="0" r="3" fill="#3d4a40"/><path d="M1 5h6l1 11H0z" fill="#c4532c"/><path d="M2 16l-1 8M6 16l1 8" stroke="#3d4a40" stroke-width="1.6" stroke-linecap="round"/></g>');
+  for(var l=0;l<9;l++){o.push('<ellipse cx="'+(110+r()*80).toFixed(1)+'" cy="'+(170+r()*26).toFixed(1)+'" rx="3" ry="1.6" fill="#c9a26a" transform="rotate('+Math.floor(r()*60-30)+')" opacity=".8"/>')}
+  return o.join("");
+}
+function sceneRiver(){
+  var r=rnd(9),o=['<rect width="300" height="200" fill="url(#sky2)"/>','<circle cx="190" cy="112" r="30" fill="#e0764d"/>'];
+  o.push('<path d="M0 112 h16v-14h12v8h10v-22h14v28h8v-10h18v14h12v-30h10v30h12v-8h14v8 H150 V112Z" fill="#d6a587" opacity=".75"/>');
+  o.push('<path d="M232 112v-18h10v-10h12v28h8v-16h16v16h22V112Z" fill="#d6a587" opacity=".75"/>');
+  o.push('<rect y="112" width="300" height="88" fill="url(#water2)"/>');
+  for(var i=0;i<9;i++){var w=46-i*4;o.push('<rect x="'+(190-w/2+(r()-.5)*8).toFixed(1)+'" y="'+(118+i*7)+'" width="'+w+'" height="2.4" rx="1.2" fill="#ec9a72" opacity="'+(.8-i*.07).toFixed(2)+'"/>')}
+  o.push('<path d="M0 98 Q60 70 120 98 Q180 70 240 98 Q270 84 300 92" fill="none" stroke="#5c6b5f" stroke-width="2.4"/><path d="M0 98 H300" stroke="#5c6b5f" stroke-width="2.4"/>');
+  for(var b=10;b<300;b+=20){var yy=98-Math.abs(Math.sin((b%120)/120*Math.PI))*24;o.push('<path d="M'+b+' 98 L'+b+' '+(yy+3).toFixed(1)+'" stroke="#5c6b5f" stroke-width="1.2"/>')}
+  o.push('<rect x="54" y="98" width="8" height="14" fill="#5c6b5f"/><rect x="176" y="98" width="8" height="14" fill="#5c6b5f"/>');
+  for(var k=0;k<34;k++){var x=k*9+r()*6,h=26+r()*34;o.push('<path d="M'+x.toFixed(1)+' 204 Q'+(x+3).toFixed(1)+' '+(200-h/2).toFixed(1)+' '+(x+(r()*10-3)).toFixed(1)+' '+(200-h).toFixed(1)+'" fill="none" stroke="'+(r()<.5?"#5e7556":"#7b8e64")+'" stroke-width="1.8" stroke-linecap="round"/>');if(r()<.5)o.push('<ellipse cx="'+(x+(r()*10-3)).toFixed(1)+'" cy="'+(200-h).toFixed(1)+'" rx="2.4" ry="5" fill="#e9d3b0"/>')}
+  o.push('<path d="M66 54q5-4 10 0q5-4 10 0M100 40q4-3 8 0q4-3 8 0" fill="none" stroke="#7a5a4a" stroke-width="1.5" stroke-linecap="round"/>');
+  return o.join("");
+}
+function sceneHutong(){
+  var r=rnd(3),o=['<rect width="300" height="200" fill="url(#sky3)"/>'];
+  o.push('<rect x="0" y="70" width="128" height="130" fill="#d9d2c2"/><rect x="172" y="60" width="128" height="140" fill="#d3ccbb"/>');
+  for(var y=78;y<200;y+=9)for(var x=(y%18?0:8);x<128;x+=16){o.push('<rect x="'+x+'" y="'+y+'" width="13" height="6" rx="1" fill="#cfc7b5"/>')}
+  o.push('<path d="M-4 72 H132 L128 62 H0Z" fill="#5f6c63"/><path d="M168 62 H304 L300 50 H172Z" fill="#5f6c63"/>');
+  for(var t=0;t<132;t+=7)o.push('<path d="M'+t+' 62 v10" stroke="#4e5a52" stroke-width="1"/>');
+  o.push('<rect x="200" y="112" width="44" height="88" rx="2" fill="#a8432a"/><rect x="204" y="116" width="17" height="84" fill="#b54e32"/><rect x="223" y="116" width="17" height="84" fill="#b54e32"/><circle cx="218" cy="156" r="2" fill="#e3b26a"/><circle cx="226" cy="156" r="2" fill="#e3b26a"/>');
+  o.push('<path d="M128 200 L140 120 L160 120 L172 200Z" fill="#e3dccb"/>');
+  o.push('<path d="M0 34 Q150 52 300 30" fill="none" stroke="#7d7a6a" stroke-width="1.2"/>');
+  [[30,"#c4532c"],[64,"#7f9b75"],[96,"#e7c989"],[220,"#9fb3c2"],[256,"#f2ece0"]].forEach(function(c,i){var x=c[0],y=36+Math.sin(x/300*Math.PI)*16;o.push('<path d="M'+(x-9)+' '+(y+1)+' h18 l3 7 -5 1 v14 h-14 v-14 l-5 -1z" fill="'+c[1]+'"/>')});
+  [0,12,24,36].forEach(function(d){o.push('<rect x="'+(66)+'" y="'+(186-d)+'" width="46" height="12" rx="4" fill="'+(d%24?"#e9dcc0":"#e2d2b0")+'"/>')});
+  o.push('<path d="M76 146c-6-10 6-14 0-24M89 144c-6-10 6-14 0-24M102 146c-6-10 6-14 0-24" fill="none" stroke="#fbf7ee" stroke-width="3" stroke-linecap="round" opacity=".9"/>');
+  o.push('<g fill="none" stroke="#3f4a43" stroke-width="2.2"><circle cx="150" cy="182" r="11"/><circle cx="182" cy="182" r="11"/><path d="M150 182l9-16h17l6 16M159 166l7 16h-16M174 162h6"/></g>');
+  return o.join("");
+}
+function sceneLake(){
+  var r=rnd(17),o=['<rect width="300" height="200" fill="url(#sky4)"/>','<circle cx="70" cy="44" r="16" fill="#f3e3c7"/>'];
+  o.push('<rect y="128" width="300" height="72" fill="#b9c9bb"/>');
+  var cols=["#b8643f","#cf7d55","#9c5236","#c26c45"],trees=[];
+  for(var i=0;i<16;i++){var x=8+i*19+r()*6,h=56+r()*46;trees.push([x,h,cols[Math.floor(r()*4)]])}
+  trees.forEach(function(t){o.push('<path d="M'+t[0]+' '+(128-t[1])+' L'+(t[0]+9)+' 128 L'+(t[0]-9)+' 128Z" fill="'+t[2]+'"/><path d="M'+t[0]+' '+(128+t[1]*.8)+' L'+(t[0]+9)+' 129 L'+(t[0]-9)+' 129Z" fill="'+t[2]+'" opacity=".32"/>')});
+  for(var k=0;k<7;k++)o.push('<rect x="'+(20+r()*240).toFixed(1)+'" y="'+(140+k*8)+'" width="'+(30+r()*40).toFixed(1)+'" height="1.6" rx=".8" fill="#e7ecdf" opacity=".7"/>');
+  o.push('<path d="M150 164h70l-8 10h-56z" fill="#e3d8c0"/><rect x="164" y="150" width="34" height="14" rx="2" fill="#d6c8a8"/><path d="M160 150h42l-4-8h-34z" fill="#8a9a8a"/>');
+  return o.join("");
+}
+var SCENES={tree:sceneTree,river:sceneRiver,hutong:sceneHutong,lake:sceneLake},SCN={};
+function scene(kind){if(!SCN[kind])SCN[kind]=SCENES[kind]()+grainRect();return '<svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'+SCN[kind]+'</svg>'}
+/* ============ 路线地图 ============ */
+var WORLD=null;
+/* 让路线的外接框落在像素区域 pad 内；s = 每像素对应的世界单位 */
+function fit(r,W,H,pad,minS){
+  var b=geom(r).bb,iw=W-pad[1]-pad[3],ih=H-pad[0]-pad[2];
+  var s=Math.max((b.x1-b.x0)/iw,(b.y1-b.y0)/ih,minS||0);
+  var cx=(b.x0+b.x1)/2,cy=(b.y0+b.y1)/2,px=pad[3]+iw/2,py=pad[0]+ih/2;
+  return {s:s,vb:[(cx-px*s).toFixed(1),(cy-py*s).toFixed(1),(W*s).toFixed(1),(H*s).toFixed(1)].join(" ")};
+}
+/* opts: W,H,pad,minS, focus(高亮站序号), walk({km,next}), label(是否显示地名), small(缩略图) */
+function routeMap(r,o){
+  if(!WORLD)WORLD=buildWorld();
+  var f=fit(r,o.W,o.H,o.pad,o.minS),s=f.s,g=geom(r),out=[];
+  out.push('<svg class="map" viewBox="'+f.vb+'" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+esc(r.name)+'示意地图，共 '+r.stops.length+' 站">');
+  out.push(WORLD);
+  out.push('<rect x="-200" y="-100" width="1000" height="760" filter="url(#grain)" opacity=".5"/>');
+  var w=function(px){return (px*s).toFixed(2)};
+  out.push('<path d="'+g.d+'" fill="none" stroke="#f8f3e8" stroke-width="'+w(o.small?6:11)+'" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>');
+  if(o.walk){
+    var L=lenAt(r,o.walk.km);
+    out.push('<path d="'+g.d+'" fill="none" stroke="#2e4a3a" stroke-width="'+w(2.6)+'" stroke-linecap="round" stroke-dasharray="'+w(1)+' '+w(7)+'" opacity=".75"/>');
+    out.push('<path class="walked-line" d="'+g.d+'" fill="none" stroke="#c4532c" stroke-width="'+w(4)+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="'+L.toFixed(1)+' 99999" filter="url(#rough)"/>');
+  }else{
+    out.push('<path d="'+g.d+'" fill="none" stroke="#2e4a3a" stroke-width="'+w(o.small?2.4:3.6)+'" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"/>');
+  }
+  if(o.label!==false&&!o.small){
+    var st=r.stops[0];
+    out.push('<text x="'+(st.x)+'" y="'+(st.y+ +w(27))+'" text-anchor="middle" font-family="PingFang SC,Hiragino Sans GB,Noto Sans SC,sans-serif" font-weight="600" font-size="'+w(10.5)+'" fill="#2e4a3a" letter-spacing="'+w(1)+'">起点</text>');
+  }
+  r.stops.forEach(function(st,i){
+    if(o.small){if(i===0||i===r.stops.length-1)out.push('<circle cx="'+st.x+'" cy="'+st.y+'" r="'+w(i?4:3.2)+'" fill="'+(i?"#c4532c":"#2e4a3a")+'" stroke="#f8f3e8" stroke-width="'+w(1.6)+'"/>');return}
+    var state="todo";
+    if(o.walk){state=i<o.walk.next?"done":(i===o.walk.next?"next":"todo")}
+    else if(o.focus===i)state="next";
+    var rr=w(state==="next"?13:11),fill={todo:"#f8f3e8",done:"#2e4a3a",next:"#c4532c"}[state],tc={todo:"#2e4a3a",done:"#f6f1e6",next:"#ffffff"}[state];
+    out.push('<g data-stop="'+i+'">');
+    if(state==="next")out.push('<circle cx="'+st.x+'" cy="'+st.y+'" r="'+w(21)+'" fill="#c4532c" opacity=".16"/>');
+    out.push('<circle cx="'+st.x+'" cy="'+(+st.y+ +w(1.5))+'" r="'+rr+'" fill="rgba(58,46,24,.18)"/>');
+    out.push('<circle cx="'+st.x+'" cy="'+st.y+'" r="'+rr+'" fill="'+fill+'" stroke="'+(state==="todo"?"#2e4a3a":"#f8f3e8")+'" stroke-width="'+w(state==="todo"?1.8:2)+'"/>');
+    out.push('<text x="'+st.x+'" y="'+st.y+'" dy=".36em" text-anchor="middle" font-family="PingFang SC,Hiragino Sans GB,Noto Sans SC,sans-serif" font-weight="700" font-size="'+w(state==="next"?12.5:11)+'" fill="'+tc+'">'+(i+1)+'</text></g>');
+  });
+  if(o.walk){
+    var p=g.el.getPointAtLength(lenAt(r,o.walk.km));
+    out.push('<circle class="pos-pulse" cx="'+p.x.toFixed(1)+'" cy="'+p.y.toFixed(1)+'" r="'+w(9)+'" fill="#c4532c"/>');
+    out.push('<circle class="pos" cx="'+p.x.toFixed(1)+'" cy="'+p.y.toFixed(1)+'" r="'+w(6.5)+'" fill="#c4532c" stroke="#fffaf0" stroke-width="'+w(2.6)+'"/>');
+  }
+  out.push('</svg>');
+  return out.join("");
+}
+function ring(frac){
+  var R=17,C=2*Math.PI*R;
+  return '<svg class="ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#fcfaf4"/><circle cx="22" cy="22" r="'+R+'" fill="none" stroke="#e6ddca" stroke-width="3.5"/><circle cx="22" cy="22" r="'+R+'" fill="none" stroke="#c4532c" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="'+(C*frac).toFixed(1)+' '+C.toFixed(1)+'" transform="rotate(-90 22 22)"/><svg x="13" y="13" width="18" height="18" class="ic" style="color:#2e4a3a;stroke-width:2"><use href="#i-walk"/></svg></svg>';
+}
+
+/* ============ 视图模板 ============ */
+var TABS=[["today","今日","today"],["route","路线","route"],["walk","漫行","walk"],["journal","手记","journal"]];
+function viewToday(a){
+  var f=R.wutong,w=a.st.walk,h=[];
+  h.push('<p class="t-date num">11月11日 · 星期三</p>');
+  h.push('<h2 class="t-greet" tabindex="-1" data-focus>下午好，<br>适合出门慢慢走</h2>');
+  h.push('<p class="t-weather">'+ic("weather")+'<span class="num">多云转晴 17°C · 西北风 2 级，傍晚可能有晚霞</span></p>');
+  if(w&&!w.done){var wr=R[w.routeId];
+    h.push('<button class="resume" data-act="resume">'+ring(w.next/wr.stops.length)+'<span><span>继续上次</span><b class="num">'+esc(wr.name)+' · 已到 '+w.next+' / '+wr.stops.length+' 站</b></span>'+ic("chev")+'</button>');}
+  h.push('<button class="feature" data-act="open" data-id="'+f.id+'" aria-label="今日推荐：'+f.name+'，'+f.km+' 公里，约 '+f.min+' 分钟"><span class="art">'+scene(f.art)+'<span class="chip-on-art">今日推荐 · '+f.chip+'</span></span><span class="body"><span><span class="name">'+f.name+'</span><span class="meta num">'+f.km+' 公里 · 约 '+f.min+' 分钟 · '+f.stops.length+' 站</span></span><span class="go">'+ic("arrow")+'</span></span></button>');
+  h.push('<div class="h-sec"><span>换一条走</span><small>左右滑动</small></div><div class="rail">');
+  ["river","hutong","lake"].forEach(function(id){var r=R[id];
+    h.push('<button class="mini" data-act="open" data-id="'+id+'" aria-label="'+r.name+'，'+r.km+' 公里，约 '+r.min+' 分钟"><span class="art">'+scene(r.art)+'</span><span class="name">'+r.name+'</span><span class="meta num">'+r.km+' 公里 · '+r.min+' 分钟 · '+r.chip+'</span></button>')});
+  h.push('</div><p class="demo-note">概念演示 · 路线、地点与天气均为虚构</p>');
+  return h.join("");
+}
+function viewRoute(a){
+  var r=R[a.st.routeId],saved=a.st.saved[r.id],w=a.st.walk,h=[];
+  var same=w&&!w.done&&w.routeId===r.id;
+  h.push('<div class="map-hero">'+routeMap(r,{W:390,H:a.mapH,pad:[a.top+62,36,66,36],minS:.95,focus:a.st.focus})+'<div class="map-top"><button class="btn-round" data-act="back" aria-label="返回今日">'+ic("back")+'</button><button class="btn-round" data-act="save" aria-pressed="'+!!saved+'" aria-label="'+(saved?"取消收藏":"收藏路线")+'">'+ic("bookmark")+'</button></div></div>');
+  h.push('<div class="sheet"><p class="r-area">'+esc(r.area)+'</p><h2 class="r-name" tabindex="-1" data-focus>'+esc(r.name)+'</h2><p class="r-tag">'+esc(r.tag)+'</p>');
+  h.push('<div class="stats"><div class="stat"><div class="v num">'+r.km+'<small>公里</small></div><div class="k">'+ic("path")+'全程</div></div><div class="stat"><div class="v num">'+r.min+'<small>分钟</small></div><div class="k">'+ic("clock")+'慢走用时</div></div><div class="stat"><div class="v num">'+r.up+'<small>米</small></div><div class="k">'+ic("hill")+'累计爬升</div></div></div>');
+  h.push('<div class="h-sec"><span>沿途 '+r.stops.length+' 站</span><small>点一站，在地图上看位置</small></div><ol class="stops">');
+  r.stops.forEach(function(s,i){var next=r.stops[i+1];
+    h.push('<li><button class="stop" data-act="focus" data-i="'+i+'" aria-pressed="'+(a.st.focus===i)+'"><span class="n">'+(i+1)+'</span><span class="t">'+esc(s.n)+'</span><span class="m num">'+(i===0?"起点":s.km.toFixed(1)+" 公里")+'</span><span class="d">'+esc(s.d)+'</span></button></li>')});
+  h.push('</ol><div class="cta-bar"><button class="btn-primary" data-act="start">'+ic("walk")+(same?'继续漫行<small class="num">已到 '+w.next+' / '+r.stops.length+' 站</small>':'开始漫行<small class="num">约 '+r.min+' 分钟</small>')+'</button></div>');
+  h.push('<p class="demo-note">概念演示 · 地图为示意插画，非真实比例</p></div>');
+  return h.join("");
+}
+function walkMap(a){var w=a.st.walk,r=R[w.routeId];return routeMap(r,{W:350,H:226,pad:[30,30,30,30],minS:.9,walk:{km:w.km,next:w.next},label:false})}
+function viewWalk(a){
+  var w=a.st.walk,h=[];
+  if(!w){
+    h.push('<div class="idle-card"><h2 tabindex="-1" data-focus>还没有出发</h2><p>挑一条路线，按“开始漫行”，这里会一站一站带你走。</p><button class="btn-primary" data-act="open" data-id="wutong">'+ic("route")+'看看老城梧桐线</button></div><p class="demo-note">概念演示</p>');
+    return h.join("");
+  }
+  var r=R[w.routeId];
+  if(w.done){
+    h.push('<div class="w-head"><div><div class="w-state paused"><span class="dot"></span>已走完</div><h2 class="w-route">'+esc(r.name)+'</h2></div></div>');
+    h.push('<div class="w-map">'+walkMap(a)+'</div>');
+    h.push('<div class="done-card"><h2 tabindex="-1" data-focus>走完了</h2><p>六站都到了。趁记忆还新，写几句路上注意到的东西。</p><div class="stats"><div class="stat"><div class="v num">'+r.km+'<small>公里</small></div><div class="k">走过</div></div><div class="stat"><div class="v num">'+fmtMin(w.sec)+'<small>分钟</small></div><div class="k">用时</div></div><div class="stat"><div class="v num">'+r.stops.length+'<small>站</small></div><div class="k">全部到达</div></div></div><button class="btn-primary" data-act="tojournal">'+ic("pen")+'写手记</button></div>');
+    return h.join("");
+  }
+  var s=r.stops[w.next];
+  h.push('<div class="w-head"><div><div class="w-state" data-ref="state"><span class="dot"></span><span data-ref="stateText">漫行中</span></div><h2 class="w-route" tabindex="-1" data-focus>'+esc(r.name)+'</h2></div><div class="w-count num">第 <b data-ref="nth">'+(w.next+1)+'</b> / '+r.stops.length+' 站</div></div>');
+  h.push('<div class="w-map" data-ref="map">'+walkMap(a)+'</div>');
+  h.push('<section class="next" data-ref="next" aria-live="polite"><div class="swap" data-ref="swap"><div class="lbl"><span class="n num">'+(w.next+1)+'</span>'+(w.next===0?"先到起点":"下一站")+'</div><h3 class="nm">'+esc(s.n)+'</h3><p class="far num" data-ref="far"></p><p class="look"><b>留意</b>'+esc(s.look)+'</p></div></section>');
+  h.push('<div class="meters" data-ref="meters"><div class="meter"><div class="v num" data-ref="time">'+fmtTime(w.sec)+'</div><div class="k">已走时间</div></div><div class="meter"><div class="v num"><span data-ref="km">'+w.km.toFixed(2)+'</span><small>公里</small></div><div class="k">已走距离 · 全程 '+r.km+' 公里</div></div></div>');
+  h.push('<div class="controls"><button class="btn-round" data-act="pause" data-ref="pause"></button><button class="btn-primary arrive" data-act="arrive" data-ref="arrive"><span class="ripple"></span>'+ic("check")+'到了</button></div><p class="hint" data-ref="hint" aria-live="polite"></p>');
+  return h.join("");
+}
+function viewJournal(a){
+  var j=a.st.journal,d=j.done,h=[];
+  h.push('<h2 class="j-title" tabindex="-1" data-focus>手记</h2><p class="j-sub">走完一条路线，写几句当时注意到的。</p>');
+  if(!d){
+    h.push('<div class="empty" style="padding-top:40px">'+emptyArt()+'<p>还没有走完的路线。<br>走完一条，就能在这里写手记。</p></div><button class="btn-primary" data-act="open" data-id="wutong" style="margin-top:18px">'+ic("route")+'挑一条路线</button>');
+    return h.join("");
+  }
+  var r=R[d.routeId];
+  h.push('<div class="walked"><div class="trace">'+routeMap(r,{W:88,H:88,pad:[12,12,12,12],small:true})+'</div><div><div class="nm">'+esc(r.name)+'</div><div class="mt">'+d.date+' · '+r.km+' 公里 · '+fmtMin(d.sec)+' 分钟<br>'+r.stops.length+' 站全部到达</div><div class="ticks" aria-hidden="true">'+r.stops.map(function(){return"<i></i>"}).join("")+'</div></div></div>');
+  var busy=j.state==="saving";
+  h.push('<div class="composer"><label class="q" for="'+a.uid+'-note">今天注意到了什么？</label><div class="field"><textarea id="'+a.uid+'-note" data-ref="note" maxlength="200" rows="4" placeholder="比如：桥栏上的石狮子，有一只缺了耳朵。"'+(busy?" readonly":"")+'>'+esc(j.draft)+'</textarea><span class="count num" data-ref="count" aria-hidden="true">'+j.draft.length+' / 200</span></div>');
+  h.push('<div class="moods-l" id="'+a.uid+'-ml">此刻的心情</div><div class="moods" role="group" aria-labelledby="'+a.uid+'-ml">'+MOODS.map(function(m){return '<button class="mood" data-act="mood" data-m="'+m+'" aria-pressed="'+(j.mood===m)+'">'+ic("check")+m+'</button>'}).join("")+'</div>');
+  h.push('<button class="btn-primary" data-act="savenote" data-ref="saveBtn"></button><div class="status" data-ref="status" role="status"></div></div>');
+  h.push('<div class="h-sec"><span>这条路线的手记</span><small class="num" data-ref="entryCount"></small></div><div data-ref="entries"></div><p class="demo-note">概念演示 · 手记只存在这一页里，刷新后清空</p>');
+  return h.join("");
+}
+function emptyArt(){return '<svg viewBox="0 0 96 72" aria-hidden="true"><path d="M14 16c10-4 22-4 34 2 12-6 24-6 34-2v42c-10-4-22-4-34 2-12-6-24-6-34-2Z" fill="#eee7d8"/><path d="M48 18v42" stroke="#dcd2bd" stroke-width="2"/><path d="M22 28h16M22 36h12M58 28h16" stroke="#cfc4ac" stroke-width="2.2" stroke-linecap="round"/><path d="M60 44c4-7 9 2 13-4" fill="none" stroke="#c4532c" stroke-width="2.2" stroke-linecap="round"/></svg>'}
+/* ============ App ============ */
+var STATUSBAR='<div class="statusbar" aria-hidden="true"><span class="num">15:24</span><span class="sys"><svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="currentColor"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="currentColor"/><rect x="10" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="15" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg><svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 11.2 5.6 8.6a3.4 3.4 0 0 1 4.8 0L8 11.2ZM3.4 6.4a6.5 6.5 0 0 1 9.2 0l1.4-1.5a8.6 8.6 0 0 0-12 0l1.4 1.5ZM1.2 4.1a9.6 9.6 0 0 1 13.6 0L16 2.8a11.4 11.4 0 0 0-16 0l1.2 1.3Z" fill="currentColor"/></svg><svg width="27" height="13" viewBox="0 0 27 13"><rect x=".6" y=".6" width="22.8" height="11.8" rx="3.6" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1.2"/><rect x="2.4" y="2.4" width="15.6" height="8.2" rx="2.2" fill="currentColor"/><path d="M25 4.4v4.2a2.2 2.2 0 0 0 0-4.2Z" fill="currentColor" fill-opacity=".45"/></svg></span></div>';
+
+var uidN=0;
+function App(screen,init,top){
+  this.screen=screen;this.uid="a"+(++uidN);this.top=top;this.st=init;this.timer=null;this.refs={};
+  screen.insertAdjacentHTML("beforeend",'<div class="app"><div class="viewport" data-ref="vp"></div><div class="toast" role="status" aria-live="polite"></div><nav class="tabbar" aria-label="主导航">'+TABS.map(function(t){return '<button class="tab" data-act="tab" data-tab="'+t[0]+'">'+ic(t[2])+'<span>'+t[1]+'</span></button>'}).join("")+'</nav></div>');
+  this.vp=screen.querySelector(".viewport");this.toastEl=screen.querySelector(".toast");
+  var vp=this.vp;vp.addEventListener("scroll",function(){screen.classList.toggle("scrolled",vp.scrollTop>8)},{passive:true});
+  var self=this;
+  screen.addEventListener("click",function(e){var b=e.target.closest("[data-act]");if(b&&screen.contains(b))self.act(b.getAttribute("data-act"),b,e)});
+  screen.addEventListener("input",function(e){if(e.target.matches("textarea[data-ref=note]"))self.onType(e.target)});
+  this.render(false);
+  if(this.st.walk&&this.st.walk.running){this.st.walk.running=false;this.start(true)}
+}
+App.prototype.$=function(name){return this.vp.querySelector('[data-ref="'+name+'"]')};
+App.prototype.go=function(tab,focus){this.st.tab=tab;this.render(focus!==false)};
+App.prototype.render=function(focus){
+  var a={st:this.st,uid:this.uid,top:this.top,mapH:this.top<40?300:336},t=this.st.tab;
+  var html=t==="today"?viewToday(a):t==="route"?viewRoute(a):t==="walk"?viewWalk(a):viewJournal(a);
+  this.vp.innerHTML='<div class="view '+t+'">'+html+'</div>';
+  this.vp.scrollTop=0;this.screen.classList.remove("scrolled");
+  var tabs=this.screen.querySelectorAll(".tab"),w=this.st.walk;
+  for(var i=0;i<tabs.length;i++){var on=tabs[i].getAttribute("data-tab")===t;if(on)tabs[i].setAttribute("aria-current","page");else tabs[i].removeAttribute("aria-current");
+    var live=tabs[i].querySelector(".live");if(tabs[i].getAttribute("data-tab")==="walk"){if(w&&w.running&&!live){tabs[i].insertAdjacentHTML("beforeend",'<span class="live" aria-hidden="true"></span>')}else if(!(w&&w.running)&&live)live.remove()}}
+  if(t==="walk")this.paintWalk();
+  if(t==="journal")this.paintJournal();
+  if(focus){var h=this.vp.querySelector("[data-focus]");if(h)h.focus({preventScroll:true})}
+};
+App.prototype.toast=function(msg){
+  var el=this.toastEl;el.innerHTML=ic("check")+'<span>'+esc(msg)+'</span>';el.classList.add("show");
+  clearTimeout(this._tt);this._tt=setTimeout(function(){el.classList.remove("show")},2200);
+};
+App.prototype.liveDot=function(){var tab=this.screen.querySelector('.tab[data-tab="walk"]'),live=tab.querySelector(".live"),w=this.st.walk;if(w&&w.running){if(!live)tab.insertAdjacentHTML("beforeend",'<span class="live" aria-hidden="true"></span>')}else if(live)live.remove()};
+
+/* ---- 计时：按时间戳计算，暂停时冻结 ---- */
+App.prototype.now=function(){
+  var w=this.st.walk;if(!w||!w.running)return{sec:w?w.sec:0,km:w?w.km:0};
+  var r=R[w.routeId],el=(Date.now()-w.t0)/1000,pace=r.km/(r.min*60);
+  var cap=r.stops[w.next].km-.02;
+  return{sec:w.sec0+el,km:Math.max(w.km0,Math.min(w.km0+el*pace,cap))};
+};
+App.prototype.freeze=function(){var w=this.st.walk,n=this.now();w.sec=n.sec;w.km=n.km};
+App.prototype.start=function(silent){
+  var w=this.st.walk,self=this;if(!w||w.running||w.done)return;
+  w.running=true;w.t0=Date.now();w.sec0=w.sec;w.km0=w.km;
+  clearInterval(this.timer);this.timer=setInterval(function(){self.tick()},1000);
+  this.liveDot();if(!silent)this.paintWalk();
+};
+App.prototype.pause=function(){
+  var w=this.st.walk;if(!w||!w.running)return;
+  this.freeze();w.running=false;clearInterval(this.timer);this.timer=null;this.liveDot();this.paintWalk();
+};
+App.prototype.tick=function(){if(this.st.tab==="walk")this.paintMeters()};
+App.prototype.paintMeters=function(){
+  var w=this.st.walk;if(!w||w.done)return;var n=this.now(),r=R[w.routeId],s=r.stops[w.next];
+  var t=this.$("time"),k=this.$("km"),f=this.$("far");if(!t)return;
+  t.textContent=fmtTime(n.sec);k.textContent=n.km.toFixed(2);
+  var m=Math.max(0,Math.round((s.km-n.km)*1000/10)*10);
+  f.textContent=m<=30?"就在附近，到了就打卡":"还有 "+m+" 米 · 慢走约 "+Math.max(1,Math.round(m/1000/(r.km/r.min)))+" 分钟";
+};
+App.prototype.paintWalk=function(){
+  var w=this.st.walk;if(this.st.tab!=="walk"||!w||w.done)return;
+  var p=this.$("pause"),st=this.$("state"),txt=this.$("stateText"),ar=this.$("arrive"),hint=this.$("hint"),mt=this.$("meters");if(!p)return;
+  p.innerHTML=ic(w.running?"pause":"play");p.setAttribute("aria-label",w.running?"暂停计时":"继续漫行");
+  st.classList.toggle("paused",!w.running);txt.textContent=w.running?"漫行中":"已暂停";mt.classList.toggle("paused-v",!w.running);
+  ar.setAttribute("aria-disabled",String(!w.running));
+  hint.textContent=w.running?"走到站点附近，点“到了”打卡":"已暂停，计时停在 "+fmtTime(w.sec)+"。点左边继续";
+  this.paintMeters();
+};
+App.prototype.arrive=function(btn){
+  var w=this.st.walk,self=this;if(!w||w.done)return;
+  if(!w.running){var h=this.$("hint");h.textContent="先点左边的继续，再打卡";return}
+  this.freeze();var r=R[w.routeId],s=r.stops[w.next];
+  w.km=s.km;w.next++;
+  if(navigator.vibrate){try{navigator.vibrate(12)}catch(e){}}
+  btn.classList.remove("hit");void btn.offsetWidth;btn.classList.add("hit");
+  if(w.next>=r.stops.length){
+    w.done=true;w.running=false;clearInterval(this.timer);this.liveDot();
+    this.st.journal.done={routeId:r.id,sec:w.sec,km:r.km,date:"今天"};this.st.journal.state="idle";
+    setTimeout(function(){self.render(true);self.toast("六站都到了")},REDUCED?0:380);return;
+  }
+  w.t0=Date.now();w.sec0=w.sec;w.km0=w.km;
+  this.toast("已到 · "+s.n);
+  var nx=r.stops[w.next],card=this.$("next"),sw=this.$("swap");
+  sw.innerHTML='<div class="lbl"><span class="n num">'+(w.next+1)+'</span>下一站</div><h3 class="nm">'+esc(nx.n)+'</h3><p class="far num" data-ref="far"></p><p class="look"><b>留意</b>'+esc(nx.look)+'</p>';
+  card.classList.remove("advance");void card.offsetWidth;card.classList.add("advance");
+  this.$("nth").textContent=w.next+1;
+  this.$("map").innerHTML=walkMap({st:this.st});
+  this.paintMeters();
+};
+
+/* ---- 手记 ---- */
+App.prototype.onType=function(ta){
+  var j=this.st.journal;j.draft=ta.value;this.$("count").textContent=ta.value.length+" / 200";
+  if(j.state==="saved"||(j.state==="hint")){j.state="idle";this.$("status").innerHTML=""}
+  this.paintSave();
+};
+App.prototype.paintSave=function(){
+  var j=this.st.journal,b=this.$("saveBtn");if(!b)return;
+  var empty=!j.draft.trim();
+  if(j.state==="saving"){b.innerHTML='<span class="spin" aria-hidden="true"></span>正在保存…';b.setAttribute("aria-busy","true");b.setAttribute("aria-disabled","true")}
+  else{b.innerHTML=ic("pen")+'保存手记';b.removeAttribute("aria-busy");b.setAttribute("aria-disabled",String(empty))}
+};
+App.prototype.paintJournal=function(){
+  var j=this.st.journal;if(!j.done)return;
+  var list=j.entries.filter(function(e){return e.routeId===j.done.routeId}),box=this.$("entries");
+  this.$("entryCount").textContent=list.length?list.length+" 条":"";
+  box.innerHTML=list.length?'<ul class="entries">'+list.slice().reverse().map(function(e){return '<li class="entry"><p>'+esc(e.text)+'</p><div class="em">'+(e.mood?'<span>'+esc(e.mood)+'</span>':'')+'<span style="background:none;color:inherit;font-weight:400;padding:0" class="num">'+e.time+'</span></div></li>'}).join("")+'</ul>':'<div class="empty">'+emptyArt()+'<p>还没写过手记。<br>写下的第一句会出现在这里。</p></div>';
+  this.paintSave();this.paintStatus();
+};
+App.prototype.paintStatus=function(){
+  var j=this.st.journal,el=this.$("status");if(!el)return;
+  el.className="status";
+  if(j.state==="saved"){el.classList.add("ok");el.innerHTML=ic("check")+'<span>已保存到手记</span>'}
+  else if(j.state==="error"){el.classList.add("err");el.innerHTML=ic("alert")+'<span>没存上，网络好像断了。<br>文字还在，可以再试一次。</span><button class="retry" data-act="savenote">重试</button>'}
+  else if(j.state==="hint"){el.innerHTML='<span>先写一句再保存。</span>'}
+  else el.innerHTML="";
+};
+App.prototype.save=function(){
+  var j=this.st.journal,self=this,ta=this.$("note");
+  if(j.state==="saving")return;
+  if(!j.draft.trim()){j.state="hint";this.paintStatus();ta.focus();return}
+  j.state="saving";ta.readOnly=true;this.paintSave();this.$("status").innerHTML="";
+  var fail=/断网/.test(j.draft)||(FAIL_ALL&&!j.failedOnce);
+  setTimeout(function(){
+    ta=self.$("note");if(!ta){j.state=fail?"error":"idle";return}
+    ta.readOnly=false;
+    if(fail){j.failedOnce=true;j.state="error";self.paintSave();self.paintStatus();var rb=self.vp.querySelector(".retry");if(rb)rb.focus({preventScroll:true});return}
+    var d=new Date(),hh=d.getHours(),mm=d.getMinutes();
+    j.entries.push({routeId:j.done.routeId,text:j.draft.trim(),mood:j.mood,time:"今天 "+hh+":"+(mm<10?"0":"")+mm});
+    j.draft="";j.mood=null;j.state="saved";ta.value="";self.$("count").textContent="0 / 200";
+    var ms=self.vp.querySelectorAll(".mood");for(var i=0;i<ms.length;i++)ms[i].setAttribute("aria-pressed","false");
+    self.paintJournal();
+  },REDUCED?600:1100);
+};
+
+App.prototype.act=function(act,b){
+  var st=this.st;
+  switch(act){
+    case "tab":var t=b.getAttribute("data-tab");if(t===st.tab){this.vp.scrollTo({top:0,behavior:REDUCED?"auto":"smooth"});return}this.go(t);break;
+    case "open":st.routeId=b.getAttribute("data-id");st.focus=null;this.go("route");break;
+    case "back":this.go("today");break;
+    case "save":var on=!st.saved[st.routeId];st.saved[st.routeId]=on;b.setAttribute("aria-pressed",String(on));b.setAttribute("aria-label",on?"取消收藏":"收藏路线");this.toast(on?"已收藏，可在路线里找到":"已取消收藏");break;
+    case "focus":var i=+b.getAttribute("data-i");st.focus=st.focus===i?null:i;var sc=this.vp.scrollTop;this.render(false);this.vp.scrollTop=sc;var nb=this.vp.querySelector('.stop[data-i="'+i+'"]');if(nb)nb.focus({preventScroll:true});break;
+    case "start":var w=st.walk,r=R[st.routeId];
+      if(!(w&&!w.done&&w.routeId===r.id)){if(this.timer)clearInterval(this.timer);st.walk={routeId:r.id,next:0,km:0,sec:0,running:false,done:false}}
+      st.tab="walk";this.render(true);this.start();break;
+    case "resume":st.tab="walk";this.render(true);this.start();break;
+    case "pause":if(st.walk.running)this.pause();else this.start();break;
+    case "arrive":this.arrive(b);break;
+    case "tojournal":this.go("journal");break;
+    case "mood":var m=b.getAttribute("data-m"),j=st.journal;if(j.state==="saving")return;j.mood=j.mood===m?null:m;var all=this.vp.querySelectorAll(".mood");for(var k=0;k<all.length;k++)all[k].setAttribute("aria-pressed",String(all[k].getAttribute("data-m")===j.mood));break;
+    case "savenote":this.save();break;
+  }
+};
+/* ============ 启动 ============ */
+function baseState(tab){return{tab:tab,routeId:"wutong",focus:null,saved:{},walk:null,journal:{done:null,draft:"",mood:null,state:"idle",entries:[]}}}
+var MQ=matchMedia("(max-width:599px)");
+var SLOTS=[
+ {cap:"今日",n:"01",st:function(){var s=baseState("today");s.walk={routeId:"river",next:2,km:1.62,sec:27*60+40,running:false,done:false};return s}},
+ {cap:"路线详情",n:"02",st:function(){var s=baseState("route");s.focus=null;return s}},
+ {cap:"漫行中",n:"03",st:function(){var s=baseState("walk");s.walk={routeId:"wutong",next:3,km:1.52,sec:23*60+15,running:true,done:false};return s}},
+ {cap:"手记",n:"04",st:function(){var s=baseState("journal");s.walk={routeId:"wutong",next:6,km:3.2,sec:DEMO_DONE.sec,running:false,done:true};s.journal.done=DEMO_DONE;s.journal.draft="桥栏上的石狮子，有一只缺了半只耳朵，被摸得最亮的就是它。";s.journal.mood="好奇";return s}}
+];
+var host=document.getElementById("phones"),mobile=MQ.matches,hashTab=(location.hash.match(/^#(today|route|walk|journal)/)||[])[1];
+if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add("shot");
+SLOTS.forEach(function(sl,i){
+  var slot=document.createElement("section");slot.className="slot";slot.setAttribute("aria-label","界面 "+sl.n+"："+sl.cap);
+  slot.innerHTML='<div class="phone"><div class="screen">'+STATUSBAR+'<div class="scrim"></div><div class="island"></div><div class="homebar"></div></div></div><p class="cap"><i>'+sl.n+'</i><b>'+sl.cap+'</b></p>';
+  host.appendChild(slot);
+  var st=sl.st();
+  if(i===0&&mobile){if(hashTab){st.tab=hashTab}}
+  new App(slot.querySelector(".screen"),st,mobile&&i===0?16:58);
+});
+})();
+</script>
+</body>
+</html>

@@ -6,11 +6,11 @@
 
 你不用先懂字体搭配、栅格、骨架屏或转场术语。描述用户、任务与想要的感觉，Kit 会引导 Codex 规划页面、选择视觉方向、实现交互，再通过真实页面检查迭代。
 
-[看案例](#三个案例) · [开始使用](#开始使用) · [Skill入口](SKILL.md) · [验证记录](docs/showcase-validation.md)
+[看样板](#目标样板) · [看案例](#流程案例) · [开始使用](#开始使用) · [Skill入口](SKILL.md) · [验证记录](docs/showcase-validation.md)
 
-![研读桌：由自然语言需求生成、经三轮真人反馈修改的阅读笔记页面](docs/assets/showcase/reading-desktop.jpg)
+![栖光 One 品牌落地页：深夜里一盏暖光台灯，大号宋体标题](docs/assets/showcase/showcase-lamp-hero.jpg)
 
-> **当前阶段：候选版。** 两个页面案例都按[视觉纠偏手册](references/visual-taste-corrections.md)完成了一轮精修，研读桌经过三轮真人反馈。案例里的 AI 是本地模拟。新版 Skill 能否让 Codex 一次生成到这个水平，还需要重新跑一遍验证。
+> **当前阶段：候选版。** 下面分两类展示。**目标样板**是按本 Kit 的方法人工打磨的成品，用来说明 Kit 追求的质量上限；**流程案例**是 Codex 读 Skill 生成后，再按真人反馈修改的过程记录。新版 Skill 能否让 Codex 一次生成到样板水平，还需要单独验证。所有数据、品牌和 AI 回答都是虚构的演示内容。
 
 ## 它能帮你做什么
 
@@ -23,7 +23,66 @@
 
 它把**设计判断、代码实现、真实验收**串在一起。已有组件和技术栈优先复用，不强制迁移到特定前端框架。
 
-## 三个案例
+## 目标样板
+
+四类常见页面，各自一套视觉语言，都是单文件 HTML，不依赖任何外部资源，打开即可交互。每个样板都附有 `DESIGN.md`，写明视觉命题、tokens、组件规则、三轮截图复查记录和验证范围。
+
+### 品牌落地页 · 栖光 One
+
+一盏会跟着日光变色的台灯。整页按“一天的光”编排：从深夜开场，经过清晨、正午、日落，回到深夜，每一段都标着时刻和色温。台灯用 SVG 手绘，全页共用同一个图形，只改光色。
+
+<table>
+<tr><td width="72%"><img src="docs/assets/showcase/showcase-lamp-slider.jpg" alt="时间滑块模块：拖到 18:30，色温 3450K，墙面和灯光一起变暖"></td><td width="28%"><img src="docs/assets/showcase/showcase-lamp-mobile.jpg" alt="手机首屏：标题、台灯和预订按钮"></td></tr>
+<tr><td>拖动时间，色温、照度、墙面和窗光一起变化</td><td>手机首屏</td></tr>
+</table>
+
+- **视觉**：强调色只有琥珀色一种。深色段的主按钮用琥珀色，浅色段改用胡桃褐，全页没有黑色按钮。三项卖点用排版做对比，不用三张一样的卡片。
+- **交互**：时间滑块、预订表单（校验、加载、成功、失败保留输入）、FAQ 折叠。
+- [查看源码](examples/showcase/lamp-landing/) · [设计记录](examples/showcase/lamp-landing/DESIGN.md)
+
+### 数据看板 · 青岚能源电站运营台
+
+运营负责人每天早上打开，回答“12 座电站今天发电是否正常、哪座要处理、该派什么单”。
+
+<img src="docs/assets/showcase/showcase-ops-detail.jpg" alt="电站运营台：实际与预测发电曲线、电站表格、故障电站详情面板">
+
+- **视觉**：实际发电用实线，预测用虚线，两者的差距用浅红面积标出，“现在”以后铺灰底，跳闸事件直接标在曲线上。总览页没有实心按钮，详情面板只有“派单”一个主操作。表格保留极淡的行线，因为要逐行比较。
+- **交互**：今日 / 7 天 / 30 天切换、排序、筛选、搜索与空结果、详情面板（Esc 关闭后焦点回到原处）、派单失败保留输入。
+
+<details>
+<summary>手机端</summary>
+<br>
+<img src="docs/assets/showcase/showcase-ops-mobile.jpg" alt="手机端三屏：总览、图表与电站卡片、全屏详情">
+</details>
+
+- [查看源码](examples/showcase/ops-dashboard/) · [设计记录](examples/showcase/ops-dashboard/DESIGN.md)
+
+### 手机 App · 漫行
+
+慢速城市散步：挑一条主题路线，一站一站走，走完写几句手记。
+
+<img src="docs/assets/showcase/showcase-walk-stage.jpg" alt="漫行四个界面：今日、路线详情、漫行中、手记">
+
+- **视觉**：城市地图、河流、梧桐和路线全部是 SVG 插画，共用一套虚构街区。主色深苔绿，柿红只用于当前站、进度和失败提示。
+- **交互**：桌面上四台手机各自可以操作；手机宽度下是真实可用的 App，底部 Tab 能切换。计时可以暂停，到站打卡，手记保存失败时保留文字。
+- [查看源码](examples/showcase/walk-app/) · [设计记录](examples/showcase/walk-app/DESIGN.md)
+
+### AI 工作台 · 衡 · 研究台
+
+研究员提问，AI 检索、阅读、撰写一份带编号引用的简报；每条结论都能点回原文核对，也能直接编辑。
+
+<table>
+<tr><td width="72%"><img src="docs/assets/showcase/showcase-research-done.jpg" alt="研究台：选中引用 2，正文句子和右侧来源卡片同时高亮"></td><td width="28%"><img src="docs/assets/showcase/showcase-research-mobile.jpg" alt="手机端：文档与来源切换，底部固定追问框"></td></tr>
+<tr><td>引用和来源双向联动</td><td>手机端</td></tr>
+</table>
+
+- **视觉**：暖石墨深色底，不用常见的黑底紫渐变。象牙金只用在引用编号、键盘焦点和主按钮三处。简报正文用宋体，读起来像一份编辑过的文档。
+- **交互**：检索、阅读、撰写三步如实展示；可以停止并保留已生成的部分；编辑保存失败时保留修改；可复制、导出 Markdown。
+- [查看源码](examples/showcase/research-workbench/) · [设计记录](examples/showcase/research-workbench/DESIGN.md)
+
+## 流程案例
+
+下面三个案例记录 Codex 读 Skill 生成页面、再按真人反馈修改的过程，用来说明方法怎么落地。
 
 这三例分别验证不同能力：从零新建、改造已有 demo、讨论说不出名字的效果。
 
@@ -97,6 +156,10 @@ python -m http.server 8000 --bind 127.0.0.1
 
 在浏览器打开：
 
+- 栖光 One 落地页：`http://127.0.0.1:8000/examples/showcase/lamp-landing/`
+- 电站运营台：`http://127.0.0.1:8000/examples/showcase/ops-dashboard/`
+- 漫行 App：`http://127.0.0.1:8000/examples/showcase/walk-app/`
+- 衡 · 研究台：`http://127.0.0.1:8000/examples/showcase/research-workbench/`
 - 研读桌：`http://127.0.0.1:8000/examples/reading-desk/`
 - 投递手记：`http://127.0.0.1:8000/examples/application-tracker/`
 - 效果体验室：`http://127.0.0.1:8000/examples/effect-studio/`
