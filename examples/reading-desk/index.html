@@ -1,55 +1,385 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>研读桌 · 留下读过的痕迹</title>
 <style>
-:root{--paper:#f6f3ec;--white:#fffdf8;--ink:#292c26;--muted:#62665c;--line:#d7d4ca;--accent:#8e3f2e;--soft:#eee8dc;--space:24px;--serif:"Noto Serif SC","Songti SC","SimSun",serif}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 system-ui,"Microsoft YaHei",sans-serif}button,input,textarea{font:inherit}button{cursor:pointer;min-height:44px;border:1px solid var(--line);border-radius:4px;padding:8px 18px;color:var(--ink);background:transparent;transition:background .15s}button:hover{background:var(--soft)}button:disabled{cursor:wait;opacity:.55}.primary{color:#fff;background:var(--accent);border-color:var(--accent)}.primary:hover{background:#743321}.quiet{border-color:transparent;padding:8px 10px;color:var(--muted)}:focus-visible{outline:2px solid var(--accent);outline-offset:4px}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--serif);line-height:1.45;font-weight:600}h1{font-size:42px;letter-spacing:.06em;margin-bottom:14px}h2{font-size:28px}h3{font-size:20px}small,.small{font-size:13px;color:var(--muted)}.eyebrow{font:12px/1.5 system-ui;letter-spacing:.14em;color:var(--accent);margin-bottom:18px}.muted{color:var(--muted)}[hidden]{display:none!important}
-.masthead{max-width:1440px;margin:auto;padding:22px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--ink)}.brand{display:flex;align-items:center;gap:14px}.mark{width:32px;height:38px;display:grid;place-items:center;background:var(--accent);color:var(--white);font:21px var(--serif);border-radius:2px}.brand strong{font:25px var(--serif);letter-spacing:.18em}.tagline{border-left:1px solid var(--line);padding-left:18px;color:var(--muted);font-size:13px}.local{font-size:12px;letter-spacing:.06em;color:var(--muted)}.local::before{content:'●';font-size:8px;color:#567153;margin-right:8px}.layout{max-width:1440px;margin:auto;display:grid;grid-template-columns:300px minmax(0,1fr);min-height:calc(100vh - 90px)}aside{padding:36px 26px 40px 40px;border-right:1px solid var(--line)}.aside-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.aside-head h2{font:16px system-ui;margin:0}.count{font-size:12px;color:var(--muted)}.new{width:100%;margin-bottom:26px}.empty{border-top:1px solid var(--line);padding-top:26px;color:var(--muted);font-size:14px}.empty-symbol{font:44px var(--serif);color:var(--accent);margin-bottom:10px}.note-row{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:20px 10px;background:transparent}.note-row[aria-current=true]{background:var(--soft);border-left:3px solid var(--accent);padding-left:7px}.note-row strong{display:block;font:18px/1.6 var(--serif);overflow-wrap:anywhere}.note-row span{display:block;font-size:12px;color:var(--muted);margin-top:7px}.aside-foot{margin-top:36px;font-size:12px;color:var(--muted)}main{min-width:0;padding:42px 64px 64px}.page{max-width:780px;margin:auto;animation:pageIn .2s ease-out}.intro{margin-bottom:32px}.intro p{color:var(--muted);margin:0}.section-label{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 10px}label{font-size:14px;font-weight:600}.step{font-family:var(--serif);color:var(--accent);margin-right:9px}input,textarea{display:block;width:100%;border:1px solid var(--line);background:var(--white);border-radius:4px;padding:13px 16px;color:var(--ink);line-height:1.8;min-width:0}textarea{resize:vertical;min-height:260px}input::placeholder,textarea::placeholder{color:#7b7c72}.short{min-height:150px}.title-input{font-family:var(--serif);font-size:20px}.field{margin-bottom:20px}.field label{display:block;margin-bottom:8px}.field-meta{display:flex;justify-content:space-between;gap:12px;margin:8px 0 20px;font-size:12px;color:var(--muted)}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px}.rule{border:0;border-top:1px solid var(--line);margin:32px 0}.status{font-size:14px;color:var(--accent);margin:18px 0;min-height:0;overflow-wrap:anywhere}.status:empty{margin:0}.notice{padding:12px 16px;border-left:2px solid var(--accent);background:var(--soft);font-size:13px;margin:20px 0;color:var(--muted)}.skeleton{padding:28px;background:var(--white);border:1px solid var(--line);margin-top:24px}.skeleton .bar{height:11px;margin:18px 0;background:#e8e4da;width:90%}.skeleton .bar:nth-child(2){width:65%}.skeleton .bar:last-child{width:76%}.skeleton p{margin:0;font-size:14px}.mobile-nav{display:none}.reading-title{font-size:36px;overflow-wrap:anywhere}.reading-meta{font-size:12px;color:var(--muted);margin-bottom:32px}.reading{white-space:pre-wrap;overflow-wrap:anywhere;font-size:17px;line-height:2}.points{padding-left:25px;margin:0}.points li{padding:0 0 16px 8px;white-space:pre-wrap;overflow-wrap:anywhere}.points li::marker{color:var(--accent);font-family:var(--serif)}details{border-top:1px solid var(--line);padding-top:20px;margin-top:36px}summary{cursor:pointer;min-height:44px;font-size:14px}details .reading{font-size:15px;color:var(--muted)}.back{margin:0 0 24px -10px}.closing{margin-top:40px;display:flex;align-items:center;gap:14px;font:12px var(--serif);color:var(--muted)}.closing:before,.closing:after{content:'';height:1px;flex:1;background:var(--line)}.editor-note{font-size:13px;color:var(--muted)}
-@keyframes pageIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}@media(min-width:1600px){main{padding-top:64px}}@media(max-width:1000px){main{padding:36px 32px}.layout{grid-template-columns:260px minmax(0,1fr)}aside{padding-left:24px;padding-right:20px}.masthead{padding-left:24px;padding-right:24px}.tagline{display:none}}@media(max-width:760px){.masthead{padding:18px 20px}.brand strong{font-size:23px}.local{font-size:10px}.layout{display:block;min-height:0}.mobile-nav{display:flex;padding:12px 20px;border-bottom:1px solid var(--line);gap:12px}.mobile-nav button{flex:1;font-size:14px}.mobile-nav button[aria-current=true]{color:var(--accent);border-bottom:2px solid var(--accent)}aside{display:none;border-right:0;padding:28px 20px}.layout.show-list aside{display:block}.layout.show-list main{display:none}main{padding:28px 20px 44px}.page{max-width:640px}h1{font-size:32px}.intro{margin-bottom:24px}.reading-title{font-size:30px}.intro p{font-size:15px}.field-meta{flex-direction:column;gap:2px}.actions button{flex:1}.note-row{padding-top:18px;padding-bottom:18px}.new{display:none}textarea{min-height:230px}.short{min-height:160px}.masthead .mark{width:27px;height:32px}.brand{gap:10px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* ── Tokens ─────────────────────────────────────────────
+   方向：书桌上的一页纸。用面和留白分层，不用线框；
+   形状柔和，朱红只用于印记、序号和当前位置，主操作用胡桃褐。 */
+:root{
+  --desk:#efe9de;           /* 桌面底色 */
+  --sheet:#fcfaf5;          /* 纸页 */
+  --well:#f3eee4;           /* 纸页内的输入面 */
+  --well-hover:#efe9dd;
+  --ink:#1d1b18;
+  --ink-2:#45413a;
+  --muted:#6a645a;          /* 纸色上 ≥4.5:1 */
+  --tint:rgba(29,27,24,.055);
+  --seal:#a8321f;
+  --walnut:#5a4030;         /* 主操作：胡桃墨褐，与纸同一色相，不用纯黑 */
+  --walnut-hi:#4a3326;
+  --seal-wash:rgba(168,50,31,.075);
+  --r-sheet:28px;--r-block:18px;--r-field:16px;--r-pill:999px;
+  --lift:0 1px 2px rgba(60,44,20,.05),0 12px 32px -12px rgba(60,44,20,.12);
+  --lift-hi:0 1px 2px rgba(60,44,20,.06),0 24px 64px -28px rgba(60,44,20,.22);
+  --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","Noto Serif CJK SC","SimSun",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;
+  --figure:"Iowan Old Style","Palatino Linotype","Palatino","Georgia",serif;
+  --measure:36em;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:radial-gradient(1200px 600px at 70% -10%,#f6f1e8 0,transparent 70%),var(--desk);color:var(--ink);font:15px/1.7 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p,ol,figure{margin:0}
+button,input,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+::selection{background:rgba(168,50,31,.16)}
+
+/* ── Controls ───────────────────────────────────────── */
+button{cursor:pointer;min-height:44px;padding:0 22px;border:0;border-radius:var(--r-pill);background:var(--tint);font-size:14px;letter-spacing:.04em;transition:background .2s var(--ease),color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease)}
+button:hover{background:rgba(29,27,24,.09)}
+button:active{transform:scale(.98)}
+button:disabled{cursor:wait;opacity:.45;transform:none}
+.primary{background:var(--walnut);color:#fbf6ee;box-shadow:inset 0 1px 0 rgba(255,240,220,.14),0 8px 20px -10px rgba(90,64,48,.6)}
+.primary:hover{background:var(--walnut-hi);box-shadow:inset 0 1px 0 rgba(255,240,220,.14),0 10px 24px -10px rgba(90,64,48,.65)}
+.quiet{background:transparent;padding:0 14px;color:var(--muted)}
+.quiet:hover{background:var(--tint);color:var(--ink)}
+.link{background:transparent;min-height:36px;padding:0 14px;color:var(--seal);font-size:13px}
+.link:hover{background:var(--seal-wash)}
+:focus-visible{outline:2px solid var(--seal);outline-offset:3px}
+[tabindex="-1"]:focus{outline:none}
+
+/* ── Masthead ───────────────────────────────────────── */
+.masthead{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;max-width:1360px;margin:0 auto;padding:24px 48px}
+.brand{display:flex;align-items:center;gap:12px}
+.seal{display:grid;place-items:center;width:32px;height:32px;background:var(--seal);color:var(--sheet);font:600 17px/1 var(--serif);border-radius:10px;box-shadow:0 6px 14px -8px rgba(168,50,31,.7)}
+.brand strong{font:600 21px/1 var(--serif);letter-spacing:.3em}
+.issue{font-size:12px;letter-spacing:.2em;color:var(--muted);text-align:center}
+.local{justify-self:end;display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:var(--r-pill);background:rgba(252,250,245,.7);font-size:12px;color:var(--muted);letter-spacing:.04em}
+.local::before{content:"";width:6px;height:6px;border-radius:50%;background:#5d7a58}
+
+/* ── Layout ─────────────────────────────────────────── */
+.layout{max-width:1360px;margin:0 auto;padding:0 48px 64px;display:grid;grid-template-columns:272px minmax(0,1fr);gap:40px}
+aside{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;padding:8px 0 24px}
+main{min-width:0}
+
+/* ── Index (rail) ───────────────────────────────────── */
+.aside-head{display:flex;align-items:baseline;justify-content:space-between;padding:0 14px 12px}
+.aside-head h2{font:600 13px/1 var(--sans);letter-spacing:.24em;color:var(--ink-2)}
+.count{font:13px/1 var(--figure);color:var(--muted)}
+.new{width:100%;margin:0 0 16px;background:rgba(252,250,245,.7);color:var(--walnut);font-weight:600;box-shadow:0 1px 2px rgba(60,44,20,.05)}
+.new:hover{background:var(--sheet)}
+#list{display:grid;gap:4px}
+.note-row{display:grid;grid-template-columns:30px 1fr;gap:0 4px;width:100%;min-height:0;padding:14px 14px;text-align:left;border-radius:var(--r-block);background:transparent;letter-spacing:0}
+.note-row:hover{background:rgba(252,250,245,.6)}
+.note-row:active{transform:none}
+.note-row .num{font:15px/1.6 var(--figure);color:var(--muted)}
+.note-row strong{font:500 16px/1.6 var(--serif);color:var(--ink);overflow-wrap:anywhere}
+.note-row .meta{grid-column:2;font-size:12px;color:var(--muted);margin-top:2px;letter-spacing:.02em}
+.note-row[aria-current=true]{background:var(--sheet);box-shadow:var(--lift)}
+.note-row[aria-current=true] .num{color:var(--seal)}
+.empty{padding:22px 20px;border-radius:var(--r-block);background:rgba(252,250,245,.55);color:var(--muted);font-size:13px;line-height:1.9}
+.empty strong{display:block;font:500 16px/1.6 var(--serif);color:var(--ink-2);margin-bottom:4px}
+.empty-symbol{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--seal-wash);margin-bottom:14px}
+.empty-symbol::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--seal);opacity:.75}
+.aside-foot{margin-top:28px;padding:0 14px;font-size:12px;line-height:1.9;color:var(--muted)}
+
+/* ── Sheet (shared page frame) ──────────────────────── */
+.page{max-width:820px;margin:0 auto;padding:56px 64px 48px;background:var(--sheet);border-radius:var(--r-sheet);box-shadow:var(--lift-hi);animation:pageIn .4s var(--ease)}
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:var(--r-pill);background:var(--seal-wash);font-size:12px;letter-spacing:.2em;color:var(--seal);margin-bottom:22px}
+.display{font:600 44px/1.32 var(--serif);letter-spacing:.02em;overflow-wrap:anywhere;text-wrap:balance}
+.deck{margin-top:16px;font:18px/1.8 var(--serif);color:var(--ink-2);max-width:26em;text-wrap:pretty}
+.status{font-size:13px;color:var(--ink-2);margin-top:14px;overflow-wrap:anywhere}
+.status:empty{display:none}
+.notice{max-width:820px;margin:0 auto 20px;padding:14px 20px;border-radius:var(--r-block);background:#f7e6df;font-size:13px;color:#6b2a1d}
+
+/* ── Compose ────────────────────────────────────────── */
+.intro{margin-bottom:44px}
+.step-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.step-head label,.step-head h2{display:flex;align-items:center;gap:12px;font:600 15px/1.4 var(--sans);letter-spacing:.1em}
+.step{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--seal-wash);font:500 14px/1 var(--figure);color:var(--seal);letter-spacing:0}
+input,textarea{display:block;width:100%;min-width:0;border:0;border-radius:var(--r-field);background:var(--well);padding:18px 22px;font:17px/1.9 var(--serif);color:var(--ink);transition:background .2s var(--ease),box-shadow .2s var(--ease)}
+input:hover,textarea:hover{background:var(--well-hover)}
+input:focus,textarea:focus{outline:none;background:#fff;box-shadow:0 0 0 1.5px rgba(29,27,24,.5),0 10px 28px -14px rgba(60,44,20,.25)}
+input:disabled,textarea:disabled{color:var(--muted)}
+input[aria-invalid=true],textarea[aria-invalid=true]{box-shadow:0 0 0 1.5px var(--seal)}
+textarea{resize:vertical;min-height:280px}
+::placeholder{color:#8f887c}
+#article{min-height:320px}
+.short{min-height:150px}
+.title-input{font:600 24px/1.5 var(--serif);padding:14px 22px}
+.field{margin-bottom:22px}
+.field>label{display:flex;align-items:baseline;gap:10px;margin:0 0 8px 6px;font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--ink-2)}
+.field small{font-size:12px;font-weight:400;letter-spacing:.02em;color:var(--muted)}
+.field-meta{display:flex;justify-content:space-between;gap:16px;margin:10px 6px 28px;font-size:12px;color:var(--muted)}
+#wordCount{font-family:var(--figure);font-variant-numeric:tabular-nums;white-space:nowrap}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.arrow{display:inline-block;margin-left:10px;transition:transform .2s var(--ease)}
+button:hover .arrow{transform:translateX(3px)}
+
+.skeleton{margin-top:32px;padding:28px 30px;border-radius:var(--r-block);background:var(--well)}
+.skeleton p{font:16px/1.8 var(--serif);color:var(--ink-2);margin-bottom:18px}
+.bars{display:grid;gap:12px;max-width:var(--measure)}
+.bar{height:10px;border-radius:var(--r-pill);background:linear-gradient(90deg,rgba(29,27,24,.06) 0 40%,rgba(29,27,24,.12) 50%,rgba(29,27,24,.06) 60% 100%);background-size:250% 100%;animation:ink 1.6s linear infinite}
+.bar:nth-child(1){width:92%}.bar:nth-child(2){width:74%;animation-delay:.12s}.bar:nth-child(3){width:83%;animation-delay:.24s}
+.skeleton small{display:block;margin-top:18px;font-size:12px;color:var(--muted)}
+
+.draft-wrap{margin-top:56px;animation:pageIn .4s var(--ease)}
+.editor-note{font-size:13px;color:var(--muted);margin:-2px 0 22px 44px}
+.closing{margin-top:64px;display:flex;align-items:center;justify-content:center;gap:12px;font:13px var(--serif);letter-spacing:.3em;color:var(--muted)}
+.closing::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);opacity:.6}
+
+/* ── Detail ─────────────────────────────────────────── */
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:-24px -32px 36px}
+.back{font-size:13px;letter-spacing:.06em}
+.reading-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.reading-meta span{padding:5px 12px;border-radius:var(--r-pill);background:var(--well);font-size:12px;color:var(--muted);letter-spacing:.02em}
+.section{margin-top:52px}
+.section-title{font:600 13px/1 var(--sans);letter-spacing:.24em;color:var(--muted);margin-bottom:22px}
+.points{list-style:none;padding:0;counter-reset:pt;max-width:var(--measure);display:grid;gap:26px}
+.points li{counter-increment:pt;position:relative;padding-left:58px;font:18px/1.9 var(--serif);color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere;text-align:justify}
+.points li::before{content:counter(pt,decimal-leading-zero);position:absolute;left:0;top:2px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--seal-wash);font:16px/1 var(--figure);color:var(--seal)}
+.thought{max-width:var(--measure);padding:26px 30px;border-radius:var(--r-block);background:var(--seal-wash)}
+.thought .reading{font:19px/1.9 var(--serif);color:var(--ink)}
+.reading{white-space:pre-wrap;overflow-wrap:anywhere;font:17px/2 var(--serif)}
+details{margin-top:44px;border-radius:var(--r-block);background:var(--well);transition:background .2s var(--ease)}
+summary{display:flex;align-items:center;justify-content:space-between;min-height:56px;padding:0 24px;cursor:pointer;list-style:none;font:600 13px/1 var(--sans);letter-spacing:.24em;color:var(--ink-2);border-radius:var(--r-block)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"展开";padding:5px 12px;border-radius:var(--r-pill);background:rgba(252,250,245,.8);font-weight:400;letter-spacing:.1em;color:var(--muted);font-size:12px}
+details[open] summary::after{content:"收起"}
+summary:hover{color:var(--ink)}
+details .reading{padding:4px 24px 26px;font-size:16px;color:var(--ink-2);max-width:calc(var(--measure) + 48px);text-align:justify}
+
+/* ── Edit ───────────────────────────────────────────── */
+#edit .intro{margin-bottom:36px}
+#edit .display{font-size:36px}
+.edit-actions{position:sticky;bottom:12px;margin-top:8px;padding:10px;border-radius:var(--r-pill);background:rgba(252,250,245,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:var(--lift);width:max-content;max-width:100%}
+
+.mobile-nav{display:none}
+
+/* ── Motion ─────────────────────────────────────────── */
+@keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes ink{from{background-position:100% 0}to{background-position:-150% 0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media(max-width:1080px){
+  .masthead,.layout{padding-left:28px;padding-right:28px}
+  .layout{grid-template-columns:240px minmax(0,1fr);gap:24px}
+  .page{padding:48px 44px 40px}
+  .toolbar{margin:-20px -20px 32px}
+  .display{font-size:38px}
+}
+@media(max-width:860px){
+  .issue{display:none}
+  .masthead{grid-template-columns:1fr auto}
+}
+@media(max-width:760px){
+  body{font-size:14px}
+  .masthead{padding:16px 20px}
+  .brand strong{font-size:19px;letter-spacing:.24em}
+  .seal{width:28px;height:28px;font-size:15px;border-radius:9px}
+  .local{font-size:11px;padding:5px 10px}
+  .mobile-nav{display:flex;position:sticky;top:8px;z-index:2;margin:0 16px 14px;padding:4px;gap:4px;border-radius:var(--r-pill);background:rgba(226,216,199,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:var(--lift)}
+  .mobile-nav button{flex:1;min-height:42px;padding:0 12px;background:transparent;color:var(--muted);font-size:14px}
+  .mobile-nav button[aria-current=true]{background:var(--sheet);color:var(--ink);font-weight:600;box-shadow:0 1px 2px rgba(60,44,20,.08),0 4px 12px -4px rgba(60,44,20,.14)}
+  #mobileCount{font-family:var(--figure);margin-left:6px;opacity:.75}
+  .layout{display:block;padding:0 12px 40px}
+  aside{display:none;position:static;max-height:none;padding:8px 4px 24px}
+  .layout.show-list aside{display:block}
+  .layout.show-list main{display:none}
+  .new{display:none}
+  .page{padding:32px 22px 28px;border-radius:24px}
+  .intro{margin-bottom:32px}
+  .display{font-size:30px;line-height:1.38}
+  #edit .display{font-size:28px}
+  .deck{font-size:16px}
+  .kicker{margin-bottom:16px}
+  .field-meta{flex-direction:column;gap:2px}
+  .actions button{flex:1}
+  textarea{min-height:220px}
+  #article{min-height:260px}
+  input,textarea{font-size:16px;padding:16px 18px}
+  .title-input{font-size:20px}
+  .toolbar{margin:-14px -10px 26px}
+  .toolbar .actions button{flex:0 0 auto}
+  .editor-note{margin-left:0}
+  .section{margin-top:40px}
+  .points{gap:22px}
+  .points li{padding-left:46px;font-size:17px}
+  .points li::before{width:32px;height:32px;font-size:14px}
+  .thought{padding:20px 22px}
+  .thought .reading{font-size:17px}
+  summary{padding:0 18px}
+  details .reading{padding:4px 18px 22px}
+  .edit-actions{width:auto}
+  .closing{margin-top:48px}
+}
 </style>
 </head>
 <body>
-<header class="masthead"><div class="brand"><span class="mark" aria-hidden="true">研</span><strong>研读桌</strong><span class="tagline">留下读过的痕迹</span></div><span class="local">本地演示 · 模拟 AI</span></header>
-<nav class="mobile-nav" aria-label="主要导航"><button id="mobileNew" aria-current="true">写一篇笔记</button><button id="mobileList">我的笔记 <span id="mobileCount">0</span></button></nav>
-<div class="layout" id="layout"><aside aria-label="我的笔记"><div class="aside-head"><h2>我的笔记</h2><span id="count" class="count">0 篇</span></div><button id="newNote" class="new primary">＋ 开始新的阅读</button><div id="list"></div><div class="aside-foot">一个留给思考的地方。<br>笔记仅保存在当前浏览器，<br>没有账号，也不上传云端。</div></aside>
-<main><div id="globalStatus" class="notice" role="alert" hidden></div>
-<section id="compose" class="page" aria-labelledby="composeTitle"><div class="intro"><p class="eyebrow">READ · THINK · KEEP</p><h1 id="composeTitle" tabindex="-1">把阅读，留在这里。</h1><p>放下一篇文章，拾起几个值得记住的想法。</p></div>
-<div class="section-label"><label for="article"><span class="step">01</span>粘贴文章</label><button id="sample" class="quiet small">试试示例文章 ↗</button></div>
-<textarea id="article" maxlength="30000" placeholder="粘贴你正在读的文章……&#10;&#10;一段有启发的文字，也值得留下一页笔记。" aria-describedby="articleHint composeStatus"></textarea><div class="field-meta"><span id="articleHint">至少 30 字。演示会从原文摘取句子，不调用真实 AI。</span><span id="wordCount">0 / 30,000 字</span></div>
-<div class="actions"><button id="generate" class="primary">整理阅读要点 <span aria-hidden="true">→</span></button><button id="cancelRun" hidden>取消整理</button></div><p id="composeStatus" class="status" role="status" aria-live="polite"></p>
-<div id="loading" class="skeleton" hidden aria-label="模拟整理进行中"><p>正在本地整理，原文仍在上方。</p><div aria-hidden="true"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div><small>这是模拟等待，不代表真实模型推理。</small></div>
-<div id="draft" hidden><hr class="rule"><div class="section-label"><h2 id="draftHeading" tabindex="-1"><span class="step">02</span>留给自己的笔记</h2></div><p class="editor-note">要点来自原文摘录。请先校订，再收进笔记。</p><div class="field"><label for="draftTitle">笔记标题</label><input id="draftTitle" class="title-input" maxlength="160"></div><div class="field"><label for="draftPoints">阅读要点 <small>每行一个要点，可自由修改</small></label><textarea id="draftPoints" class="short" maxlength="30000"></textarea></div><div class="field"><label for="draftThoughts">我的想法 <small>选填</small></label><textarea id="draftThoughts" class="short" placeholder="它让我想到……" maxlength="30000"></textarea></div><button id="saveDraft" class="primary">保存笔记</button><p id="draftStatus" class="status" role="status"></p></div>
-<div class="closing">阅读不必匆忙</div></section>
-<section id="detail" class="page" hidden aria-labelledby="detailTitle"><button id="backList" class="quiet back">← 返回笔记列表</button><p class="eyebrow">READING NOTES / 阅读手记</p><h1 id="detailTitle" class="reading-title" tabindex="-1"></h1><p id="detailMeta" class="reading-meta"></p><div class="actions"><button id="editNote">编辑笔记</button></div><p id="detailStatus" class="status" role="status"></p><hr class="rule"><h3>值得记住</h3><ol id="detailPoints" class="points"></ol><div id="thoughtSection"><hr class="rule"><h3>我的想法</h3><p id="detailThoughts" class="reading"></p></div><details><summary>回看原文</summary><p id="detailSource" class="reading"></p></details><div class="closing">读过，也想过</div></section>
-<section id="edit" class="page" hidden aria-labelledby="editHeading"><p class="eyebrow">REVISIT / 再想一想</p><h1 id="editHeading" tabindex="-1">编辑笔记</h1><p class="muted">让它更接近你自己的理解。</p><div class="field"><label for="editTitle">笔记标题</label><input id="editTitle" class="title-input" maxlength="160"></div><div class="field"><label for="editPoints">阅读要点 <small>每行一个要点</small></label><textarea id="editPoints" maxlength="30000"></textarea></div><div class="field"><label for="editThoughts">我的想法 <small>选填</small></label><textarea id="editThoughts" class="short" maxlength="30000"></textarea></div><div class="actions"><button id="saveEdit" class="primary">保存修改</button><button id="cancelEdit">取消</button></div><p id="editStatus" class="status" role="status"></p></section>
-</main></div>
+<header class="masthead">
+  <div class="brand"><span class="seal" aria-hidden="true">研</span><strong>研读桌</strong></div>
+  <p class="issue" id="issueDate">阅读手记</p>
+  <span class="local">本地演示 · 模拟 AI</span>
+</header>
+<nav class="mobile-nav" aria-label="主要导航"><button id="mobileNew" aria-current="true">写一篇笔记</button><button id="mobileList">我的笔记<span id="mobileCount">0</span></button></nav>
+
+<div class="layout" id="layout">
+<aside aria-label="我的笔记">
+  <div class="aside-head"><h2>目录</h2><span id="count" class="count">0 篇</span></div>
+  <button id="newNote" class="new">＋ 开始新的阅读</button>
+  <div id="list"></div>
+  <p class="aside-foot">一个留给思考的地方。笔记只保存在当前浏览器，没有账号，也不上传云端。</p>
+</aside>
+
+<main>
+<div id="globalStatus" class="notice" role="alert" hidden></div>
+
+<section id="compose" class="page" aria-labelledby="composeTitle">
+  <div class="intro">
+    <p class="kicker">新的一页</p>
+    <h1 id="composeTitle" class="display" tabindex="-1">把阅读，留在这里。</h1>
+    <p class="deck">放下一篇文章，拾起几个值得记住的想法。整理只是起点，最后留下的要点由你决定。</p>
+  </div>
+
+  <div class="step-head"><label for="article"><span class="step">01</span>粘贴文章</label><button id="sample" class="link">试试示例文章</button></div>
+  <textarea id="article" maxlength="30000" placeholder="粘贴你正在读的文章……&#10;&#10;第一行会作为笔记标题。" aria-describedby="articleHint composeStatus"></textarea>
+  <div class="field-meta"><span id="articleHint">至少 30 字。演示会从原文摘取句子，不调用真实 AI。</span><span id="wordCount">0 / 30,000 字</span></div>
+  <div class="actions"><button id="generate" class="primary">整理阅读要点<span class="arrow" aria-hidden="true">→</span></button><button id="cancelRun" hidden>取消整理</button></div>
+  <p id="composeStatus" class="status" role="status" aria-live="polite"></p>
+
+  <div id="loading" class="skeleton" hidden aria-label="模拟整理进行中">
+    <p>正在本地整理，原文保留在上方。</p>
+    <div class="bars" aria-hidden="true"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <small>这是模拟等待，不代表真实模型推理。</small>
+  </div>
+
+  <div id="draft" class="draft-wrap" hidden>
+    <div class="step-head"><h2 id="draftHeading" tabindex="-1"><span class="step">02</span>留给自己的笔记</h2></div>
+    <p class="editor-note">要点摘自原文。先校订，再收进目录。</p>
+    <div class="field"><label for="draftTitle">标题</label><input id="draftTitle" class="title-input" maxlength="160"></div>
+    <div class="field"><label for="draftPoints">阅读要点 <small>每行一个，可自由修改</small></label><textarea id="draftPoints" class="short" maxlength="30000"></textarea></div>
+    <div class="field"><label for="draftThoughts">我的想法 <small>选填</small></label><textarea id="draftThoughts" class="short" placeholder="它让我想到……" maxlength="30000"></textarea></div>
+    <div class="actions"><button id="saveDraft" class="primary">收进笔记</button></div>
+    <p id="draftStatus" class="status" role="status"></p>
+  </div>
+  <div class="closing">阅读不必匆忙</div>
+</section>
+
+<article id="detail" class="page" hidden aria-labelledby="detailTitle">
+  <div class="toolbar">
+    <button id="backList" class="quiet back">← 目录</button>
+    <div class="actions"><button id="editNote">编辑</button></div>
+  </div>
+  <p class="kicker" id="detailKicker">阅读手记</p>
+  <h1 id="detailTitle" class="display" tabindex="-1"></h1>
+  <p id="detailMeta" class="reading-meta"></p>
+  <p id="detailStatus" class="status" role="status"></p>
+
+  <section class="section" aria-labelledby="pointsTitle">
+    <h2 class="section-title" id="pointsTitle">值得记住</h2>
+    <ol id="detailPoints" class="points"></ol>
+  </section>
+
+  <section id="thoughtSection" class="section" aria-labelledby="thoughtTitle">
+    <h2 class="section-title" id="thoughtTitle">我的想法</h2>
+    <div class="thought"><p id="detailThoughts" class="reading"></p></div>
+  </section>
+
+  <details><summary>回看原文</summary><p id="detailSource" class="reading"></p></details>
+  <div class="closing">读过，也想过</div>
+</article>
+
+<section id="edit" class="page" hidden aria-labelledby="editHeading">
+  <div class="intro">
+    <p class="kicker">再想一想</p>
+    <h1 id="editHeading" class="display" tabindex="-1">编辑笔记</h1>
+    <p class="deck">让它更接近你自己的理解。</p>
+  </div>
+  <div class="field"><label for="editTitle">标题</label><input id="editTitle" class="title-input" maxlength="160"></div>
+  <div class="field"><label for="editPoints">阅读要点 <small>每行一个</small></label><textarea id="editPoints" maxlength="30000"></textarea></div>
+  <div class="field"><label for="editThoughts">我的想法 <small>选填</small></label><textarea id="editThoughts" class="short" maxlength="30000"></textarea></div>
+  <div class="actions edit-actions"><button id="saveEdit" class="primary">保存修改</button><button id="cancelEdit">取消</button></div>
+  <p id="editStatus" class="status" role="status"></p>
+</section>
+</main>
+</div>
+
 <script>
 'use strict';
 const KEY='yanduzhuo-notes-v1';
 const $=id=>document.getElementById(id);
 let notes=[],activeId=null,page='compose',dirty=false,running=false,runId=0,timer=null,storageBroken=false,generatedSource='';
 const sampleText='阅读的价值，不只在于读完\n\n我们常把读完一本书当成目标，却忘了问：有哪些想法真正留下来了？阅读不是收集信息的比赛，而是让陌生的观点进入自己的生活。\n\n做笔记时，不妨先合上文章，试着用自己的话说出最重要的一点。记不住的地方，往往也是理解还不够清晰的地方。重新阅读这些段落，比抄下整篇文章更有帮助。\n\n一条好的阅读笔记，可以从一个具体的问题开始：这与我的经验有什么联系？它能改变我下一次的决定吗？把抽象的观点连接到真实的情境，知识才会变得可用。\n\n也要给想法留一点时间。几天后重新打开笔记，补上一句新的理解。阅读的收获，常常发生在读完之后。';
+
 function extract(text){return text.split(/[。！？!?\n]+/u).map(x=>x.trim()).filter(x=>x.length>=8).slice(0,4).map(x=>x.length>260?x.slice(0,260)+'…':x);}
+/* 第一行较短且后面还有正文时，作为标题，不再重复进入要点。 */
+function splitTitle(source){const lines=source.split('\n');const first=lines[0].trim();const rest=lines.slice(1).join('\n').trim();if(first&&first.length<=40&&rest.length>=8)return{title:first,body:rest};return{title:first.slice(0,40),body:source};}
 function validNote(n){return n&&typeof n.id==='string'&&typeof n.title==='string'&&Array.isArray(n.points)&&n.points.every(x=>typeof x==='string')&&typeof n.source==='string'&&typeof n.thoughts==='string'&&typeof n.updated==='string';}
 function persist(next){if(storageBroken)throw Error('existing data unreadable');const serialized=JSON.stringify(next);localStorage.setItem(KEY,serialized);if(localStorage.getItem(KEY)!==serialized)throw Error('readback failed');}
-function load(){try{const raw=localStorage.getItem(KEY);if(raw){const data=JSON.parse(raw);if(!Array.isArray(data)||!data.every(validNote))throw Error('invalid stored data');notes=data;}}catch(e){storageBroken=true;$('globalStatus').hidden=false;$('globalStatus').textContent='无法读取浏览器笔记，暂未覆盖原有数据。请检查浏览器存储权限，恢复后刷新。当前仍可整理和编辑草稿。';}renderList();}
-function renderList(){const list=$('list');list.replaceChildren();$('count').textContent=notes.length+' 篇';$('mobileCount').textContent=notes.length;if(!notes.length){const empty=document.createElement('div');empty.className='empty';empty.innerHTML='<div class="empty-symbol" aria-hidden="true">〰</div><strong>第一页，留给下一次灵感。</strong><p>粘贴一篇文章，整理后保存，<br>你的阅读手记就会出现在这里。</p>';list.append(empty);return;}notes.forEach(note=>{const b=document.createElement('button');b.className='note-row';b.setAttribute('aria-current',String(activeId===note.id));const title=document.createElement('strong');title.textContent=note.title;const meta=document.createElement('span');meta.textContent=formatDate(note.updated)+' · '+note.points.length+' 个要点';b.append(title,meta);b.onclick=()=>{if(leaveAllowed())openNote(note.id);};list.append(b);});}
-function formatDate(value){const d=new Date(value);return Number.isNaN(d.getTime())?'本地笔记':d.toLocaleDateString('zh-CN',{month:'2-digit',day:'2-digit'});}
+function pad(n){return String(n).padStart(2,'0');}
+function noteNumber(id){const i=notes.findIndex(n=>n.id===id);return i<0?'':pad(notes.length-i);}
+function load(){
+  $('issueDate').textContent=new Date().toLocaleDateString('zh-CN',{year:'numeric',month:'long'})+' · 阅读手记';
+  try{const raw=localStorage.getItem(KEY);if(raw){const data=JSON.parse(raw);if(!Array.isArray(data)||!data.every(validNote))throw Error('invalid stored data');notes=data;}}
+  catch(e){storageBroken=true;$('globalStatus').hidden=false;$('globalStatus').textContent='无法读取浏览器笔记，暂未覆盖原有数据。请检查浏览器存储权限，恢复后刷新。当前仍可整理和编辑草稿。';}
+  renderList();
+}
+function renderList(){
+  const list=$('list');list.replaceChildren();
+  $('count').textContent=notes.length+' 篇';$('mobileCount').textContent=notes.length;
+  if(!notes.length){const empty=document.createElement('div');empty.className='empty';empty.innerHTML='<span class="empty-symbol" aria-hidden="true"></span><strong>第一页，留给下一次阅读。</strong>粘贴一篇文章，整理后收进笔记，它会出现在这里。';list.append(empty);return;}
+  notes.forEach((note,i)=>{
+    const b=document.createElement('button');b.className='note-row';b.setAttribute('aria-current',String(activeId===note.id));
+    const num=document.createElement('span');num.className='num';num.textContent=pad(notes.length-i);num.setAttribute('aria-hidden','true');
+    const title=document.createElement('strong');title.textContent=note.title;
+    const meta=document.createElement('span');meta.className='meta';meta.textContent=formatDate(note.updated)+' · '+note.points.length+' 个要点';
+    b.append(num,title,meta);b.onclick=()=>{if(leaveAllowed())openNote(note.id);};list.append(b);
+  });
+}
+function formatDate(value,long){const d=new Date(value);if(Number.isNaN(d.getTime()))return'本地笔记';return long?d.toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric'}):d.toLocaleDateString('zh-CN',{month:'2-digit',day:'2-digit'});}
 function cancelRun(){runId++;clearTimeout(timer);running=false;$('loading').hidden=true;$('cancelRun').hidden=true;$('generate').disabled=false;$('article').disabled=false;$('sample').disabled=false;}
 function leaveAllowed(){if(dirty&&!confirm('有尚未保存的内容，确定放弃并离开吗？'))return false;cancelRun();dirty=false;return true;}
-function show(next){page=next;$('layout').classList.remove('show-list');['compose','detail','edit'].forEach(id=>$(id).hidden=id!==next);$('mobileNew').setAttribute('aria-current',String(next==='compose'));$('mobileList').setAttribute('aria-current',String(next!=='compose'));}
-function fresh(){if(!leaveAllowed())return;activeId=null;show('compose');$('article').value='';$('wordCount').textContent='0 / 30,000 字';$('draft').hidden=true;$('composeStatus').textContent='';$('draftStatus').textContent='';renderList();$('composeTitle').focus();}
-function showList(){if(!leaveAllowed())return;if(page==='compose'){ $('draft').hidden=true;$('article').value='';$('wordCount').textContent='0 / 30,000 字'; }$('layout').classList.add('show-list');$('mobileNew').setAttribute('aria-current','false');$('mobileList').setAttribute('aria-current','true');if(window.innerWidth>760){if(notes.length)openNote(activeId||notes[0].id);else show('compose');}else $('mobileNew').focus();}
-function openNote(id,message=''){const note=notes.find(n=>n.id===id);if(!note)return;activeId=id;dirty=false;show('detail');$('detailTitle').textContent=note.title;$('detailMeta').textContent=formatDate(note.updated)+' 更新 · '+note.source.length+' 字原文 · 模拟 AI 摘录，已由你保存';$('detailPoints').replaceChildren();note.points.forEach(point=>{const li=document.createElement('li');li.textContent=point;$('detailPoints').append(li);});$('detailThoughts').textContent=note.thoughts;$('thoughtSection').hidden=!note.thoughts;$('detailSource').textContent=note.source;document.querySelector('details').open=false;$('detailStatus').textContent=message;renderList();$('detailTitle').focus();}
-$('article').addEventListener('input',()=>{dirty=true;$('wordCount').textContent=$('article').value.length.toLocaleString()+' / 30,000 字';});
+function show(next){page=next;$('layout').classList.remove('show-list');['compose','detail','edit'].forEach(id=>$(id).hidden=id!==next);$('mobileNew').setAttribute('aria-current',String(next==='compose'));$('mobileList').setAttribute('aria-current',String(next!=='compose'));window.scrollTo&&window.scrollTo(0,0);}
+function resetCompose(){$('article').value='';$('wordCount').textContent='0 / 30,000 字';$('draft').hidden=true;$('composeStatus').textContent='';$('draftStatus').textContent='';}
+function fresh(){if(!leaveAllowed())return;activeId=null;show('compose');resetCompose();renderList();$('composeTitle').focus();}
+function showList(){if(!leaveAllowed())return;if(page==='compose')resetCompose();$('layout').classList.add('show-list');$('mobileNew').setAttribute('aria-current','false');$('mobileList').setAttribute('aria-current','true');if(window.innerWidth>760){if(notes.length)openNote(activeId||notes[0].id);else show('compose');}else $('mobileList').focus();}
+function metaItem(text){const s=document.createElement('span');s.textContent=text;return s;}
+function openNote(id,message=''){
+  const note=notes.find(n=>n.id===id);if(!note)return;activeId=id;dirty=false;show('detail');
+  $('detailKicker').textContent='阅读手记 · No.'+noteNumber(id);
+  $('detailTitle').textContent=note.title;
+  $('detailMeta').replaceChildren(metaItem(formatDate(note.updated,true)+' 更新'),metaItem('原文 '+note.source.length.toLocaleString()+' 字'),metaItem('要点摘自原文（模拟 AI），已由你校订'));
+  $('detailPoints').replaceChildren();note.points.forEach(point=>{const li=document.createElement('li');li.textContent=point;$('detailPoints').append(li);});
+  $('detailThoughts').textContent=note.thoughts;$('thoughtSection').hidden=!note.thoughts;
+  $('detailSource').textContent=note.source;document.querySelector('details').open=false;
+  $('detailStatus').textContent=message;renderList();$('detailTitle').focus();
+}
+$('article').addEventListener('input',()=>{dirty=true;$('article').removeAttribute('aria-invalid');$('wordCount').textContent=$('article').value.length.toLocaleString()+' / 30,000 字';});
 $('sample').onclick=()=>{if(dirty&&!confirm('用示例替换当前未保存的内容吗？'))return;$('article').value=sampleText;$('article').dispatchEvent(new Event('input'));$('draft').hidden=true;$('composeStatus').textContent='已填入原创示例文章，可直接整理。';};
-$('generate').onclick=()=>{const source=$('article').value.trim();if(source.length<30){$('composeStatus').textContent='请粘贴至少 30 字的文章，再整理阅读要点。';$('article').setAttribute('aria-invalid','true');$('article').focus();return;}if(!$('draft').hidden&&!confirm('重新整理会替换下方未保存的笔记，继续吗？'))return;$('article').removeAttribute('aria-invalid');cancelRun();const token=runId;running=true;dirty=true;$('draft').hidden=true;$('loading').hidden=false;$('cancelRun').hidden=false;$('generate').disabled=true;$('article').disabled=true;$('sample').disabled=true;$('composeStatus').textContent='模拟整理中，可随时取消。';timer=setTimeout(()=>{if(token!==runId)return;try{generatedSource=source;let points=extract(source);if(!points.length)points=[source.slice(0,260)];$('draftTitle').value=source.split('\n')[0].slice(0,40);$('draftPoints').value=points.join('\n');$('draftThoughts').value='';cancelRun();$('draft').hidden=false;$('composeStatus').textContent='整理完成：以下为本地规则摘录，请校订后保存。';$('draftStatus').textContent='';if(document.activeElement===document.body||document.activeElement===$('generate'))$('draftHeading').focus();}catch(e){cancelRun();$('composeStatus').textContent='整理失败，原文已保留，请重试。';}},900);};
+$('generate').onclick=()=>{
+  const source=$('article').value.trim();
+  if(source.length<30){$('composeStatus').textContent='请粘贴至少 30 字的文章，再整理阅读要点。';$('article').setAttribute('aria-invalid','true');$('article').focus();return;}
+  if(!$('draft').hidden&&!confirm('重新整理会替换下方未保存的笔记，继续吗？'))return;
+  $('article').removeAttribute('aria-invalid');cancelRun();const token=runId;running=true;dirty=true;
+  $('draft').hidden=true;$('loading').hidden=false;$('cancelRun').hidden=false;$('generate').disabled=true;$('article').disabled=true;$('sample').disabled=true;
+  $('composeStatus').textContent='模拟整理中，可随时取消。';
+  timer=setTimeout(()=>{
+    if(token!==runId)return;
+    try{generatedSource=source;const parts=splitTitle(source);let points=extract(parts.body);if(!points.length)points=[parts.body.slice(0,260)];
+      $('draftTitle').value=parts.title;$('draftPoints').value=points.join('\n');$('draftThoughts').value='';
+      cancelRun();$('draft').hidden=false;$('composeStatus').textContent='整理完成：以下为本地规则摘录，请校订后保存。';$('draftStatus').textContent='';
+      if(document.activeElement===document.body||document.activeElement===$('generate'))$('draftHeading').focus();
+    }catch(e){cancelRun();$('composeStatus').textContent='整理失败，原文已保留，请重试。';}
+  },900);
+};
 $('cancelRun').onclick=()=>{cancelRun();$('composeStatus').textContent='已取消，原文已保留，可以重新整理。';$('generate').focus();};
-function fields(prefix){const title=$(prefix+'Title').value.trim(),points=$(prefix+'Points').value.split('\n').map(x=>x.trim()).filter(Boolean),thoughts=$(prefix+'Thoughts').value.trim();if(!title||!points.length){$(prefix+'Status').textContent='请填写笔记标题和至少一个阅读要点。';$(prefix+(!title?'Title':'Points')).focus();return null;}return{title,points,thoughts};}
+function fields(prefix){const title=$(prefix+'Title').value.trim(),points=$(prefix+'Points').value.split('\n').map(x=>x.trim()).filter(Boolean),thoughts=$(prefix+'Thoughts').value.trim();if(!title||!points.length){$(prefix+'Status').textContent='请填写标题和至少一个阅读要点。';$(prefix+(!title?'Title':'Points')).focus();return null;}return{title,points,thoughts};}
 function save(prefix){const data=fields(prefix);if(!data)return;const button=$(prefix==='draft'?'saveDraft':'saveEdit');button.disabled=true;$(prefix+'Status').textContent='正在保存到当前浏览器…';try{const old=prefix==='edit'?notes.find(n=>n.id===activeId):null;const note={...data,id:old?old.id:'n'+Date.now()+'-'+Math.random().toString(36).slice(2),source:old?old.source:generatedSource,updated:new Date().toISOString()};const next=[note,...notes.filter(n=>n.id!==note.id)];persist(next);notes=next;dirty=false;openNote(note.id,'已保存到当前浏览器。');}catch(e){$(prefix+'Status').textContent='保存失败：浏览器存储不可用或空间不足。内容已保留，请检查权限后重试。';}finally{button.disabled=false;}}
 $('saveDraft').onclick=()=>save('draft');$('saveEdit').onclick=()=>save('edit');
 $('editNote').onclick=()=>{const n=notes.find(n=>n.id===activeId);show('edit');$('editTitle').value=n.title;$('editPoints').value=n.points.join('\n');$('editThoughts').value=n.thoughts;$('editStatus').textContent='';dirty=false;$('editHeading').focus();};

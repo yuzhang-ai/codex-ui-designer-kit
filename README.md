@@ -8,9 +8,9 @@
 
 [看案例](#三个案例) · [开始使用](#开始使用) · [Skill入口](SKILL.md) · [验证记录](docs/showcase-validation.md)
 
-![研读桌：由自然语言需求生成的阅读笔记页面](docs/assets/showcase/reading-desktop.jpg)
+![研读桌：由自然语言需求生成、经三轮真人反馈修改的阅读笔记页面](docs/assets/showcase/reading-desktop.jpg)
 
-> **当前阶段：流程验证候选。** 下列案例用于展示新建、改造与效果讨论，尚未达到精修产品页面的视觉标杆要求。已有指定浏览器功能验证，案例 AI 为本地模拟。我们正在用[真实产品调研与复评](docs/product-benchmark-research.md)及[视觉基准](references/product-visual-benchmarks.md)收敛质量。
+> **当前阶段：流程验证候选。** 下列案例用于展示新建、改造与效果讨论。研读桌已经过三轮真人反馈修改，其余案例尚未精修。已有指定浏览器功能验证，案例 AI 为本地模拟。我们正在用[真实产品调研与复评](docs/product-benchmark-research.md)及[视觉基准](references/product-visual-benchmarks.md)收敛质量。
 
 设计方法进一步补充了[从成熟产品提炼自己的视觉语言](references/visual-design-derivation.md)：先解释定位、布局、字体、信息和图标之间的关系，再落到前端；[来源与边界](docs/visual-design-extraction.md)可核查。这是方法更新，尚未证明新一轮生成效果。
 
@@ -27,22 +27,33 @@
 
 ## 三个案例
 
-这三例分别验证不同能力；效果体验室是局部演示，两个页面案例的视觉精修仍待完成。
+这三例分别验证不同能力。研读桌已按真人反馈完成一轮视觉精修；投递手记的视觉精修仍待完成；效果体验室是局部演示。
 
 ### 01 · 研读桌：从想法到阅读产品
 
 > “我没有设计经验，希望像一本安静的杂志。粘贴文章后整理要点，能保存、查看和编辑；电脑手机都能用。”
 
-- **设计判断**：用纸白、墨色与朱红建立阅读气质；桌面目录与正文双栏，手机聚焦单个任务。
-- **实际流程**：粘贴 → 模拟整理 → 校订 → 保存 → 列表 → 详情 → 编辑。
-- **交互细节**：等待反馈、取消、原文保留、刷新读回、轻转场及减少动态效果。
-
 <table>
-<tr><td width="72%"><img src="docs/assets/showcase/reading-desktop.jpg" alt="研读桌桌面详情，目录与阅读区域分开"></td><td width="28%"><img src="docs/assets/showcase/reading-mobile.jpg" alt="研读桌手机详情，单列阅读与编辑入口"></td></tr>
+<tr><td width="72%"><img src="docs/assets/showcase/reading-desktop.jpg" alt="研读桌 v2 桌面详情：圆角纸页浮在暖色桌面上，目录在左，要点用朱红圆形序号"></td><td width="28%"><img src="docs/assets/showcase/reading-mobile.jpg" alt="研读桌 v2 手机详情：浮动分段导航与单列纸页"></td></tr>
 <tr><td>桌面：目录与阅读</td><td>手机：聚焦当前内容</td></tr>
 </table>
 
-[查看源码与运行方法](examples/reading-desk/) · [查看验证与首次修复](docs/showcase-validation.md#1-研读桌从一句需求开始)
+- **设计判断**：书桌上的一页纸。层级靠“桌面 → 纸页 → 内凹面”三层面和留白区分，不用分割线；阅读内容统一用宋体，朱红只用于印章、序号和当前位置，主操作用与纸同色相的胡桃褐。
+- **实际流程**：粘贴 → 模拟整理 → 校订 → 保存 → 列表 → 详情 → 编辑。
+- **交互细节**：等待反馈、取消、原文保留、刷新读回、保存失败保留输入、轻转场及减少动态效果。
+
+**这一版是怎么改出来的。** v1 由 Kit 首次生成，功能完整，但满屏细线、直角、红色用在太多地方。之后按真人反馈改了三轮：先统一阅读字体、修掉标题被重复摘成要点和宽屏偏左；再按“不喜欢线框感和直角”改成纸页与圆角；最后按“牛皮纸背景上放黑按钮有点怪”把主按钮换成胡桃褐。每轮的问题、改法和规则已整理进[视觉纠偏手册](references/visual-taste-corrections.md)，供 Codex 下次生成前读取。
+
+<details>
+<summary>对比 v1 与 v2 新建页</summary>
+<br>
+<table>
+<tr><td width="50%"><img src="docs/assets/showcase/reading-v1-desktop.jpg" alt="研读桌 v1：细线分区、直角、红色主按钮"></td><td width="50%"><img src="docs/assets/showcase/reading-compose.jpg" alt="研读桌 v2 新建页：内凹输入面与胡桃褐主按钮"></td></tr>
+<tr><td>v1：线框分区，强调色过多</td><td>v2 新建页：一屏一个主操作</td></tr>
+</table>
+</details>
+
+[查看源码与运行方法](examples/reading-desk/) · [设计记录](examples/reading-desk/DESIGN.md) · [首轮验证与修复](docs/showcase-validation.md#1-研读桌从一句需求开始)
 
 ### 02 · 投递手记：把能跑的 demo 改成日常工具
 
@@ -133,6 +144,7 @@ GitHub 文件页展示源码，不会直接运行这些 HTML。案例无需前�
 |---|---|
 | [产品设计流程](references/product-design-workflow.md) | 页面规划与主任务闭环 |
 | [设计基础](references/design-foundations.md) | 内容层级、排版、间距与响应式 |
+| [视觉纠偏手册](references/visual-taste-corrections.md) | Agent 默认审美的常见问题、改法与研读桌改版案例 |
 | [真实产品视觉基准](references/product-visual-benchmarks.md) | 按任务选参照，逐项验收精修质量 |
 | [产品调研与样例复评](docs/product-benchmark-research.md) | 官方来源、可见观察、证据边界和现有差距 |
 | [交互契约](references/interaction-contracts.md) | 输入保留、错误恢复、焦点与用户控制 |
