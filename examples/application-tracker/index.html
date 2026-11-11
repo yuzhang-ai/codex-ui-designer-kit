@@ -1,20 +1,164 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>投递手记 · 我的求职记录</title>
 <style>
-:root{--paper:#f5f6f2;--surface:#fff;--ink:#202e2a;--muted:#626e67;--line:#dfe5de;--green:#256047;--tint:#edf4ed;--error:#a13429;--radius:14px}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;min-height:44px;border:1px solid var(--line);background:white;color:var(--ink);border-radius:8px;padding:9px 17px;font-weight:600}button:hover{background:var(--tint)}button:disabled{cursor:not-allowed;opacity:.55}button.primary{background:var(--green);border-color:var(--green);color:white}button.primary:hover{background:#184d37}:focus-visible{outline:3px solid #d29639;outline-offset:3px}header{border-bottom:1px solid var(--line);background:var(--surface)}.topbar{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:19px 32px}.brand{display:flex;align-items:center;gap:12px;font-weight:750;font-size:19px}.mark{display:grid;place-items:center;width:34px;height:34px;background:var(--green);color:white;border-radius:10px;font-size:19px}.local{color:var(--muted);font-size:13px}.local:before{content:'●';color:var(--green);font-size:10px;margin-right:7px}main{max-width:1200px;margin:auto;padding:46px 32px 28px}.heading{display:flex;justify-content:space-between;gap:24px;align-items:center;margin-bottom:30px}.eyebrow{font-size:12px;letter-spacing:2px;color:var(--green);font-weight:700;margin:0 0 9px}h1{font-size:30px;letter-spacing:-1px;line-height:1.3;margin:0 0 9px}p{margin:0}.intro{color:var(--muted)}.workspace{border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);overflow:hidden}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px;border-bottom:1px solid var(--line)}.filters{display:flex;gap:5px;flex-wrap:wrap}.filter{border:0;background:transparent;color:var(--muted);padding:8px 12px;font-size:14px}.filter[aria-pressed=true]{background:var(--tint);color:var(--green)}.filter span{font-size:12px;margin-left:7px;font-weight:400}.search{position:relative;max-width:330px;width:100%}.search input{padding-left:37px}.search-icon{position:absolute;left:13px;top:10px;color:var(--muted)}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #c9d3c9;border-radius:8px;background:#fff;color:var(--ink);min-height:46px}input::placeholder,textarea::placeholder{color:#7b847e}table{width:100%;border-collapse:collapse;table-layout:fixed}th{font-size:12px;color:var(--muted);font-weight:500;text-align:left;background:#fafbf8;padding:13px 24px}td{padding:22px 24px;border-top:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}.company{font-weight:700;font-size:16px}.role{font-size:14px;color:var(--muted);margin-top:4px}.note{color:#505f55;white-space:pre-wrap;font-size:14px}.badge{display:inline-block;border-radius:6px;padding:4px 9px;white-space:nowrap;font-size:12px;font-weight:600;background:#eef0eb;color:#55634f}.badge.sent{background:#eef2fd;color:#375b9c}.badge.interview{background:#ecf5ec;color:#32673a}.edit-button{white-space:nowrap;min-height:44px;padding:6px 12px;font-size:13px;border-color:transparent;color:var(--green)}.empty{padding:65px 24px 70px;text-align:center}.empty-icon{margin:0 auto 20px;width:54px;height:62px;border:1px solid #cad8c9;border-radius:9px;background:var(--tint);display:grid;place-items:center;font-size:27px;color:var(--green);transform:rotate(-7deg)}.empty h2{font-size:20px;margin:0 0 8px}.empty p{color:var(--muted);margin-bottom:22px}.list-footer{padding:14px 24px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px}.footnote{font-size:12px;color:var(--muted);margin:22px 0;line-height:1.8}.feedback:not(:empty){margin-bottom:18px;padding:12px 16px;border:1px solid #c6ddc7;border-radius:9px;background:var(--tint);color:var(--green)}.feedback.error:not(:empty){background:#fff1ee;border-color:#e9bdb5;color:var(--error)}dialog{width:min(540px,calc(100% - 32px));max-height:90dvh;padding:0;border:1px solid var(--line);border-radius:16px;color:var(--ink);box-shadow:0 22px 80px #102a2226}dialog::backdrop{background:#18282066}.dialog-head{padding:24px 26px 18px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}h2{font-size:23px;margin:0 0 4px}.dialog-head p{font-size:13px;color:var(--muted)}.close{border:0;padding:0;width:40px;min-height:40px;font-size:23px;color:var(--muted)}form{padding:0 26px 24px}.fields{display:grid;gap:17px}label{display:block;font-size:14px;font-weight:600}label input,label select,label textarea{margin-top:7px;font-weight:400}label small{font-size:12px;font-weight:400;color:var(--muted)}textarea{resize:vertical;min-height:108px}.form-actions{margin-top:24px;display:flex;justify-content:flex-end;gap:10px}.form-feedback{font-size:13px;color:var(--error);margin-top:12px}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}tr:hover td{background:#fdfefb}
-@media(max-width:850px){.toolbar{align-items:stretch;flex-direction:column;gap:12px}.search{max-width:none}th,td{padding-left:18px;padding-right:18px}main{padding-top:32px}}
-@media(max-width:600px){.topbar{padding:16px 20px}.local{font-size:11px}.brand{font-size:17px;gap:8px}main{padding:28px 16px 20px}.heading{gap:16px;align-items:flex-start;flex-direction:column;margin-bottom:24px}h1{font-size:27px}.intro{font-size:14px}.heading>.primary{width:100%}.toolbar{padding:15px}.filters{gap:0;justify-content:space-between}.filter{padding:7px 9px;font-size:13px}.filter span{margin-left:4px}table,tbody{display:block}thead{display:none}tr{display:grid;grid-template-columns:minmax(0,1fr) auto;padding:18px;gap:12px;border-top:1px solid var(--line)}td{display:block;border:0;padding:0}td:first-child{grid-column:1;grid-row:1}td:nth-child(2){grid-column:2;grid-row:1}td:nth-child(3){grid-column:1/-1;grid-row:2}td:last-child{grid-column:1/-1;grid-row:3;text-align:right}.note{line-height:1.7}.list-footer{padding:14px 18px;flex-wrap:wrap}.empty{padding:40px 20px}.dialog-head{padding:22px 20px 16px}form{padding:0 20px 20px}.form-actions button{flex:1}dialog{max-height:94dvh}.footnote{margin:16px 2px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
-@media(min-width:641px) and (max-width:900px){td:last-child,th:last-child{padding-left:8px;padding-right:8px}}
+/* ── Tokens ─────────────────────────────────────────────
+   方向：每天打开的投递清单。浅鼠尾草色桌面上一张圆角工作面；
+   记录行之间保留极淡的行线，因为要逐行比较公司、进展和备注；
+   其余分区靠留白和底色面，不用外框。主操作用同色相的深松绿。 */
+:root{
+  --desk:#edf0ea;
+  --sheet:#fbfcf9;
+  --well:#f1f4ee;
+  --well-hover:#eaeee6;
+  --ink:#1f2b26;
+  --ink-2:#3f4c45;
+  --muted:#5f6b64;          /* 纸面上 ≥4.5:1 */
+  --row-rule:rgba(31,43,38,.07);
+  --pine:#2f5a45;           /* 主操作 */
+  --pine-hi:#264a39;
+  --pine-wash:rgba(47,90,69,.09);
+  --error:#a13429;--error-wash:#fbecea;
+  --r-sheet:24px;--r-block:16px;--r-field:14px;--r-pill:999px;
+  --lift:0 1px 2px rgba(30,52,40,.05),0 10px 28px -14px rgba(30,52,40,.16);
+  --lift-hi:0 1px 2px rgba(30,52,40,.05),0 24px 60px -30px rgba(30,52,40,.26);
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Segoe UI","Microsoft YaHei",sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 520px at 75% -10%,#f4f6f1 0,transparent 70%),var(--desk);color:var(--ink);font:15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+p{margin:0}
+
+/* ── Controls ───────────────────────────────────────── */
+button{cursor:pointer;min-height:44px;border:0;border-radius:var(--r-pill);background:var(--well);color:var(--ink);padding:0 20px;font-weight:600;transition:background .2s var(--ease),box-shadow .2s var(--ease),transform .2s var(--ease)}
+button:hover{background:var(--well-hover)}
+button:active{transform:scale(.98)}
+button:disabled{cursor:not-allowed;opacity:.5;transform:none}
+button.primary{background:var(--pine);color:#f7faf6;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 8px 20px -10px rgba(47,90,69,.6)}
+button.primary:hover{background:var(--pine-hi)}
+:focus-visible{outline:2px solid var(--pine);outline-offset:3px}
+
+/* ── Header ─────────────────────────────────────────── */
+header{background:transparent}
+.topbar{max-width:1160px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:24px 32px 8px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;letter-spacing:.02em}
+.mark{display:grid;place-items:center;width:34px;height:34px;background:var(--pine);color:#f7faf6;border-radius:11px;font-size:17px;box-shadow:0 6px 14px -8px rgba(47,90,69,.7)}
+.local{display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:var(--r-pill);background:rgba(251,252,249,.75);color:var(--muted);font-size:12px}
+.local:before{content:"";width:6px;height:6px;border-radius:50%;background:#5d8a6c}
+
+/* ── Page ───────────────────────────────────────────── */
+main{max-width:1160px;margin:auto;padding:32px 32px 40px}
+.heading{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin:0 4px 24px}
+h1{font-size:30px;letter-spacing:-.01em;line-height:1.3;margin:0 0 6px;font-weight:700}
+.intro{color:var(--muted)}
+
+.feedback:not(:empty){display:flex;align-items:center;gap:10px;margin-bottom:16px;padding:12px 18px;border-radius:var(--r-block);background:#e3eee5;color:#24503b;font-weight:500}
+.feedback:not(:empty)::before{content:"✓";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--pine);color:#f7faf6;font-size:11px;flex:none}
+.feedback.error:not(:empty)::before{content:"!";background:var(--error)}
+.feedback.error:not(:empty){background:var(--error-wash);color:var(--error)}
+
+.workspace{background:var(--sheet);border-radius:var(--r-sheet);box-shadow:var(--lift-hi);overflow:hidden}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px 12px}
+.filters{display:flex;gap:4px;flex-wrap:wrap;padding:4px;border-radius:var(--r-pill);background:var(--well)}
+.filter{min-height:38px;padding:0 14px;background:transparent;color:var(--muted);font-size:14px;font-weight:600}
+.filter:hover{background:rgba(255,255,255,.6)}
+.filter[aria-pressed=true]{background:var(--sheet);color:var(--ink);box-shadow:0 1px 2px rgba(30,52,40,.08),0 4px 10px -4px rgba(30,52,40,.14)}
+.filter span{font-size:12px;margin-left:6px;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+.search{position:relative;max-width:320px;width:100%}
+.search input{padding-left:42px;border-radius:var(--r-pill);min-height:44px}
+.search-icon{position:absolute;left:17px;top:50%;transform:translateY(-52%);color:var(--muted);font-size:16px}
+
+input,select,textarea{width:100%;padding:11px 16px;border:0;border-radius:var(--r-field);background:var(--well);color:var(--ink);min-height:46px;transition:background .2s var(--ease),box-shadow .2s var(--ease)}
+input:hover,select:hover,textarea:hover{background:var(--well-hover)}
+input:focus,select:focus,textarea:focus{outline:none;background:#fff;box-shadow:0 0 0 1.5px rgba(47,90,69,.55),0 8px 22px -12px rgba(30,52,40,.25)}
+input[aria-invalid=true],textarea[aria-invalid=true]{box-shadow:0 0 0 1.5px var(--error)}
+input::placeholder,textarea::placeholder{color:#7d877f}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 22px) 52%,calc(100% - 17px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:40px}
+
+/* ── Records ────────────────────────────────────────── */
+/* 记录要逐行比较，保留极淡行线；行线从内容起点开始，不贯穿到工作面边缘。 */
+table{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed}
+th{font-size:12px;color:var(--muted);font-weight:500;text-align:left;padding:12px 24px 10px;letter-spacing:.04em}
+td{padding:20px 24px;vertical-align:top;overflow-wrap:anywhere;background-image:linear-gradient(var(--row-rule),var(--row-rule));background-size:calc(100% - 0px) 1px;background-repeat:no-repeat;background-position:0 0;transition:background-color .15s var(--ease)}
+tbody tr:first-child td{background-image:none}
+td:first-child{background-position:24px 0;background-size:calc(100% - 24px) 1px}
+td:last-child{background-size:calc(100% - 24px) 1px}
+tbody tr:hover td{background-color:rgba(47,90,69,.035)}
+.company{font-weight:700;font-size:16px}
+.role{font-size:14px;color:var(--muted);margin-top:3px}
+.note{color:var(--ink-2);white-space:pre-wrap;font-size:14px}
+.badge{display:inline-flex;align-items:center;gap:7px;border-radius:var(--r-pill);padding:4px 12px 4px 10px;white-space:nowrap;font-size:12px;font-weight:600;background:#eef0ea;color:#55604f}
+.badge:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7}
+.badge.sent{background:#eaf0f8;color:#36588c}
+.badge.interview{background:#e6f1e8;color:#2c6a41}
+.edit-button{white-space:nowrap;min-height:40px;padding:0 16px;font-size:13px;background:transparent;color:var(--pine)}
+.edit-button:hover{background:var(--pine-wash)}
+
+.empty{padding:56px 24px 64px;text-align:center}
+.empty-icon{margin:0 auto 20px;width:56px;height:56px;border-radius:18px;background:var(--pine-wash);display:grid;place-items:center;font-size:24px;color:var(--pine)}
+.empty h2{font-size:19px;margin:0 0 6px}
+.empty p{color:var(--muted);margin-bottom:22px}
+
+.list-footer{padding:14px 24px 18px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;background:var(--well)}
+.footnote{font-size:12px;color:var(--muted);margin:20px 6px;line-height:1.8}
+
+/* ── Dialog ─────────────────────────────────────────── */
+dialog{width:min(540px,calc(100% - 32px));max-height:90dvh;padding:0;border:0;border-radius:var(--r-sheet);background:var(--sheet);color:var(--ink);box-shadow:0 30px 80px -20px rgba(16,42,34,.35)}
+dialog[open]{animation:pop .24s var(--ease)}
+dialog::backdrop{background:rgba(24,40,32,.32);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.dialog-head{padding:26px 28px 18px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+h2{font-size:22px;margin:0 0 4px}
+.dialog-head p{font-size:13px;color:var(--muted)}
+.close{padding:0;width:40px;min-height:40px;font-size:22px;color:var(--muted);background:var(--well)}
+form{padding:0 28px 26px}
+.fields{display:grid;gap:18px}
+label{display:block;font-size:14px;font-weight:600}
+label input,label select,label textarea{margin-top:8px;font-weight:400}
+label small{font-size:12px;font-weight:400;color:var(--muted);margin-left:4px}
+textarea{resize:vertical;min-height:108px}
+.form-actions{margin-top:24px;display:flex;justify-content:flex-end;gap:10px}
+.form-feedback{font-size:13px;color:var(--error);margin-top:12px}
+.form-feedback:empty{display:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:none}}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media(max-width:850px){.toolbar{align-items:stretch;flex-direction:column;gap:12px}.filters{align-self:flex-start}.search{max-width:none}th,td{padding-left:18px;padding-right:18px}td:first-child{background-position:18px 0;background-size:calc(100% - 18px) 1px}td:last-child{background-size:calc(100% - 18px) 1px}main{padding-top:24px}}
+@media(max-width:600px){
+  .topbar{padding:16px 16px 4px}.local{font-size:11px;padding:5px 10px}.brand{font-size:17px;gap:10px}.mark{width:30px;height:30px;border-radius:10px;font-size:15px}
+  main{padding:20px 12px 20px}
+  .heading{gap:14px;align-items:stretch;flex-direction:column;margin:0 6px 18px}
+  h1{font-size:26px}.intro{font-size:14px}.heading>.primary{width:100%}
+  .workspace{background:transparent;box-shadow:none;border-radius:0;overflow:visible}
+  .toolbar{padding:0 0 12px}
+  .filters{align-self:stretch;justify-content:space-between;gap:2px;background:rgba(251,252,249,.7)}
+  .filter{flex:1;padding:0 6px;font-size:13px}.filter span{margin-left:3px}
+  .search input{background:var(--sheet);box-shadow:0 1px 2px rgba(30,52,40,.05)}
+  table,tbody{display:block}thead{display:none}
+  tbody{display:grid;gap:10px}
+  tr{display:grid;grid-template-columns:minmax(0,1fr) auto;padding:18px;gap:10px 12px;background:var(--sheet);border-radius:var(--r-block);box-shadow:var(--lift)}
+  td{display:block;padding:0;background-image:none!important}
+  tbody tr:hover td{background-color:transparent}
+  td:first-child{grid-column:1;grid-row:1}td:nth-child(2){grid-column:2;grid-row:1}td:nth-child(3){grid-column:1/-1;grid-row:2;padding:12px 14px;border-radius:12px;background-color:var(--well)}td:last-child{grid-column:1/-1;grid-row:3;text-align:right}
+  .edit-button{min-height:42px;background:var(--pine-wash)}
+  .note{line-height:1.7}
+  .empty{padding:40px 20px;background:var(--sheet);border-radius:var(--r-block);box-shadow:var(--lift)}
+  .list-footer{margin-top:10px;padding:12px 6px;background:transparent;flex-wrap:wrap}
+  .dialog-head{padding:22px 20px 16px}form{padding:0 20px 20px}.form-actions button{flex:1}dialog{max-height:94dvh}
+  .footnote{margin:12px 6px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(min-width:601px) and (max-width:900px){td:last-child,th:last-child{padding-left:8px;padding-right:8px}}
 </style></head><body>
 <header><div class="topbar"><div class="brand"><span class="mark" aria-hidden="true">↗</span>投递手记</div><span class="local">浏览器本地保存</span></div></header>
-<main><div class="heading"><div><p class="eyebrow">MY APPLICATIONS</p><h1>每一步，都有记录。</h1><p class="intro">整理心仪岗位，跟进每一次机会。</p></div><button class="primary" id="new">＋ 新增投递</button></div>
+<main><div class="heading"><div><h1>每一步，都有记录。</h1><p class="intro">整理心仪岗位，跟进每一次机会。</p></div><button class="primary" id="new">＋ 新增投递</button></div>
 <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
 <section class="workspace" aria-label="投递记录"><div class="toolbar"><div class="filters" role="group" aria-label="按投递状态筛选"></div><div class="search"><span class="search-icon" aria-hidden="true">⌕</span><label class="sr-only" for="search">搜索公司、岗位或备注</label><input id="search" type="search" placeholder="搜索公司、岗位或备注" autocomplete="off"></div></div>
 <table aria-label="我的投递记录"><colgroup><col style="width:34%"><col style="width:15%"><col style="width:39%"><col style="width:12%"></colgroup><thead><tr><th scope="col">公司 / 岗位</th><th scope="col">进展</th><th scope="col">备注</th><th scope="col">操作</th></tr></thead><tbody id="rows"></tbody></table>
 <div class="empty" id="empty"><div class="empty-icon" aria-hidden="true">↗</div><h2 id="empty-title">从一个心仪岗位开始</h2><p id="empty-text">记下公司和岗位，为下一次行动留个线索。</p><button id="empty-action" class="primary">新增第一条投递</button></div>
-<div class="list-footer"><span id="count">共 0 条记录</span><span>记录进展，按自己的节奏前行</span></div></section>
-<p class="footnote">数据仅保存在当前浏览器，不会上传。清除浏览器数据会丢失记录；切换浏览器、设备或页面地址不会自动同步。</p></main>
+<div class="list-footer"><span id="count">共 0 条记录</span><span>数据只保存在当前浏览器</span></div></section>
+<p class="footnote">不会上传。清除浏览器数据会丢失记录；切换浏览器、设备或页面地址不会自动同步。</p></main>
 <dialog id="editor" aria-labelledby="editor-title"><div class="dialog-head"><div><h2 id="editor-title">新增投递</h2><p>先记下来，进展和备注可以随时更新。</p></div><button type="button" class="close" id="close" aria-label="关闭编辑">×</button></div><form id="form"><div class="fields"><label for="company">公司 <small>必填</small><input id="company" name="company" required autocomplete="organization" placeholder="例如：心仪的公司"></label><label for="role">岗位 <small>必填</small><input id="role" name="role" required placeholder="例如：产品经理"></label><label for="status">当前进展<select id="status" name="status"><option>待投递</option><option>已投递</option><option>面试中</option></select></label><label for="note">备注 <small>可选</small><textarea id="note" name="note" placeholder="记下面试准备、沟通进展或下一步计划…"></textarea></label></div><p id="form-feedback" class="form-feedback" role="alert"></p><div class="form-actions"><button type="button" id="cancel">取消</button><button class="primary" id="save" type="submit">保存记录</button></div></form></dialog>
 <script>
 'use strict';

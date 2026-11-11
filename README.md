@@ -10,9 +10,7 @@
 
 ![研读桌：由自然语言需求生成、经三轮真人反馈修改的阅读笔记页面](docs/assets/showcase/reading-desktop.jpg)
 
-> **当前阶段：流程验证候选。** 下列案例用于展示新建、改造与效果讨论。研读桌已经过三轮真人反馈修改，其余案例尚未精修。已有指定浏览器功能验证，案例 AI 为本地模拟。我们正在用[真实产品调研与复评](docs/product-benchmark-research.md)及[视觉基准](references/product-visual-benchmarks.md)收敛质量。
-
-设计方法进一步补充了[从成熟产品提炼自己的视觉语言](references/visual-design-derivation.md)：先解释定位、布局、字体、信息和图标之间的关系，再落到前端；[来源与边界](docs/visual-design-extraction.md)可核查。这是方法更新，尚未证明新一轮生成效果。
+> **当前阶段：候选版。** 两个页面案例都按[视觉纠偏手册](references/visual-taste-corrections.md)完成了一轮精修，研读桌经过三轮真人反馈。案例里的 AI 是本地模拟。新版 Skill 能否让 Codex 一次生成到这个水平，还需要重新跑一遍验证。
 
 ## 它能帮你做什么
 
@@ -27,7 +25,7 @@
 
 ## 三个案例
 
-这三例分别验证不同能力。研读桌已按真人反馈完成一轮视觉精修；投递手记的视觉精修仍待完成；效果体验室是局部演示。
+这三例分别验证不同能力：从零新建、改造已有 demo、讨论说不出名字的效果。
 
 ### 01 · 研读桌：从想法到阅读产品
 
@@ -60,21 +58,22 @@
 > “功能能跑，但像作业。希望变成每天能用的产品，保留原数据和新增、编辑、搜索功能。”
 
 <table>
-<tr><td width="50%"><img src="docs/assets/showcase/applications-before.jpg" alt="改造前：表单与固定宽度表格直接堆放"></td><td width="50%"><img src="docs/assets/showcase/applications-after.jpg" alt="改造后：列表优先、状态筛选与清晰操作层级"></td></tr>
+<tr><td width="50%"><img src="docs/assets/showcase/applications-before.jpg" alt="改造前：表单与固定宽度表格直接堆放"></td><td width="50%"><img src="docs/assets/showcase/applications-after.jpg" alt="改造后：圆角工作面、分段筛选、胶囊状态标签，记录行之间保留淡行线"></td></tr>
 <tr><td>改造前：功能直接堆在一页</td><td>改造后：按记录和操作组织界面</td></tr>
 </table>
 
 - **保留**：原数据键、字段，以及新增、编辑、搜索、保存能力。
 - **改善**：列表优先、按需编辑、状态筛选；手机转为记录卡片，失败时保留输入。
+- **视觉**：记录行之间保留极淡行线，因为要逐行比较；其余分区去掉线，改用留白和底色面。主操作用和背景同色相的深松绿，筛选改为分段胶囊。和研读桌同一套方法，结果不同，因为一个是阅读产品，一个是数据工具。
 - **验证**：先在旧页创建记录，再用新版打开、修改、刷新，确认数据继承与保存。
 
 <details>
 <summary>查看手机布局</summary>
 <br>
-<img src="docs/assets/showcase/applications-mobile.jpg" width="320" alt="投递手记手机卡片列表，保留状态、备注与编辑入口">
+<img src="docs/assets/showcase/applications-mobile.jpg" width="320" alt="投递手记手机端：分段筛选、圆角记录卡片，备注放在卡片内的浅色面里">
 </details>
 
-[查看改造前后源码](examples/application-tracker/) · [查看验证与首次修复](docs/showcase-validation.md#2-投递手记保留功能与数据的改造)
+[查看改造前后源码](examples/application-tracker/) · [设计记录](examples/application-tracker/DESIGN.md) · [首轮验证与修复](docs/showcase-validation.md#2-投递手记保留功能与数据的改造)
 
 ### 03 · 效果体验室：把感觉变成可讨论的设计
 
@@ -143,9 +142,11 @@ GitHub 文件页展示源码，不会直接运行这些 HTML。案例无需前�
 | 资源 | 用途 |
 |---|---|
 | [产品设计流程](references/product-design-workflow.md) | 页面规划与主任务闭环 |
-| [设计基础](references/design-foundations.md) | 内容层级、排版、间距与响应式 |
-| [视觉纠偏手册](references/visual-taste-corrections.md) | Agent 默认审美的常见问题、改法与研读桌改版案例 |
-| [真实产品视觉基准](references/product-visual-benchmarks.md) | 按任务选参照，逐项验收精修质量 |
+| [设计基础](references/design-foundations.md) | 视觉第 1 步：内容层级、排版、间距与响应式 |
+| [视觉语言推导](references/visual-design-derivation.md) | 视觉第 2 步：从产品定位推出风格命题 |
+| [真实产品视觉基准](references/product-visual-benchmarks.md) | 视觉第 3 和第 6 步：按任务选参照，逐项验收精修质量 |
+| [项目设计契约](references/project-design-contract.md) | 视觉第 4 步：把方向写成 tokens、组件和状态规格 |
+| [视觉纠偏手册](references/visual-taste-corrections.md) | 视觉第 5 和第 6 步：Agent 默认审美问题、截图复查顺序、两个案例的改版记录 |
 | [产品调研与样例复评](docs/product-benchmark-research.md) | 官方来源、可见观察、证据边界和现有差距 |
 | [交互契约](references/interaction-contracts.md) | 输入保留、错误恢复、焦点与用户控制 |
 | [Recipes](recipes/) | SaaS、CRM、AI工作台、看板、移动笔记五类场景 |
@@ -158,11 +159,9 @@ Recipe 和 pattern 提供设计指导与结构示意，部分组件需要自行�
 
 ## 验证与边界
 
-本次两个新案例检查了指定主流程、保存刷新、桌面与390/768宽度；修复过焦点和中宽布局问题。脚本测试与独立复核均有记录，详见[案例验证说明](docs/showcase-validation.md)。
+两个页面案例都在浏览器里走过主流程、保存刷新、保存失败，并检查了 1440 / 768 / 375 宽度；`verify.cjs` 和仓库测试通过。过程见各案例的 `DESIGN.md` 和[案例验证说明](docs/showcase-validation.md)。
 
-仍未验证真人审美、真实AI输出质量、完整无障碍覆盖、真实手机软键盘及生产环境。旧新单次样例不支持稳定质量提升或提效倍数的结论。
-
-本地案例使用模拟数据，不包含客户资料。实际外部发送、生产写回或权限变化需要符合目标项目的授权。
+还没有验证的：真实 AI 输出质量、完整无障碍、真实手机软键盘、生产环境，以及新版 Skill 让 Codex 从零生成时能否达到同样效果。案例使用模拟数据，不含客户资料。
 
 ## 来源与复用
 

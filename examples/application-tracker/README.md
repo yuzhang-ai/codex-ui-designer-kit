@@ -18,7 +18,7 @@ python -m http.server 8000 --bind 127.0.0.1
 
 在本目录执行 `node verify.cjs`，使用 Node.js 22 或以上。脚本验证 DOM/storage 替身下的逻辑；它不启动浏览器，也不证明视觉或无障碍合规。
 
-本案例已有指定浏览器主流程、桌面/390/768 宽度检查。首次缺陷与修复、精确验证边界见 [案例记录](../../docs/showcase-validation.md)。真人审美尚未验收。
+本案例已有指定浏览器主流程、1440 / 768 / 375 宽度检查。v1 的首次缺陷与修复见 [案例记录](../../docs/showcase-validation.md)；v2 的视觉改动与验证见 [DESIGN.md](DESIGN.md)。真人审美尚未验收。
 
 ## 改造前后
 
