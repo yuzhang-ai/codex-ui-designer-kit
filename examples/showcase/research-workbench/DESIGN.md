@@ -99,6 +99,21 @@
 - **对比度**：见 Tokens 表，按 WCAG 公式计算，所有文字均 ≥4.5:1。
 - **截图**：`docs/assets/showcase/showcase-research-done.jpg`（1440×1080，固定高亮引用 2，结论、技术路线和整张表格都可读）、`showcase-research-running.jpg`（1440，撰写中）、`showcase-research-mobile.jpg`（375，3 倍，iframe 截取）。
 
+## Windows 实机字体（2026-11-12，用户补验）
+
+在 Windows 11 中文版 + Edge 152 上，用 DevTools 协议 `CSS.getPlatformFontsForNode` 查实际渲染字体，页面状态 `#done&still`，源码版本 `6610a6b`。
+
+| 节点 | 实际字体 |
+|---|---|
+| 品牌“衡”、简报标题、正文结论、来源摘录（含中英数字混排） | STSong（本机已安装） |
+| 用户问题 | 中文 Microsoft YaHei UI，数字 Segoe UI Semibold |
+| `0.31 元/Wh` 数值 | Segoe UI Semibold，等高数字，0 清晰 |
+| 来源序号 | Segoe UI Semibold |
+
+七个抽查节点都没有用到 SimSun 或 NSimSun。临时把 `--serif` 改为 `"Microsoft YaHei UI","Microsoft YaHei",serif` 后，标题、正文和摘录都回退到 Microsoft YaHei UI，可读，但段落宽度和字重有明显变化。检查后已恢复。
+
+边界：只验证了这一个样板、这一台机器。这台机器命中的是 STSong，不能据此推断其他 Windows 机器也会命中。
+
 ## 自审记录（visual-taste-corrections 第 6 节）
 
 1. 第一轮：来源摘录全部用金色浅底高亮，来源栏比正文还抢眼，金色的角色也超过了三种。研究中的状态胶囊、步骤和光标也用了金色。改法：摘录默认改为细下划线，只有选中的卡片才用金色；运行相关元素全部改为中性色；品牌图标和关键数字的强调也改为中性色。375 宽度下步骤换成两行，改为只显示名称。
@@ -112,5 +127,5 @@
 - 没有真人审美验收，也没有真实用户测试。
 - 没有用读屏软件实际朗读，没有在真实手机软键盘、iOS Safari 安全区上测试；安全区只做了 CSS。
 - 测试脚本是临时注入的，没有随示例提交；仓库里没有可复跑的 `verify` 脚本（本机没有 Node）。
-- `contenteditable` 编辑在复制粘贴富文本时没有做清洗；Windows 和 Android 上缺少宋体时会回退到 Noto Serif SC 或系统衬线，效果未看。
+- `contenteditable` 编辑在复制粘贴富文本时没有做清洗；Android 上缺少宋体时会回退到 Noto Serif SC 或系统衬线，效果未看。
 - 线程列表里的其他记录只会弹出“演示”提示，没有预置内容。附件 chip 是演示用的固定文件，没有接入文件选择器。

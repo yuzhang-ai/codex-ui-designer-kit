@@ -100,7 +100,11 @@
   - **数字和西文确实要单独指定时**（价格、KPI、时间），用等高数字的字体，并加 `font-variant-numeric: lining-nums tabular-nums`，例如 `"SF Pro Text","Segoe UI","Helvetica Neue"`。
   - **无衬线**：`-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Segoe UI","Microsoft YaHei UI","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif`。
   - **品牌感依赖某个字体时**，打包子集化的网页字体（只含页面实际用到的字，许可要允许嵌入），并写好 `font-display: swap` 和回退。不能打包时，方向本身不能只靠这个字体成立。
-- **检查**：交付前至少在一个 Windows 浏览器（或用 `font-family` 临时只留回退字体模拟）里截一张代表页。DESIGN 里写明各平台实际渲染出的字体。
+- **检查**：交付前至少在一台真实 Windows 机器的浏览器里看一次代表页，并记录**实际渲染出的字体**，不要只看声明的字体栈。
+  - **查实际字体**：浏览器开发者工具的“已渲染字体”（Chrome / Edge：元素面板 → 计算样式 → 底部 Rendered Fonts），或用 DevTools 协议的 `CSS.getPlatformFontsForNode`。`getComputedStyle` 返回的是声明的字体栈，不能证明用了哪一个。
+  - **抽查节点**：品牌字、页面标题、阅读正文、中英数字混排的一段、单独的数字（价格、编号）。
+  - **再测最后的回退**：临时把阅读字体变量改成只剩回退字体（如 `"Microsoft YaHei UI",serif`），确认能读、布局没崩，然后恢复。不同机器装的字体不同，本机命中了宋体不代表所有 Windows 都会。
+  - **写进 DESIGN**：系统和浏览器版本、每类节点实际用的字体、是否出现 SimSun、强制回退的结果。
 
 ---
 
