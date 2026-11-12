@@ -10,7 +10,7 @@
 
 ![栖光 One 品牌落地页：深夜里一盏暖光台灯，大号宋体标题](docs/assets/showcase/showcase-lamp-hero.jpg)
 
-> **当前阶段：候选版。** 下面分两类展示。**目标样板**是按本 Kit 的方法人工打磨的成品，用来说明 Kit 追求的质量上限；**流程案例**是 Codex 读 Skill 生成后，再按真人反馈修改的过程记录。新版 Skill 能否让 Codex 一次生成到样板水平，还需要单独验证。所有数据、品牌和 AI 回答都是虚构的演示内容。
+> **当前阶段：候选版。** 下面分两类展示。**目标样板**是按本 Kit 的方法人工打磨的成品，用来说明 Kit 追求的质量上限；**流程案例**是 Codex 读 Skill 生成后，再按真人反馈修改的过程记录。新版 Skill 能否让 Codex 一次生成到样板水平，还需要单独验证，方法见[盲测提示词](docs/blind-test-prompt.md)。所有数据、品牌和 AI 回答都是虚构的演示内容。
 
 ## 它能帮你做什么
 
@@ -99,7 +99,7 @@
 - **实际流程**：粘贴 → 模拟整理 → 校订 → 保存 → 列表 → 详情 → 编辑。
 - **交互细节**：等待反馈、取消、原文保留、刷新读回、保存失败保留输入、轻转场及减少动态效果。
 
-**这一版是怎么改出来的。** v1 由 Kit 首次生成，功能完整，但满屏细线、直角、红色用在太多地方。之后按真人反馈改了三轮：先统一阅读字体、修掉标题被重复摘成要点和宽屏偏左；再按“不喜欢线框感和直角”改成纸页与圆角；最后按“牛皮纸背景上放黑按钮有点怪”把主按钮换成胡桃褐。每轮的问题、改法和规则已整理进[视觉纠偏手册](references/visual-taste-corrections.md)，供 Codex 下次生成前读取。
+**这一版是怎么改出来的。** v1 由 Kit 首次生成，功能完整，但满屏细线、直角、红色用在太多地方。之后按真人反馈改了三轮：先统一阅读字体、修掉标题被重复摘成要点和宽屏偏左；再按“不喜欢线框感和直角”改成纸页与圆角；最后按“牛皮纸背景上放黑按钮有点怪”把主按钮换成胡桃褐。每轮的问题和改法记录在[改版案例](docs/case-studies/reading-desk-v1-v2.md)，从中提炼的通用规则写进了[视觉纠偏手册](references/visual-taste-corrections.md)和[视觉特点](references/visual-signature.md)。
 
 <details>
 <summary>对比 v1 与 v2 新建页</summary>
@@ -209,7 +209,10 @@ GitHub 文件页展示源码，不会直接运行这些 HTML。案例无需前�
 | [视觉语言推导](references/visual-design-derivation.md) | 视觉第 2 步：从产品定位推出风格命题 |
 | [真实产品视觉基准](references/product-visual-benchmarks.md) | 视觉第 3 和第 6 步：按任务选参照，逐项验收精修质量 |
 | [项目设计契约](references/project-design-contract.md) | 视觉第 4 步：把方向写成 tokens、组件和状态规格 |
-| [视觉纠偏手册](references/visual-taste-corrections.md) | 视觉第 5 和第 6 步：Agent 默认审美问题、截图复查顺序、两个案例的改版记录 |
+| [视觉纠偏手册](references/visual-taste-corrections.md) | 视觉第 5 和第 6 步：Agent 默认审美问题、跨平台字体、截图复查顺序 |
+| [视觉特点](references/visual-signature.md) | 视觉第 5 步后半段：风格命题、标志性元素、字号层级、替换浏览器默认样式 |
+| [改版案例](docs/case-studies/reading-desk-v1-v2.md) | 研读桌按真人反馈改三轮的完整记录（维护者参考，生成时不必读） |
+| [盲测提示词](docs/blind-test-prompt.md) | 换一个仓库里没有的需求，检验 Codex 只读 Skill 能做到什么水平，附对照表 |
 | [产品调研与样例复评](docs/product-benchmark-research.md) | 官方来源、可见观察、证据边界和现有差距 |
 | [交互契约](references/interaction-contracts.md) | 输入保留、错误恢复、焦点与用户控制 |
 | [Recipes](recipes/) | SaaS、CRM、AI工作台、看板、移动笔记五类场景 |

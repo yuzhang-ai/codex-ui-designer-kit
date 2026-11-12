@@ -35,10 +35,10 @@ description: Design and implement coherent product UI with Codex for users witho
 | 2. 风格命题 | `references/visual-design-derivation.md` | 从产品定位推出两三个风格特征，以及字体、信息表达、图标的关系 |
 | 3. 同任务参照 | `references/product-visual-benchmarks.md` 上半部分 | 选一个真实产品页面做主参照，写清采用和舍弃的部分 |
 | 4. 写成规格 | `references/project-design-contract.md` | 把方向落成 tokens、组件 variants 和状态反馈，映射到代码位置 |
-| 5. 避开默认问题 | `references/visual-taste-corrections.md` 第 1–5 节和第 8 节 | 写 CSS 前排查 Agent 常见的默认习惯：线和容器没有分工、圆角不成体系、主操作颜色和背景脱节、强调色角色太多；并查看已知的用户偏好 |
-| 6. 截图验收 | `visual-taste-corrections.md` 第 6 节，再用 `product-visual-benchmarks.md` 的 V1–V10 | 先按顺序复查截图修明显问题，再逐项记录视觉验收证据 |
+| 5. 避开问题，做出特点 | `references/visual-taste-corrections.md` 第 1–5 节和第 8 节；`references/visual-signature.md` | 写 CSS 前排查 Agent 常见的默认习惯（线和容器没有分工、圆角不成体系、主操作颜色和背景脱节、强调色角色太多、只在 Mac 上看过字体），查看已知用户偏好；再写一句风格命题，选一个来自核心对象的标志性元素，拉开字号层级 |
+| 6. 截图验收 | `visual-taste-corrections.md` 第 6 节、`visual-signature.md` 第 6 节，再用 `product-visual-benchmarks.md` 的 V1–V10 | 先按顺序复查截图修明显问题，确认页面有特点、能被认出，再逐项记录视觉验收证据 |
 
-小任务把 1–4 步的结论合成一份简短 DESIGN 即可，不必每份文档都写满。方向词（“安静”“杂志感”“高级”）要翻译成面、形状、线和主色的具体用法；第一张代表页截图后向用户确认方向，再扩展其余页面。
+小任务把 1–4 步的结论合成一份简短 DESIGN 即可，不必每份文档都写满。方向词（“安静”“杂志感”“高级”）要翻译成面、形状、线和主色的具体用法。
 
 结合任务、内容密度、用户、品牌和参考，给出一个推荐方向及理由。没有品牌时选择清晰克制的默认方向，必要时只给一个有实际差异的备选。
 
@@ -47,6 +47,12 @@ description: Design and implement coherent product UI with Codex for users witho
 - 展示/营销页面：突出内容叙事与转化；视觉表现服务于文案和品牌。
 
 避免把所有品类套进同一种 hero、三列卡片、渐变或玻璃效果。先实现最能代表核心任务的一页，用真实内容和目标设备验证方向，再扩展其余页面，共用组件与 tokens。明确推荐不等于要求用户逐项批准；在授权范围内继续执行。
+
+**第一张代表页截图后，是否停下来等用户确认方向：**
+
+- **等待**：用户在对话中可以回复，并且没有说过“直接做完”“不用问我”。这时发出代表页截图和一句话方向说明（风格命题 + 标志性元素），只问一个问题：方向对不对。只确认这一次，之后不再逐项询问。
+- **继续**：用户说过不用等、任务是无人值守运行（批处理、定时任务、测试），或者用户已经在本次对话里确认过方向。这时直接扩展其余页面，并在 DESIGN 里写一节“待确认的方向选择”，交付时一起说明。
+- 无论哪种，用户之前给过的偏好（`visual-taste-corrections.md` 第 8 节、对话中的反馈）都直接执行，不需要再问。
 
 ### 用户说不出效果名字时
 
